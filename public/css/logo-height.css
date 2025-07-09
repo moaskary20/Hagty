@@ -1,0 +1,482 @@
+/* تخصيص ارتفاع اللوجو في Filament */
+
+/* تخصيص معاينة الصورة في FileUpload */
+.fi-fo-file-upload img,
+.fi-fo-file-upload .fi-fo-file-upload-file-preview img,
+.fi-fo-file-upload-file img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    min-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تخصيص عرض الصورة في الجدول */
+.fi-ta-image img,
+.fi-ta-image-column img,
+td img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    min-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تخصيص عام لجميع الصور في Filament */
+[data-filament-table] img,
+[data-filament-form] img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    min-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تخصيص أكثر تحديداً */
+.filament-tables-image-column img,
+.filament-forms-file-upload-component img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    min-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تكبير إطار الجدول */
+.fi-ta-content,
+.fi-ta-table-container,
+.fi-ta-table-wrapper {
+    width: 100% !important;
+    max-width: 1200px !important;
+    min-height: 200px !important;
+    padding: 2rem !important;
+    margin: 0 auto !important;
+}
+
+/* تكبير الصفوف والخلايا */
+.fi-ta-table th,
+.fi-ta-table td {
+    padding: 1.5rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+}
+
+/* تكبير header الجدول */
+.fi-ta-table thead th {
+    padding: 2rem 1.5rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+
+/* تكبير أزرار العمليات */
+.fi-ta-actions {
+    padding: 1rem !important;
+}
+
+.fi-ta-actions button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+}
+
+/* فرض اللون الأبيض لعمود التاريخ */
+.fi-ta-table td:last-child,
+.fi-ta-table td:last-child .fi-ta-text {
+    color: #ffffff !important;
+}
+
+/* فرض اللون الأبيض لجميع النصوص في الجداول */
+.fi-ta-table,
+.fi-ta-table *,
+.fi-ta-table th,
+.fi-ta-table td,
+.fi-ta-table th *,
+.fi-ta-table td *,
+.fi-ta-table .fi-ta-text,
+.fi-ta-table .fi-ta-cell,
+.fi-ta-table .fi-ta-cell-content,
+.fi-ta-table span,
+.fi-ta-table p,
+.fi-ta-table div {
+    color: #ffffff !important;
+}
+
+/* فرض اللون الأبيض لheaders الجدول */
+.fi-ta-table thead th,
+.fi-ta-table thead th *,
+.fi-ta-header-cell,
+.fi-ta-header-cell * {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* فرض اللون الأبيض للروابط في الجدول */
+.fi-ta-table a,
+.fi-ta-table .fi-link {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+.fi-ta-table a:hover,
+.fi-ta-table .fi-link:hover {
+    color: #e5e7eb !important;
+}
+
+/* فرض اللون الأبيض للنصوص الفرعية */
+.fi-ta-table .fi-ta-text-item,
+.fi-ta-table .fi-ta-text-item-label,
+.fi-ta-table .text-sm,
+.fi-ta-table .text-xs {
+    color: #ffffff !important;
+}
+
+/* تخصيص للنصوص في الثيم الداكن */
+[data-theme="dark"] .fi-ta-table,
+[data-theme="dark"] .fi-ta-table *,
+[data-theme="dark"] .fi-ta-table th,
+[data-theme="dark"] .fi-ta-table td,
+[data-theme="dark"] .fi-ta-table th *,
+[data-theme="dark"] .fi-ta-table td * {
+    color: #ffffff !important;
+}
+
+/* تخصيص إضافي للنصوص الغامقة */
+.dark .fi-ta-table,
+.dark .fi-ta-table *,
+.dark .fi-ta-table th,
+.dark .fi-ta-table td,
+.dark .fi-ta-table th *,
+.dark .fi-ta-table td * {
+    color: #ffffff !important;
+}
+
+/* إزالة أي تأثيرات لونية قد تخفي النص */
+.fi-ta-table * {
+    text-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* فرض اللون الأبيض للأيقونات في الجدول */
+.fi-ta-table svg,
+.fi-ta-table .fi-icon {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* تخصيص ألوان الأزرار غير النشطة في الشريط الجانبي */
+.fi-sidebar-nav-item,
+.fi-sidebar-nav-item a,
+.fi-sidebar-nav-item button,
+.fi-sidebar-nav-item .fi-sidebar-nav-item-button {
+    color: #ffffff !important;
+}
+
+.fi-sidebar-nav-item:not(.fi-active) {
+    color: #ffffff !important;
+}
+
+.fi-sidebar-nav-item:not(.fi-active) a,
+.fi-sidebar-nav-item:not(.fi-active) button,
+.fi-sidebar-nav-item:not(.fi-active) .fi-sidebar-nav-item-button {
+    color: #ffffff !important;
+}
+
+/* تخصيص أيقونات الأزرار غير النشطة */
+.fi-sidebar-nav-item:not(.fi-active) svg,
+.fi-sidebar-nav-item:not(.fi-active) .fi-icon {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* تخصيص عام للشريط الجانبي */
+.fi-sidebar-nav,
+.fi-sidebar-nav * {
+    color: #ffffff !important;
+}
+
+/* تخصيص للنصوص في الشريط الجانبي */
+.fi-sidebar-nav-item-label,
+.fi-sidebar-nav-group-label {
+    color: #ffffff !important;
+}
+
+/* تخصيص للأزرار في حالة hover */
+.fi-sidebar-nav-item:hover,
+.fi-sidebar-nav-item:hover a,
+.fi-sidebar-nav-item:hover button {
+    color: #e5e7eb !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* تخصيص إضافي للثيم الداكن */
+[data-theme="dark"] .fi-sidebar-nav-item,
+[data-theme="dark"] .fi-sidebar-nav-item a,
+[data-theme="dark"] .fi-sidebar-nav-item button,
+[data-theme="dark"] .fi-sidebar-nav-item svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+.dark .fi-sidebar-nav-item,
+.dark .fi-sidebar-nav-item a,
+.dark .fi-sidebar-nav-item button,
+.dark .fi-sidebar-nav-item svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* تخصيص للأزرار في الـ navigation */
+.fi-topbar-nav-item,
+.fi-topbar-nav-item a,
+.fi-topbar-nav-item button {
+    color: #ffffff !important;
+}
+
+.fi-topbar-nav-item svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* تخصيص للقوائم المنسدلة */
+.fi-dropdown-panel,
+.fi-dropdown-panel * {
+    color: #ffffff !important;
+}
+
+/* تخصيص للأزرار العامة غير النشطة */
+button:not(.fi-btn-primary):not(.fi-btn-danger):not(.fi-btn-success),
+.fi-btn:not(.fi-btn-primary):not(.fi-btn-danger):not(.fi-btn-success) {
+    color: #ffffff !important;
+}
+
+/* تخصيص للروابط العامة */
+a:not(.fi-btn) {
+    color: #ffffff !important;
+}
+
+/* تخصيص الزر النشط باللون الوردي */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item.fi-active a,
+.fi-sidebar-nav-item.fi-active button,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-button {
+    color: #ec4899 !important; /* اللون الوردي */
+    background-color: rgba(236, 72, 153, 0.1) !important; /* خلفية وردية شفافة */
+}
+
+/* تخصيص أيقونة الزر النشط */
+.fi-sidebar-nav-item.fi-active svg,
+.fi-sidebar-nav-item.fi-active .fi-icon {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+/* تخصيص النص في الزر النشط */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-label {
+    color: #ec4899 !important;
+    font-weight: 600 !important;
+}
+
+/* تخصيص للحالة المختارة في التنقل العلوي */
+.fi-topbar-nav-item.fi-active,
+.fi-topbar-nav-item.fi-active a,
+.fi-topbar-nav-item.fi-active button {
+    color: #ec4899 !important;
+}
+
+.fi-topbar-nav-item.fi-active svg {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+/* تخصيص للثيم الداكن - الزر النشط */
+[data-theme="dark"] .fi-sidebar-nav-item.fi-active,
+[data-theme="dark"] .fi-sidebar-nav-item.fi-active a,
+[data-theme="dark"] .fi-sidebar-nav-item.fi-active button,
+[data-theme="dark"] .fi-sidebar-nav-item.fi-active svg {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+.dark .fi-sidebar-nav-item.fi-active,
+.dark .fi-sidebar-nav-item.fi-active a,
+.dark .fi-sidebar-nav-item.fi-active button,
+.dark .fi-sidebar-nav-item.fi-active svg {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+/* تخصيص hover للزر النشط */
+.fi-sidebar-nav-item.fi-active:hover {
+    color: #be185d !important; /* وردي أغمق عند hover */
+    background-color: rgba(236, 72, 153, 0.2) !important;
+}
+
+.fi-sidebar-nav-item.fi-active:hover svg {
+    color: #be185d !important;
+    fill: #be185d !important;
+}
+
+/* تخصيص إضافي للتأكد من ظهور اللون الوردي */
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item[data-active="true"] {
+    color: #ec4899 !important;
+}
+
+.fi-sidebar-nav-item[aria-current="page"] svg,
+.fi-sidebar-nav-item[data-active="true"] svg {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+/* قواعد أكثر تحديداً وقوة للزر النشط */
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] * {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+/* فرض اللون الوردي بأولوية عالية جداً */
+.fi-sidebar-nav-item:where(.fi-active, [aria-current="page"], [data-active="true"]) {
+    color: #ec4899 !important;
+}
+
+.fi-sidebar-nav-item:where(.fi-active, [aria-current="page"], [data-active="true"]) * {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+}
+
+/* تخصيص مباشر للعناصر الداخلية */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-button,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-button,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-icon {
+    color: #ec4899 !important;
+}
+
+/* تجاوز أي لون أبيض موجود */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"] {
+    --fi-sidebar-nav-item-active-color: #ec4899 !important;
+    --fi-sidebar-nav-item-color: #ec4899 !important;
+}
+
+/* CSS variables إضافية */
+.fi-sidebar-nav-item.fi-active {
+    --c-600: 236, 72, 153 !important;
+    --primary-600: 236, 72, 153 !important;
+}
+
+/* إعادة تعريف شاملة */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item.fi-active a,
+.fi-sidebar-nav-item.fi-active button,
+.fi-sidebar-nav-item.fi-active span,
+.fi-sidebar-nav-item.fi-active svg,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item[aria-current="page"] a,
+.fi-sidebar-nav-item[aria-current="page"] button,
+.fi-sidebar-nav-item[aria-current="page"] span,
+.fi-sidebar-nav-item[aria-current="page"] svg {
+    color: #ec4899 !important;
+    fill: #ec4899 !important;
+    stroke: #ec4899 !important;
+}
+
+/* التأكد من عدم تداخل الألوان الأخرى */
+.fi-sidebar-nav-item.fi-active {
+    background-color: rgba(236, 72, 153, 0.1) !important;
+}
+
+/* فرض تطبيق اللون حتى لو كان هناك inline styles */
+.fi-sidebar-nav-item[style*="color"] {
+    color: #ec4899 !important;
+}
+
+/* تخصيص الـ shadow الوردي */
+.shadow-sm,
+.fi-ta-content,
+.fi-ta-table-container,
+.fi-panel,
+.fi-card,
+[class*="shadow"] {
+    --tw-shadow: 0 1px 2px 0 rgb(238 64 147) !important;
+    --tw-shadow-colored: 0 1px 2px 0 rgb(238 64 147) !important;
+    box-shadow: 0 1px 2px 0 rgb(238 64 147) !important;
+}
+
+/* headers الجدول - داكن مع borders وردية */
+.fi-ta-table thead,
+.fi-ta-table thead th,
+.fi-ta-table thead tr,
+.fi-ta-header,
+.fi-ta-header-cell,
+thead,
+th {
+    background-color: #1a1a1a !important;
+    border-color: #ed4496 !important;
+    border-bottom: 1px solid #ed4496 !important;
+    border-right: 1px solid #ed4496 !important;
+    color: #ffffff !important;
+}
+
+/* borders وردية لجميع عناصر الجدول */
+.fi-ta-table,
+.fi-ta-content,
+.fi-ta-table-container,
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+[data-filament-table],
+[class*="border"] {
+    border-color: #ed4496 !important;
+}
+
+/* حاوي الجدول */
+.fi-ta-content.bg-white,
+.bg-white[data-filament-table] {
+    background-color: transparent !important;
+    border: 2px solid #ed4496 !important;
+}
+
+/* إجبار الـ borders الوردية */
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+.dark\:divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #ed4496 !important;
+}
+
+/* تخصيص النصوص في الجداول */
+.fi-ta-table,
+.fi-ta-table * {
+    color: #ffffff !important;
+}
+
+/* الأزرار الجانبية */
+a.fi-sidebar-item-button {
+    color: white !important;
+    transition: all 0.2s ease !important;
+}
+
+/* عند المرور */
+a.fi-sidebar-item-button:hover {
+    background-color: #ec4899 !important;
+    color: white !important;
+}
+
+/* الزر النشط */
+.fi-sidebar-nav-item.fi-active a.fi-sidebar-item-button,
+.fi-sidebar-nav-item[aria-current="page"] a.fi-sidebar-item-button {
+    background-color: #ec4899 !important;
+    color: white !important;
+}
+
+/* النصوص والأيقونات */
+.fi-sidebar-nav-item * {
+    color: inherit !important;
+    fill: currentColor !important;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار التخصيصات</title>
+    <style>
+        /* CSS للاختبار */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .test-toolbar {
+            background-color: #e5e5e5;
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .fi-ta-header-toolbar {
+            background-color: #d1d5db;
+            color: #374151;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .flex.items-center.justify-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #9ca3af;
+            color: #1f2937;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .text-gray-700 {
+            color: #374151;
+        }
+        
+        .text-gray-950 {
+            color: #030712;
+        }
+    </style>
+</head>
+<body>
+    <h1>اختبار التخصيصات</h1>
+    
+    <div class="test-toolbar">
+        <p>هذا شريط أدوات تجريبي</p>
+    </div>
+    
+    <div class="fi-ta-header-toolbar">
+        <p>هذا شريط أدوات Filament</p>
+    </div>
+    
+    <div class="flex items-center justify-between">
+        <p>هذا div مع flex و items-center و justify-between</p>
+        <button>زر</button>
+    </div>
+    
+    <div class="text-gray-700">
+        <p>هذا نص بلون text-gray-700</p>
+    </div>
+    
+    <div class="text-gray-950">
+        <p>هذا نص بلون text-gray-950</p>
+    </div>
+    
+    <div class="gap-x-4 px-4 py-3">
+        <p>هذا div مع gap-x-4 و px-4 و py-3</p>
+    </div>
+    
+    <script>
+        // تطبيق التخصيصات فور تحميل الصفحة
+        (function() {
+            console.log('بدء تطبيق التخصيصات...');
+            
+            // CSS بقوة قصوى
+            const style = document.createElement('style');
+            style.innerHTML = `
+                * {
+                    color: white !important;
+                    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                    direction: rtl !important;
+                }
+                
+                *[class*="toolbar"],
+                *[class*="header"],
+                *[class*="fi-ta-header"],
+                *[class*="fi-ta-toolbar"],
+                *[class*="fi-ta-header-toolbar"],
+                div[class*="flex"][class*="items-center"],
+                div[class*="justify-between"],
+                div[class*="gap-x-4"],
+                div[class*="px-4"],
+                div[class*="py-3"],
+                .test-toolbar,
+                .fi-ta-header-toolbar,
+                .flex.items-center.justify-between,
+                .text-gray-700,
+                .text-gray-950 {
+                    background-color: #dc2175 !important;
+                    background: #dc2175 !important;
+                    color: white !important;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // تطبيق inline styles
+            document.querySelectorAll('*').forEach(el => {
+                if (el.style) {
+                    el.style.setProperty('color', 'white', 'important');
+                    el.style.setProperty('font-family', 'Noto Sans Arabic, Segoe UI, Tahoma, Geneva, Verdana, sans-serif', 'important');
+                    el.style.setProperty('direction', 'rtl', 'important');
+                }
+                
+                const className = el.className ? el.className.toString() : '';
+                if (className.includes('toolbar') || 
+                    className.includes('header') || 
+                    className.includes('fi-ta-header') ||
+                    className.includes('fi-ta-toolbar') ||
+                    className.includes('fi-ta-header-toolbar') ||
+                    className.includes('flex') ||
+                    className.includes('justify-between') ||
+                    className.includes('gap-x-4') ||
+                    className.includes('px-4') ||
+                    className.includes('py-3') ||
+                    className.includes('text-gray-700') ||
+                    className.includes('text-gray-950')) {
+                    
+                    el.style.setProperty('background-color', '#dc2175', 'important');
+                    el.style.setProperty('background', '#dc2175', 'important');
+                    el.style.setProperty('color', 'white', 'important');
+                }
+            });
+            
+            console.log('تم تطبيق التخصيصات');
+        })();
+    </script>
+</body>
+</html>

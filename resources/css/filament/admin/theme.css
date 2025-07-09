@@ -1,0 +1,190 @@
+/* Custom CSS for Pink Buttons and Navigation */
+
+/* تخصيص لون النص للكلاسات الرمادية لتكون بيضاء */
+.text-gray-700,
+.text-gray-950,
+.text-gray-700 *,
+.text-gray-950 * {
+    color: white !important;
+}
+
+/* فرض الخط العربي على جميع العناصر */
+* {
+    font-family: 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+    direction: rtl !important;
+}
+
+/* CSS NUCLEAR OPTION - فرض اللون بأقصى قوة ممكنة */
+* [class*="fi-ta-header-toolbar"],
+*[class*="fi-ta-header-toolbar"],
+div[class*="fi-ta-header-toolbar"],
+.fi-ta-header-toolbar,
+[class*="toolbar"]:not([class*="sidebar"]):not([class*="topbar"]),
+[class*="header-toolbar"],
+div.flex.items-center.justify-between,
+div[class*="flex"][class*="items-center"][class*="justify-between"],
+div[class*="gap-x-4"][class*="px-4"][class*="py-3"],
+div[class*="gap-x-4"][class*="px-4"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+
+/* تخصيص لون خلفية شريط أدوات الجدول */
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6 {
+    background-color: #dc2175 !important;
+    color: white !important;
+}
+
+/* تخصيصات إضافية لشريط أدوات الجدول بأولوية أعلى */
+.fi-ta-header-toolbar,
+.fi-ta-header-toolbar.flex,
+.fi-ta-header-toolbar.flex.items-center,
+.fi-ta-header-toolbar.flex.items-center.justify-between,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6,
+[class*="fi-ta-header-toolbar"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* تخصيص فوري لشريط أدوات الجدول - طريقة أكثر فعالية */
+body [class*="fi-ta-header-toolbar"],
+body div[class*="fi-ta-header-toolbar"],
+body .fi-ta-header-toolbar,
+body .fi-ta-header-toolbar.flex,
+body .fi-ta-header-toolbar.flex.items-center,
+body .fi-ta-header-toolbar.flex.items-center.justify-between,
+body .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4,
+body .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4,
+body .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3,
+body .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6,
+html body [class*="fi-ta-header-toolbar"],
+html body div[class*="fi-ta-header-toolbar"],
+html body .fi-ta-header-toolbar {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* تخصيص بـ attribute selector */
+[class*="fi-ta-header-toolbar"][class*="flex"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* تخصيص عام جداً */
+div[class*="toolbar"][class*="flex"][class*="items-center"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* استهداف العناصر المحددة بـ data attributes */
+[data-filament-table] [class*="toolbar"],
+[data-filament-table] [class*="header"],
+.fi-ta-ctn [class*="toolbar"],
+.fi-ta-ctn [class*="header"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* استهداف عام لجميع عناصر شريط الأدوات */
+div[class*="fi-ta-header-toolbar"],
+div[class*="header-toolbar"],
+.fi-ta-header-ctn > div,
+.fi-ta-header > div {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* إجبار الألوان الوردية للتنقل */
+.fi-sidebar-nav-item {
+    color: white !important;
+}
+
+.fi-sidebar-nav-item:hover {
+    color: #f472b6 !important; /* pink-400 */
+    background-color: rgba(244, 114, 182, 0.05) !important;
+}
+
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"] {
+    color: #f472b6 !important; /* pink-400 */
+    background-color: rgba(244, 114, 182, 0.1) !important;
+}
+
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] * {
+    color: #f472b6 !important; /* pink-400 */
+    fill: #f472b6 !important;
+}
+
+.fi-sidebar-nav-item:hover * {
+    color: #f472b6 !important; /* pink-400 */
+    fill: #f472b6 !important;
+}
+
+.fi-sidebar-nav-item:active {
+    color: #db2777 !important; /* pink-600 */
+    background-color: rgba(244, 114, 182, 0.2) !important;
+}
+
+.fi-sidebar-nav-item:active * {
+    color: #db2777 !important; /* pink-600 */
+    fill: #db2777 !important;
+}
+
+/* Custom CSS for better contrast in dark theme */
+.fi-ta-table,
+.fi-ta-table * {
+    color: white !important;
+}
+
+.fi-ta-table th,
+.fi-ta-table td {
+    color: white !important;
+}
+
+/* Logo height fixing */
+.fi-ta-image img,
+.fi-fo-file-upload img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* Navigation specific overrides with higher specificity */
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item {
+    color: white !important;
+}
+
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item:hover {
+    color: #f472b6 !important; /* pink-400 */
+    background-color: rgba(244, 114, 182, 0.05) !important;
+}
+
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] {
+    color: #f472b6 !important; /* pink-400 */
+    background-color: rgba(244, 114, 182, 0.1) !important;
+}
+
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] * {
+    color: #f472b6 !important; /* pink-400 */
+    fill: #f472b6 !important;
+}
+
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item:hover * {
+    color: #f472b6 !important; /* pink-400 */
+    fill: #f472b6 !important;
+}

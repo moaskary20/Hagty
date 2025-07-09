@@ -1,0 +1,24 @@
+/* تخصيص ارتفاع اللوجو في Filament */
+.fi-fo-file-upload img,
+.fi-ta-image img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تخصيص معاينة الصورة في FileUpload */
+.fi-fo-file-upload .fi-fo-file-upload-file-preview img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تخصيص عرض الصورة في الجدول */
+.fi-ta-image-column img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}

@@ -1,0 +1,31 @@
+/* CSS بأولوية قصوى جداً */
+html body div.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6,
+html body div.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3,
+html body div.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4,
+html body div.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4,
+html body div.fi-ta-header-toolbar.flex.items-center.justify-between,
+html body div.fi-ta-header-toolbar.flex.items-center,
+html body div.fi-ta-header-toolbar.flex,
+html body div.fi-ta-header-toolbar,
+html body .fi-ta-header-toolbar,
+html body *[class*="fi-ta-header-toolbar"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* تخصيصات النصوص الرمادية */
+html body .text-gray-700,
+html body .text-gray-950,
+html body .text-gray-600,
+html body .text-gray-800,
+html body .text-gray-900,
+html body [class*="text-gray"] {
+    color: white !important;
+}
+
+/* فرض الخط العربي */
+html body * {
+    font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    direction: rtl !important;
+}

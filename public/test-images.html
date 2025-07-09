@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>اختبار الصور</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-test { margin: 20px 0; padding: 10px; border: 1px solid #ddd; }
+        img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>اختبار الصور</h1>
+    
+    <div class="image-test">
+        <h3>الصورة الافتراضية:</h3>
+        <img src="/images/default-doctor.svg" alt="Default Doctor">
+    </div>
+    
+    <div class="image-test">
+        <h3>الصور المحفوظة:</h3>
+        <img src="/storage/doctors/01JZP9KKV92FQ29D7KREX88YP6.png" alt="Doctor 1">
+        <img src="/storage/doctors/01JZPA84WBVVQ2MCVTQMVKTX4P.jpg" alt="Doctor 2">
+        <img src="/storage/doctors/01JZPAZSFXFH8YE4KB9SGP3HKZ.jpg" alt="Doctor 3">
+    </div>
+    
+    <div class="image-test">
+        <h3>فحص وجود الملفات:</h3>
+        <p>تحقق من وجود الملفات في مجلد storage/app/public/doctors/</p>
+        <p>تحقق من وجود الرابط الرمزي في public/storage/doctors/</p>
+    </div>
+</body>
+</html>

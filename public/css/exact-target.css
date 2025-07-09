@@ -1,0 +1,113 @@
+/* استهداف الكلاس الفعلي المكتشف */
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6 {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* استهداف جميع الاحتمالات */
+.fi-ta-header-toolbar {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+.fi-ta-header-toolbar.flex {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+.fi-ta-header-toolbar.flex.items-center {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+.fi-ta-header-toolbar.flex.items-center.justify-between {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4 {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4 {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3 {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* النصوص الرمادية */
+.text-gray-700,
+.text-gray-950,
+.text-gray-600,
+.text-gray-800,
+.text-gray-900 {
+    color: white !important;
+}
+
+/* الخط العربي */
+* {
+    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    direction: rtl !important;
+}
+
+/* أي element يحتوي على fi-ta-header-toolbar */
+*[class*="fi-ta-header-toolbar"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* أي element يحتوي على toolbar */
+*[class*="toolbar"]:not([class*="sidebar"]):not([class*="topbar"]) {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* أي element يحتوي على header */
+*[class*="header"]:not([class*="sidebar"]):not([class*="topbar"]) {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* أي div مع flex items-center justify-between */
+div.flex.items-center.justify-between:not([class*="sidebar"]) {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* أي div مع gap-x-4 و px-4 */
+div[class*="gap-x-4"][class*="px-4"]:not([class*="sidebar"]) {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* أي div مع py-3 */
+div[class*="py-3"]:not([class*="sidebar"]) {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* أي element مع sm:px-6 */
+*[class*="sm:px-6"] {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}

@@ -1,0 +1,16 @@
+/* Force Noto Sans Arabic font on all elements */
+body, body *, .fi-body, .fi-body * {
+    font-family: 'Noto Sans Arabic', sans-serif !important;
+}
+
+/* Force white color on gray text elements */
+.text-gray-500, .text-gray-400, .text-gray-600 {
+    color: white !important;
+}
+
+/* More specific targets for Filament UI */
+.fi-ta-cell .text-gray-500, 
+.fi-in-field-wrapper-helper-text,
+.fi-ta-empty-state-description {
+    color: white !important;
+}

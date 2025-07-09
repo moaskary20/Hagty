@@ -1,0 +1,125 @@
+/* إعدادات RTL للغة العربية */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] body {
+    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    background-color: #000000 !important;
+}
+
+/* إخفاء شريط الوثائق العلوي */
+.fi-topbar .fi-topbar-item:has([href*="github"]),
+.fi-topbar .fi-topbar-item:has([href*="filament"]),
+.fi-topbar-end .fi-topbar-item:last-child {
+    display: none !important;
+}
+
+/* إخفاء أيقونة GitHub و روابط الوثائق */
+.fi-topbar [title*="GitHub"],
+.fi-topbar [title*="Documentation"],
+.fi-topbar [href*="github.com"],
+.fi-topbar [href*="filamentphp.com"] {
+    display: none !important;
+}
+
+/* تخصيص الألوان الأساسية */
+:root {
+    --primary-50: #fdf2f8;
+    --primary-100: #fce7f3;
+    --primary-200: #fbcfe8;
+    --primary-300: #f9a8d4;
+    --primary-400: #f472b6;
+    --primary-500: #eb6fab;
+    --primary-600: #db2777;
+    --primary-700: #be185d;
+    --primary-800: #9d174d;
+    --primary-900: #831843;
+    --text-primary: #fce7f3;
+    --text-secondary: #f9a8d4;
+    --text-muted: #f472b6;
+}
+
+/* خلفية سوداء للتطبيق */
+.fi-main,
+.fi-panel,
+.fi-body,
+html,
+body {
+    background-color: #000000 !important;
+    color: #fce7f3 !important;
+}
+
+/* شريط جانبي بخلفية سوداء */
+.fi-sidebar {
+    background-color: #000000 !important;
+    border-right: 1px solid #eb6fab !important;
+}
+
+/* شريط علوي بخلفية سوداء */
+.fi-topbar {
+    background-color: #000000 !important;
+    border-bottom: 1px solid #eb6fab !important;
+}
+
+/* اللوجو والعلامة التجارية */
+.fi-logo {
+    filter: none !important;
+}
+
+.fi-sidebar-header {
+    border-bottom: 1px solid #eb6fab !important;
+}
+
+.fi-sidebar-brand {
+    color: #fce7f3 !important;
+}
+
+/* تحسين شريط البحث */
+html[dir="rtl"] .fi-global-search-field {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="rtl"] * {
+    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html[dir="rtl"] .fi-header-subheading {
+    text-align: right;
+}
+
+/* إضافات للثيم الداكن مع اللون الوردي */
+.fi-sidebar-nav-item:hover {
+    background-color: #eb6fab !important;
+    color: #000000 !important;
+}
+
+.fi-sidebar-nav-item.active {
+    background-color: #eb6fab !important;
+    color: #000000 !important;
+}
+
+/* تحسين شكل الأيقونات */
+.fi-sidebar-nav-icon {
+    color: #eb6fab !important;
+}
+
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-icon {
+    color: #000000 !important;
+}
+
+/* تحسين العناصر التفاعلية */
+.fi-link:hover {
+    color: #eb6fab !important;
+}
+
+.fi-badge {
+    background-color: #eb6fab !important;
+    color: #000000 !important;
+}

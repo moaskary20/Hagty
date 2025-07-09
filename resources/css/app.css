@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* تخصيص لون النص للكلاسات الرمادية لتكون بيضاء */
+.text-gray-700,
+.text-gray-950,
+.text-gray-700 *,
+.text-gray-950 * {
+    color: white !important;
+}
+
+/* فرض الخط العربي على جميع العناصر */
+* {
+    font-family: 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+    direction: rtl !important;
+}
+
+/* تخصيص شريط أدوات الجدول بأولوية قصوى */
+body [class*="fi-ta-header-toolbar"],
+body div[class*="fi-ta-header-toolbar"],
+body .fi-ta-header-toolbar,
+html body [class*="fi-ta-header-toolbar"],
+html body div[class*="fi-ta-header-toolbar"],
+html body .fi-ta-header-toolbar,
+.fi-ta-header-toolbar,
+.fi-ta-header-toolbar.flex,
+.fi-ta-header-toolbar.flex.items-center,
+.fi-ta-header-toolbar.flex.items-center.justify-between,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3,
+.fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6,
+[class*="fi-ta-header-toolbar"],
+[class*="fi-ta-header-toolbar"][class*="flex"],
+div[class*="toolbar"][class*="flex"][class*="items-center"],
+div[class*="fi-ta-header-toolbar"],
+div[class*="header-toolbar"],
+.fi-ta-header-ctn > div,
+.fi-ta-header > div {
+    background-color: #dc2175 !important;
+    background: #dc2175 !important;
+    color: white !important;
+}
+
+/* تخصيصات الشريط الجانبي */
+.fi-sidebar-nav-item {
+    color: white !important;
+}
+
+.fi-sidebar-nav-item:hover {
+    color: #f472b6 !important;
+    background-color: rgba(244, 114, 182, 0.05) !important;
+}
+
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"] {
+    color: #f472b6 !important;
+    background-color: rgba(244, 114, 182, 0.1) !important;
+}
+
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] * {
+    color: #f472b6 !important;
+    fill: #f472b6 !important;
+}
+
+.fi-sidebar-nav-item:hover * {
+    color: #f472b6 !important;
+    fill: #f472b6 !important;
+}

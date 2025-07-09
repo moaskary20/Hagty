@@ -1,0 +1,193 @@
+/* CSS للأزرار الوردية - الحل النهائي */
+
+/* الزر النشط - نفس الكود الذي اكتشفته */
+a.fi-sidebar-item-button.relative.flex.items-center.justify-center.gap-x-3.rounded-lg.px-2.py-2.outline-none.transition.duration-75.hover\:bg-gray-100.focus-visible\:bg-gray-100.dark\:hover\:bg-white\/5.dark\:focus-visible\:bg-white\/5.bg-gray-100.dark\:bg-white\/5 {
+    background-color: #ec4899 !important;
+    color: white !important;
+}
+
+/* جميع أزرار الشريط الجانبي */
+a.fi-sidebar-item-button {
+    color: white !important;
+    transition: all 0.2s ease !important;
+}
+
+/* عند المرور */
+a.fi-sidebar-item-button:hover {
+    background-color: #ec4899 !important;
+    color: white !important;
+}
+
+/* الزر النشط */
+.fi-sidebar-nav-item.fi-active a.fi-sidebar-item-button,
+.fi-sidebar-nav-item[aria-current="page"] a.fi-sidebar-item-button {
+    background-color: #ec4899 !important;
+    color: white !important;
+}
+
+/* عند الضغط */
+a.fi-sidebar-item-button:active {
+    background-color: #be185d !important;
+    color: white !important;
+}
+
+/* النصوص والأيقونات داخل الأزرار */
+a.fi-sidebar-item-button * {
+    color: inherit !important;
+    fill: currentColor !important;
+}
+
+/* تأكيد أولوية أعلى للحالة النشطة */
+.fi-sidebar-nav-item.fi-active a.fi-sidebar-item-button,
+.fi-sidebar-nav-item[aria-current] a.fi-sidebar-item-button {
+    background-color: #ec4899 !important;
+}
+
+/* تخصيص إضافي للأيقونات */
+.fi-sidebar-nav-item svg {
+    color: inherit !important;
+    fill: currentColor !important;
+}
+
+/* تخصيص الجدول والحاوي - الكود المضاف */
+.fi-ta-content.relative.divide-y.divide-gray-200.overflow-x-auto.dark\:divide-white\/10.dark\:border-t-white\/10.\!border-t-0 {
+    background-color: #ed4496 !important;
+}
+
+/* تغيير ألوان البوردر */
+.fi-ta-content,
+.fi-ta-table,
+.fi-ta-table-container {
+    border-color: #ed4496 !important;
+}
+
+/* تخصيص الخطوط الفاصلة */
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+.dark\:divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #ed4496 !important;
+}
+
+/* headers الجدول */
+.fi-ta-table thead th {
+    border-color: #ed4496 !important;
+    background-color: rgba(237, 68, 150, 0.1) !important;
+}
+
+/* صفوف الجدول */
+.fi-ta-table tbody tr {
+    border-color: #ed4496 !important;
+}
+
+.fi-ta-table tbody tr:hover {
+    background-color: rgba(237, 68, 150, 0.05) !important;
+}
+
+/* خلايا الجدول */
+.fi-ta-table td,
+.fi-ta-table th {
+    border-color: #ed4496 !important;
+}
+
+/* تخصيص إضافي للحدود العامة */
+.border-gray-200,
+.dark\:border-white\/10 {
+    border-color: #ed4496 !important;
+}
+
+/* تخصيص الـ shadow الوردي */
+.shadow-sm,
+.fi-ta-content,
+.fi-ta-table-container,
+.fi-panel,
+.fi-card,
+[class*="shadow"] {
+    --tw-shadow: 0 1px 2px 0 rgb(238 64 147) !important;
+    --tw-shadow-colored: 0 1px 2px 0 rgb(238 64 147) !important;
+    box-shadow: 0 1px 2px 0 rgb(238 64 147) !important;
+}
+
+/* headers الجدول - داكن مع borders وردية */
+.fi-ta-table thead,
+.fi-ta-table thead th,
+.fi-ta-table thead tr,
+.fi-ta-header,
+.fi-ta-header-cell,
+thead,
+th {
+    background-color: #1a1a1a !important;
+    border-color: #ed4496 !important;
+    border-bottom: 1px solid #ed4496 !important;
+    border-right: 1px solid #ed4496 !important;
+    color: #ffffff !important;
+}
+
+/* borders وردية لجميع عناصر الجدول */
+.fi-ta-table,
+.fi-ta-content,
+.fi-ta-table-container,
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+[data-filament-table],
+[class*="border"] {
+    border-color: #ed4496 !important;
+}
+
+/* حاوي الجدول */
+.fi-ta-content.bg-white,
+.bg-white[data-filament-table] {
+    background-color: transparent !important;
+    border: 2px solid #ed4496 !important;
+}
+
+/* إجبار الـ borders الوردية */
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+.dark\:divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #ed4496 !important;
+}
+
+/* تخصيص النصوص في الجداول */
+.fi-ta-table,
+.fi-ta-table * {
+    color: #ffffff !important;
+}
+
+/* تخصيص اللوجو */
+img.fi-logo.flex,
+.fi-logo img,
+.fi-topbar .fi-logo,
+.fi-topbar .fi-logo img,
+.fi-topbar img.fi-logo,
+.fi-brand img,
+nav img.fi-logo,
+header img.fi-logo {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    min-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* تخصيص إضافي للشريط العلوي */
+.fi-topbar .fi-brand,
+.fi-topbar .fi-brand a {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* تخصيص الصور في الجداول */
+.fi-ta-image img,
+.fi-fo-file-upload img,
+[data-filament-table] img,
+[data-filament-form] img {
+    height: 4rem !important;
+    max-height: 4rem !important;
+    min-height: 4rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
