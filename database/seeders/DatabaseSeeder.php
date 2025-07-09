@@ -19,5 +19,16 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        
+        // تشغيل seeders الموارد الصحية
+        $this->call([
+            DoctorSeeder::class,
+            HospitalSeeder::class,
+            PharmacySeeder::class,
+            HealthTipSeeder::class,
+            GovInitiativeSeeder::class,
+            HospitalDonationSeeder::class,
+            PandemicAlertSeeder::class,
+        ]);
     }
 }
