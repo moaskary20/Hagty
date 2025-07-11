@@ -33,5 +33,16 @@ class AdminUserSeeder extends Seeder
                 'email_verified_at' => now(),
             ]
         );
+        User::updateOrCreate(
+            [
+                'email' => 'mo.askary@gmail.com',
+            ],
+            [
+                'name' => 'مدير النظام',
+                'email' => 'mo.askary@gmail.com',
+                'password' => bcrypt('newpassword'),
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }

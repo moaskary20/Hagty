@@ -1,0 +1,17 @@
+/* تغيير لون النص في عناوين مجموعات وأزرار القائمة الجانبية فقط إلى الأبيض */
+.fi-sidebar-nav-group-label,
+.fi-sidebar-nav-item-label {
+    color: #fff !important;
+}
+
+/* إعادة النصوص الأخرى للون الافتراضي (أسود أو رمادي) */
+.fi-sidebar-nav .fi-sidebar-nav-group .fi-sidebar-nav-item button,
+.fi-sidebar-nav .fi-sidebar-nav-group .fi-sidebar-nav-item a {
+    color: inherit !important;
+}
+
+/* التأكيد على أن فقط label هو الأبيض، وليس كل العناصر */
+.fi-sidebar-nav-group-label,
+.fi-sidebar-nav-item-label {
+    color: #fff !important;
+}

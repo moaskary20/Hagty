@@ -48,7 +48,7 @@
 a.fi-sidebar-item-button.relative.flex.items-center.justify-center.gap-x-3.rounded-lg.px-2.py-2.outline-none.transition.duration-75.hover\:bg-gray-100.focus-visible\:bg-gray-100.dark\:hover\:bg-white\/5.dark\:focus-visible\:bg-white\/5.bg-gray-100.dark\:bg-white\/5 {
     background-color: #ec6da9;
 }
-a.fi-sidebar-item-button.relative.flex.items-center.justify-center.gap-x-3.rounded-lg.px-2.py-2.outline-none.transition.duration-75.hover\:bg-gray-100.focus-visible\:bg-gray-100.dark\:hover\:bg-white\/5.dark\:focus-visible\:bg-white\/5.bg-gray-100.dark\:bg-white\/5:hover,
+a.fi-sidebar-item-button.relative.flex.items-center.justifyCenter.gap-x-3.rounded-lg.px-2.py-2.outline-none.transition.duration-75.hover\:bg-gray-100.focus-visible\:bg-gray-100.dark\:hover\:bg-white\/5.dark\:focus-visible\:bg-white\/5.bg-gray-100.dark\:bg-white\/5:hover,
 a.fi-sidebar-item-button.relative.flex.items-center.justifyCenter.gap-x-3.rounded-lg.px-2.py-2.outline-none.transition.duration-75.hover\:bg-gray-100.focus-visible\:bg-gray-100.dark\:hover\:bg-white\/5.dark\:focus-visible\:bg-white\/5.bg-gray-100.dark\:bg-white\/5:focus {
     background-color: #dc2175 !important;
     color: #fff !important;
@@ -249,9 +249,6 @@ input.fi-checkbox-input.rounded.border-none.bg-white.shadow-sm.ring-1.transition
 .fi-ta-empty-state, .fi-ta-empty-state *, .fi-ta-empty-state-message, .fi-ta-empty-state-message * {
     color: #9c9c9c !important;
 }
-span.fi-input-wrp-label.whitespace-nowrap.text-sm.text-gray-500.dark\:text-gray-400 {
-    color: #222121 !important;
-}
 
 h3.fi-section-header-heading.text-base.font-semibold.leading-6.text-gray-950.dark\:text-white {
     color: black !important;
@@ -264,7 +261,7 @@ p.fi-section-header-description.overflow-hidden.break-words.text-sm.text-gray-50
     padding-top: 13px;
 }
 span.text-sm.font-medium.leading-6.text-gray-950.dark\:text-white {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 
 p.fi-fo-field-wrp-error-message.text-sm.text-danger-600.dark\:text-danger-400 {
@@ -340,6 +337,38 @@ button[type="submit"]:hover span.fi-btn-label,
     color: #fff !important;
 }
 
+/* --- إزالة القواعد المتعارضة أو الزائدة التي تعيد اللون الأسود أو الرمادي على الـ labels --- */
+/* تم حذف أو تعطيل القواعد التالية:
+span.fi-input-wrp-label.whitespace-nowrap.text-sm.text-gray-500.dark\:text-gray-400 { color: #222121 !important; }
+h3.fi-section-header-heading.text-base.font-semibold.leading-6.text-gray-950.dark\:text-white { color: black !important; }
+*/
+
+/* --- قاعدة موحدة وقوية لعناوين الحقول (labels) بالأبيض فقط --- */
+label,
+.fi-fo-field-wrp-label,
+.fi-fo-field-wrp-label *,
+label.fi-fo-field-wrp-label--inline,
+.fi-fo-field-wrp-label.fi-fo-field-wrp-label--inline *,
+span.fi-fo-field-wrp-label,
+span.fi-fo-field-wrp-label *,
+span.text-sm.font-medium.leading-6.text-gray-950.dark\:text-white,
+h3.fi-section-header-heading.text-base.font-semibold.leading-6.text-gray-950.dark\:text-white {
+    color: #fff !important;
+}
+
+/* --- قاعدة قوية في نهاية الملف لضمان ظهور جميع عناوين الحقول (labels) بالأبيض فقط --- */
+.fi-fo-field-wrp-label,
+.fi-fo-field-wrp-label *,
+label,
+.fi-fo-field-wrp-label.fi-fo-field-wrp-label--inline,
+.fi-fo-field-wrp-label.fi-fo-field-wrp-label--inline *,
+span.fi-fo-field-wrp-label,
+span.fi-fo-field-wrp-label *,
+span.text-sm.font-medium.leading-6.text-gray-950.dark\:text-white,
+h3.fi-section-header-heading.text-base.font-semibold.leading-6.text-gray-950.dark\:text-white {
+    color: #fff !important;
+}
+
 /* تخصيص لون جميع الـ labels في النماذج ليكون أبيض */
 .fi-fo-field-wrp-label,
 .fi-fo-field-wrp-label *,
@@ -381,7 +410,7 @@ input[type="week"] {
 
 /* تخصيص لون عنصر span محدد ليكون أبيض */
 span.text-sm.font-medium.leading-6.text-gray-950.dark\:text-white {
-    color: #080808 !important;
+    color: #ffffff !important;
 }
 
 /* تخصيص لون خلفية النافذة المنبثقة (Modal) */
@@ -801,3 +830,4 @@ span.text-sm.font-medium.leading-6.text-gray-950.dark\:text-white {
 .fi-ta-table .fi-ta-text-column-copyable:hover::after {
     opacity: 1 !important;
 }
+
