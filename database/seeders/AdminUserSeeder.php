@@ -40,7 +40,8 @@ class AdminUserSeeder extends Seeder
             [
                 'name' => 'مدير النظام',
                 'email' => 'mo.askary@gmail.com',
-                'password' => bcrypt('newpassword'),
+                'password' => Hash::make('newpassword'),
+                'is_admin' => true,
                 'email_verified_at' => now(),
             ]
         );

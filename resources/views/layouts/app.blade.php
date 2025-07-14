@@ -200,5 +200,9 @@
     <div id="app">
         @yield('content')
     </div>
+
+    <div style="margin: 2rem 0;">
+        @include('filament.pages.rehlaaty.menu')
+    </div>
 </body>
 </html>
