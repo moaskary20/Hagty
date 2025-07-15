@@ -18,6 +18,36 @@ use App\Http\Controllers\DjPerformerController;
 use App\Http\Controllers\FlowerDecoratorController;
 use App\Http\Controllers\WeddingDressDesignerController;
 
+// Skin Care Doctors
+use App\Http\Controllers\SkinCareDoctorController;
+
+// Nail Lash Specialists
+use App\Http\Controllers\NailLashSpecialistController;
+
+// Nutrition Doctors
+use App\Http\Controllers\NutritionDoctorController;
+
+// Route test for skin-care-doctors.store
+Route::any('/skin-care-doctors-test', function() { return 'test'; })->name('skin-care-doctors.store');
+
+// Route for nail-lash-specialists.store
+Route::post('/nail-lash-specialists', [App\Http\Controllers\NailLashSpecialistController::class, 'store'])->name('nail-lash-specialists.store');
+
+// Route for nail-lash-specialists.tips
+Route::post('/nail-lash-specialists/tips', [App\Http\Controllers\NailLashSpecialistController::class, 'addTip'])->name('nail-lash-specialists.tips');
+
+// Route for nail-lash-specialists.videos
+Route::post('/nail-lash-specialists/videos', [App\Http\Controllers\NailLashSpecialistController::class, 'addVideo'])->name('nail-lash-specialists.videos');
+
+// Route for nutrition-doctors.store
+Route::post('/nutrition-doctors', [App\Http\Controllers\NutritionDoctorController::class, 'store'])->name('nutrition-doctors.store');
+
+// Route for nutrition-doctors.tips
+Route::post('/nutrition-doctors/tips', [App\Http\Controllers\NutritionDoctorController::class, 'addTip'])->name('nutrition-doctors.tips');
+
+// Route for nutrition-doctors.videos
+Route::post('/nutrition-doctors/videos', [App\Http\Controllers\NutritionDoctorController::class, 'addVideo'])->name('nutrition-doctors.videos');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,6 +55,8 @@ Route::get('/', function () {
 Route::get('/test-livewire', function () {
     return view('test-livewire');
 });
+
+
 
 // صفحة صيحات الموضة (مدونات الأناقة)
 \Filament\Facades\Filament::registerPages([
