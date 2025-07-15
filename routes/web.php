@@ -27,6 +27,9 @@ use App\Http\Controllers\NailLashSpecialistController;
 // Nutrition Doctors
 use App\Http\Controllers\NutritionDoctorController;
 
+// Spa Clinics
+use App\Http\Controllers\SpaClinicController;
+
 // Route test for skin-care-doctors.store
 Route::any('/skin-care-doctors-test', function() { return 'test'; })->name('skin-care-doctors.store');
 
@@ -47,6 +50,15 @@ Route::post('/nutrition-doctors/tips', [App\Http\Controllers\NutritionDoctorCont
 
 // Route for nutrition-doctors.videos
 Route::post('/nutrition-doctors/videos', [App\Http\Controllers\NutritionDoctorController::class, 'addVideo'])->name('nutrition-doctors.videos');
+
+// Route for spa-clinics.store
+Route::post('/spa-clinics', [App\Http\Controllers\SpaClinicController::class, 'store'])->name('spa-clinics.store');
+
+// Route for spa-clinics.tips
+Route::post('/spa-clinics/tips', [App\Http\Controllers\SpaClinicController::class, 'addTip'])->name('spa-clinics.tips');
+
+// Route for spa-clinics.videos
+Route::post('/spa-clinics/videos', [App\Http\Controllers\SpaClinicController::class, 'addVideo'])->name('spa-clinics.videos');
 
 Route::get('/', function () {
     return view('welcome');
