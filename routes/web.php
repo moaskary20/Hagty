@@ -282,3 +282,9 @@ Route::prefix('admin/how-to-be-mom')->group(function () {
     // الإحصائيات
     Route::get('/stats', [App\Http\Controllers\HowToBeMomController::class, 'getStats'])->name('how-to-be-mom.stats');
 });
+
+// Route for skin-care-doctors.tips
+Route::post('/skin-care-doctors/tips', [App\Http\Controllers\SkinCareDoctorController::class, 'addTip'])->name('skin-care-doctors.tips');
+
+// Route for skin-care-doctors.videos
+Route::post('/skin-care-doctors/videos', [App\Http\Controllers\SkinCareDoctorController::class, 'addVideo'])->name('skin-care-doctors.videos');
