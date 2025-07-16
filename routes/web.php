@@ -30,6 +30,9 @@ use App\Http\Controllers\NutritionDoctorController;
 // Spa Clinics
 use App\Http\Controllers\SpaClinicController;
 
+// Training Videos
+use App\Http\Controllers\TrainingVideoController;
+
 // Route test for skin-care-doctors.store
 Route::any('/skin-care-doctors-test', function() { return 'test'; })->name('skin-care-doctors.store');
 
@@ -59,6 +62,9 @@ Route::post('/spa-clinics/tips', [App\Http\Controllers\SpaClinicController::clas
 
 // Route for spa-clinics.videos
 Route::post('/spa-clinics/videos', [App\Http\Controllers\SpaClinicController::class, 'addVideo'])->name('spa-clinics.videos');
+
+// Route for training-videos.store
+Route::post('/training-videos', [App\Http\Controllers\TrainingVideoController::class, 'store'])->name('training-videos.store');
 
 Route::get('/', function () {
     return view('welcome');

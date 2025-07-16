@@ -17,40 +17,36 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
-    
-    protected static ?string $navigationLabel = 'المستخدمون';
-    
-    protected static ?string $modelLabel = 'مستخدم';
-    
-    protected static ?string $pluralModelLabel = 'المستخدمون';
-    
-    protected static ?string $navigationGroup = 'إدارة النظام';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'المستخدمين';
+    protected static ?string $pluralLabel = 'كل المستخدمين';
+    protected static ?string $label = 'مستخدم';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->label('الاسم')
+                    ->label('اسم المستخدم')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->label('البريد الإلكتروني')
                     ->email()
                     ->required()
-                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
-                Forms\Components\DateTimePicker::make('email_verified_at')
-                    ->label('تاريخ التحقق من البريد الإلكتروني'),
-                Forms\Components\TextInput::make('password')
-                    ->label('كلمة المرور')
-                    ->password()
-                    ->required()
-                    ->minLength(8)
-                    ->dehydrateStateUsing(fn ($state) => bcrypt($state))
-                    ->dehydrated(fn ($state) => filled($state))
-                    ->required(fn (string $context): bool => $context === 'create'),
+                Forms\Components\Select::make('roles')
+                    ->label('الأدوار')
+                    ->relationship('roles', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->helperText('حدد الأدوار لهذا المستخدم'),
+                Forms\Components\Select::make('permissions')
+                    ->label('الصلاحيات')
+                    ->relationship('permissions', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->helperText('حدد الصلاحيات الإضافية لهذا المستخدم'),
             ]);
     }
 
@@ -58,48 +54,22 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label('الاسم')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('email')
-                    ->label('البريد الإلكتروني')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('email_verified_at')
-                    ->label('تاريخ التحقق')
-                    ->dateTime('d/m/Y H:i')
-                    ->sortable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('تاريخ الإنشاء')
-                    ->dateTime('d/m/Y H:i')
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->label('تاريخ التحديث')
-                    ->dateTime('d/m/Y H:i')
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('id')->label('الرقم')->sortable(),
+                Tables\Columns\TextColumn::make('name')->label('اسم المستخدم')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('email')->label('البريد الإلكتروني')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('created_at')->label('تاريخ الإنشاء')->dateTime()->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make()
-                    ->label('تحرير'),
-                Tables\Actions\DeleteAction::make()
-                    ->label('حذف'),
+                Tables\Actions\EditAction::make()->label('تعديل'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()
-                        ->label('حذف المحدد'),
+                    Tables\Actions\DeleteBulkAction::make()->label('حذف'),
                 ]),
-            ])
-            ->emptyStateHeading('لا توجد مستخدمون')
-            ->emptyStateDescription('ابدأ بإنشاء مستخدم جديد.')
-            ->emptyStateIcon('heroicon-o-users');
+            ]);
     }
 
     public static function getRelations(): array
