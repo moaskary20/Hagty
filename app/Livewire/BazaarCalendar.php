@@ -6,6 +6,50 @@ use App\Models\Bazaar;
 
 class BazaarCalendar extends Component
 {
+    public $showBazaarInfoModal = false;
+    public $showBookingModal = false;
+    public $bazaarDetails = null;
+
+    public function openBazaarInfoModal($id)
+    {
+        $this->bazaarDetails = \App\Models\Bazaar::find($id);
+        $this->showBazaarInfoModal = true;
+    }
+
+    public function openBookingModal($id)
+    {
+        $this->bazaarDetails = \App\Models\Bazaar::find($id);
+        $this->showBookingModal = true;
+    }
+
+    public function closeBazaarInfoModal()
+    {
+        $this->showBazaarInfoModal = false;
+        $this->bazaarDetails = null;
+    }
+
+    public function closeBookingModal()
+    {
+        $this->showBookingModal = false;
+        $this->bazaarDetails = null;
+    }
+    protected $listeners = ['bazaarSaved' => 'closeAddBazaarModal'];
+
+    public function closeAddBazaarModal()
+    {
+        $this->showAddBazaarModal = false;
+    }
+    public $showAddBazaarModal = false;
+    public $showEditBazaarModal = false;
+    public function openAddBazaarModal()
+    {
+        $this->showAddBazaarModal = true;
+    }
+
+    public function openEditBazaarModal()
+    {
+        $this->showEditBazaarModal = true;
+    }
     public $city = '';
     public $type = '';
     public $currentMonth;

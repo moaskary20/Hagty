@@ -14,15 +14,15 @@
 
     {{-- Action Buttons --}}
     <div class="flex flex-wrap gap-4 mb-6">
-        <button wire:click="openOutingAreaModal" 
+        <button wire:click="openOutingAreaModal"
                 class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
             إضافة مكان خروج
         </button>
-        
-        <button wire:click="openActivityModal" 
+
+        <button wire:click="openActivityModal"
                 class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -35,23 +35,23 @@
     <div class="rounded-lg shadow p-4 mb-6" style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.1) 0%, rgba(236, 109, 169, 0.2) 100%);">
         <h3 class="text-lg font-semibold mb-3">تصفية حسب النوع</h3>
         <div class="flex flex-wrap gap-2">
-            <button wire:click="$set('selectedType', '')" 
+            <button wire:click="$set('selectedType', '')"
                     class="px-3 py-1 rounded {{ $selectedType == '' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-700' }}">
                 الكل
             </button>
-            <button wire:click="$set('selectedType', 'مطعم')" 
+            <button wire:click="$set('selectedType', 'مطعم')"
                     class="px-3 py-1 rounded {{ $selectedType == 'مطعم' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-700' }}">
                 مطاعم
             </button>
-            <button wire:click="$set('selectedType', 'كافيه')" 
+            <button wire:click="$set('selectedType', 'كافيه')"
                     class="px-3 py-1 rounded {{ $selectedType == 'كافيه' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-700' }}">
                 كافيهات
             </button>
-            <button wire:click="$set('selectedType', 'مخيم')" 
+            <button wire:click="$set('selectedType', 'مخيم')"
                     class="px-3 py-1 rounded {{ $selectedType == 'مخيم' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-700' }}">
                 مخيمات
             </button>
-            <button wire:click="$set('selectedType', 'فندق - استخدام يومي')" 
+            <button wire:click="$set('selectedType', 'فندق - استخدام يومي')"
                     class="px-3 py-1 rounded {{ $selectedType == 'فندق - استخدام يومي' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-700' }}">
                 فنادق - استخدام يومي
             </button>
@@ -86,23 +86,23 @@
 
                     <div class="space-y-2 text-sm text-gray-600">
                         <p><strong>العنوان:</strong> {{ $area->address }}</p>
-                        
+
                         @if($area->phone)
                             <p><strong>الهاتف:</strong> {{ $area->phone }}</p>
                         @endif
-                        
+
                         @if($area->working_hours)
                             <p><strong>ساعات العمل:</strong> {{ $area->working_hours }}</p>
                         @endif
-                        
+
                         @if($area->price_range)
                             <p><strong>نطاق الأسعار:</strong> {{ $area->price_range }}</p>
                         @endif
-                        
+
                         @if($area->age_group)
                             <p><strong>الفئة العمرية:</strong> {{ $area->age_group }}</p>
                         @endif
-                        
+
                         @if($area->description)
                             <p><strong>الوصف:</strong> {{ Str::limit($area->description, 100) }}</p>
                         @endif
@@ -115,11 +115,11 @@
                     @endif
 
                     <div class="mt-4 flex gap-2">
-                        <button wire:click="editOutingArea({{ $area->id }})" 
+                        <button wire:click="editOutingArea({{ $area->id }})"
                                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm">
                             تعديل
                         </button>
-                        <button wire:click="deleteOutingArea({{ $area->id }})" 
+                        <button wire:click="deleteOutingArea({{ $area->id }})"
                                 class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm">
                             حذف
                         </button>
@@ -139,21 +139,26 @@
 
     {{-- Outing Area Modal --}}
     @if ($showOutingAreaModal)
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
-            <div class="rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-screen overflow-y-auto" style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.15) 0%, rgba(236, 109, 169, 0.25) 100%); backdrop-filter: blur(15px);">
-                <div class="px-6 py-4" style="border-bottom: 1px solid rgba(236, 109, 169, 0.3);">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50 p-4">
+            {{-- Modal content container --}}
+            <div class="rounded-lg shadow-xl w-full max-w-2xl bg-white flex flex-col h-full max-h-[calc(100vh-2rem)]"
+                 style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.15) 0%, rgba(236, 109, 169, 0.25) 100%); backdrop-filter: blur(15px);">
+
+                {{-- Modal Header --}}
+                <div class="px-6 py-4 flex-shrink-0" style="border-bottom: 1px solid rgba(236, 109, 169, 0.3);">
                     <h3 class="text-lg font-medium" style="color: #ec6da9;">إضافة مكان خروج عائلي</h3>
                 </div>
-                
-                <div class="px-6 py-4">
+
+                {{-- Modal Body (Scrollable Content) --}}
+                <div class="px-6 py-4 flex-grow overflow-y-auto">
                     <div class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">اسم المكان</label>
-                                <input type="text" wire:model="outingAreaForm.name" 
+                                <input type="text" wire:model="outingAreaForm.name"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">نوع المكان</label>
                                 <select wire:model="outingAreaForm.type"
@@ -177,40 +182,40 @@
                                       class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">رقم الهاتف</label>
-                                <input type="tel" wire:model="outingAreaForm.phone" 
+                                <input type="tel" wire:model="outingAreaForm.phone"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">التقييم (1-5)</label>
-                                <input type="number" min="1" max="5" step="0.1" wire:model="outingAreaForm.rating" 
+                                <input type="number" min="1" max="5" step="0.1" wire:model="outingAreaForm.rating"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">نطاق الأسعار</label>
-                                <input type="text" wire:model="outingAreaForm.price_range" 
-                                       placeholder="مثل: 50-100 ريال" 
+                                <input type="text" wire:model="outingAreaForm.price_range"
+                                       placeholder="مثل: 50-100 ريال"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">ساعات العمل</label>
-                                <input type="text" wire:model="outingAreaForm.working_hours" 
-                                       placeholder="9 صباحاً - 11 مساءً" 
+                                <input type="text" wire:model="outingAreaForm.working_hours"
+                                       placeholder="9 صباحاً - 11 مساءً"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">الفئة العمرية المناسبة</label>
-                            <input type="text" wire:model="outingAreaForm.age_group" 
-                                   placeholder="مثل: جميع الأعمار، أطفال 3-12 سنة" 
+                            <input type="text" wire:model="outingAreaForm.age_group"
+                                   placeholder="مثل: جميع الأعمار، أطفال 3-12 سنة"
                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                         </div>
 
@@ -222,7 +227,7 @@
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">الموقع الإلكتروني</label>
-                            <input type="url" wire:model="outingAreaForm.website" 
+                            <input type="url" wire:model="outingAreaForm.website"
                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                         </div>
 
@@ -233,13 +238,13 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="px-6 py-4 border-t flex justify-end space-x-2 rtl:space-x-reverse" style="border-color: rgba(236, 109, 169, 0.2); background: rgba(236, 109, 169, 0.1);">
-                    <button wire:click="closeOutingAreaModal" 
+
+                <div class="px-6 py-4 flex-shrink-0 border-t flex justify-end space-x-2 rtl:space-x-reverse" style="border-color: rgba(236, 109, 169, 0.2); background: rgba(236, 109, 169, 0.1);">
+                    <button wire:click="closeOutingAreaModal"
                             class="px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200" style="background: rgba(255, 255, 255, 0.7);">
                         إلغاء
                     </button>
-                    <button wire:click="saveOutingArea" 
+                    <button wire:click="saveOutingArea"
                             class="px-4 py-2 text-white rounded-md hover:opacity-90" style="background: #ec6da9;">
                         حفظ المكان
                     </button>
@@ -250,21 +255,26 @@
 
     {{-- Activity Modal --}}
     @if ($showActivityModal)
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
-            <div class="rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-screen overflow-y-auto" style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.15) 0%, rgba(236, 109, 169, 0.25) 100%); backdrop-filter: blur(15px);">
-                <div class="px-6 py-4" style="border-bottom: 1px solid rgba(236, 109, 169, 0.3);">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50 p-4">
+            {{-- Modal content container --}}
+            <div class="rounded-lg shadow-xl w-full max-w-2xl bg-white flex flex-col h-full max-h-[calc(100vh-2rem)]"
+                 style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.15) 0%, rgba(236, 109, 169, 0.25) 100%); backdrop-filter: blur(15px);">
+
+                {{-- Modal Header --}}
+                <div class="px-6 py-4 flex-shrink-0" style="border-bottom: 1px solid rgba(236, 109, 169, 0.3);">
                     <h3 class="text-lg font-medium" style="color: #ec6da9;">إضافة نشاط عائلي</h3>
                 </div>
-                
-                <div class="px-6 py-4">
+
+                {{-- Modal Body (Scrollable Content) --}}
+                <div class="px-6 py-4 flex-grow overflow-y-auto">
                     <div class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">اسم النشاط</label>
-                                <input type="text" wire:model="activityForm.activity_name" 
+                                <input type="text" wire:model="activityForm.activity_name"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">التصنيف</label>
                                 <select wire:model="activityForm.category"
@@ -293,60 +303,60 @@
                                       class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">المنظم</label>
-                                <input type="text" wire:model="activityForm.organizer" 
+                                <input type="text" wire:model="activityForm.organizer"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">هاتف التواصل</label>
-                                <input type="tel" wire:model="activityForm.contact_phone" 
+                                <input type="tel" wire:model="activityForm.contact_phone"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">التكلفة</label>
-                                <input type="number" step="0.01" wire:model="activityForm.cost" 
+                                <input type="number" step="0.01" wire:model="activityForm.cost"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">المدة</label>
-                                <input type="text" wire:model="activityForm.duration" 
-                                       placeholder="مثل: 3 ساعات، يومين" 
+                                <input type="text" wire:model="activityForm.duration"
+                                       placeholder="مثل: 3 ساعات، يومين"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">الفئة العمرية</label>
-                                <input type="text" wire:model="activityForm.age_group" 
-                                       placeholder="مثل: 5-15 سنة" 
+                                <input type="text" wire:model="activityForm.age_group"
+                                       placeholder="مثل: 5-15 سنة"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> {{-- Adjusted for responsiveness --}}
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">متاح من</label>
-                                <input type="date" wire:model="activityForm.available_from" 
+                                <input type="date" wire:model="activityForm.available_from"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">متاح إلى</label>
-                                <input type="date" wire:model="activityForm.available_to" 
+                                <input type="date" wire:model="activityForm.available_to"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">طريقة الحجز</label>
-                            <input type="text" wire:model="activityForm.booking_method" 
-                                   placeholder="مثل: حجز مسبق، حضور مباشر" 
+                            <input type="text" wire:model="activityForm.booking_method"
+                                   placeholder="مثل: حجز مسبق، حضور مباشر"
                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                         </div>
 
@@ -357,13 +367,13 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="px-6 py-4 border-t flex justify-end space-x-2 rtl:space-x-reverse" style="border-color: rgba(236, 109, 169, 0.2); background: rgba(236, 109, 169, 0.1);">
-                    <button wire:click="closeActivityModal" 
+
+                <div class="px-6 py-4 flex-shrink-0 border-t flex justify-end space-x-2 rtl:space-x-reverse" style="border-color: rgba(236, 109, 169, 0.2); background: rgba(236, 109, 169, 0.1);">
+                    <button wire:click="closeActivityModal"
                             class="px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200" style="background: rgba(255, 255, 255, 0.7);">
                         إلغاء
                     </button>
-                    <button wire:click="saveActivity" 
+                    <button wire:click="saveActivity"
                             class="px-4 py-2 text-white rounded-md hover:opacity-90" style="background: #ec6da9;">
                         حفظ النشاط
                     </button>

@@ -20,7 +20,7 @@
 
     {{-- Add New Record Button --}}
     <div class="mb-6">
-        <button wire:click="openHealthRecordModal" 
+        <button wire:click="openHealthRecordModal"
                 class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -47,30 +47,30 @@
                     @if($record->birth_date)
                         <p><strong>تاريخ الميلاد:</strong> {{ $record->birth_date->format('Y-m-d') }}</p>
                     @endif
-                    
+
                     @if($record->family_doctor)
                         <p><strong>طبيب العائلة:</strong> {{ $record->family_doctor }}</p>
                     @endif
-                    
+
                     @if($record->doctor_phone)
                         <p><strong>هاتف الطبيب:</strong> {{ $record->doctor_phone }}</p>
                     @endif
-                    
+
                     @if($record->chronic_diseases)
                         <p><strong>أمراض مزمنة:</strong> {{ Str::limit($record->chronic_diseases, 50) }}</p>
                     @endif
-                    
+
                     @if($record->current_medications)
                         <p><strong>الأدوية الحالية:</strong> {{ Str::limit($record->current_medications, 50) }}</p>
                     @endif
                 </div>
 
                 <div class="mt-4 flex gap-2">
-                    <button wire:click="editHealthRecord({{ $record->id }})" 
+                    <button wire:click="editHealthRecord({{ $record->id }})"
                             class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm">
                         تعديل
                     </button>
-                    <button wire:click="deleteHealthRecord({{ $record->id }})" 
+                    <button wire:click="deleteHealthRecord({{ $record->id }})"
                             class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm">
                         حذف
                     </button>
@@ -86,24 +86,32 @@
         @endforelse
     </div>
 
-    {{-- Health Record Modal --}}
+    ---
+
+    ## Health Record Modal
+
     @if ($showHealthRecordModal)
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
-            <div class="rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-screen overflow-y-auto" style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.15) 0%, rgba(236, 109, 169, 0.25) 100%); backdrop-filter: blur(15px);">
-                <div class="px-6 py-4" style="border-bottom: 1px solid rgba(236, 109, 169, 0.3);">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50 p-4">
+            {{-- Modal content container --}}
+            <div class="rounded-lg shadow-xl w-full max-w-md bg-white flex flex-col h-full max-h-[calc(100vh-2rem)]"
+                 style="background: linear-gradient(135deg, rgba(236, 109, 169, 0.15) 0%, rgba(236, 109, 169, 0.25) 100%); backdrop-filter: blur(15px);">
+
+                {{-- Modal Header --}}
+                <div class="px-6 py-4 flex-shrink-0" style="border-bottom: 1px solid rgba(236, 109, 169, 0.3);">
                     <h3 class="text-lg font-medium" style="color: #ec6da9;">إضافة سجل صحي جديد</h3>
                 </div>
-                
-                <div class="px-6 py-4">
+
+                {{-- Modal Body (Scrollable Content) --}}
+                <div class="px-6 py-4 flex-grow overflow-y-auto">
                     <div class="space-y-4">
                         {{-- Basic Info --}}
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">اسم فرد العائلة</label>
-                                <input type="text" wire:model="healthRecordForm.member_name" 
+                                <input type="text" wire:model="healthRecordForm.member_name"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">صلة القرابة</label>
                                 <select wire:model="healthRecordForm.relationship"
@@ -124,13 +132,13 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">تاريخ الميلاد</label>
-                                <input type="date" wire:model="healthRecordForm.birth_date" 
+                                <input type="date" wire:model="healthRecordForm.birth_date"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">فصيلة الدم</label>
                                 <select wire:model="healthRecordForm.blood_type"
@@ -146,10 +154,10 @@
                                     <option value="O-">O-</option>
                                 </select>
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">الطول (سم)</label>
-                                <input type="number" step="0.1" wire:model="healthRecordForm.height" 
+                                <input type="number" step="0.1" wire:model="healthRecordForm.height"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
@@ -177,32 +185,32 @@
                         </div>
 
                         {{-- Doctor Info --}}
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">طبيب العائلة</label>
-                                <input type="text" wire:model="healthRecordForm.family_doctor" 
+                                <input type="text" wire:model="healthRecordForm.family_doctor"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
                                        placeholder="د. محمد أحمد">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">هاتف الطبيب</label>
-                                <input type="tel" wire:model="healthRecordForm.doctor_phone" 
+                                <input type="tel" wire:model="healthRecordForm.doctor_phone"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
 
                         {{-- Insurance Info --}}
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">شركة التأمين</label>
-                                <input type="text" wire:model="healthRecordForm.insurance_company" 
+                                <input type="text" wire:model="healthRecordForm.insurance_company"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
-                            
+
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">رقم التأمين</label>
-                                <input type="text" wire:model="healthRecordForm.insurance_number" 
+                                <input type="text" wire:model="healthRecordForm.insurance_number"
                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
                             </div>
                         </div>
@@ -215,13 +223,14 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="px-6 py-4 border-t flex justify-end space-x-2 rtl:space-x-reverse" style="border-color: rgba(236, 109, 169, 0.2); background: rgba(236, 109, 169, 0.1);">
-                    <button wire:click="closeHealthRecordModal" 
+
+                {{-- Modal Footer --}}
+                <div class="px-6 py-4 flex-shrink-0 border-t flex justify-end space-x-2 rtl:space-x-reverse" style="border-color: rgba(236, 109, 169, 0.2); background: rgba(236, 109, 169, 0.1);">
+                    <button wire:click="closeHealthRecordModal"
                             class="px-4 py-2 text-gray-700 rounded-md hover:bg-gray-200" style="background: rgba(255, 255, 255, 0.7);">
                         إلغاء
                     </button>
-                    <button wire:click="saveHealthRecord" 
+                    <button wire:click="saveHealthRecord"
                             class="px-4 py-2 text-white rounded-md hover:opacity-90" style="background: #ec6da9;">
                         حفظ السجل الصحي
                     </button>

@@ -34,5 +34,7 @@
         </div>
     </div>
     <!-- Bazaar Grid -->
-    @livewire('bazaar-list')
+    <div class="bg-black rounded-lg shadow-lg p-6">
+        @livewire('bazaar-list')
+    </div>
 </div>

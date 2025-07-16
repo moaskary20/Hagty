@@ -58,7 +58,7 @@ class BazaarForm extends Component
             ]
         );
         session()->flash('message', 'تم حفظ بيانات البازار بنجاح');
-        $this->emitUp('bazaarSaved');
+        $this->dispatch('bazaarSaved')->to('bazaar-calendar');
     }
 
     public function render()

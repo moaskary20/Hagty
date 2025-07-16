@@ -13,30 +13,5 @@
             {{ session('error') }}
         </div>
     @endif
-    <div class="mb-6 flex flex-col md:flex-row gap-4 items-center">
-        <div>
-            <label class="block mb-1 text-sm text-gray-700">المدينة:</label>
-            <select wire:model="city" class="rounded-lg border-gray-300">
-                <option value="">الكل</option>
-                @foreach($cities as $city)
-                    <option value="{{ $city }}">{{ $city }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div>
-            <label class="block mb-1 text-sm text-gray-700">نوع الفعالية:</label>
-            <select wire:model="type" class="rounded-lg border-gray-300">
-                <option value="">الكل</option>
-                @foreach($types as $type)
-                    <option value="{{ $type }}">{{ $type }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="flex gap-2 items-center">
-            <button wire:click="previousMonth" class="bg-pink-400 hover:bg-pink-600 text-white px-3 py-2 rounded">الشهر السابق</button>
-            <span class="font-bold text-lg">{{ $currentMonthName }} {{ $currentYear }}</span>
-            <button wire:click="nextMonth" class="bg-pink-400 hover:bg-pink-600 text-white px-3 py-2 rounded">الشهر التالي</button>
-        </div>
-    </div>
-    @livewire('bazaar-calendar')
+    <livewire:bazaar-calendar wire:key="bazaar-calendar" />
 </div>
