@@ -7,16 +7,10 @@ use Filament\Pages\Page;
 class UmomiPage extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-heart';
-
     protected static string $view = 'filament.pages.umomi';
 
-
     // إخفاء الصفحة من القائمة الجانبية
-    protected static ?string $title = null;
-    protected static ?string $navigationLabel = null;
-    protected static ?string $navigationGroup = null;
-
-    protected static ?int $navigationSort = 1;
+    protected static bool $shouldRegisterNavigation = false;
 
     public function getTitle(): string
     {
