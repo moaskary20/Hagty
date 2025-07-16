@@ -10,11 +10,11 @@ class UmomiPage extends Page
 
     protected static string $view = 'filament.pages.umomi';
 
-    protected static ?string $title = 'أومومتي';
 
-    protected static ?string $navigationLabel = 'أومومتي';
-
-    protected static ?string $navigationGroup = 'أومومتي';
+    // إخفاء الصفحة من القائمة الجانبية
+    protected static ?string $title = null;
+    protected static ?string $navigationLabel = null;
+    protected static ?string $navigationGroup = null;
 
     protected static ?int $navigationSort = 1;
 
