@@ -66,6 +66,9 @@ Route::post('/spa-clinics/videos', [App\Http\Controllers\SpaClinicController::cl
 // Route for training-videos.store
 Route::post('/training-videos', [App\Http\Controllers\TrainingVideoController::class, 'store'])->name('training-videos.store');
 
+// Route for training-videos.destroy
+Route::delete('/training-videos/{id}', [App\Http\Controllers\TrainingVideoController::class, 'destroy'])->name('training-videos.destroy');
+
 Route::get('/', function () {
     return view('welcome');
 });
