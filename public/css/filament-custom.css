@@ -1,0 +1,14 @@
+/* تخصيص ألوان الأدوار والصلاحيات */
+.custom-role-checkbox label[for^="roles-"] {
+    background: #c2185b;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+.custom-permission-checkbox label[for^="permissions-"] {
+    background: #7c43bd;
+    color: #fff;
+    border-radius: 6px;
+    padding: 2px 8px;
+}

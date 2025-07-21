@@ -11,7 +11,17 @@
         @forelse($videos as $video)
             <div class="bg-white rounded-lg shadow p-4 relative flex flex-col">
                 <div class="aspect-w-16 aspect-h-9 mb-2">
-                    <iframe src="{{ $video->video_url }}" frameborder="0" allowfullscreen class="w-full h-40 rounded"></iframe>
+                    @php
+                        $embedUrl = $video->video_url;
+                        // تحويل رابط يوتيوب عادي إلى embed تلقائياً
+                        if (Str::contains($embedUrl, 'youtube.com/watch?v=')) {
+                            $embedUrl = str_replace('watch?v=', 'embed/', $embedUrl);
+                        }
+                        if (Str::contains($embedUrl, 'youtu.be/')) {
+                            $embedUrl = str_replace('youtu.be/', 'youtube.com/embed/', $embedUrl);
+                        }
+                    @endphp
+                    <iframe src="{{ $embedUrl }}" frameborder="0" allowfullscreen class="w-full h-40 rounded"></iframe>
                 </div>
                 <h3 class="font-bold text-lg text-pink-600 mb-1">{{ $video->title }}</h3>
                 <p class="text-gray-600 mb-2">{{ $video->description }}</p>
