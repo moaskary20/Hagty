@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -77,6 +78,9 @@ Route::get('/test-livewire', function () {
     return view('test-livewire');
 });
 
+// إضافة route لمعالجة إضافة طفل جديد في لوحة الإدارة باسم admin.babies.store
+Route::post('/admin/welcome-baby/add', [App\Http\Controllers\AdminWelcomeBabyController::class, 'store'])->name('admin.babies.store');
+Route::delete('/admin/babies/{baby}', [\App\Http\Controllers\AdminWelcomeBabyController::class, 'destroy'])->name('admin.babies.destroy');
 
 
 // صفحة صيحات الموضة (مدونات الأناقة)
@@ -289,3 +293,6 @@ Route::post('/skin-care-doctors/tips', [App\Http\Controllers\SkinCareDoctorContr
 
 // Route for skin-care-doctors.videos
 Route::post('/skin-care-doctors/videos', [App\Http\Controllers\SkinCareDoctorController::class, 'addVideo'])->name('skin-care-doctors.videos');
+
+// إضافة route لمعالجة إضافة طفل جديد في لوحة الإدارة باسم admin.babies.store
+Route::post('/admin/welcome-baby/add', [App\Http\Controllers\AdminWelcomeBabyController::class, 'store'])->name('admin.babies.store');

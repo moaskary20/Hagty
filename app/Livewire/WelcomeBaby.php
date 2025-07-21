@@ -9,6 +9,7 @@ use App\Models\BabyExpertAdvice;
 use App\Models\BabyDoctorTip;
 use App\Models\BabyMonthlyGrowth;
 use App\Models\BabyShowerList;
+use App\Models\Baby;
 
 class WelcomeBaby extends Component
 {
@@ -19,6 +20,10 @@ class WelcomeBaby extends Component
     public $showDoctorTipModal = false;
     public $showMonthlyGrowthModal = false;
     public $showShowerListModal = false;
+    public $showBabyModal = false;
+    public $showDoctorModal = false;
+    public $showNurseryModal = false;
+    public $showVaccineModal = false;
 
     // خصائص التحرير
     public $editingDayStep = null;
@@ -27,6 +32,10 @@ class WelcomeBaby extends Component
     public $editingDoctorTip = null;
     public $editingMonthlyGrowth = null;
     public $editingShowerList = null;
+    public $editingBaby = null;
+    public $editingDoctor = false;
+    public $editingNursery = false;
+    public $editingVaccine = false;
 
     // نماذج البيانات
     public $dayStepForm = [
@@ -79,6 +88,36 @@ class WelcomeBaby extends Component
         'estimated_price' => 0,
         'notes' => '',
         'is_purchased' => false,
+    ];
+
+    // نموذج بيانات الطفل
+    public $babyForm = [
+        'name' => '',
+        'birth_date' => '',
+        'gender' => '',
+        'mother_name' => '',
+        'father_name' => '',
+        'health_info' => '',
+    ];
+
+    public $doctorForm = [
+        'name' => '',
+        'specialty' => '',
+        'phone' => '',
+        'notes' => '',
+    ];
+
+    public $nurseryForm = [
+        'name' => '',
+        'address' => '',
+        'phone' => '',
+        'notes' => '',
+    ];
+
+    public $vaccineForm = [
+        'name' => '',
+        'date' => '',
+        'notes' => '',
     ];
 
     public function mount()
@@ -160,6 +199,111 @@ class WelcomeBaby extends Component
     {
         $this->showShowerListModal = false;
         $this->editingShowerList = null;
+    }
+
+    public function openBabyModal($babyId = null)
+    {
+        if ($babyId) {
+            $baby = Baby::find($babyId);
+            if ($baby) {
+                $this->babyForm = $baby->toArray();
+                $this->editingBaby = $babyId;
+            }
+        } else {
+            $this->babyForm = [
+                'name' => '',
+                'birth_date' => '',
+                'gender' => '',
+                'mother_name' => '',
+                'father_name' => '',
+                'health_info' => '',
+            ];
+            $this->editingBaby = false;
+        }
+        $this->showBabyModal = true;
+    }
+
+    public function closeBabyModal()
+    {
+        $this->showBabyModal = false;
+        $this->editingBaby = false;
+    }
+
+    public function openDoctorModal($doctorId = null)
+    {
+        if ($doctorId) {
+            $doctor = \App\Models\BabyDoctor::find($doctorId);
+            if ($doctor) {
+                $this->doctorForm = $doctor->toArray();
+                $this->editingDoctor = $doctorId;
+            }
+        } else {
+            $this->doctorForm = [
+                'name' => '',
+                'specialty' => '',
+                'phone' => '',
+                'notes' => '',
+            ];
+            $this->editingDoctor = false;
+        }
+        $this->showDoctorModal = true;
+    }
+
+    public function closeDoctorModal()
+    {
+        $this->showDoctorModal = false;
+        $this->editingDoctor = false;
+    }
+
+    public function openNurseryModal($nurseryId = null)
+    {
+        if ($nurseryId) {
+            $nursery = \App\Models\Nursery::find($nurseryId);
+            if ($nursery) {
+                $this->nurseryForm = $nursery->toArray();
+                $this->editingNursery = $nurseryId;
+            }
+        } else {
+            $this->nurseryForm = [
+                'name' => '',
+                'address' => '',
+                'phone' => '',
+                'notes' => '',
+            ];
+            $this->editingNursery = false;
+        }
+        $this->showNurseryModal = true;
+    }
+
+    public function closeNurseryModal()
+    {
+        $this->showNurseryModal = false;
+        $this->editingNursery = false;
+    }
+
+    public function openVaccineModal($vaccineId = null)
+    {
+        if ($vaccineId) {
+            $vaccine = \App\Models\Vaccine::find($vaccineId);
+            if ($vaccine) {
+                $this->vaccineForm = $vaccine->toArray();
+                $this->editingVaccine = $vaccineId;
+            }
+        } else {
+            $this->vaccineForm = [
+                'name' => '',
+                'date' => '',
+                'notes' => '',
+            ];
+            $this->editingVaccine = false;
+        }
+        $this->showVaccineModal = true;
+    }
+
+    public function closeVaccineModal()
+    {
+        $this->showVaccineModal = false;
+        $this->editingVaccine = false;
     }
 
     // طرق حفظ البيانات
@@ -245,6 +389,128 @@ class WelcomeBaby extends Component
         $this->closeShowerListModal();
     }
 
+    public function saveBaby()
+    {
+        $this->validate([
+            'babyForm.name' => 'required',
+            'babyForm.birth_date' => 'required|date',
+            'babyForm.gender' => 'required',
+            'babyForm.mother_name' => 'required',
+            'babyForm.father_name' => 'required',
+        ], [], [
+            'babyForm.name' => 'اسم الطفل',
+            'babyForm.birth_date' => 'تاريخ الميلاد',
+            'babyForm.gender' => 'الجنس',
+            'babyForm.mother_name' => 'اسم الأم',
+            'babyForm.father_name' => 'اسم الأب',
+        ]);
+
+        if ($this->editingBaby) {
+            $baby = Baby::find($this->editingBaby);
+            if ($baby) {
+                $baby->update($this->babyForm);
+            }
+        } else {
+            Baby::create($this->babyForm);
+        }
+        $this->closeBabyModal();
+    }
+
+    public function saveDoctor()
+    {
+        $this->validate([
+            'doctorForm.name' => 'required',
+            'doctorForm.specialty' => 'required',
+        ], [], [
+            'doctorForm.name' => 'اسم الطبيب',
+            'doctorForm.specialty' => 'التخصص',
+        ]);
+
+        if ($this->editingDoctor) {
+            $doctor = \App\Models\BabyDoctor::find($this->editingDoctor);
+            if ($doctor) {
+                $doctor->update($this->doctorForm);
+            }
+        } else {
+            \App\Models\BabyDoctor::create($this->doctorForm);
+        }
+        $this->closeDoctorModal();
+    }
+
+    public function saveNursery()
+    {
+        $this->validate([
+            'nurseryForm.name' => 'required',
+            'nurseryForm.address' => 'required',
+        ], [], [
+            'nurseryForm.name' => 'اسم الحضانة',
+            'nurseryForm.address' => 'العنوان',
+        ]);
+
+        if ($this->editingNursery) {
+            $nursery = \App\Models\Nursery::find($this->editingNursery);
+            if ($nursery) {
+                $nursery->update($this->nurseryForm);
+            }
+        } else {
+            \App\Models\Nursery::create($this->nurseryForm);
+        }
+        $this->closeNurseryModal();
+    }
+
+    public function saveVaccine()
+    {
+        $this->validate([
+            'vaccineForm.name' => 'required',
+            'vaccineForm.date' => 'required|date',
+        ], [], [
+            'vaccineForm.name' => 'اسم التطعيم',
+            'vaccineForm.date' => 'تاريخ التطعيم',
+        ]);
+
+        if ($this->editingVaccine) {
+            $vaccine = \App\Models\Vaccine::find($this->editingVaccine);
+            if ($vaccine) {
+                $vaccine->update($this->vaccineForm);
+            }
+        } else {
+            \App\Models\Vaccine::create($this->vaccineForm);
+        }
+        $this->closeVaccineModal();
+    }
+
+    public function deleteBaby($babyId)
+    {
+        $baby = Baby::find($babyId);
+        if ($baby) {
+            $baby->delete();
+        }
+    }
+
+    public function deleteDoctor($doctorId)
+    {
+        $doctor = \App\Models\BabyDoctor::find($doctorId);
+        if ($doctor) {
+            $doctor->delete();
+        }
+    }
+
+    public function deleteNursery($nurseryId)
+    {
+        $nursery = \App\Models\Nursery::find($nurseryId);
+        if ($nursery) {
+            $nursery->delete();
+        }
+    }
+
+    public function deleteVaccine($vaccineId)
+    {
+        $vaccine = \App\Models\Vaccine::find($vaccineId);
+        if ($vaccine) {
+            $vaccine->delete();
+        }
+    }
+
     // طرق إعادة تعيين النماذج
     public function resetForms()
     {
@@ -254,6 +520,10 @@ class WelcomeBaby extends Component
         $this->resetDoctorTipForm();
         $this->resetMonthlyGrowthForm();
         $this->resetShowerListForm();
+        $this->resetBabyForm();
+        $this->resetDoctorForm();
+        $this->resetNurseryForm();
+        $this->resetVaccineForm();
     }
 
     public function resetDayStepForm()
@@ -324,6 +594,51 @@ class WelcomeBaby extends Component
             'notes' => '',
             'is_purchased' => false,
         ];
+    }
+
+    public function resetBabyForm()
+    {
+        $this->babyForm = [
+            'name' => '',
+            'birth_date' => '',
+            'gender' => '',
+            'mother_name' => '',
+            'father_name' => '',
+            'health_info' => '',
+        ];
+        $this->editingBaby = null;
+    }
+
+    public function resetDoctorForm()
+    {
+        $this->doctorForm = [
+            'name' => '',
+            'specialty' => '',
+            'phone' => '',
+            'notes' => '',
+        ];
+        $this->editingDoctor = false;
+    }
+
+    public function resetNurseryForm()
+    {
+        $this->nurseryForm = [
+            'name' => '',
+            'address' => '',
+            'phone' => '',
+            'notes' => '',
+        ];
+        $this->editingNursery = false;
+    }
+
+    public function resetVaccineForm()
+    {
+        $this->vaccineForm = [
+            'name' => '',
+            'date' => '',
+            'notes' => '',
+        ];
+        $this->editingVaccine = false;
     }
 
     // خصائص computed للبيانات
@@ -438,6 +753,26 @@ class WelcomeBaby extends Component
                 'is_purchased' => false
             ]
         ]);
+    }
+
+    public function getBabiesProperty()
+    {
+        return \App\Models\Baby::orderBy('created_at', 'desc')->get();
+    }
+
+    public function getDoctorsProperty()
+    {
+        return \App\Models\BabyDoctor::orderByDesc('id')->get();
+    }
+
+    public function getNurseriesProperty()
+    {
+        return \App\Models\Nursery::orderByDesc('id')->get();
+    }
+
+    public function getVaccinesProperty()
+    {
+        return \App\Models\Vaccine::orderByDesc('id')->get();
     }
 
     public function render()
