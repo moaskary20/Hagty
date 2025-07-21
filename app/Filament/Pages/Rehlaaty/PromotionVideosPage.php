@@ -10,4 +10,9 @@ class PromotionVideosPage extends Page
     protected static ?string $title = 'فيديوهات ترويجية';
     protected static ?string $navigationLabel = 'فيديوهات ترويجية';
     protected static ?string $navigationGroup = 'رحلتي';
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 }

@@ -3,7 +3,7 @@
     <div style="flex: 1;">
         @include('filament.pages.rehlaaty.style-pink')
         <div class="pink-section">
-            <h1>فيديوهات ترويجية للعروض والأماكن</h1>
+            <h1>فيديوهات ترويجية للعروض والأماكسسسسن</h1>
             <a href="#" class="btn btn-pink" onclick="document.getElementById('addVideoModal').style.display='block';return false;">إضافة فيديو جديد</a>
             <!-- Modal -->
             <div id="addVideoModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:9999;">

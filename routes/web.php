@@ -82,6 +82,7 @@ Route::get('/test-livewire', function () {
 // صفحة صيحات الموضة (مدونات الأناقة)
 \Filament\Facades\Filament::registerPages([
     FashionTrendsPage::class,
+    \App\Filament\Pages\PromoVideosPage::class,
 ]);
 
 Route::post('/accessoraty/shops', [AccessoratyShopController::class, 'store'])->name('accessoraty.shops.store');
