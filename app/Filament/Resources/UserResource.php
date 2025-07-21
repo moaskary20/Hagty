@@ -35,6 +35,13 @@ class UserResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('password')
+                    ->label('كلمة المرور')
+                    ->password()
+                    ->required()
+                    ->maxLength(255)
+                    ->dehydrateStateUsing(fn($state) => bcrypt($state))
+                    ->visible(fn($livewire) => $livewire instanceof \Filament\Resources\Pages\CreateRecord),
                 Forms\Components\CheckboxList::make('roles')
                     ->label('الأدوار')
                     ->options(fn () => \Spatie\Permission\Models\Role::all()->pluck('name', 'id'))
