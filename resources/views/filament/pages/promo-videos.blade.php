@@ -1,4 +1,3 @@
-
 <div class="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 p-6" dir="rtl">
     <!-- Header -->
     <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg p-6 mb-8 shadow-lg">
@@ -46,3 +45,30 @@
         </div>
     </div>
 </div>
+
+<!-- ربط ملف CSS المخصص للأدوار -->
+<link rel="stylesheet" href="{{ asset('css/filament-custom.css') }}">
+<!-- Choices.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<!-- Choices.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<!-- تفعيل Choices.js على حقل الأدوار -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var roleSelect = document.querySelector('select.custom-role-select');
+        if (roleSelect) {
+            const choices = new Choices(roleSelect, {
+                removeItemButton: true,
+                searchEnabled: true,
+            });
+        }
+    });
+</script>
+<style>
+    /* تخصيص لون خيار مدير النظام */
+    .choices__item[data-value="1"], .choices__item[data-id="1"] {
+        background: #c2185b !important;
+        color: #fff !important;
+        font-weight: bold;
+    }
+</style>

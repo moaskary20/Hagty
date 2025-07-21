@@ -10,7 +10,29 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, \Spatie\Permission\Traits\HasRoles;
+
+    // علاقة الأدوار
+    public function roles()
+    {
+        return $this->belongsToMany(
+            \Spatie\Permission\Models\Role::class,
+            'model_has_roles',
+            'model_id',
+            'role_id'
+        )->where('model_type', self::class);
+    }
+
+    // علاقة التصريحات
+    public function permissions()
+    {
+        return $this->belongsToMany(
+            \Spatie\Permission\Models\Permission::class,
+            'model_has_permissions',
+            'model_id',
+            'permission_id'
+        )->where('model_type', self::class);
+    }
 
     /**
      * The attributes that are mass assignable.

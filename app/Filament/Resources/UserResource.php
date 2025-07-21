@@ -35,18 +35,18 @@ class UserResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('roles')
+                Forms\Components\CheckboxList::make('roles')
                     ->label('الأدوار')
-                    ->relationship('roles', 'name')
-                    ->multiple()
-                    ->preload()
-                    ->helperText('حدد الأدوار لهذا المستخدم'),
-                Forms\Components\Select::make('permissions')
+                    ->options(fn () => \Spatie\Permission\Models\Role::all()->pluck('name', 'id'))
+                    ->columns(2)
+                    ->helperText('حدد الأدوار لهذا المستخدم')
+                    ->extraAttributes(['class' => 'custom-role-checkbox']),
+                Forms\Components\CheckboxList::make('permissions')
                     ->label('الصلاحيات')
-                    ->relationship('permissions', 'name')
-                    ->multiple()
-                    ->preload()
-                    ->helperText('حدد الصلاحيات الإضافية لهذا المستخدم'),
+                    ->options(fn () => \Spatie\Permission\Models\Permission::all()->pluck('name', 'id'))
+                    ->columns(2)
+                    ->helperText('حدد الصلاحيات الإضافية لهذا المستخدم')
+                    ->extraAttributes(['class' => 'custom-permission-checkbox']),
             ]);
     }
 
@@ -57,6 +57,8 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('id')->label('الرقم')->sortable(),
                 Tables\Columns\TextColumn::make('name')->label('اسم المستخدم')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('email')->label('البريد الإلكتروني')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('roles.name')->label('الأدوار')->badge()->limit(3),
+                Tables\Columns\TextColumn::make('permissions.name')->label('الصلاحيات')->badge()->limit(3),
                 Tables\Columns\TextColumn::make('created_at')->label('تاريخ الإنشاء')->dateTime()->sortable(),
             ])
             ->filters([

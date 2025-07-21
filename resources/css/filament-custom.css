@@ -15,3 +15,16 @@
 .fi-sidebar-nav-item-label {
     color: #fff !important;
 }
+
+/* تلوين خيارات الأدوار باللون الأبيض وخلفية داكنة */
+select.custom-role-select option {
+    color: #fff !important;
+    background: #222;
+}
+
+/* تخصيص لون مدير النظام */
+select.custom-role-select option[value="1"] {
+    color: #fff !important;
+    background: #c2185b;
+    font-weight: bold;
+}
