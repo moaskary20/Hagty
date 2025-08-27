@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الجمال - منصة HAGTY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .primary-bg { background-color: #d94288; }
+        .primary-text { color: #d94288; }
+        .primary-border { border-color: #d94288; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-violet-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-500 to-violet-600 text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="{{ route('home') }}" class="text-2xl font-bold">HAGTY</a>
+                </div>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="{{ route('home') }}" class="hover:text-pink-200 transition duration-300">الرئيسية</a>
+                    <a href="{{ route('section', 'accessoraty') }}" class="hover:text-pink-200 transition duration-300">أكسسوراتى</a>
+                    <a href="{{ route('section', 'health') }}" class="hover:text-pink-200 transition duration-300">الصحة</a>
+                    <a href="{{ route('section', 'fashion') }}" class="hover:text-pink-200 transition duration-300">الموضة</a>
+                    <a href="{{ route('section', 'babies') }}" class="hover:text-pink-200 transition duration-300">الأطفال</a>
+                    <a href="{{ route('section', 'wedding') }}" class="hover:text-pink-200 transition duration-300">الزفاف</a>
+                    <a href="{{ route('section', 'beauty') }}" class="hover:text-pink-200 transition duration-300 font-bold">الجمال</a>
+                    <a href="{{ route('section', 'umomi') }}" class="hover:text-pink-200 transition duration-300">أومومتي</a>
+                </div>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+        <!-- Beauty Search Form -->
+        <div class="max-w-4xl mx-auto mb-8">
+            @include('components.beauty-search-form')
+        </div>
+    <section class="bg-gradient-to-r from-purple-500 to-violet-600 text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">💄 قسم الجمال</h1>
+            <p class="text-xl md:text-2xl mb-8">كل ما تحتاجينه للعناية بجمالك</p>
+            
+            <!-- Statistics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $plastic_surgeons->count() }}</div>
+                    <div class="text-sm">جراحي تجميل</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $hair_stylists->count() }}</div>
+                    <div class="text-sm">مصففي شعر</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $beauty_shops->count() }}</div>
+                    <div class="text-sm">متاجر جمال</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $training_videos->count() }}</div>
+                    <div class="text-sm">فيديوهات تدريب</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- جراحي التجميل -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">👨‍⚕️ جراحي التجميل</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse($plastic_surgeons as $surgeon)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $surgeon->name }}</h3>
+                        @if($surgeon->title)
+                        <p class="text-primary-text font-semibold mb-2">{{ $surgeon->title }}</p>
+                        @endif
+                        @if($surgeon->specialty)
+                        <p class="text-gray-600 mb-4">{{ $surgeon->specialty }}</p>
+                        @endif
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($surgeon->clinic_address)
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $surgeon->clinic_address }}</div>
+                            @endif
+                            @if($surgeon->phone)
+                            <div><i class="fas fa-phone ml-2"></i>{{ $surgeon->phone }}</div>
+                            @endif
+                            @if($surgeon->profile_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $surgeon->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-user-md text-4xl mb-4"></i>
+                    <p>لا يوجد جراحي تجميل متاحين حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- مصففي الشعر -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">💇‍♀️ مصففي الشعر</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse($hair_stylists as $stylist)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $stylist->name }}</h3>
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($stylist->location)
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $stylist->location }}</div>
+                            @endif
+                            @if($stylist->phone)
+                            <div><i class="fas fa-phone ml-2"></i>{{ $stylist->phone }}</div>
+                            @endif
+                            @if($stylist->profile_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $stylist->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-cut text-4xl mb-4"></i>
+                    <p>لا يوجد مصففي شعر متاحين حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- أطباء العناية بالبشرة -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">👩‍⚕️ أطباء العناية بالبشرة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse($skin_care_doctors as $doctor)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $doctor->name }}</h3>
+                        @if($doctor->title)
+                        <p class="text-primary-text font-semibold mb-2">{{ $doctor->title }}</p>
+                        @endif
+                        @if($doctor->specialty)
+                        <p class="text-gray-600 mb-4">{{ $doctor->specialty }}</p>
+                        @endif
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($doctor->clinic_address)
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $doctor->clinic_address }}</div>
+                            @endif
+                            @if($doctor->phone)
+                            <div><i class="fas fa-phone ml-2"></i>{{ $doctor->phone }}</div>
+                            @endif
+                            @if($doctor->profile_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $doctor->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-user-nurse text-4xl mb-4"></i>
+                    <p>لا يوجد أطباء عناية بالبشرة متاحين حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- متخصصي الأظافر والرموش -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">💅 متخصصي الأظافر والرموش</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse($nail_lash_specialists as $specialist)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $specialist->name }}</h3>
+                        @if($specialist->title)
+                        <p class="text-primary-text font-semibold mb-2">{{ $specialist->title }}</p>
+                        @endif
+                        @if($specialist->specialty)
+                        <p class="text-gray-600 mb-4">{{ $specialist->specialty }}</p>
+                        @endif
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($specialist->center_address)
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $specialist->center_address }}</div>
+                            @endif
+                            @if($specialist->phone)
+                            <div><i class="fas fa-phone ml-2"></i>{{ $specialist->phone }}</div>
+                            @endif
+                            @if($specialist->profile_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $specialist->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-spa text-4xl mb-4"></i>
+                    <p>لا يوجد متخصصي أظافر ورموش متاحين حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- أطباء التغذية -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🥗 أطباء التغذية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse($nutrition_doctors as $doctor)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $doctor->name }}</h3>
+                        @if($doctor->title)
+                        <p class="text-primary-text font-semibold mb-2">{{ $doctor->title }}</p>
+                        @endif
+                        @if($doctor->specialty)
+                        <p class="text-gray-600 mb-4">{{ $doctor->specialty }}</p>
+                        @endif
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($doctor->clinic_address)
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $doctor->clinic_address }}</div>
+                            @endif
+                            @if($doctor->phone)
+                            <div><i class="fas fa-phone ml-2"></i>{{ $doctor->phone }}</div>
+                            @endif
+                            @if($doctor->profile_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $doctor->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-apple-alt text-4xl mb-4"></i>
+                    <p>لا يوجد أطباء تغذية متاحين حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- عيادات السبا -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🧖‍♀️ عيادات السبا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @forelse($spa_clinics as $spa)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $spa->name }}</h3>
+                        @if($spa->specialty)
+                        <p class="text-gray-600 mb-4">{{ $spa->specialty }}</p>
+                        @endif
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($spa->center_address)
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $spa->center_address }}</div>
+                            @endif
+                            @if($spa->phone)
+                            <div><i class="fas fa-phone ml-2"></i>{{ $spa->phone }}</div>
+                            @endif
+                            @if($spa->profile_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $spa->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-hot-tub text-4xl mb-4"></i>
+                    <p>لا توجد عيادات سبا متاحة حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- متاجر الجمال -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🛍️ متاجر الجمال</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse($beauty_shops as $shop)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $shop->name }}</h3>
+                        <p class="text-gray-600 mb-4">{{ $shop->description }}</p>
+                        <div class="space-y-2 text-sm text-gray-500">
+                            <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $shop->location }}</div>
+                            <div><i class="fas fa-phone ml-2"></i>{{ $shop->phone }}</div>
+                            @if($shop->website_url)
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $shop->website_url }}" class="text-primary-text hover:underline">الموقع الإلكتروني</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-store text-4xl mb-4"></i>
+                    <p>لا توجد متاجر جمال متاحة حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- فيديوهات التدريب -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎥 فيديوهات التدريب</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse($training_videos as $video)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $video->عنوان_الفيديو }}</h3>
+                        <p class="text-gray-600 mb-4">{{ $video->وصف_الفيديو }}</p>
+                        <div class="space-y-2 text-sm text-gray-500">
+                            @if($video->التصنيف)
+                            <div><i class="fas fa-tag ml-2"></i>{{ $video->التصنيف }}</div>
+                            @endif
+                            @if($video->النوع)
+                            <div><i class="fas fa-play ml-2"></i>{{ $video->النوع }}</div>
+                            @endif
+                            @if($video->رابط_الفيديو)
+                            <div><i class="fas fa-video ml-2"></i><a href="{{ $video->رابط_الفيديو }}" class="text-primary-text hover:underline">مشاهدة الفيديو</a></div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-video text-4xl mb-4"></i>
+                    <p>لا توجد فيديوهات تدريب متاحة حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="primary-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">HAGTY</h3>
+                    <p class="text-pink-200">منصة شاملة لجميع احتياجاتك</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">الأقسام الرئيسية</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{{ route('section', 'accessoraty') }}" class="hover:text-pink-200">أكسسوراتى</a></li>
+                        <li><a href="{{ route('section', 'health') }}" class="hover:text-pink-200">الصحة</a></li>
+                        <li><a href="{{ route('section', 'fashion') }}" class="hover:text-pink-200">الموضة</a></li>
+                        <li><a href="{{ route('section', 'babies') }}" class="hover:text-pink-200">الأطفال</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">خدمات إضافية</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{{ route('section', 'wedding') }}" class="hover:text-pink-200">الزفاف</a></li>
+                        <li><a href="{{ route('section', 'beauty') }}" class="hover:text-pink-200">الجمال</a></li>
+                        <li><a href="{{ route('section', 'umomi') }}" class="hover:text-pink-200">أومومتي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">تواصل معنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-2xl hover:text-pink-200"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-pink-200"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-pink-200"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-pink-300 mt-8 pt-8 text-center">
+                <p>&copy; 2024 HAGTY. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

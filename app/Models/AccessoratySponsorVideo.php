@@ -8,7 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class AccessoratySponsorVideo extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
-        'video_url', 'skip_after_seconds'
+        'title',
+        'description',
+        'video_url',
+        'thumbnail',
+        'duration',
+        'skip_after_seconds',
+        'is_active'
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+        'skip_after_seconds' => 'integer',
     ];
 }

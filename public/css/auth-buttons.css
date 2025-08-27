@@ -1,0 +1,89 @@
+/* أزرار المصادقة المخصصة - منصة HAGTY */
+
+/* إزالة التأثيرات الافتراضية للمتصفح */
+.auth-btn-primary,
+.auth-btn-secondary {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.auth-btn-primary:visited,
+.auth-btn-secondary:visited {
+    color: inherit !important;
+}
+
+.auth-btn-primary:active,
+.auth-btn-secondary:active {
+    color: inherit !important;
+}
+
+/* زر تسجيل الدخول والملف الشخصي */
+.auth-btn-primary {
+    background: #d94288 !important;
+    color: white !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-btn-primary:hover {
+    background: #c13a7a !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.auth-btn-primary:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+}
+
+/* زر إنشاء الحساب */
+.auth-btn-secondary {
+    background: white !important;
+    color: #d94288 !important;
+    border: 2px solid #d94288 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-btn-secondary:hover {
+    background: #d94288 !important;
+    color: white !important;
+    border-color: #d94288 !important;
+    transform: translateY(-2px);
+}
+
+.auth-btn-secondary:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+}
+
+/* تأثيرات إضافية */
+.auth-btn-primary::before,
+.auth-btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.auth-btn-primary:hover::before,
+.auth-btn-secondary:hover::before {
+    left: 100%;
+}
+
+/* منع ظهور الألوان الافتراضية */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* تحسين الأداء */
+.auth-btn-primary,
+.auth-btn-secondary {
+    will-change: transform;
+    backface-visibility: hidden;
+}

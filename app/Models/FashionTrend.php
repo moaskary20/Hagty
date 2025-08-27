@@ -7,16 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class FashionTrend extends Model
 {
     use HasFactory;
-    protected $table = 'صيحات_الموضة';
+    protected $table = 'fashion_trends';
     protected $fillable = [
-        'العنوان',
-        'الوصف',
-        'الصورة',
-        'النوع',
-        'رابط_الفيديو',
-        'حالة_التفعيل',
-        'تاريخ_النشر',
-        'category_id', // إضافة مفتاح القسم إذا لم يكن موجودًا
+        'title',
+        'content',
+        'image',
+        'category_id',
     ];
 
     public function category()

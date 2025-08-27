@@ -70,9 +70,17 @@ Route::post('/training-videos', [App\Http\Controllers\TrainingVideoController::c
 // Route for training-videos.destroy
 Route::delete('/training-videos/{id}', [App\Http\Controllers\TrainingVideoController::class, 'destroy'])->name('training-videos.destroy');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/section/{section}', [App\Http\Controllers\HomeController::class, 'section'])->name('section');
+Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
+
+// Section-specific search routes
+Route::get('/search/health', [App\Http\Controllers\SectionSearchController::class, 'searchHealth'])->name('search.health');
+Route::get('/search/fashion', [App\Http\Controllers\SectionSearchController::class, 'searchFashion'])->name('search.fashion');
+Route::get('/search/babies', [App\Http\Controllers\SectionSearchController::class, 'searchBabies'])->name('search.babies');
+Route::get('/search/wedding', [App\Http\Controllers\SectionSearchController::class, 'searchWedding'])->name('search.wedding');
+Route::get('/search/beauty', [App\Http\Controllers\SectionSearchController::class, 'searchBeauty'])->name('search.beauty');
+Route::get('/search/accessoraty', [App\Http\Controllers\SectionSearchController::class, 'searchAccessoraty'])->name('search.accessoraty');
 
 Route::get('/test-livewire', function () {
     return view('test-livewire');
@@ -81,6 +89,20 @@ Route::get('/test-livewire', function () {
 // إضافة route لمعالجة إضافة طفل جديد في لوحة الإدارة باسم admin.babies.store
 Route::post('/admin/welcome-baby/add', [App\Http\Controllers\AdminWelcomeBabyController::class, 'store'])->name('admin.babies.store');
 Route::delete('/admin/babies/{baby}', [\App\Http\Controllers\AdminWelcomeBabyController::class, 'destroy'])->name('admin.babies.destroy');
+
+// Authentication Routes
+Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
+// Profile Routes (Protected)
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
+    Route::put('/profile/update', [App\Http\Controllers\AuthController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/profile/change-password', [App\Http\Controllers\AuthController::class, 'changePassword'])->name('profile.change-password');
+});
 
 
 // صفحة صيحات الموضة (مدونات الأناقة)

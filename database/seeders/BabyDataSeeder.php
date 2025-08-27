@@ -97,20 +97,22 @@ class BabyDataSeeder extends Seeder
         $expertAdvices = [
             [
                 'expert_name' => 'د. فاطمة أحمد',
-                'expert_specialization' => 'أخصائية تربية الأطفال',
+                'expert_title' => 'أخصائية تربية الأطفال',
+                'expert_specialization' => 'تربية الأطفال',
                 'title' => 'بناء روتين يومي للطفل',
                 'content' => 'إنشاء روتين ثابت يساعد الطفل على الشعور بالأمان ويسهل على الوالدين التنبؤ باحتياجاته. ابدئي بروتين بسيط للنوم والأكل.',
+                'category' => 'تربية',
                 'target_age' => '0-12 شهر',
-                'tips' => 'كوني مرنة في البداية، الثبات مع الوقت، راقبي إشارات طفلك',
                 'is_active' => true
             ],
             [
                 'expert_name' => 'د. محمد العلي',
-                'expert_specialization' => 'استشاري تطوير الطفل',
+                'expert_title' => 'استشاري تطوير الطفل',
+                'expert_specialization' => 'تطوير الطفل',
                 'title' => 'تطوير مهارات التواصل المبكر',
                 'content' => 'تحدثي مع طفلك منذ الولادة، اقرئي له، وغني له. هذا يساعد في تطوير مهارات اللغة والتواصل منذ وقت مبكر.',
+                'category' => 'تطوير',
                 'target_age' => '0-18 شهر',
-                'tips' => 'استخدمي تعبيرات الوجه، كرري الأصوات، اقرئي يومياً',
                 'is_active' => true
             ]
         ];
@@ -124,21 +126,31 @@ class BabyDataSeeder extends Seeder
             [
                 'doctor_name' => 'د. سارة الزهراني',
                 'doctor_specialization' => 'طبيبة أطفال',
+                'doctor_title' => 'طبيبة أطفال',
                 'title' => 'متى يجب الاتصال بالطبيب',
                 'content' => 'اتصلي بالطبيب فوراً إذا كان طفلك يعاني من حمى، صعوبة في التنفس، قيء مستمر، أو إذا كان يبدو مريضاً جداً.',
+                'medical_category' => 'صحة عامة',
                 'urgency_level' => 'عالي',
-                'symptoms' => 'حمى، صعوبة تنفس، قيء، خمول',
                 'age_group' => '0-12 شهر',
+                'symptoms' => json_encode(['حمى', 'صعوبة تنفس', 'قيء', 'خمول']),
+                'warnings' => json_encode(['اتصلي بالطبيب فوراً']),
+                'requires_consultation' => 1,
+                'is_emergency' => 1,
                 'is_active' => true
             ],
             [
                 'doctor_name' => 'د. أحمد المالكي',
                 'doctor_specialization' => 'استشاري طب الأطفال',
+                'doctor_title' => 'استشاري طب الأطفال',
                 'title' => 'العناية بالحبل السري',
                 'content' => 'حافظي على نظافة وجفاف منطقة الحبل السري. لا تستخدمي الكحول إلا إذا نصح الطبيب بذلك. سيسقط الحبل طبيعياً خلال 1-3 أسابيع.',
+                'medical_category' => 'عناية حديثي الولادة',
                 'urgency_level' => 'متوسط',
-                'symptoms' => 'احمرار، رائحة كريهة، إفرازات',
                 'age_group' => '0-1 شهر',
+                'symptoms' => json_encode(['احمرار', 'رائحة كريهة', 'إفرازات']),
+                'warnings' => json_encode(['استشيري الطبيب إذا استمرت المشكلة']),
+                'requires_consultation' => 0,
+                'is_emergency' => 0,
                 'is_active' => true
             ]
         ];
@@ -153,30 +165,18 @@ class BabyDataSeeder extends Seeder
                 'month_number' => 1,
                 'title' => 'الشهر الأول - مرحبا بالعالم',
                 'description' => 'في الشهر الأول، يتكيف طفلك مع العالم الخارجي. ينام معظم الوقت ويحتاج للرضاعة كل 2-3 ساعات.',
-                'physical_development' => 'يزداد الوزن 150-200 جرام أسبوعياً، يفقد منعكس مورو تدريجياً',
-                'cognitive_development' => 'يبدأ في التركيز على الوجوه، يتفاعل مع الأصوات المألوفة',
-                'milestones' => 'رفع الرأس لثوان قليلة، التحديق في الوجوه، الاستجابة للأصوات العالية',
-                'care_tips' => 'رضاعة منتظمة، نوم آمن، تفاعل لطيف',
-                'is_active' => true
-            ],
-            [
-                'month_number' => 2,
-                'title' => 'الشهر الثاني - الابتسامات الأولى',
-                'description' => 'يبدأ طفلك في إظهار ابتساماته الاجتماعية الأولى ويصبح أكثر تنبهاً لمحيطه.',
-                'physical_development' => 'تحسن في التحكم برفع الرأس، حركات أكثر سلاسة',
-                'cognitive_development' => 'ابتسامات اجتماعية، تتبع الأشياء بالعيون',
-                'milestones' => 'الابتسام للآخرين، إصدار أصوات ناعمة، رفع الرأس 45 درجة',
-                'care_tips' => 'مزيد من وقت البطن، التحدث والغناء، اللعب البصري',
-                'is_active' => true
-            ],
-            [
-                'month_number' => 3,
-                'title' => 'الشهر الثالث - الاكتشاف',
-                'description' => 'يصبح طفلك أكثر تفاعلاً ويبدأ في اكتشاف يديه وصوته.',
-                'physical_development' => 'تحكم أفضل في الرأس والرقبة، بداية تحريك الذراعين بقصد',
-                'cognitive_development' => 'ضحك، تقليد بعض الحركات والأصوات',
-                'milestones' => 'رفع الرأس والصدر في وقت البطن، إمساك الأشياء لفترة قصيرة',
-                'care_tips' => 'ألعاب تحفز الحواس، قراءة القصص، تنويع الأنشطة',
+                'physical_development' => json_encode(['يزداد الوزن 150-200 جرام أسبوعياً', 'يفقد منعكس مورو تدريجياً']),
+                'mental_development' => json_encode(['يبدأ في التركيز على الوجوه', 'يتفاعل مع الأصوات المألوفة']),
+                'social_development' => json_encode(['يستجيب للمس', 'يبدأ في التعرف على الوالدين']),
+                'milestones' => json_encode(['رفع الرأس لثوان قليلة', 'التحديق في الوجوه', 'الاستجابة للأصوات العالية']),
+                'feeding_info' => json_encode(['رضاعة كل 2-3 ساعات', '6-8 رضعات يومياً']),
+                'sleep_info' => json_encode(['16-17 ساعة يومياً', 'فترات قصيرة']),
+                'safety_tips' => json_encode(['نوم آمن على الظهر', 'مراقبة مستمرة']),
+                'weight_range' => '3-4.5 كجم',
+                'height_range' => '50-55 سم',
+                'image' => '/images/growth/month-1.jpg',
+                'activities' => json_encode(['التحدث مع الطفل', 'الغناء', 'اللمس اللطيف']),
+                'warning_signs' => json_encode(['عدم الرضاعة', 'عدم الاستجابة']),
                 'is_active' => true
             ]
         ];
@@ -192,59 +192,15 @@ class BabyDataSeeder extends Seeder
                 'description' => 'عربة أطفال آمنة ومريحة للتنقل مع الطفل',
                 'category' => 'النقل',
                 'priority' => 'عالي',
-                'estimated_price' => '800.00',
-                'notes' => 'يفضل أن تكون قابلة للطي وخفيفة الوزن',
-                'is_purchased' => false,
-                'is_active' => true
-            ],
-            [
-                'item_name' => 'سرير أطفال',
-                'description' => 'سرير آمن مع مرتبة مناسبة لحديثي الولادة',
-                'category' => 'النوم',
-                'priority' => 'عالي',
-                'estimated_price' => '1200.00',
-                'notes' => 'يجب أن يكون مطابقاً لمعايير السلامة',
-                'is_purchased' => false,
-                'is_active' => true
-            ],
-            [
-                'item_name' => 'ملابس حديثي الولادة',
-                'description' => 'مجموعة ملابس قطنية ناعمة مناسبة للأطفال الرضع',
-                'category' => 'الملابس',
-                'priority' => 'عالي',
-                'estimated_price' => '300.00',
-                'notes' => 'يفضل القطن الطبيعي، مقاسات مختلفة',
-                'is_purchased' => false,
-                'is_active' => true
-            ],
-            [
-                'item_name' => 'مقعد سيارة للأطفال',
-                'description' => 'مقعد سيارة آمن مخصص لحديثي الولادة',
-                'category' => 'النقل',
-                'priority' => 'عالي',
-                'estimated_price' => '600.00',
-                'notes' => 'ضروري قبل مغادرة المستشفى',
-                'is_purchased' => false,
-                'is_active' => true
-            ],
-            [
-                'item_name' => 'زجاجات رضاعة',
-                'description' => 'مجموعة زجاجات رضاعة مع حلمات مناسبة للأطفال',
-                'category' => 'التغذية',
-                'priority' => 'متوسط',
-                'estimated_price' => '150.00',
-                'notes' => 'خالية من BPA، سهلة التنظيف',
-                'is_purchased' => false,
-                'is_active' => true
-            ],
-            [
-                'item_name' => 'حفاظات',
-                'description' => 'مخزون من الحفاظات بمقاسات مختلفة',
-                'category' => 'العناية',
-                'priority' => 'عالي',
-                'estimated_price' => '400.00',
-                'notes' => 'احتياطي لعدة أشهر، مقاسات متنوعة',
-                'is_purchased' => false,
+                'estimated_price' => 800.00,
+                'size_info' => 'مناسبة لجميع الأعمار',
+                'age_suitability' => '0-3 سنوات',
+                'image' => '/images/baby-shower/stroller.jpg',
+                'features' => json_encode(['قابلة للطي', 'خفيفة الوزن', 'آمنة']),
+                'buying_tips' => json_encode(['اختاري المقاس المناسب', 'تأكدي من معايير السلامة']),
+                'season' => 'جميع الفصول',
+                'is_essential' => 1,
+                'is_luxury' => 0,
                 'is_active' => true
             ]
         ];

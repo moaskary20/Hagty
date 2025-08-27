@@ -8,7 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class AccessoratyBannerAd extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
-        'image', 'link'
+        'title',
+        'description', 
+        'image',
+        'link',
+        'location',
+        'is_active'
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
     ];
 }

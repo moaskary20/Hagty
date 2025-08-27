@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $section_name }} - HAGTY</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .primary-color {
+            color: #d94288;
+        }
+        
+        .primary-bg {
+            background-color: #d94288;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(217, 66, 136, 0.2);
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="{{ route('home') }}" class="text-2xl font-bold primary-color">HAGTY</a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
+                        <a href="{{ route('home') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">الرئيسية</a>
+                        <a href="{{ route('section', 'accessoraty') }}" class="px-3 py-2 rounded-md text-sm font-medium primary-color font-semibold">أكسسوراتى</a>
+                        <a href="{{ route('section', 'health') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">الصحة</a>
+                        <a href="{{ route('section', 'fashion') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">الموضة</a>
+                        <a href="{{ route('section', 'babies') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">الأطفال</a>
+                        <a href="{{ route('section', 'wedding') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">الزفاف</a>
+                        <a href="{{ route('section', 'beauty') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">الجمال</a>
+                        <a href="{{ route('section', 'umomi') }}" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-pink-600">أومومتي</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+        <!-- Accessoraty Search Form -->
+        <div class="max-w-4xl mx-auto mb-8">
+            @include('components.accessoraty-search-form')
+        </div>
+    <section class="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-4">{{ $section_name }}</h1>
+            <p class="text-xl mb-8">كورسات تعليمية احترافية وإكسسوارات عصرية</p>
+            <div class="flex justify-center space-x-4 space-x-reverse">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $courses->count() ?? 0 }}</div>
+                    <div class="text-sm">كورس تعليمي</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $students->count() ?? 0 }}</div>
+                    <div class="text-sm">طالبة مسجلة</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $shops->count() ?? 0 }}</div>
+                    <div class="text-sm">متجر إكسسوارات</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الكورسات التعليمية -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">الكورسات التعليمية</h2>
+                <p class="text-gray-600">تعلمي من أفضل المدربين في مجالات التجميل والموضة والتصميم</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($courses ?? [] as $course)
+                <div class="section-card card-hover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900">{{ $course->name }}</h3>
+                            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $course->students_count }} طالبة</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($course->description, 150) }}</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-user mr-1"></i>
+                                {{ $course->instructor }}
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>
+                                {{ $course->duration }}
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">
+                                السعة: {{ $course->max_students }} طالبة
+                            </span>
+                            <button class="primary-bg text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition duration-300">
+                                سجلي الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-12">
+                    <div class="text-6xl mb-4">📚</div>
+                    <h3 class="text-xl font-semibold mb-2">لا توجد كورسات متاحة حالياً</h3>
+                    <p>سيتم إضافة كورسات جديدة قريباً</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- الطلاب المسجلين -->
+    <section class="py-16 bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">الطلاب المسجلين</h2>
+                <p class="text-gray-600">تعرفي على الطالبات المسجلات في الكورسات</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($students ?? [] as $student)
+                <div class="section-card card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-pink-600 font-semibold">{{ substr($student->name, 0, 1) }}</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">{{ $student->name }}</h3>
+                                <p class="text-sm text-gray-500">{{ $student->email }}</p>
+                            </div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">الكورس المسجل:</span>
+                                <span class="text-sm primary-color font-semibold">{{ $student->course->name ?? 'غير محدد' }}</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-sm text-gray-500">رقم الهاتف:</span>
+                                <span class="text-sm text-gray-700">{{ $student->phone }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-12">
+                    <div class="text-6xl mb-4">👩‍🎓</div>
+                    <h3 class="text-xl font-semibold mb-2">لا توجد طالبات مسجلات حالياً</h3>
+                    <p>سجلي في أحد الكورسات المتاحة</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- متاجر الإكسسوارات -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">متاجر الإكسسوارات</h2>
+                <p class="text-gray-600">اكتشفي أجمل الإكسسوارات من أفضل المتاجر</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($shops ?? [] as $shop)
+                <div class="section-card card-hover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ $shop->name ?? 'متجر جديد' }}</h3>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($shop->description ?? 'وصف المتجر', 100) }}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">{{ $shop->location ?? 'موقع غير محدد' }}</span>
+                            <span class="text-sm primary-color font-semibold">تصفحي المنتجات</span>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-12">
+                    <div class="text-6xl mb-4">🛍️</div>
+                    <h3 class="text-xl font-semibold mb-2">لا توجد متاجر متاحة حالياً</h3>
+                    <p>سيتم إضافة متاجر جديدة قريباً</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- الإعلانات واللافتات -->
+    <section class="py-16 bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">الإعلانات واللافتات</h2>
+                <p class="text-gray-600">أحدث العروض والتخفيضات</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                @forelse($banners ?? [] as $banner)
+                <div class="section-card card-hover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ $banner->title ?? 'إعلان جديد' }}</h3>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($banner->description ?? 'وصف الإعلان', 150) }}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">{{ $banner->location ?? 'موقع غير محدد' }}</span>
+                            <span class="text-sm primary-color font-semibold">عرض التفاصيل</span>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-12">
+                    <div class="text-6xl mb-4">📢</div>
+                    <h3 class="text-xl font-semibold mb-2">لا توجد إعلانات متاحة حالياً</h3>
+                    <p>سيتم إضافة إعلانات جديدة قريباً</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- الفيديوهات الإعلانية -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">الفيديوهات الإعلانية</h2>
+                <p class="text-gray-600">شاهدي أحدث الفيديوهات الإعلانية</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($videos ?? [] as $video)
+                <div class="section-card card-hover">
+                    <div class="p-6">
+                        <div class="bg-gray-200 rounded-lg h-32 mb-4 flex items-center justify-center">
+                            <span class="text-gray-500">🎥</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ $video->title ?? 'فيديو جديد' }}</h3>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($video->description ?? 'وصف الفيديو', 100) }}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">{{ $video->duration ?? '00:00' }}</span>
+                            <span class="text-sm primary-color font-semibold">شاهدي الفيديو</span>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-12">
+                    <div class="text-6xl mb-4">🎬</div>
+                    <h3 class="text-xl font-semibold mb-2">لا توجد فيديوهات متاحة حالياً</h3>
+                    <p>سيتم إضافة فيديوهات جديدة قريباً</p>
+                </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-pink-500 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">ابدئي رحلتك التعليمية اليوم</h2>
+            <p class="text-xl mb-8">انضمي إلى آلاف الطالبات اللواتي طورن مهاراتهن مع HAGTY</p>
+            <div class="flex justify-center space-x-4 space-x-reverse">
+                <button class="bg-white text-pink-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                    سجلي في كورس جديد
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-pink-600 transition duration-300">
+                    تصفحي المتاجر
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">HAGTY</h3>
+                    <p class="text-gray-400">منصة شاملة للمرأة العربية</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">الأقسام</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="{{ route('section', 'accessoraty') }}" class="hover:text-white">أكسسوراتى</a></li>
+                        <li><a href="{{ route('section', 'health') }}" class="hover:text-white">الصحة</a></li>
+                        <li><a href="{{ route('section', 'fashion') }}" class="hover:text-white">الموضة</a></li>
+                        <li><a href="{{ route('section', 'babies') }}" class="hover:text-white">الأطفال</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">خدمات إضافية</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="{{ route('section', 'wedding') }}" class="hover:text-white">الزفاف</a></li>
+                        <li><a href="{{ route('section', 'beauty') }}" class="hover:text-white">الجمال</a></li>
+                        <li><a href="{{ route('section', 'umomi') }}" class="hover:text-white">أومومتي</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">تواصل معنا</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>البريد الإلكتروني: info@hagty.com</p>
+                        <p>الهاتف: +2010006908075</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HAGTY. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
+</html>

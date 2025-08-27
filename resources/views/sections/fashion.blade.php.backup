@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الموضة - منصة HAGTY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .primary-bg { background-color: #d94288; }
+        .primary-text { color: #d94288; }
+        .primary-border { border-color: #d94288; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="{{ route('home') }}" class="text-2xl font-bold">HAGTY</a>
+                </div>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('home') }}" class="hover:text-pink-200 transition duration-300">الرئيسية</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'accessoraty') }}" class="hover:text-pink-200 transition duration-300">أكسسوراتى</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'health') }}" class="hover:text-pink-200 transition duration-300">الصحة</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'fashion') }}" class="hover:text-pink-200 transition duration-300 font-bold">الموضة</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'babies') }}" class="hover:text-pink-200 transition duration-300">الأطفال</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'wedding') }}" class="hover:text-pink-200 transition duration-300">الزفاف</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'beauty') }}" class="hover:text-pink-200 transition duration-300">الجمال</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                    <a href="{{ route('section', 'umomi') }}" class="hover:text-pink-200 transition duration-300">أومومتي</a>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+                </div>
+                <!-- Search Bar -->
+                <div class="hidden md:block">
+                    @include('components.search-bar')
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+        <!-- Fashion Search Form -->
+        <div class="max-w-4xl mx-auto mb-8">
+            @include('components.fashion-search-form')
+        </div>
+    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">👗 قسم الموضة</h1>
+            <p class="text-xl md:text-2xl mb-8">أحدث صيحات الموضة والأزياء</p>
+            
+            <!-- Statistics -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $fashion_trends->count() }}</div>
+                    <div class="text-sm">صيحات موضة</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $sponsor_videos->count() }}</div>
+                    <div class="text-sm">فيديوهات دعائية</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                    <div class="text-3xl font-bold">{{ $forasy_courses->count() }}</div>
+                    <div class="text-sm">كورسات موضة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- صيحات الموضة -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">👗 صيحات الموضة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse($fashion_trends as $trend)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $trend->title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($trend->description, 150) }}</p>
+                        @if($trend->category)
+                        <div class="mt-4">
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">{{ $trend->category }}</span>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-tshirt text-4xl mb-4"></i>
+                    <p>لا توجد صيحات موضة متاحة حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- الفيديوهات الدعائية -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎥 الفيديوهات الدعائية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse($sponsor_videos as $video)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $video->title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($video->description, 150) }}</p>
+                        @if($video->duration)
+                        <div class="text-sm text-gray-500">
+                            <i class="fas fa-clock ml-2"></i>{{ $video->duration }}
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-video text-4xl mb-4"></i>
+                    <p>لا توجد فيديوهات دعائية متاحة حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+        <!-- كورسات الموضة -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📚 كورسات الموضة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse($forasy_courses as $course)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $course->title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($course->description, 150) }}</p>
+                        @if($course->instructor)
+                        <div class="text-sm text-gray-500">
+                            <i class="fas fa-user ml-2"></i>{{ $course->instructor }}
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-full text-center text-gray-500 py-8">
+                    <i class="fas fa-graduation-cap text-4xl mb-4"></i>
+                    <p>لا توجد كورسات موضة متاحة حالياً</p>
+                </div>
+                @endforelse
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="primary-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">HAGTY</h3>
+                    <p class="text-pink-200">منصة شاملة لجميع احتياجاتك</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">الأقسام الرئيسية</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{{ route('section', 'accessoraty') }}" class="hover:text-pink-200">أكسسوراتى</a></li>
+                        <li><a href="{{ route('section', 'health') }}" class="hover:text-pink-200">الصحة</a></li>
+                        <li><a href="{{ route('section', 'fashion') }}" class="hover:text-pink-200">الموضة</a></li>
+                        <li><a href="{{ route('section', 'babies') }}" class="hover:text-pink-200">الأطفال</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">خدمات إضافية</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{{ route('section', 'wedding') }}" class="hover:text-pink-200">الزفاف</a></li>
+                        <li><a href="{{ route('section', 'beauty') }}" class="hover:text-pink-200">الجمال</a></li>
+                        <li><a href="{{ route('section', 'umomi') }}" class="hover:text-pink-200">أومومتي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">تواصل معنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-2xl hover:text-pink-200"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-pink-200"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-pink-200"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-pink-300 mt-8 pt-8 text-center">
+                <p>&copy; 2024 HAGTY. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
