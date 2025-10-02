@@ -32,6 +32,58 @@
             font-family: 'Cairo', sans-serif;
         }
         
+        /* Popup Notification Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .popup-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: popupSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         .primary-color {
             color: #d94288;
         }
@@ -124,6 +176,59 @@
             width: 100% !important;
         }
         
+        /* Sponsor Swiper specific styles */
+        .sponsorSwiper .swiper-slide {
+            height: 100vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        .sponsorSwiper .swiper-wrapper {
+            height: 100vh !important;
+        }
+        
+        .sponsorSwiper {
+            height: 100vh !important;
+        }
+        
+        /* Debug styles */
+        .sponsorSwiper .swiper-slide {
+            border: 2px solid red !important;
+            min-height: 100vh !important;
+        }
+        
+        .sponsorSwiper .swiper-slide::before {
+            content: 'Slide Content' !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            color: white !important;
+            font-size: 24px !important;
+            z-index: 10 !important;
+        }
+        
+        .sponsorSwiper .swiper-slide::after {
+            content: 'Background Image' !important;
+            position: absolute !important;
+            top: 20% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            color: yellow !important;
+            font-size: 18px !important;
+            z-index: 10 !important;
+        }
+        
+        .sponsorSwiper .swiper-slide .text-center {
+            background: rgba(0,0,0,0.5) !important;
+            padding: 20px !important;
+            border-radius: 10px !important;
+        }
+        
         /* تأكيد ظهور أزرار التنقل */
         .swiper-button-next,
         .swiper-button-prev {
@@ -131,6 +236,46 @@
             visibility: visible !important;
             display: flex !important;
             z-index: 100 !important;
+        }
+        
+        /* تحويل أزرار التنقل إلى أسهم */
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            content: '' !important;
+            font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 900 !important;
+            font-size: 20px !important;
+            color: white !important;
+        }
+        
+        .swiper-button-next::after {
+            content: '\f054' !important; /* Font Awesome arrow-right */
+        }
+        
+        .swiper-button-prev::after {
+            content: '\f053' !important; /* Font Awesome arrow-left */
+        }
+        
+        /* تنسيق أزرار التنقل */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px !important;
+            height: 50px !important;
+            background: rgba(217, 66, 136, 0.8) !important;
+            border-radius: 50% !important;
+            border: 2px solid white !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(217, 66, 136, 1) !important;
+            transform: scale(1.1) !important;
+        }
+        
+        .swiper-button-disabled {
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
         }
         
         /* تأكيد ظهور الترقيم */
@@ -234,88 +379,7 @@
             box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
         }
         
-        /* Mobile Menu Styles */
-        .mobile-menu-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            margin: 4px 0;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #374151;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .mobile-menu-item:hover {
-            transform: translateX(-4px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.15);
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-        }
-        
-        .mobile-menu-item span {
-            margin-right: 12px;
-            font-size: 16px;
-        }
-        
-        .mobile-auth-btn {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding: 12px 16px;
-            margin: 8px 0;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .mobile-auth-btn.primary {
-            background: linear-gradient(135deg, #d94288 0%, #c13a7a 100%);
-            color: white;
-        }
-        
-        .mobile-auth-btn.primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.3);
-        }
-        
-        .mobile-auth-btn.secondary {
-            background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
-        }
-        
-        .mobile-auth-btn.secondary:hover {
-            background: #d94288;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.2);
-        }
-        
-        .mobile-auth-btn span {
-            margin-right: 12px;
-        }
-        
-        /* Mobile Menu Animation */
-        #mobile-menu {
-            animation: slideDown 0.3s ease-out;
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        /* Mobile Menu Styles are handled by shared-header component */
         
         /* خلفية متحركة من القلوب والتاج والنجوم */
         .floating-background {
@@ -331,7 +395,7 @@
         
         .floating-icon {
             position: absolute;
-            opacity: 0.15;
+            opacity: 0.15;https://github.com/moaskary20/Hagty
             animation: float 8s ease-in-out infinite;
             font-size: 3rem;
             filter: drop-shadow(0 0 8px rgba(217, 66, 136, 0.3));
@@ -1044,199 +1108,7 @@
         <div class="floating-icon crown" style="top: 60%; left: 50%;">👑</div>
     </div>
     
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold primary-color">HAGTY</div>
-                </div>
-                
-                <!-- Navigation Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
-                        <a href="#home" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الرئيسية</a>
-                        <a href="#accessoraty" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">أكسسوراتى</a>
-                        <a href="#health" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الصحة</a>
-                        <a href="#fashion" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الموضة</a>
-                        <a href="#babies" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الأطفال</a>
-                        <a href="#wedding" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الزفاف</a>
-                        <a href="#beauty" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الجمال</a>
-                        <a href="#umomi" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">أومومتي</a>
-                    </div>
-                </div>
-                
-
-
-                <!-- Auth Buttons -->
-                <div class="hidden md:flex items-center space-x-3 space-x-reverse">
-                    @auth
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <div class="flex items-center space-x-2 space-x-reverse">
-                                <div class="w-8 h-8 bg-gradient-to-r from-d94288 to-purple-600 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user text-white text-sm"></i>
-                                </div>
-                                <span class="text-sm font-medium text-gray-700">مرحباً، {{ Auth::user()->first_name ?? Auth::user()->name }}</span>
-                            </div>
-                            <a href="{{ route('profile') }}" class="auth-btn-primary px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                                <i class="fas fa-user-edit ml-1"></i>الملف الشخصي
-                            </a>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                               class="bg-white text-gray-600 border border-gray-300 px-4 py-2.5 rounded-xl hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                                <i class="fas fa-sign-out-alt ml-1"></i>تسجيل الخروج
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                @csrf
-                            </form>
-                        </div>
-                    @else
-                        <a href="{{ route('login') }}" class="auth-btn-primary px-5 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            <i class="fas fa-sign-in-alt ml-2"></i>الدخول
-                        </a>
-                        <a href="{{ route('register') }}" class="auth-btn-secondary px-5 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            <i class="fas fa-user-plus ml-2"></i>الاشتراك
-                        </a>
-                    @endauth
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden">
-                <div class="bg-gradient-to-br from-white to-pink-50 border-t border-pink-200 shadow-lg">
-                    <!-- Header -->
-                    <div class="px-4 py-3 bg-gradient-to-r from-d94288 to-purple-600 text-white">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <i class="fas fa-bars text-white"></i>
-                            </div>
-                            <span class="mr-3 font-semibold text-lg">القائمة الرئيسية</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation Links -->
-                    <div class="px-4 py-2 space-y-1">
-                        <a href="#home" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-home text-white text-sm"></i>
-                            </div>
-                            <span>الرئيسية</span>
-                        </a>
-                        
-                        <a href="#accessoraty" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-gem text-white text-sm"></i>
-                            </div>
-                            <span>أكسسوراتى</span>
-                        </a>
-                        
-                        <a href="#health" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-heartbeat text-white text-sm"></i>
-                            </div>
-                            <span>الصحة</span>
-                        </a>
-                        
-                        <a href="#fashion" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-tshirt text-white text-sm"></i>
-                            </div>
-                            <span>الموضة</span>
-                        </a>
-                        
-                        <a href="#babies" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-baby text-white text-sm"></i>
-                            </div>
-                            <span>الأطفال</span>
-                        </a>
-                        
-                        <a href="#wedding" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-heart text-white text-sm"></i>
-                            </div>
-                            <span>الزفاف</span>
-                        </a>
-                        
-                        <a href="#beauty" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-spa text-white text-sm"></i>
-                            </div>
-                            <span>الجمال</span>
-                        </a>
-                        
-                        <a href="#umomi" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-female text-white text-sm"></i>
-                            </div>
-                            <span>أومومتي</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile Auth Buttons -->
-                    <div class="px-4 py-4 border-t border-pink-200 bg-white bg-opacity-50">
-                        @auth
-                            <div class="flex items-center mb-4 p-3 bg-gradient-to-r from-d94288 to-purple-600 rounded-xl text-white">
-                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user text-white"></i>
-                                </div>
-                                <div class="mr-3">
-                                    <div class="font-semibold">مرحباً، {{ Auth::user()->first_name ?? Auth::user()->name }}</div>
-                                    <div class="text-sm opacity-90">مرحباً بك في HAGTY</div>
-                                </div>
-                            </div>
-                            
-                            <a href="{{ route('profile') }}" class="mobile-auth-btn primary">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-user-edit text-white text-sm"></i>
-                                </div>
-                                <span>الملف الشخصي</span>
-                            </a>
-                            
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                               class="mobile-auth-btn secondary">
-                                <div class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-sign-out-alt text-white text-sm"></i>
-                                </div>
-                                <span>تسجيل الخروج</span>
-                            </a>
-                        @else
-                            <div class="text-center mb-4">
-                                <div class="w-16 h-16 bg-gradient-to-r from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                                    <i class="fas fa-user-plus text-white text-xl"></i>
-                                </div>
-                                <div class="text-gray-600 font-medium">انضمي إلى مجتمعنا</div>
-                            </div>
-                            
-                            <a href="{{ route('login') }}" class="mobile-auth-btn primary">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-sign-in-alt text-white text-sm"></i>
-                                </div>
-                                <span>تسجيل الدخول</span>
-                            </a>
-                            
-                            <a href="{{ route('register') }}" class="mobile-auth-btn secondary">
-                                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-user-plus text-d94288 text-sm"></i>
-                                </div>
-                                <span>إنشاء حساب جديد</span>
-                            </a>
-                        @endauth
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </nav>
+    @include('components.shared-header')
 
     <!-- Enhanced Hero Slider -->
     <section id="home" class="hero-section relative">
@@ -1259,83 +1131,70 @@
         
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
-                <!-- Enhanced Slide 1 -->
-                <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
-                    <div class="overlay absolute inset-0 flex items-center justify-center">
-                        <div class="text-center text-white section-fade-in">
-                            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow-lg">
-                                مرحباً بك في <span class="text-yellow-300 animate-pulse">HAGTY</span>
-                            </h1>
-                            <p class="text-xl md:text-2xl mb-8 text-pink-100 leading-relaxed">
-                                منصة شاملة للمرأة العربية - كل ما تحتاجينه في مكان واحد
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="#about" class="glow-border pulse-button">
-                                    <div class="content">
-                                        <span class="text-d94288 font-bold text-lg flex items-center justify-center">
-                                            <i class="fas fa-rocket ml-2 animated-icon"></i>اكتشفي المزيد
-                                        </span>
-                                    </div>
-                                </a>
-                                <a href="{{ route('register') }}" class="transparent-button inline-block px-8 py-3 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-d94288 transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-heart ml-2 animated-icon"></i>انضمي إلينا
-                                </a>
+                @if(isset($forasy_banners) && $forasy_banners->count() > 0)
+                    @foreach($forasy_banners as $banner)
+                    <div class="swiper-slide hero-slide" style="background-image: url('{{ \Illuminate\Support\Str::startsWith($banner->banner_image, ['http', 'https']) ? $banner->banner_image : Storage::url($banner->banner_image) }}');">
+                        @if($banner->show_overlay)
+                        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        @endif
+                        <div class="absolute inset-0 flex items-center justify-{{ $banner->text_position ?? 'center' }}">
+                            <div class="text-center text-white section-fade-in max-w-4xl mx-auto px-4">
+                                @if($banner->main_title)
+                                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow-lg" style="color: {{ $banner->text_color ?? '#ffffff' }}">
+                                    {{ $banner->main_title }}
+                                </h1>
+                                @endif
+                                @if($banner->subtitle)
+                                <p class="text-xl md:text-2xl mb-8 text-shadow-md" style="color: {{ $banner->text_color ?? '#ffffff' }}">
+                                    {{ $banner->subtitle }}
+                                </p>
+                                @endif
+                                @if($banner->button_text)
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    @if($banner->button_url)
+                                    <a href="{{ $banner->button_url }}" class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                        <i class="fas fa-arrow-left ml-2"></i>
+                                        {{ $banner->button_text }}
+                                    </a>
+                                    @else
+                                    <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                        <i class="fas fa-arrow-left ml-2"></i>
+                                        {{ $banner->button_text }}
+                                    </button>
+                                    @endif
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Enhanced Slide 2 -->
-                <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                    <div class="overlay absolute inset-0 flex items-center justify-center">
-                        <div class="text-center text-white section-fade-in">
-                            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow-lg">
-                                كورسات تعليمية <span class="text-yellow-300 animate-pulse">احترافية</span>
-                            </h1>
-                            <p class="text-xl md:text-2xl mb-8 text-pink-100 leading-relaxed">
-                                تعلمي من أفضل المدربين في مجالات التجميل والموضة والتصميم
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="{{ route('section', 'accessoraty') }}" class="glow-border pulse-button">
-                                    <div class="content">
-                                        <span class="text-d94288 font-bold text-lg flex items-center justify-center">
-                                            <i class="fas fa-graduation-cap ml-2 animated-icon"></i>ابدأي التعلم
-                                        </span>
-                                    </div>
-                                </a>
-                                <a href="{{ route('section', 'accessoraty') }}" class="transparent-button inline-block px-8 py-3 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-d94288 transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-book ml-2 animated-icon"></i>استكشفي الكورسات
-                                </a>
+                    @endforeach
+                @else
+                    <!-- Default Slides if no banners in database -->
+                    <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+                        <div class="overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white section-fade-in">
+                                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow-lg">
+                                    مرحباً بك في <span class="text-yellow-300 animate-pulse">HAGTY</span>
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 text-pink-100 leading-relaxed">
+                                    منصة شاملة للمرأة العربية - كل ما تحتاجينه في مكان واحد
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <a href="#about" class="glow-border pulse-button">
+                                        <div class="content">
+                                            <span class="text-d94288 font-bold text-lg flex items-center justify-center">
+                                                <i class="fas fa-rocket ml-2 animated-icon"></i>اكتشفي المزيد
+                                            </span>
+                                        </div>
+                                    </a>
+                                    <a href="{{ route('register') }}" class="transparent-button inline-block px-8 py-3 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-d94288 transition-all duration-300 transform hover:scale-105">
+                                        <i class="fas fa-heart ml-2 animated-icon"></i>انضمي إلينا
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Enhanced Slide 3 -->
-                <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                    <div class="overlay absolute inset-0 flex items-center justify-center">
-                        <div class="text-center text-white section-fade-in">
-                            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow-lg">
-                                رعاية صحية <span class="text-yellow-300 animate-pulse">شاملة</span>
-                            </h1>
-                            <p class="text-xl md:text-2xl mb-8 text-pink-100 leading-relaxed">
-                                اطبيبة متخصصات ونصائح صحية لصحة أفضل
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="{{ route('section', 'health') }}" class="glow-border pulse-button">
-                                    <div class="content">
-                                        <span class="text-d94288 font-bold text-lg flex items-center justify-center">
-                                            <i class="fas fa-calendar-check ml-2 animated-icon"></i>احجزي موعد
-                                        </span>
-                                    </div>
-                                </a>
-                                <a href="{{ route('section', 'health') }}" class="transparent-button inline-block px-8 py-3 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-d94288 transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-user-md ml-2 animated-icon"></i>ابحثي عن طبيبة
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
             </div>
             
             <!-- Enhanced Navigation -->
@@ -1347,64 +1206,6 @@
         </div>
     </section>
 
-    <!-- Enhanced Statistics Section -->
-    <section class="py-20 bg-gradient-to-br from-white to-pink-50 relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-10 left-10 w-32 h-32 bg-d94288 rounded-full"></div>
-            <div class="absolute top-40 right-20 w-24 h-24 bg-purple-500 rounded-full"></div>
-            <div class="absolute bottom-20 left-32 w-40 h-40 bg-pink-400 rounded-full"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 section-fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    إحصائيات <span class="text-d94288">المنصة</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    أرقام تتحدث عن نفسها - منصة HAGTY تنمو معك يوماً بعد يوم
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="enhanced-card text-center p-8 transform hover:scale-105 transition-all duration-500">
-                    <div class="w-20 h-20 bg-gradient-to-br from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-graduation-cap text-white text-3xl animated-icon"></i>
-                    </div>
-                    <div class="text-5xl font-bold text-d94288 mb-3 stats-number">{{ $courses_count ?? 0 }}</div>
-                    <div class="text-lg text-gray-700 font-semibold">كورس تعليمي</div>
-                    <div class="text-sm text-gray-500 mt-2">متاح للتعلم</div>
-                </div>
-                
-                <div class="enhanced-card text-center p-8 transform hover:scale-105 transition-all duration-500">
-                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-users text-white text-3xl animated-icon"></i>
-                    </div>
-                    <div class="text-5xl font-bold text-green-600 mb-3 stats-number">{{ $students_count ?? 0 }}</div>
-                    <div class="text-lg text-gray-700 font-semibold">طالبة مسجلة</div>
-                    <div class="text-sm text-gray-500 mt-2">في مجتمعنا</div>
-                </div>
-                
-                <div class="enhanced-card text-center p-8 transform hover:scale-105 transition-all duration-500">
-                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-md text-white text-3xl animated-icon"></i>
-                    </div>
-                    <div class="text-5xl font-bold text-red-600 mb-3 stats-number">{{ $doctors->count() ?? 0 }}</div>
-                    <div class="text-lg text-gray-700 font-semibold">طبيبة متخصصة</div>
-                    <div class="text-sm text-gray-500 mt-2">لرعايتك</div>
-                </div>
-                
-                <div class="enhanced-card text-center p-8 transform hover:scale-105 transition-all duration-500">
-                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tshirt text-white text-3xl animated-icon"></i>
-                    </div>
-                    <div class="text-5xl font-bold text-purple-600 mb-3 stats-number">{{ $fashion_trends->count() ?? 0 }}</div>
-                    <div class="text-lg text-gray-700 font-semibold">صيحة موضة</div>
-                    <div class="text-sm text-gray-500 mt-2">لإطلالتك</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Enhanced Search Section -->
     <section id="search" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
@@ -1533,29 +1334,29 @@
                     <p class="text-sm text-gray-600 mt-1">رعاية الأمومة</p>
                 </div>
 
-                <!-- الزفاف -->
+                <!-- زفافي -->
                 <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'wedding') }}'">
                     <div class="relative mb-4">
                         <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop&crop=center" 
-                                 alt="الزفاف" 
+                                 alt="زفافي" 
                                  class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">الزفاف</h3>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">زفافي</h3>
                     <p class="text-sm text-gray-600 mt-1">يومك الخاص</p>
                 </div>
 
-                <!-- الجمال -->
+                <!-- جمالي -->
                 <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'beauty') }}'">
                     <div class="relative mb-4">
                         <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop&crop=center" 
-                                 alt="الجمال" 
+                                 alt="جمالي" 
                                  class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">الجمال</h3>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">جمالي</h3>
                     <p class="text-sm text-gray-600 mt-1">عناية وجمال</p>
                 </div>
 
@@ -1572,18 +1373,36 @@
                     <p class="text-sm text-gray-600 mt-1">إكسسوارات عصرية</p>
                 </div>
 
-                <!-- الصحة -->
+                <!-- صحتي -->
                 <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'health') }}'">
                     <div class="relative mb-4">
                         <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop&crop=center" 
-                                 alt="الصحة" 
+                                 alt="صحتي" 
                                  class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">الصحة</h3>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">صحتي</h3>
                     <p class="text-sm text-gray-600 mt-1">رعاية صحية</p>
                 </div>
+
+                <!-- أطفالي -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'babies') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=400&fit=crop&crop=center" 
+                                 alt="أطفالي" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">أطفالي</h3>
+                    <p class="text-sm text-gray-600 mt-1">رعاية الأطفال</p>
+                </div>
+
+
+
+
+
 
                 <!-- الموضة -->
                 <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'fashion') }}'">
@@ -1598,18 +1417,6 @@
                     <p class="text-sm text-gray-600 mt-1">أحدث الصيحات</p>
                 </div>
 
-                <!-- الأطفال -->
-                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'babies') }}'">
-                    <div class="relative mb-4">
-                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=400&fit=crop&crop=center" 
-                                 alt="الأطفال" 
-                                 class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">الأطفال</h3>
-                    <p class="text-sm text-gray-600 mt-1">رعاية الأطفال</p>
-                </div>
 
                 <!-- فرحي -->
                 <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('section', 'joy') }}'">
@@ -1623,208 +1430,362 @@
                     <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">فرحي</h3>
                     <p class="text-sm text-gray-600 mt-1">مناسبات سعيدة</p>
                 </div>
+
+                <!-- ايفينتاتى -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('eventaty.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=400&fit=crop&crop=center" 
+                                 alt="ايفينتاتى" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">ايفينتاتى</h3>
+                    <p class="text-sm text-gray-600 mt-1">فعاليات وحفلات</p>
+                </div>
+
+                <!-- فورصى -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('forasy.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=400&fit=crop&crop=center" 
+                                 alt="فورصى" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">فورصى</h3>
+                    <p class="text-sm text-gray-600 mt-1">فرص عمل</p>
+                </div>
+
+                <!-- هديتي -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('hadiety.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400&h=400&fit=crop&crop=center" 
+                                 alt="هديتي" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">هديتي</h3>
+                    <p class="text-sm text-gray-600 mt-1">أفكار هدايا</p>
+                </div>
+
+                <!-- بيتي -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('beity.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400&h=400&fit=crop&crop=center" 
+                                 alt="بيتي" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">بيتي</h3>
+                    <p class="text-sm text-gray-600 mt-1">ديكور وأثاث</p>
+                </div>
+
+                <!-- حساباتى -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('hesabaty.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=400&fit=crop&crop=center" 
+                                 alt="حساباتى" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">حساباتى</h3>
+                    <p class="text-sm text-gray-600 mt-1">إدارة مالية</p>
+                </div>
+
+                <!-- رياضتي -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('riadaty.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=400&fit=crop&crop=center" 
+                                 alt="رياضتي" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">رياضتي</h3>
+                    <p class="text-sm text-gray-600 mt-1">لياقة ورياضة</p>
+                </div>
+
+                <!-- مشروعي -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('mashroay.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop&crop=center" 
+                                 alt="مشروعي" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">مشروعي</h3>
+                    <p class="text-sm text-gray-600 mt-1">ريادة أعمال</p>
+                </div>
+
+                <!-- مستشاري -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('mostashary.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=center" 
+                                 alt="مستشاري" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">مستشاري</h3>
+                    <p class="text-sm text-gray-600 mt-1">استشارات متنوعة</p>
+                </div>
+
+                <!-- مستمعي -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('mostamay.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop&crop=center" 
+                                 alt="مستمعي" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">مستمعي</h3>
+                    <p class="text-sm text-gray-600 mt-1">تطوير ذات</p>
+                </div>
+
+                <!-- نساء الغد -->
+                <div class="text-center group cursor-pointer" onclick="window.location.href='{{ route('nesaa-alghad.index') }}'">
+                    <div class="relative mb-4">
+                        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop&crop=center" 
+                                 alt="نساء الغد" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-d94288 transition-colors">نساء الغد</h3>
+                    <p class="text-sm text-gray-600 mt-1">تمكين المرأة</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced أكسسوراتى Section -->
-    <section id="accessoraty" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-20 right-20 w-40 h-40 bg-d94288 rounded-full"></div>
-            <div class="absolute bottom-20 left-20 w-32 h-32 bg-purple-500 rounded-full"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 section-fade-in">
-                <div class="w-20 h-20 bg-gradient-to-br from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-gem text-white text-3xl animated-icon"></i>
+    @if(isset($sponsor_banners) && $sponsor_banners->count() > 0)
+        <!-- Debug: عدد البانرات = {{ $sponsor_banners->count() }} -->
+        <!-- Sponsor Banners Slider -->
+        <section class="relative overflow-hidden">
+            <div class="w-full">
+                <div class="text-center py-16 bg-white">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-d94288 to-purple-600 rounded-full mb-6">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        شركاؤنا <span class="text-d94288">المميزون</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        اكتشفي أفضل العروض والخدمات من شركائنا الموثوقين
+                    </p>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    <span class="text-d94288">أكسسوراتى</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    كورسات تعليمية احترافية وإكسسوارات عصرية لتصميم إطلالتك المميزة
-                </p>
-            </div>
-            
-            <!-- الكورسات التعليمية -->
-            <div class="mb-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">
-                    <i class="fas fa-graduation-cap ml-2 text-d94288"></i>الكورسات التعليمية
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @forelse($courses ?? [] as $course)
-                    <div class="enhanced-card group">
-                        <div class="p-8">
-                            <div class="w-16 h-16 bg-gradient-to-br from-d94288 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-book text-white text-2xl"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">{{ $course->name }}</h4>
-                            <p class="text-gray-600 mb-6 text-center leading-relaxed">{{ Str::limit($course->description, 120) }}</p>
-                            <div class="flex justify-between items-center mb-6">
-                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{{ $course->instructor }}</span>
-                                <span class="text-sm text-d94288 font-bold bg-pink-100 px-3 py-1 rounded-full">{{ $course->students_count }} طالبة</span>
-                            </div>
-                            <div class="text-center">
-                                <button onclick="Livewire.dispatch('openCourseRegistration', {courseId: {{ $course->id }}, courseName: '{{ $course->name }}'})" 
-                                        class="w-full bg-gradient-to-r from-d94288 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-d94288 transition-all duration-300 transform hover:-translate-y-1 course-start-btn">
-                                    <i class="fas fa-play ml-2"></i>ابدأي التعلم
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    @empty
-                    <div class="col-span-full text-center text-gray-500 py-16">
-                        <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-graduation-cap text-gray-400 text-4xl"></i>
-                        </div>
-                        <p class="text-xl">لا توجد كورسات متاحة حالياً</p>
-                        <p class="text-gray-400 mt-2">سنضيف كورسات جديدة قريباً</p>
-                    </div>
-                    @endforelse
-                </div>
-            </div>
-            
-            </div>
-            
-            <!-- متاجر الإكسسوارات -->
-            <div class="mt-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">
-                    <i class="fas fa-shopping-bag ml-2 text-d94288"></i>متاجر الإكسسوارات
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @forelse($accessoraty_shops ?? [] as $shop)
-                    <div class="enhanced-card group">
-                        <div class="p-8">
-                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-store text-white text-2xl"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">{{ $shop->brand_name }}</h4>
-                            <p class="text-gray-600 mb-6 text-center leading-relaxed">{{ $shop->location }}</p>
-                            <div class="flex justify-between items-center mb-6">
-                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{{ $shop->category }}</span>
-                                <span class="text-sm text-green-600 font-bold bg-green-100 px-3 py-1 rounded-full">متجر معتمد</span>
-                            </div>
-                            <div class="text-center">
-                                @if($shop->shop_url)
-                                    <a href="{{ $shop->shop_url }}" target="_blank" 
-                                       class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-1 inline-block text-center">
-                                        <i class="fas fa-shopping-bag ml-2"></i>تسوقي الآن
-                                    </a>
-                                @else
-                                    <button class="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white py-3 rounded-xl font-semibold cursor-not-allowed" disabled>
-                                        <i class="fas fa-shopping-bag ml-2"></i>المتجر غير متاح
-                                    </button>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    @empty
-                    <div class="col-span-full text-center text-gray-500 py-16">
-                        <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-store text-gray-400 text-4xl"></i>
-                        </div>
-                        <p class="text-xl">لا توجد متاجر متاحة حالياً</p>
-                        <p class="text-gray-400 mt-2">سنضيف متاجر جديدة قريباً</p>
-                    </div>
-                    @endforelse
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="{{ route('section', 'accessoraty') }}" class="glow-border pulse-button inline-block">
-                    <div class="content">
-                        <span class="text-d94288 font-bold text-lg flex items-center justify-center">
-                            <i class="fas fa-arrow-left ml-2"></i>عرض جميع الكورسات والمتاجر
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="section-divider">
-        <div class="section-divider-content">
-            <h3 class="text-2xl font-bold mb-2">اكتشفي المزيد من الخدمات</h3>
-            <p class="text-lg opacity-90">منصة HAGTY تجمع لك كل ما تحتاجينه</p>
-        </div>
-    </div>
-
-    <!-- Enhanced الصحة Section -->
-    <section id="health" class="py-20 bg-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-20 left-20 w-32 h-32 bg-red-500 rounded-full"></div>
-            <div class="absolute bottom-20 right-20 w-40 h-40 bg-pink-400 rounded-full"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 section-fade-in">
-                <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-heartbeat text-white text-3xl animated-icon"></i>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    <span class="text-red-600">الصحة</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    رعاية صحية شاملة ومتخصصة لصحة أفضل وحياة أجمل
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @forelse($doctors ?? [] as $doctor)
-                <div class="enhanced-card group">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-user-md text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">{{ $doctor->first_name ? 'د. ' . $doctor->first_name . ' ' . ($doctor->last_name ?? '') : 'د. غير محدد' }}</h4>
-                        <p class="text-gray-600 mb-6 text-center leading-relaxed">{{ $doctor->specialty ?? 'تخصص غير محدد' }}</p>
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{{ $doctor->clinic_address ?? 'عنوان غير محدد' }}</span>
-                            <span class="text-sm text-red-600 font-bold bg-red-100 px-3 py-1 rounded-full">متاحة للحجز</span>
-                        </div>
-                        <div class="text-center">
-                            @if($doctor->booking_url)
-                                <a href="{{ $doctor->booking_url }}" target="_blank" 
-                                   class="w-full bg-gradient-to-r from-red-500 to-pink-600 text-white py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-red-500 transition-all duration-300 transform hover:-translate-y-1 book-appointment-btn inline-block text-center">
-                                    <i class="fas fa-calendar-check ml-2"></i>احجزي موعد
-                                </a>
-                            @else
-                                <button class="w-full bg-gradient-to-r from-gray-400 to-gray-500 text-white py-3 rounded-xl font-semibold cursor-not-allowed" disabled>
-                                    <i class="fas fa-calendar-times ml-2"></i>الحجز غير متاح
-                                </button>
+                
+                <div class="swiper sponsorSwiper">
+                    <div class="swiper-wrapper">
+                        @foreach($sponsor_banners as $banner)
+                        <div class="swiper-slide hero-slide" style="background-image: url('{{ \Illuminate\Support\Str::startsWith($banner->image, ['http', 'https']) ? $banner->image : Storage::url($banner->image) }}');">
+                            @if($banner->show_overlay)
+                            <div class="overlay absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                             @endif
+                            <div class="absolute inset-0 flex items-center justify-{{ $banner->text_position ?? 'center' }}">
+                                <div class="text-center text-white section-fade-in max-w-4xl mx-auto px-4">
+                                    @if($banner->main_title)
+                                    <h3 class="text-4xl md:text-6xl font-bold mb-6 text-shadow-lg group-hover:text-yellow-300 transition-colors duration-300" style="color: {{ $banner->text_color ?? '#ffffff' }}">
+                                        {{ $banner->main_title }}
+                                    </h3>
+                                    @endif
+                                    @if($banner->subtitle)
+                                    <p class="text-xl md:text-2xl mb-8 text-shadow-md opacity-90" style="color: {{ $banner->text_color ?? '#ffffff' }}">
+                                        {{ $banner->subtitle }}
+                                    </p>
+                                    @endif
+                                    @if($banner->button_text)
+                                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                        @if($banner->link_url)
+                                        <a href="{{ $banner->link_url }}" target="_blank" class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                            <i class="fas fa-external-link-alt ml-2"></i>
+                                            {{ $banner->button_text }}
+                                        </a>
+                                        @else
+                                        <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                            <i class="fas fa-external-link-alt ml-2"></i>
+                                            {{ $banner->button_text }}
+                                        </button>
+                                        @endif
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    
+                    <!-- Enhanced Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    
+                    <!-- Enhanced Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing Sponsor Swiper...');
+            const sponsorSwiperElement = document.querySelector('.sponsorSwiper');
+            if (!sponsorSwiperElement) {
+                console.error('Sponsor Swiper element not found!');
+                return;
+            }
+            console.log('Sponsor Swiper element found:', sponsorSwiperElement);
+            
+            const sponsorSwiper = new Swiper('.sponsorSwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: '.sponsorSwiper .swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '"></span>';
+                    },
+                },
+                navigation: {
+                    nextEl: '.sponsorSwiper .swiper-button-next',
+                    prevEl: '.sponsorSwiper .swiper-button-prev',
+                    disabledClass: 'swiper-button-disabled',
+                },
+                effect: 'slide',
+                speed: 800,
+                grabCursor: true,
+                watchOverflow: true,
+                on: {
+                    init: function() {
+                        console.log('Sponsor Swiper initialized successfully!');
+                        console.log('Number of slides:', this.slides.length);
+                        // Force button visibility after initialization
+                        setTimeout(() => {
+                            const nextBtn = document.querySelector('.sponsorSwiper .swiper-button-next');
+                            const prevBtn = document.querySelector('.sponsorSwiper .swiper-button-prev');
+                            const pagination = document.querySelector('.sponsorSwiper .swiper-pagination');
+                            
+                            if (nextBtn) {
+                                nextBtn.style.opacity = '1';
+                                nextBtn.style.visibility = 'visible';
+                                nextBtn.style.display = 'flex';
+                            }
+                            if (prevBtn) {
+                                prevBtn.style.opacity = '1';
+                                prevBtn.style.visibility = 'visible';
+                                prevBtn.style.display = 'flex';
+                            }
+                            if (pagination) {
+                                pagination.style.opacity = '1';
+                                pagination.style.visibility = 'visible';
+                                pagination.style.display = 'flex';
+                            }
+                        }, 100);
+                    },
+                    slideChange: function() {
+                        // Ensure buttons remain visible after slide change
+                        const nextBtn = document.querySelector('.sponsorSwiper .swiper-button-next');
+                        const prevBtn = document.querySelector('.sponsorSwiper .swiper-button-prev');
+                        if (nextBtn) nextBtn.style.opacity = '1';
+                        if (prevBtn) prevBtn.style.opacity = '1';
+                    },
+                }
+            });
+            
+            console.log('Sponsor Swiper setup completed!');
+            console.log('Sponsor Swiper instance:', sponsorSwiper);
+        });
+    </script>
+    @endif
+
+    <!-- Blog Section -->
+    @if(isset($latest_blogs) && $latest_blogs->count() > 0)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-d94288 to-purple-600 rounded-full mb-6">
+                    <i class="fas fa-newspaper text-white text-2xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    أحدث <span class="text-d94288">المقالات</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    اكتشفي آخر المقالات والنصائح المفيدة من خبرائنا
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                @foreach($latest_blogs as $blog)
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+                    @if($blog->featured_image)
+                        <div class="aspect-w-16 aspect-h-9">
+                            <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
+                                 alt="{{ $blog->title }}"
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                    @endif
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="inline-block bg-d94288 text-white text-xs px-3 py-1 rounded-full">
+                                {{ $blog->section_name }}
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock ml-1"></i>
+                                {{ $blog->published_at->diffForHumans() }}
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-d94288 transition-colors">
+                            <a href="{{ route('articles.show', $blog->slug) }}">
+                                {{ $blog->title }}
+                            </a>
+                        </h3>
+                        
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                            {{ $blog->excerpt }}
+                        </p>
+                        
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <div class="flex items-center">
+                                <i class="fas fa-user ml-1"></i>
+                                <span>{{ $blog->author_name ?? 'غير محدد' }}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-eye ml-1"></i>
+                                <span>{{ $blog->views_count }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                @empty
-                <div class="col-span-full text-center text-gray-500 py-16">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-md text-gray-400 text-4xl"></i>
-                    </div>
-                    <p class="text-xl">لا توجد أطباء متاحين حالياً</p>
-                    <p class="text-gray-400 mt-2">سنضيف أطباء جدد قريباً</p>
-                </div>
-                @endforelse
+                </article>
+                @endforeach
             </div>
-            
-            <div class="text-center mt-12">
-                <a href="{{ route('section', 'health') }}" class="glow-border pulse-button inline-block">
-                    <div class="content">
-                        <span class="text-red-600 font-bold text-lg flex items-center justify-center">
-                            <i class="fas fa-arrow-left ml-2"></i>عرض جميع الأطباء
-                        </span>
-                    </div>
+
+            <!-- View All Button -->
+            <div class="text-center">
+                <a href="{{ route('articles.index') }}" 
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-d94288 to-purple-600 text-white font-bold rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-newspaper ml-2"></i>
+                    تصفح المدونة
                 </a>
             </div>
         </div>
     </section>
+    @endif
 
     <!-- Customer Reviews Section -->
-    <section class="py-20 reviews-section relative overflow-hidden">
+    <section class="pt-8 pb-20 reviews-section relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 section-fade-in">
                 <div class="w-20 h-20 bg-gradient-to-br from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -1917,69 +1878,6 @@
         </div>
     </section>
 
-    <!-- Enhanced الموضة Section -->
-    <section id="fashion" class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-20 right-20 w-36 h-36 bg-purple-500 rounded-full"></div>
-            <div class="absolute bottom-20 left-20 w-28 h-28 bg-pink-400 rounded-full"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 section-fade-in">
-                <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-tshirt text-white text-3xl animated-icon"></i>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    <span class="text-purple-600">الموضة</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    أحدث صيحات الموضة والتجميل لإطلالة مميزة وعصرية
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @forelse($fashion_trends ?? [] as $trend)
-                <div class="enhanced-card group">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <i class="fas fa-star text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">{{ $trend->title ?? 'صيحة جديدة' }}</h4>
-                        <p class="text-gray-600 mb-6 text-center leading-relaxed">{{ Str::limit($trend->content ?? 'وصف الصيحة', 120) }}</p>
-                        <div class="flex justify-between items-center mb-6">
-                            <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">{{ $trend->category->name ?? 'عام' }}</span>
-                            <span class="text-sm text-purple-600 font-bold bg-purple-100 px-3 py-1 rounded-full">جديد</span>
-                        </div>
-                        <div class="text-center">
-                            <button class="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-purple-500 transition-all duration-300 transform hover:-translate-y-1">
-                                <i class="fas fa-eye ml-2"></i>اقرأي المزيد
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                @empty
-                <div class="col-span-full text-center text-gray-500 py-16">
-                    <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tshirt text-gray-400 text-4xl"></i>
-                    </div>
-                    <p class="text-xl">لا توجد صيحات متاحة حالياً</p>
-                    <p class="text-gray-400 mt-2">سنضيف صيحات جديدة قريباً</p>
-                </div>
-                @endforelse
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="{{ route('section', 'fashion') }}" class="glow-border pulse-button inline-block">
-                    <div class="content">
-                        <span class="text-purple-600 font-bold text-lg flex items-center justify-center">
-                            <i class="fas fa-arrow-left ml-2"></i>عرض جميع الصيحات
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Enhanced App Download Section -->
     <section class="app-download-section text-white relative overflow-hidden">
@@ -2060,280 +1958,9 @@
         </div>
     </section>
 
-    <!-- الأطفال Section -->
-    <section id="babies" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">الأطفال</h2>
-                <p class="text-gray-600">رعاية شاملة للأطفال والأمهات</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @forelse($babies ?? [] as $baby)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-baby text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $baby->name ?? 'طفل جديد' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">{{ $baby->age ?? 'عمر غير محدد' }} سنوات</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $baby->parent_name ?? 'أم غير محدد' }}</span>
-                            <span class="text-sm text-yellow-600 font-semibold bg-yellow-100 px-2 py-1 rounded-full">طفل</span>
-                        </div>
-                        <button onclick="openBabiesDetailsModal({{ $baby->id }}, '{{ $baby->name }}', '{{ $baby->age }}', '{{ $baby->parent_name }}', '{{ $baby->birth_date ?? '' }}', '{{ $baby->weight ?? '' }}', '{{ $baby->height ?? '' }}', '{{ $baby->notes ?? '' }}')" 
-                                class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold hover:from-orange-500 hover:to-yellow-400 transition-all duration-300 transform hover:-translate-y-1">
-                            <i class="fas fa-info-circle ml-2"></i>عرض التفاصيل
-                        </button>
-                    </div>
-                </div>
-                @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
-                    <i class="fas fa-baby text-6xl mb-4 text-gray-300"></i>
-                    <p class="text-xl">لا توجد بيانات أطفال متاحة حالياً</p>
-                </div>
-                @endforelse
-            </div>
-            
-            <div class="text-center mt-8">
-                <a href="{{ route('section', 'babies') }}" class="primary-bg text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-700 transition duration-300">
-                    عرض جميع البيانات
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- الزفاف Section -->
-    <section id="wedding" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">الزفاف</h2>
-                <p class="text-gray-600">كل ما تحتاجينه لحفل زفاف مثالي</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- مصمم فساتين الزفاف -->
-                @forelse(($wedding_designers ?? [])->take(1) as $designer)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-tshirt text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $designer->name ?? 'مصمم جديد' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">{{ Str::limit($designer->description ?? 'وصف المصمم', 100) }}</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $designer->location ?? 'موقع غير محدد' }}</span>
-                            <span class="text-sm text-pink-600 font-semibold bg-pink-100 px-2 py-1 rounded-full">مصمم</span>
-                        </div>
-                        <button onclick="openWeddingBookingModal('designer', {{ $designer->id }}, '{{ $designer->name }}', '{{ $designer->description }}', '{{ $designer->address }}', '{{ $designer->phone_numbers ? ($designer->phone_numbers[0] ?? '') : '' }}', '{{ $designer->price_range_min }}-{{ $designer->price_range_max }} جنيه')" 
-                                class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-500 transition-all duration-300 transform hover:-translate-y-1">
-                            <i class="fas fa-calendar-check ml-2"></i>احجزي موعد
-                        </button>
-                    </div>
-                </div>
-                @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
-                    <i class="fas fa-tshirt text-6xl mb-4 text-gray-300"></i>
-                    <p class="text-xl">لا توجد مصممين متاحين حالياً</p>
-                </div>
-                @endforelse
 
-                <!-- منظم حفلات الزفاف -->
-                @forelse(($wedding_planners ?? [])->take(1) as $planner)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-calendar-alt text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $planner->name ?? 'منظم جديد' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">{{ Str::limit($planner->description ?? 'وصف المنظم', 100) }}</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $planner->location ?? 'موقع غير محدد' }}</span>
-                            <span class="text-sm text-blue-600 font-semibold bg-blue-100 px-2 py-1 rounded-full">منظم</span>
-                        </div>
-                        <button onclick="openWeddingBookingModal('planner', {{ $planner->id }}, '{{ $planner->name }}', 'منظم حفلات زفاف محترف', '{{ $planner->location }}', '{{ $planner->phone ?? '' }}', '{{ $planner->package ?? '' }}')" 
-                                class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:from-indigo-600 hover:to-blue-500 transition-all duration-300 transform hover:-translate-y-1">
-                            <i class="fas fa-calendar-check ml-2"></i>احجزي موعد
-                        </button>
-                    </div>
-                </div>
-                @empty
-                @endforelse
 
-                <!-- فنانة مكياج -->
-                @forelse(($makeup_artists ?? [])->take(1) as $artist)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-palette text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $artist->name ?? 'فنانة جديدة' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">{{ Str::limit($artist->specialty ?? 'تخصص غير محدد', 100) }}</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $artist->location ?? 'موقع غير محدد' }}</span>
-                            <span class="text-sm text-red-600 font-semibold bg-red-100 px-2 py-1 rounded-full">مكياج</span>
-                        </div>
-                        <button onclick="openWeddingBookingModal('makeup', {{ $artist->id }}, '{{ $artist->name }}', '{{ $artist->description }}', '{{ $artist->address }}', '{{ $artist->phone ?? '' }}', 'مكياج كامل')" 
-                                class="w-full bg-gradient-to-r from-red-500 to-pink-600 text-white py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-red-500 transition-all duration-300 transform hover:-translate-y-1">
-                            <i class="fas fa-calendar-check ml-2"></i>احجزي موعد
-                        </button>
-                    </div>
-                </div>
-                @empty
-                @endforelse
-            </div>
-            
-            <div class="text-center mt-8">
-                <a href="{{ route('section', 'wedding') }}" class="primary-bg text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-700 transition duration-300">
-                    عرض جميع خدمات الزفاف
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- الجمال Section -->
-    <section id="beauty" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">الجمال</h2>
-                <p class="text-gray-600">خدمات تجميل متخصصة وعناية بالبشرة</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- جراحي التجميل -->
-                @forelse($plastic_surgeons ?? [] as $surgeon)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-user-md text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $surgeon->name ?? 'جراح جديد' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">{{ $surgeon->specialty ?? 'تخصص غير محدد' }}</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $surgeon->clinic_address ?? 'عيادة غير محدد' }}</span>
-                            <span class="text-sm text-blue-600 font-semibold bg-blue-100 px-2 py-1 rounded-full">جراحة تجميل</span>
-                        </div>
-                        @if($surgeon->booking_url)
-                            <a href="{{ $surgeon->booking_url }}" target="_blank" 
-                               class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:from-indigo-600 hover:to-blue-500 transition-all duration-300 transform hover:-translate-y-1 text-center block">
-                                <i class="fas fa-calendar-check ml-2"></i>احجزي استشارة
-                            </a>
-                        @else
-                            <button onclick="alert('رابط الحجز غير متاح حالياً')" 
-                                    class="w-full bg-gray-400 text-white py-3 rounded-xl font-semibold cursor-not-allowed">
-                                <i class="fas fa-calendar-check ml-2"></i>احجزي استشارة
-                            </button>
-                        @endif
-                    </div>
-                </div>
-                @empty
-                @endforelse
-
-                <!-- مصففي الشعر -->
-                @forelse($hair_stylists ?? [] as $stylist)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-cut text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $stylist->name ?? 'مصفف جديد' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">تصفيف شعر احترافي</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $stylist->location ?? 'موقع غير محدد' }}</span>
-                            <span class="text-sm text-pink-600 font-semibold bg-pink-100 px-2 py-1 rounded-full">تصفيف شعر</span>
-                        </div>
-                        @if($stylist->booking_url)
-                            <a href="{{ $stylist->booking_url }}" target="_blank" 
-                               class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-500 transition-all duration-300 transform hover:-translate-y-1 text-center block">
-                                <i class="fas fa-calendar-check ml-2"></i>احجزي استشارة
-                            </a>
-                        @else
-                            <button onclick="alert('رابط الحجز غير متاح حالياً')" 
-                                    class="w-full bg-gray-400 text-white py-3 rounded-xl font-semibold cursor-not-allowed">
-                                <i class="fas fa-calendar-check ml-2"></i>احجزي استشارة
-                            </button>
-                        @endif
-                    </div>
-                </div>
-                @empty
-                @endforelse
-
-                <!-- متاجر الجمال -->
-                @forelse($beauty_shops ?? [] as $shop)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-store text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2 text-center">{{ $shop->brand_name ?? 'متجر جديد' }}</h4>
-                        <p class="text-gray-600 mb-4 text-center">خدمات تجميل شاملة</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $shop->location ?? 'موقع غير محدد' }}</span>
-                            <span class="text-sm text-green-600 font-semibold bg-green-100 px-2 py-1 rounded-full">متجر جمال</span>
-                        </div>
-                        @if($shop->shop_url)
-                            <a href="{{ $shop->shop_url }}" target="_blank" 
-                               class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-1 text-center block">
-                                <i class="fas fa-calendar-check ml-2"></i>احجزي استشارة
-                            </a>
-                        @else
-                            <button onclick="alert('رابط الحجز غير متاح حالياً')" 
-                                    class="w-full bg-gray-400 text-white py-3 rounded-xl font-semibold cursor-not-allowed">
-                                <i class="fas fa-calendar-check ml-2"></i>احجزي استشارة
-                            </button>
-                        @endif
-                    </div>
-                </div>
-                @empty
-                @endforelse
-            </div>
-            
-            <div class="text-center mt-8">
-                <a href="{{ route('section', 'beauty') }}" class="primary-bg text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-700 transition duration-300">
-                    عرض جميع خدمات الجمال
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- أومومتي Section -->
-    <section id="umomi" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">أومومتي</h2>
-                <p class="text-gray-600">رعاية شاملة للأمهات الحوامل</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @forelse($maternity_doctors ?? [] as $doctor)
-                <div class="section-card card-hover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold text-gray-900 mb-2">{{ $doctor->name ?? 'دكتورة جديدة' }}</h4>
-                        <p class="text-gray-600 mb-4">{{ $doctor->specialty ?? 'تخصص غير محدد' }}</p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-sm text-gray-500">{{ $doctor->clinic_name ?? 'عيادة غير محدد' }}</span>
-                            <span class="text-sm text-teal-600 font-semibold bg-teal-100 px-2 py-1 rounded-full">طبيبة أمومة</span>
-                        </div>
-                        <button onclick="openUmomiBookingModal('doctor', {{ $doctor->id }}, '{{ $doctor->name }}', '{{ $doctor->specialty }}', '{{ $doctor->clinic_name ?? '' }}', '{{ $doctor->phone_numbers ? ($doctor->phone_numbers[0] ?? '') : '' }}', '{{ $doctor->consultation_fees ?? '' }}')" 
-                                class="w-full bg-gradient-to-r from-teal-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-teal-500 transition-all duration-300 transform hover:-translate-y-1">
-                            <i class="fas fa-calendar-check ml-2"></i>احجزي موعد
-                        </button>
-                    </div>
-                </div>
-                @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
-                    لا توجد أطباء متاحين حالياً
-                </div>
-                @endforelse
-            </div>
-            
-            <div class="text-center mt-8">
-                <a href="{{ route('section', 'umomi') }}" class="primary-bg text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-700 transition duration-300">
-                    عرض جميع خدمات الأمومة
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Newsletter Section -->
     <section class="py-20 newsletter-section relative overflow-hidden">
@@ -2681,9 +2308,7 @@
             }
         });
 
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Mobile menu functionality is handled by shared-header component
         
         // Scroll to top functionality
         function scrollToTop() {
@@ -2815,26 +2440,7 @@
             checkCourseIcon();
         }, 2000);
         
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        }
+        // Mobile menu functionality is handled by shared-header component
     </script>
     
     <!-- Course Registration Modal -->
@@ -3345,6 +2951,91 @@
                 closeBabiesDetailsModal();
             }
         });
+        
+        // Popup Notifications
+        @if(isset($popup_notifications) && $popup_notifications->count() > 0)
+        @foreach($popup_notifications as $popup)
+        setTimeout(function() {
+            showPopupNotification(@json($popup));
+        }, {{ $popup->display_delay * 1000 }});
+        @endforeach
+        @endif
+        
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days*24*60*60*1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            const cname = name + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1);
+                if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+            }
+            return "";
+        }
+
+        function showPopupNotification(popup) {
+            // Show popup every time (removed cookie/localStorage check)
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'popup-overlay';
+            overlay.id = 'popup-overlay-' + popup.id;
+            
+            let mediaContent = '';
+            if (popup.media_url) {
+                if (popup.type === 'video') {
+                    mediaContent = `<video controls style="width: 100%; max-height: 400px; object-fit: cover;">
+                        <source src="{{ Storage::url('') }}${popup.media_url}" type="video/mp4">
+                        متصفحك لا يدعم تشغيل الفيديو
+                    </video>`;
+                } else {
+                    mediaContent = `<img src="{{ Storage::url('') }}${popup.media_url}" alt="${popup.title || ''}" style="width: 100%; max-height: 400px; object-fit: cover;">`;
+                }
+            }
+            
+            let buttonContent = '';
+            if (popup.show_button && popup.button_text && popup.button_url) {
+                buttonContent = `<a href="${popup.button_url}" target="_blank" class="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-lg hover:from-pink-700 hover:to-rose-700 transition-all font-bold inline-block mt-4">
+                    ${popup.button_text}
+                </a>`;
+            }
+            
+            overlay.innerHTML = `
+                <div class="popup-content" style="position: relative; max-width: 600px;">
+                    <button class="popup-close" onclick="closePopupNotification(${popup.id})">&times;</button>
+                    ${mediaContent}
+                    <div class="p-6">
+                        ${popup.title ? `<h3 class="text-2xl font-bold mb-3 text-gray-800">${popup.title}</h3>` : ''}
+                        ${popup.content ? `<p class="text-gray-600 mb-4">${popup.content}</p>` : ''}
+                        ${buttonContent}
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(overlay);
+            document.body.style.overflow = 'hidden';
+            
+            // Auto close after duration
+            if (popup.display_duration > 0) {
+                setTimeout(function() {
+                    closePopupNotification(popup.id);
+                }, popup.display_duration * 1000);
+            }
+        }
+        
+        function closePopupNotification(popupId) {
+            const overlay = document.getElementById('popup-overlay-' + popupId);
+            if (overlay) {
+                overlay.remove();
+                document.body.style.overflow = 'auto';
+            }
+        }
     </script>
 </body>
 </html>

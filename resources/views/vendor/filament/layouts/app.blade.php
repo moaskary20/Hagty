@@ -10,7 +10,6 @@
     @if (isset($head))
         {{ $head }}
     @endif
-    <script src="/js/nuclear-color-force.js"></script>
 </head>
 <body class="fi-body">
     {{ $slot }}

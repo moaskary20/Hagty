@@ -83,7 +83,6 @@
             </script>
         @endif
         {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::HEAD_END, scopes: $livewire?->getRenderHookScopes()) }}
-        <link rel="stylesheet" href="/css/force-filament.css">
         <link rel="stylesheet" href="/css/arabic-rtl.css">
     </head>
     <body

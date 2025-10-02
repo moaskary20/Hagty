@@ -74,6 +74,15 @@ class AuthController extends Controller
             'phone' => 'required|string|max:20',
             'birth_date' => 'required|date|before:today',
             'password' => 'required|string|min:8|confirmed',
+            'gender' => 'required|in:male,female',
+            'marital_status' => 'required|in:single,married,divorced,widowed',
+            'blood_type' => 'nullable|string|max:10',
+            'emergency_contact_name' => 'nullable|string|max:255',
+            'emergency_contact_phone' => 'nullable|string|max:20',
+            'emergency_contact_relation' => 'nullable|string|max:100',
+            'job' => 'nullable|string|max:255',
+            'children_count' => 'nullable|integer|min:0',
+            'interests' => 'nullable|array',
             'terms' => 'required|accepted',
         ], [
             'first_name.required' => 'الاسم الأول مطلوب',
@@ -87,6 +96,10 @@ class AuthController extends Controller
             'password.required' => 'كلمة المرور مطلوبة',
             'password.min' => 'كلمة المرور يجب أن تكون 8 أحرف على الأقل',
             'password.confirmed' => 'تأكيد كلمة المرور غير متطابق',
+            'gender.required' => 'النوع مطلوب',
+            'gender.in' => 'النوع يجب أن يكون ذكر أو أنثى',
+            'marital_status.required' => 'الحالة الاجتماعية مطلوبة',
+            'marital_status.in' => 'الحالة الاجتماعية غير صحيحة',
             'terms.required' => 'يجب الموافقة على الشروط والأحكام',
             'terms.accepted' => 'يجب الموافقة على الشروط والأحكام',
         ]);
@@ -98,6 +111,10 @@ class AuthController extends Controller
         }
 
         try {
+            // حساب العمر والتحقق من +18
+            $age = \Carbon\Carbon::parse($request->birth_date)->age;
+            $age_verified = $age >= 18;
+
             $user = User::create([
                 'name' => $request->first_name . ' ' . $request->last_name,
                 'first_name' => $request->first_name,
@@ -106,6 +123,17 @@ class AuthController extends Controller
                 'phone' => $request->phone,
                 'birth_date' => $request->birth_date,
                 'password' => Hash::make($request->password),
+                'gender' => $request->gender,
+                'marital_status' => $request->marital_status,
+                'age_verified' => $age_verified,
+                'blood_type' => $request->blood_type,
+                'emergency_contact_name' => $request->emergency_contact_name,
+                'emergency_contact_phone' => $request->emergency_contact_phone,
+                'emergency_contact_relation' => $request->emergency_contact_relation,
+                'job' => $request->job,
+                'children_count' => $request->children_count ?? 0,
+                'children_details' => $request->children_details,
+                'interests' => $request->interests,
             ]);
 
             Auth::login($user);

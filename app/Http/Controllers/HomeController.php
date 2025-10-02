@@ -38,6 +38,7 @@ use App\Models\TrainingVideo;
 use App\Models\AccessoratyShop;
 use App\Models\AccessoratyBannerAd;
 use App\Models\AccessoratySponsorVideo;
+use App\Models\SponsorBanner;
 use App\Models\MaternityDoctor;
 use App\Models\WeeklyBabyCare;
 use App\Models\DeliveryPreparation;
@@ -48,11 +49,16 @@ use App\Models\WomenCamp;
 use App\Models\CalendarEvent;
 use App\Models\FamilyAdvice;
 use App\Models\FamilyActivity;
+use App\Models\PopupNotification;
 use App\Models\FamilyOutingArea;
 use App\Models\FamilyHealthRecord;
+use App\Models\ForasyBanner;
+use App\Models\Blog;
+use App\BlogHelper;
 
 class HomeController extends Controller
 {
+    use BlogHelper;
     public function index()
     {
         // جمع البيانات من جميع الأقسام
@@ -108,6 +114,28 @@ class HomeController extends Controller
             'maternity_doctors' => MaternityDoctor::take(6)->get(),
             'weekly_baby_cares' => WeeklyBabyCare::take(6)->get(),
             'delivery_preparations' => DeliveryPreparation::take(6)->get(),
+            
+            // الإشعارات المتبثقة
+            'popup_notifications' => PopupNotification::where('is_active', true)
+                ->where(function($query) {
+                    $query->whereNull('start_date')
+                          ->orWhere('start_date', '<=', now());
+                })
+                ->where(function($query) {
+                    $query->whereNull('end_date')
+                          ->orWhere('end_date', '>=', now());
+                })
+                ->orderBy('created_at', 'desc')
+                ->get(),
+
+            // بانرز الممولين
+            'sponsor_banners' => SponsorBanner::active()->orderBy('display_order')->get(),
+            
+            // بانرات السلايدر الرئيسي
+            'forasy_banners' => ForasyBanner::where('is_active', true)->orderBy('display_order')->get(),
+            
+            // أحدث المقالات
+            'latest_blogs' => Blog::published()->orderBy('published_at', 'desc')->limit(4)->get(),
         ];
 
         return view('home', $data);
@@ -153,6 +181,7 @@ class HomeController extends Controller
                     'shops' => AccessoratyShop::all(),
                     'banners' => AccessoratyBannerAd::all(),
                     'videos' => AccessoratySponsorVideo::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('accessoraty', 3),
                 ];
                 
             case 'health':
@@ -161,6 +190,7 @@ class HomeController extends Controller
                     'hospitals' => Hospital::all(),
                     'pharmacies' => Pharmacy::all(),
                     'health_tips' => HealthTip::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('health', 3),
                 ];
                 
             case 'fashion':
@@ -168,11 +198,13 @@ class HomeController extends Controller
                     'fashion_trends' => FashionTrend::all(),
                     'sponsor_videos' => SponsorVideo::all(),
                     'forasy_courses' => ForasyCourse::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('fashion', 3),
                 ];
                 
             case 'babies':
                 return [
                     'babies' => Baby::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('babies', 3),
                 ];
                 
             case 'wedding':
@@ -187,6 +219,7 @@ class HomeController extends Controller
                     'flower_decorators' => FlowerDecorator::all(),
                     'wedding_gift_suppliers' => WeddingGiftSupplier::all(),
                     'wedding_photographers' => WeddingPhotographer::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('wedding', 3),
                 ];
                 
                 case 'beauty':
@@ -200,6 +233,7 @@ class HomeController extends Controller
                         'nutrition_doctors' => NutritionDoctor::all(),
                         'spa_clinics' => SpaClinic::all(),
                         'training_videos' => TrainingVideo::all(),
+                        'latestBlogs' => $this->getLatestBlogsForSection('beauty', 3),
                     ];
                 
             case 'umomi':
@@ -207,6 +241,7 @@ class HomeController extends Controller
                     'maternity_doctors' => MaternityDoctor::all(),
                     'weekly_baby_cares' => WeeklyBabyCare::all(),
                     'delivery_preparations' => DeliveryPreparation::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('umomi', 3),
                 ];
                 
             case 'rehlaaty':
@@ -216,6 +251,7 @@ class HomeController extends Controller
                     'travel_offers' => TravelOffer::all(),
                     'women_camps' => WomenCamp::all(),
                     'calendar_events' => CalendarEvent::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('rehlaaty', 3),
                 ];
                 
             case 'family':
@@ -224,6 +260,7 @@ class HomeController extends Controller
                     'family_activities' => FamilyActivity::all(),
                     'family_outing_areas' => FamilyOutingArea::all(),
                     'family_health_records' => FamilyHealthRecord::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('family', 3),
                 ];
                 
             case 'joy':
@@ -231,6 +268,7 @@ class HomeController extends Controller
                     'dj_wedding_packages' => DjWeddingPackage::all(),
                     'dj_banners' => DjBanner::all(),
                     'dj_video_ads' => DjVideoAd::all(),
+                    'latestBlogs' => $this->getLatestBlogsForSection('joy', 3),
                 ];
                 
             default:

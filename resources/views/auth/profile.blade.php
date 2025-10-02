@@ -15,38 +15,7 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-gradient-to-r from-d94288 to-purple-600 text-white shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <a href="{{ route('home') }}" class="text-3xl font-bold hover:text-pink-200 transition duration-300">
-                        <i class="fas fa-heart mr-2"></i>HAGTY
-                    </a>
-                </div>
-                <div class="hidden md:flex space-x-8 space-x-reverse">
-                    <a href="{{ route('home') }}" class="hover:text-pink-200 transition duration-300">الرئيسية</a>
-                    <a href="{{ route('section', 'health') }}" class="hover:text-pink-200 transition duration-300">الصحة</a>
-                    <a href="{{ route('section', 'fashion') }}" class="hover:text-pink-200 transition duration-300">الموضة</a>
-                    <a href="{{ route('section', 'wedding') }}" class="hover:text-pink-200 transition duration-300">الزفاف</a>
-                    <a href="{{ route('section', 'beauty') }}" class="hover:text-pink-200 transition duration-300">الجمال</a>
-                    <a href="{{ route('section', 'babies') }}" class="hover:text-pink-200 transition duration-300">الأطفال</a>
-                    <a href="{{ route('section', 'accessoraty') }}" class="hover:text-pink-200 transition duration-300">أكسسوراتى</a>
-                    <a href="{{ route('section', 'umomi') }}" class="hover:text-pink-200 transition duration-300">أومومتي</a>
-                </div>
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <span class="text-sm">مرحباً، {{ Auth::user()->first_name }}</span>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                       class="bg-white text-d94288 px-4 py-2 rounded-lg hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-sign-out-alt ml-1"></i>تسجيل الخروج
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('components.shared-header')
 
     <!-- Profile Content -->
     <div class="py-12">

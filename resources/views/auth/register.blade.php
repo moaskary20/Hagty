@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
         .primary-bg { background-color: #d94288; }
@@ -49,225 +51,12 @@
             color: white;
         }
         
-        /* CSS للـ Footer */
-        .enhanced-footer {
-            background: linear-gradient(135deg, #d94288 0%, #8b5cf6 100%);
-            position: relative;
-        }
         
-        .enhanced-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .footer-logo-section {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-logo-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
-        }
-        
-        .footer-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-subtitle {
-            font-size: 1.1rem;
-            color: #e5e7eb;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .footer-section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fbbf24;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .footer-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #e5e7eb;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-        }
-        
-        .footer-link:hover {
-            color: #fbbf24;
-            background: rgba(251, 191, 36, 0.1);
-            transform: translateX(-5px);
-        }
-        
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #e5e7eb;
-            margin-bottom: 0.75rem;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-contact-item:hover {
-            background: rgba(251, 191, 36, 0.1);
-            transform: translateX(-5px);
-        }
-        
-        .social-media-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .social-icon.facebook {
-            background: linear-gradient(135deg, #1877f2 0%, #0d6efd 100%);
-        }
-        
-        .social-icon.instagram {
-            background: linear-gradient(135deg, #e4405f 0%, #c13584 100%);
-        }
-        
-        .social-icon.tiktok {
-            background: linear-gradient(135deg, #000000 0%, #25f4ee 100%);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .app-download-section-footer {
-            text-align: center;
-        }
-        
-        .app-download-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #fbbf24;
-            margin-bottom: 1rem;
-        }
-        
-        .download-button-footer {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            margin: 0.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .download-button-footer:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .copyright-text {
-            color: #d1d5db;
-            margin-bottom: 0.5rem;
-        }
-        
-        .love-text {
-            color: #fbbf24;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="text-2xl font-bold primary-color">HAGTY</div>
-                </div>
-                
-                <!-- Navigation Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
-                        <a href="{{ route('home') }}#home" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الرئيسية</a>
-                        <a href="{{ route('section', 'accessoraty') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">أكسسوراتى</a>
-                        <a href="{{ route('section', 'health') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الصحة</a>
-                        <a href="{{ route('section', 'fashion') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الموضة</a>
-                        <a href="{{ route('section', 'babies') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الأطفال</a>
-                        <a href="{{ route('section', 'wedding') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الزفاف</a>
-                        <a href="{{ route('section', 'beauty') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الجمال</a>
-                        <a href="{{ route('section', 'umomi') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">أومومتي</a>
-                    </div>
-                </div>
-
-                <!-- Auth Buttons -->
-                <div class="hidden md:flex items-center space-x-3 space-x-reverse">
-                    <a href="{{ route('login') }}" class="auth-btn-primary px-5 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                        <i class="fas fa-sign-in-alt ml-2"></i>الدخول
-                    </a>
-                    <a href="{{ route('register') }}" class="auth-btn-secondary px-5 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                        <i class="fas fa-user-plus ml-2"></i>الاشتراك
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('components.shared-header')
 
     <!-- Register Form -->
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -338,13 +127,53 @@
                                value="{{ old('phone') }}">
                     </div>
 
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="gender" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-venus-mars ml-2"></i>النوع
+                            </label>
+                            <select id="gender" name="gender" required 
+                                    class="appearance-none relative block w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm">
+                                <option value="">اختر النوع</option>
+                                <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>أنثى</option>
+                                <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>ذكر</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="marital_status" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-heart ml-2"></i>الحالة الاجتماعية
+                            </label>
+                            <select id="marital_status" name="marital_status" required 
+                                    class="appearance-none relative block w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm">
+                                <option value="">اختر الحالة الاجتماعية</option>
+                                <option value="single" {{ old('marital_status') == 'single' ? 'selected' : '' }}>عزباء</option>
+                                <option value="married" {{ old('marital_status') == 'married' ? 'selected' : '' }}>متزوجة</option>
+                                <option value="divorced" {{ old('marital_status') == 'divorced' ? 'selected' : '' }}>مطلقة</option>
+                                <option value="widowed" {{ old('marital_status') == 'widowed' ? 'selected' : '' }}>أرملة</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div>
                         <label for="birth_date" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="fas fa-calendar ml-2"></i>تاريخ الميلاد
+                            <i class="fas fa-calendar ml-2"></i>تاريخ الميلاد (يجب أن تكون +18)
                         </label>
                         <input id="birth_date" name="birth_date" type="date" required 
                                class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm"
                                value="{{ old('birth_date') }}">
+                        <p class="text-xs text-gray-500 mt-1">يجب أن تكون 18 سنة أو أكثر</p>
+                    </div>
+
+                    <div>
+                        <label for="location" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-map-marker-alt ml-2"></i>الموقع (سيتم تحديده تلقائياً)
+                        </label>
+                        <input id="location" name="location" type="text" readonly
+                               class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl bg-gray-100 sm:text-sm"
+                               placeholder="سيتم تحديد موقعك تلقائياً">
+                        <button type="button" id="getLocationBtn" class="mt-2 text-sm text-d94288 hover:text-purple-600">
+                            <i class="fas fa-location-arrow ml-1"></i>تحديد الموقع
+                        </button>
                     </div>
 
                     <div>
@@ -363,6 +192,140 @@
                         <input id="password_confirmation" name="password_confirmation" type="password" required 
                                class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm"
                                placeholder="أعد إدخال كلمة المرور">
+                    </div>
+
+                    <div>
+                        <label for="blood_type" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-tint ml-2"></i>فصيلة الدم
+                        </label>
+                        <select id="blood_type" name="blood_type" 
+                                class="appearance-none relative block w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm">
+                            <option value="">اختر فصيلة الدم (اختياري)</option>
+                            <option value="A+" {{ old('blood_type') == 'A+' ? 'selected' : '' }}>A+</option>
+                            <option value="A-" {{ old('blood_type') == 'A-' ? 'selected' : '' }}>A-</option>
+                            <option value="B+" {{ old('blood_type') == 'B+' ? 'selected' : '' }}>B+</option>
+                            <option value="B-" {{ old('blood_type') == 'B-' ? 'selected' : '' }}>B-</option>
+                            <option value="AB+" {{ old('blood_type') == 'AB+' ? 'selected' : '' }}>AB+</option>
+                            <option value="AB-" {{ old('blood_type') == 'AB-' ? 'selected' : '' }}>AB-</option>
+                            <option value="O+" {{ old('blood_type') == 'O+' ? 'selected' : '' }}>O+</option>
+                            <option value="O-" {{ old('blood_type') == 'O-' ? 'selected' : '' }}>O-</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="emergency_contact_name" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-user-friends ml-2"></i>اسم جهة الطوارئ
+                            </label>
+                            <input id="emergency_contact_name" name="emergency_contact_name" type="text" 
+                                   class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm"
+                                   placeholder="اسم جهة الطوارئ"
+                                   value="{{ old('emergency_contact_name') }}">
+                        </div>
+                        <div>
+                            <label for="emergency_contact_phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-phone ml-2"></i>رقم جهة الطوارئ
+                            </label>
+                            <input id="emergency_contact_phone" name="emergency_contact_phone" type="tel" 
+                                   class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm"
+                                   placeholder="رقم جهة الطوارئ"
+                                   value="{{ old('emergency_contact_phone') }}">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="emergency_contact_relation" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-heart ml-2"></i>صلة القرابة
+                        </label>
+                        <select id="emergency_contact_relation" name="emergency_contact_relation" 
+                                class="appearance-none relative block w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm">
+                            <option value="">اختر صلة القرابة</option>
+                            <option value="mother" {{ old('emergency_contact_relation') == 'mother' ? 'selected' : '' }}>الأم</option>
+                            <option value="father" {{ old('emergency_contact_relation') == 'father' ? 'selected' : '' }}>الأب</option>
+                            <option value="brother" {{ old('emergency_contact_relation') == 'brother' ? 'selected' : '' }}>الأخ</option>
+                            <option value="sister" {{ old('emergency_contact_relation') == 'sister' ? 'selected' : '' }}>الأخت</option>
+                            <option value="husband" {{ old('emergency_contact_relation') == 'husband' ? 'selected' : '' }}>الزوج</option>
+                            <option value="wife" {{ old('emergency_contact_relation') == 'wife' ? 'selected' : '' }}>الزوجة</option>
+                            <option value="son" {{ old('emergency_contact_relation') == 'son' ? 'selected' : '' }}>الابن</option>
+                            <option value="daughter" {{ old('emergency_contact_relation') == 'daughter' ? 'selected' : '' }}>الابنة</option>
+                            <option value="other" {{ old('emergency_contact_relation') == 'other' ? 'selected' : '' }}>أخرى</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="job" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-briefcase ml-2"></i>الوظيفة
+                        </label>
+                        <input id="job" name="job" type="text" 
+                               class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm"
+                               placeholder="الوظيفة"
+                               value="{{ old('job') }}">
+                    </div>
+
+                    <div id="childrenSection" style="display: none;">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-baby ml-2"></i>معلومات الأطفال
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="children_count" class="block text-sm font-medium text-gray-600 mb-1">عدد الأطفال</label>
+                                <input id="children_count" name="children_count" type="number" min="0" 
+                                       class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288 focus:z-10 sm:text-sm"
+                                       placeholder="0"
+                                       value="{{ old('children_count', 0) }}">
+                            </div>
+                        </div>
+                        <div id="childrenDetails" class="mt-4">
+                            <!-- سيتم إضافة تفاصيل الأطفال هنا بواسطة JavaScript -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-star ml-2"></i>الاهتمامات
+                        </label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="hadiety" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">هديتي</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="beity" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">بيتي</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="hesabaty" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">حساباتى</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="riadaty" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">رياضتي</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="mashroay" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">مشروعي</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="mostashary" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">مستشاري</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="mostamay" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">مستمعي</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="nesaa-alghad" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">نساء الغد</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="eventaty" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">ايفينتاتى</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="interests[]" value="forasy" class="mr-2 text-d94288 focus:ring-d94288">
+                                <span class="text-sm">فورصى</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
@@ -432,5 +395,111 @@
     </div>
 
     @include('components.shared-footer')
+
+    <script>
+        // تحديد الموقع تلقائياً
+        document.getElementById('getLocationBtn').addEventListener('click', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    
+                    // استخدام reverse geocoding للحصول على العنوان
+                    fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=ar`)
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('location').value = data.city + ', ' + data.countryName;
+                            // إضافة hidden inputs للإحداثيات
+                            addHiddenInput('latitude', latitude);
+                            addHiddenInput('longitude', longitude);
+                        })
+                        .catch(error => {
+                            console.error('Error getting location:', error);
+                            document.getElementById('location').value = 'الموقع: ' + latitude + ', ' + longitude;
+                            addHiddenInput('latitude', latitude);
+                            addHiddenInput('longitude', longitude);
+                        });
+                }, function(error) {
+                    console.error('Error getting location:', error);
+                    alert('لا يمكن تحديد موقعك. يرجى المحاولة مرة أخرى.');
+                });
+            } else {
+                alert('المتصفح لا يدعم تحديد الموقع.');
+            }
+        });
+
+        function addHiddenInput(name, value) {
+            if (!document.querySelector(`input[name="${name}"]`)) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = name;
+                input.value = value;
+                document.querySelector('form').appendChild(input);
+            }
+        }
+
+        // إظهار/إخفاء قسم الأطفال بناءً على الحالة الاجتماعية
+        document.getElementById('marital_status').addEventListener('change', function() {
+            const childrenSection = document.getElementById('childrenSection');
+            if (this.value === 'married' || this.value === 'divorced' || this.value === 'widowed') {
+                childrenSection.style.display = 'block';
+            } else {
+                childrenSection.style.display = 'none';
+            }
+        });
+
+        // إضافة تفاصيل الأطفال
+        document.getElementById('children_count').addEventListener('input', function() {
+            const count = parseInt(this.value) || 0;
+            const detailsContainer = document.getElementById('childrenDetails');
+            detailsContainer.innerHTML = '';
+
+            for (let i = 1; i <= count; i++) {
+                const childDiv = document.createElement('div');
+                childDiv.className = 'grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 p-4 bg-gray-50 rounded-lg';
+                childDiv.innerHTML = `
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600 mb-1">اسم الطفل ${i}</label>
+                        <input type="text" name="children_details[${i-1}][name]" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-d94288"
+                               placeholder="اسم الطفل">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600 mb-1">النوع</label>
+                        <select name="children_details[${i-1}][gender]" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-d94288">
+                            <option value="">اختر النوع</option>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600 mb-1">العمر</label>
+                        <input type="number" name="children_details[${i-1}][age]" min="0" max="18"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-d94288"
+                               placeholder="العمر">
+                    </div>
+                `;
+                detailsContainer.appendChild(childDiv);
+            }
+        });
+
+        // التحقق من العمر عند تغيير تاريخ الميلاد
+        document.getElementById('birth_date').addEventListener('change', function() {
+            const birthDate = new Date(this.value);
+            const today = new Date();
+            const age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            if (age < 18) {
+                alert('يجب أن تكون 18 سنة أو أكثر للتسجيل');
+                this.value = '';
+            }
+        });
+    </script>
 </body>
 </html>

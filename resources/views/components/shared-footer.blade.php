@@ -25,7 +25,7 @@
                     <li>
                         <a href="{{ route('section', 'health') }}" class="footer-link">
                             <i class="fas fa-heartbeat text-red-400"></i>
-                            الصحة
+                            صحتي
                         </a>
                     </li>
                     <li>
@@ -37,13 +37,13 @@
                     <li>
                         <a href="{{ route('section', 'babies') }}" class="footer-link">
                             <i class="fas fa-baby text-blue-400"></i>
-                            الأطفال
+                            أطفالي
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('section', 'wedding') }}" class="footer-link">
                             <i class="fas fa-heart text-yellow-400"></i>
-                            الزفاف
+                            زفافي
                         </a>
                     </li>
                 </ul>
@@ -56,7 +56,7 @@
                     <li>
                         <a href="{{ route('section', 'beauty') }}" class="footer-link">
                             <i class="fas fa-spa text-indigo-400"></i>
-                            الجمال
+                            جمالي
                         </a>
                     </li>
                     <li>

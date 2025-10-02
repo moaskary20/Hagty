@@ -15,28 +15,7 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-gradient-to-r from-d94288 to-purple-600 text-white shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <a href="{{ route('home') }}" class="text-3xl font-bold hover:text-pink-200 transition duration-300">
-                        <i class="fas fa-heart mr-2"></i>HAGTY
-                    </a>
-                </div>
-                <div class="hidden md:flex space-x-8 space-x-reverse">
-                    <a href="{{ route('home') }}" class="hover:text-pink-200 transition duration-300">الرئيسية</a>
-                    <a href="{{ route('section', 'health') }}" class="hover:text-pink-200 transition duration-300">الصحة</a>
-                    <a href="{{ route('section', 'fashion') }}" class="hover:text-pink-200 transition duration-300">الموضة</a>
-                    <a href="{{ route('section', 'wedding') }}" class="hover:text-pink-200 transition duration-300">الزفاف</a>
-                    <a href="{{ route('section', 'beauty') }}" class="hover:text-pink-200 transition duration-300">الجمال</a>
-                    <a href="{{ route('section', 'babies') }}" class="hover:text-pink-200 transition duration-300">الأطفال</a>
-                    <a href="{{ route('section', 'accessoraty') }}" class="hover:text-pink-200 transition duration-300">أكسسوراتى</a>
-                    <a href="{{ route('section', 'umomi') }}" class="hover:text-pink-200 transition duration-300">أومومتي</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('components.shared-header')
 
     <!-- Login Form -->
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

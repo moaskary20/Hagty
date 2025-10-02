@@ -164,195 +164,7 @@
 </head>
 <body class="bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="{{ route('home') }}" class="text-2xl font-bold primary-color">HAGTY</a>
-                </div>
-                
-                <!-- Navigation Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
-                        <a href="{{ route('home') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الرئيسية</a>
-                        <a href="{{ route('section', 'accessoraty') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">أكسسوراتى</a>
-                        <a href="{{ route('section', 'health') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white bg-pink-100">الصحة</a>
-                        <a href="{{ route('section', 'fashion') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الموضة</a>
-                        <a href="{{ route('section', 'babies') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الأطفال</a>
-                        <a href="{{ route('section', 'wedding') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الزفاف</a>
-                        <a href="{{ route('section', 'beauty') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">الجمال</a>
-                        <a href="{{ route('section', 'umomi') }}" class="menu-item px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-white">أومومتي</a>
-                    </div>
-                </div>
-                
-                <!-- Auth Buttons -->
-                <div class="hidden md:flex items-center space-x-3 space-x-reverse">
-                    @auth
-                        <div class="flex items-center space-x-3 space-x-reverse">
-                            <div class="flex items-center space-x-2 space-x-reverse">
-                                <div class="w-8 h-8 bg-gradient-to-r from-d94288 to-purple-600 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user text-white text-sm"></i>
-                                </div>
-                                <span class="text-sm font-medium text-gray-700">مرحباً، {{ Auth::user()->first_name ?? Auth::user()->name }}</span>
-                            </div>
-                            <a href="{{ route('profile') }}" class="auth-btn-primary px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                                <i class="fas fa-user-edit ml-1"></i>الملف الشخصي
-                            </a>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                               class="bg-white text-gray-600 border border-gray-300 px-4 py-2.5 rounded-xl hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                                <i class="fas fa-sign-out-alt ml-1"></i>تسجيل الخروج
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                @csrf
-                            </form>
-                        </div>
-                    @else
-                        <a href="{{ route('login') }}" class="auth-btn-primary px-5 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            <i class="fas fa-sign-in-alt ml-2"></i>الدخول
-                        </a>
-                        <a href="{{ route('register') }}" class="auth-btn-secondary px-5 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            <i class="fas fa-user-plus ml-2"></i>الاشتراك
-                        </a>
-                    @endauth
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden">
-                <div class="bg-gradient-to-br from-white to-pink-50 border-t border-pink-200 shadow-lg">
-                    <!-- Header -->
-                    <div class="px-4 py-3 bg-gradient-to-r from-d94288 to-purple-600 text-white">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <i class="fas fa-bars text-white"></i>
-                            </div>
-                            <span class="mr-3 font-semibold text-lg">القائمة الرئيسية</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation Links -->
-                    <div class="px-4 py-2 space-y-1">
-                        <a href="{{ route('home') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-home text-white text-sm"></i>
-                            </div>
-                            <span>الرئيسية</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'accessoraty') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-gem text-white text-sm"></i>
-                            </div>
-                            <span>أكسسوراتى</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'health') }}" class="mobile-menu-item active">
-                            <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-heartbeat text-white text-sm"></i>
-                            </div>
-                            <span>الصحة</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'fashion') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-tshirt text-white text-sm"></i>
-                            </div>
-                            <span>الموضة</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'babies') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-baby text-white text-sm"></i>
-                            </div>
-                            <span>الأطفال</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'wedding') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-heart text-white text-sm"></i>
-                            </div>
-                            <span>الزفاف</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'beauty') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-spa text-white text-sm"></i>
-                            </div>
-                            <span>الجمال</span>
-                        </a>
-                        
-                        <a href="{{ route('section', 'umomi') }}" class="mobile-menu-item">
-                            <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-female text-white text-sm"></i>
-                            </div>
-                            <span>أومومتي</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Mobile Auth Buttons -->
-                    <div class="px-4 py-4 border-t border-pink-200 bg-white bg-opacity-50">
-                        @auth
-                            <div class="flex items-center mb-4 p-3 bg-gradient-to-r from-d94288 to-purple-600 rounded-xl text-white">
-                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user text-white"></i>
-                                </div>
-                                <div class="mr-3">
-                                    <div class="font-semibold">مرحباً، {{ Auth::user()->first_name ?? Auth::user()->name }}</div>
-                                    <div class="text-sm opacity-90">مرحباً بك في HAGTY</div>
-                                </div>
-                            </div>
-                            
-                            <a href="{{ route('profile') }}" class="mobile-auth-btn primary">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-user-edit text-white text-sm"></i>
-                                </div>
-                                <span>الملف الشخصي</span>
-                            </a>
-                            
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                               class="mobile-auth-btn secondary">
-                                <div class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-sign-out-alt text-white text-sm"></i>
-                                </div>
-                                <span>تسجيل الخروج</span>
-                            </a>
-                        @else
-                            <div class="text-center mb-4">
-                                <div class="w-16 h-16 bg-gradient-to-r from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                                    <i class="fas fa-user-plus text-white text-xl"></i>
-                                </div>
-                                <div class="text-gray-600 font-medium">انضمي إلى مجتمعنا</div>
-                            </div>
-                            
-                            <a href="{{ route('login') }}" class="mobile-auth-btn primary">
-                                <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-sign-in-alt text-white text-sm"></i>
-                                </div>
-                                <span>تسجيل الدخول</span>
-                            </a>
-                            
-                            <a href="{{ route('register') }}" class="mobile-auth-btn secondary">
-                                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-user-plus text-d94288 text-sm"></i>
-                                </div>
-                                <span>إنشاء حساب جديد</span>
-                            </a>
-                        @endauth
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('components.shared-header')
 
     <!-- Hero Section -->
     <section class="relative py-20 overflow-hidden">
@@ -656,5 +468,78 @@
         setupLoadMore('show-more-pharmacies', '.pharmacy-card', 6);
         setupLoadMore('show-more-tips', '.tip-card', 6);
     </script>
+
+    <!-- Latest Blogs Section -->
+    @if($latestBlogs && $latestBlogs->count() > 0)
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-green-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 أحدث المقالات في الصحة</h2>
+                <p class="text-gray-600 text-lg">نصائح وأفكار مفيدة حول الصحة والعافية</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                @foreach($latestBlogs as $blog)
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    @if($blog->featured_image)
+                        <div class="h-48 overflow-hidden">
+                            <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
+                                 alt="{{ $blog->title }}"
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                    @endif
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-semibold">
+                                {{ $blog->section_name }}
+                            </span>
+                            <span class="text-sm text-gray-500">
+                                <i class="fas fa-clock ml-1"></i>
+                                {{ $blog->published_at->diffForHumans() }}
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-green-600 transition-colors duration-300">
+                                {{ $blog->title }}
+                            </a>
+                        </h3>
+                        
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            {{ $blog->excerpt }}
+                        </p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-eye ml-1"></i>
+                                <span>{{ $blog->views_count }} مشاهدة</span>
+                                <i class="fas fa-clock mr-2 ml-4"></i>
+                                <span>{{ $blog->reading_time }} دقيقة قراءة</span>
+                            </div>
+                            
+                            <a href="{{ route('articles.show', $blog->slug) }}" 
+                               class="inline-flex items-center text-green-600 hover:text-green-700 font-semibold transition-colors duration-300">
+                                اقرأ المزيد
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="{{ route('articles.index') }}" 
+                   class="inline-flex items-center bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-newspaper ml-2"></i>
+                    تصفح جميع المقالات
+                </a>
+            </div>
+        </div>
+    </section>
+    @endif
+
+    @include('components.shared-footer')
 </body>
 </html>

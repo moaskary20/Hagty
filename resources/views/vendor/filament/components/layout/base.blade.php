@@ -83,7 +83,6 @@
             </script>
         @endif
         {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::HEAD_END, scopes: $livewire?->getRenderHookScopes()) }}
-        <script src="/js/nuclear-color-force.js"></script>
     </head>
     <body
         {{ $attributes

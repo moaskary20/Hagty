@@ -95,6 +95,19 @@ Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLoginForm
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
+
+// New pages routes
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/join-us', function () {
+    return view('join-us');
+})->name('join-us');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 // Profile Routes (Protected)
@@ -318,3 +331,71 @@ Route::post('/skin-care-doctors/videos', [App\Http\Controllers\SkinCareDoctorCon
 
 // إضافة route لمعالجة إضافة طفل جديد في لوحة الإدارة باسم admin.babies.store
 Route::post('/admin/welcome-baby/add', [App\Http\Controllers\AdminWelcomeBabyController::class, 'store'])->name('admin.babies.store');
+
+// مسارات قسم ايفينتاتى
+Route::prefix('eventaty')->group(function () {
+    Route::get('/', [App\Http\Controllers\EventatyController::class, 'index'])->name('eventaty.index');
+    Route::get('/search', [App\Http\Controllers\EventatyController::class, 'search'])->name('eventaty.search');
+    Route::get('/events/{id}', [App\Http\Controllers\EventatyController::class, 'show'])->name('eventaty.show');
+    Route::get('/events/{id}/book', [App\Http\Controllers\EventatyController::class, 'bookingForm'])->name('eventaty.booking.form');
+    Route::post('/events/{id}/book', [App\Http\Controllers\EventatyController::class, 'storeBooking'])->name('eventaty.booking.store');
+    Route::get('/bookings/{bookingId}/success', [App\Http\Controllers\EventatyController::class, 'bookingSuccess'])->name('eventaty.booking.success');
+});
+
+// مسارات قسم فورصى
+Route::prefix('forasy')->group(function () {
+    Route::get('/', [App\Http\Controllers\ForasyController::class, 'index'])->name('forasy.index');
+    Route::get('/jobs/{id}', [App\Http\Controllers\ForasyController::class, 'showJob'])->name('forasy.jobs.show');
+    Route::get('/advices/{id}', [App\Http\Controllers\ForasyController::class, 'showAdvice'])->name('forasy.advices.show');
+});
+
+// مسارات قسم هديتي
+Route::get('/hadiety', [App\Http\Controllers\HadietyController::class, 'index'])->name('hadiety.index');
+Route::get('/hadiety/guide/{id}', [App\Http\Controllers\HadietyController::class, 'showGuide'])->name('hadiety.guide.show');
+Route::post('/hadiety/service-request', [App\Http\Controllers\HadietyController::class, 'storeServiceRequest'])->name('hadiety.service.request');
+
+// مسارات قسم بيتي
+Route::get('/beity', [App\Http\Controllers\BeityController::class, 'index'])->name('beity.index');
+Route::get('/beity/design/{id}', [App\Http\Controllers\BeityController::class, 'showDesign'])->name('beity.design.show');
+
+// مسارات قسم حساباتى
+Route::middleware('auth')->group(function () {
+    Route::get('/hesabaty', [App\Http\Controllers\HesabatyController::class, 'index'])->name('hesabaty.index');
+    Route::post('/hesabaty/income', [App\Http\Controllers\HesabatyController::class, 'storeIncome'])->name('hesabaty.income.store');
+    Route::post('/hesabaty/expense', [App\Http\Controllers\HesabatyController::class, 'storeExpense'])->name('hesabaty.expense.store');
+    Route::post('/hesabaty/goal', [App\Http\Controllers\HesabatyController::class, 'storeGoal'])->name('hesabaty.goal.store');
+    Route::post('/hesabaty/bill', [App\Http\Controllers\HesabatyController::class, 'storeBill'])->name('hesabaty.bill.store');
+});
+
+// مسارات قسم رياضتي
+Route::get('/riadaty', [App\Http\Controllers\RiadatyController::class, 'index'])->name('riadaty.index');
+Route::post('/riadaty/plan/start', [App\Http\Controllers\RiadatyController::class, 'startPlan'])->name('riadaty.plan.start');
+Route::post('/riadaty/challenge/join', [App\Http\Controllers\RiadatyController::class, 'joinChallenge'])->name('riadaty.challenge.join');
+
+// مسارات قسم مشروعي
+Route::get('/mashroay', [App\Http\Controllers\MashroayController::class, 'index'])->name('mashroay.index');
+Route::get('/mashroay/idea/{id}', [App\Http\Controllers\MashroayController::class, 'showIdea'])->name('mashroay.idea.show');
+Route::get('/mashroay/advice/{id}', [App\Http\Controllers\MashroayController::class, 'showAdvice'])->name('mashroay.advice.show');
+
+// مسارات قسم مستشاري
+Route::get('/mostashary', [App\Http\Controllers\MostasharyController::class, 'index'])->name('mostashary.index');
+
+// مسارات قسم مستمعي
+Route::get('/mostamay', [App\Http\Controllers\MostamayController::class, 'index'])->name('mostamay.index');
+Route::get('/mostamay/motivational/{id}', [App\Http\Controllers\MostamayController::class, 'showMotivational'])->name('mostamay.motivational.show');
+Route::get('/mostamay/skill/{id}', [App\Http\Controllers\MostamayController::class, 'showSkill'])->name('mostamay.skill.show');
+Route::get('/mostamay/story/{id}', [App\Http\Controllers\MostamayController::class, 'showStory'])->name('mostamay.story.show');
+Route::get('/mostamay/post/{id}', [App\Http\Controllers\MostamayController::class, 'showPost'])->name('mostamay.post.show');
+
+// مسارات قسم نساء الغد
+Route::get('/nesaa-alghad', [App\Http\Controllers\NesaaAlghadController::class, 'index'])->name('nesaa-alghad.index');
+Route::get('/nesaa-alghad/story/{id}', [App\Http\Controllers\NesaaAlghadController::class, 'showStory'])->name('nesaa-alghad.story.show');
+
+// Articles Routes
+Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{slug}', [App\Http\Controllers\ArticleController::class, 'show'])->name('articles.show');
+
+// Comments Routes
+Route::post('/comments', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
+Route::get('/comments/{blogId}', [App\Http\Controllers\CommentController::class, 'getComments'])->name('comments.get');
+Route::get('/nesaa-alghad', [App\Http\Controllers\NesaaAlghadController::class, 'index'])->name('nesaa-alghad.index');

@@ -3,206 +3,78 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', config('app.name', 'Laravel'))</title>
     
-    <!-- CSS فوري -->
-    <style id="force-toolbar-override">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts - Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Apply Tajawal font to all elements */
         * {
-            color: white !important;
-            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-            direction: rtl !important;
+            font-family: 'Tajawal', sans-serif !important;
         }
         
-        /* الكلاس الفعلي المكتشف */
-        .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6 {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .d94288 {
+            color: #d94288;
         }
-        
-        .fi-ta-header-toolbar {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .bg-d94288 {
+            background-color: #d94288;
         }
-        
-        .fi-ta-header-toolbar.flex {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .border-d94288 {
+            border-color: #d94288;
         }
-        
-        .fi-ta-header-toolbar.flex.items-center {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .focus\:ring-d94288:focus {
+            --tw-ring-color: #d94288;
         }
-        
-        .fi-ta-header-toolbar.flex.items-center.justify-between {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .focus\:border-d94288:focus {
+            border-color: #d94288;
         }
-        
-        *[class*="toolbar"]:not([class*="sidebar"]):not([class*="topbar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .hover\:text-d94288:hover {
+            color: #d94288;
         }
-        
-        *[class*="header"]:not([class*="sidebar"]):not([class*="topbar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .hover\:from-pink-700:hover {
+            --tw-gradient-from: #be185d;
+            --tw-gradient-to: rgb(190 24 93 / 0);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
         }
-        
-        *[class*="fi-ta-header"] {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .hover\:to-purple-700:hover {
+            --tw-gradient-to: #7c2d12;
         }
-        
-        *[class*="fi-ta-toolbar"] {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
+        .from-d94288 {
+            --tw-gradient-from: #d94288;
+            --tw-gradient-to: rgb(217 66 136 / 0);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
         }
-        
-        *[class*="fi-ta-header-toolbar"] {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
-        }
-        
-        div[class*="flex"][class*="items-center"]:not([class*="sidebar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
-        }
-        
-        div[class*="justify-between"]:not([class*="sidebar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
-        }
-        
-        div[class*="gap-x-4"]:not([class*="sidebar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
-        }
-        
-        div[class*="px-4"]:not([class*="sidebar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
-        }
-        
-        div[class*="py-3"]:not([class*="sidebar"]) {
-            background-color: #dc2175 !important;
-            background: #dc2175 !important;
-            color: white !important;
-        }
-        
-        /* النصوص الرمادية */
-        .text-gray-700, .text-gray-950, .text-gray-600, .text-gray-800, .text-gray-900 {
-            color: white !important;
+        .to-purple-600 {
+            --tw-gradient-to: #9333ea;
         }
     </style>
-    
-    <!-- JavaScript فوري -->
-    <script>
-        console.log("🔥 بدء تشغيل الحل المباشر من Template...");
-        
-        // دالة لتطبيق الألوان مباشرة
-        function applyDirectColors() {
-            console.log("🎯 تطبيق الألوان مباشرة...");
-            
-            let found = 0;
-            
-            // البحث عن العناصر المختلفة
-            const selectors = [
-                ".fi-ta-header-toolbar",
-                "[class*=\"fi-ta-header-toolbar\"]",
-                "[class*=\"toolbar\"]",
-                "[class*=\"header\"]",
-                "[class*=\"fi-ta-header\"]",
-                "[class*=\"fi-ta-toolbar\"]",
-                "div[class*=\"flex\"][class*=\"items-center\"]",
-                "div[class*=\"justify-between\"]",
-                "div[class*=\"gap-x-4\"]",
-                "div[class*=\"px-4\"]",
-                "div[class*=\"py-3\"]"
-            ];
-            
-            selectors.forEach(selector => {
-                try {
-                    const elements = document.querySelectorAll(selector);
-                    elements.forEach(element => {
-                        const className = element.className || "";
-                        
-                        // تجاهل العناصر الجانبية
-                        if (!className.includes("sidebar") && !className.includes("topbar") && !className.includes("fi-sidebar")) {
-                            // تطبيق الألوان بطرق متعددة
-                            element.style.cssText += "; background-color: #dc2175 !important; background: #dc2175 !important; color: white !important;";
-                            element.style.setProperty("background-color", "#dc2175", "important");
-                            element.style.setProperty("background", "#dc2175", "important");
-                            element.style.setProperty("color", "white", "important");
-                            
-                            // إضافة attribute
-                            element.setAttribute("data-force-applied", "true");
-                            
-                            found++;
-                            console.log(`✅ تم تطبيق اللون على: ${selector} ->`, element.className);
-                        }
-                    });
-                } catch(e) {
-                    console.warn(`خطأ في selector ${selector}:`, e);
-                }
-            });
-            
-            console.log(`🎯 تم تطبيق الألوان على ${found} عنصر`);
-            return found;
-        }
-        
-        // تطبيق فوري
-        applyDirectColors();
-        
-        // تطبيق عند تحميل DOM
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log("📄 DOM محمل - تطبيق الألوان");
-            setTimeout(() => {
-                applyDirectColors();
-            }, 100);
-        });
-        
-        // تطبيق عند تحميل النافذة
-        window.addEventListener("load", () => {
-            console.log("🌐 النافذة محملة - تطبيق الألوان");
-            setTimeout(() => {
-                applyDirectColors();
-            }, 500);
-        });
-        
-        // تطبيق دوري كل ثانية
-        setInterval(() => {
-            const found = applyDirectColors();
-            if (found > 0) {
-                console.log(`🔄 تطبيق دوري: معالجة ${found} عنصر`);
-            }
-        }, 1000);
-        
-        console.log("🔥 الحل المباشر من Template جاهز!");
-    </script>
-    <script src="/js/nuclear-color-force.js"></script>
 </head>
-<body>
+<body class="bg-gray-50">
     <div id="app">
         @yield('content')
     </div>
 
-    <div style="margin: 2rem 0;">
-        @include('filament.pages.rehlaaty.menu')
-    </div>
 </body>
 </html>
