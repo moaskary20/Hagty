@@ -8,21 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/join-us-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/join-us-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-d94288 to-purple-600 text-white py-20">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">انضم إلينا</h1>
-            <p class="text-xl md:text-2xl">كن جزءاً من مجتمع HAGTY وقدم خدماتك للنساء العربيات</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">انضم إلينا</h1>
+            <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">كن جزءاً من مجتمع HAGTY وقدم خدماتك للنساء العربيات</p>
         </div>
     </section>
 
@@ -30,53 +32,53 @@
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">ما نقدمه لك</h2>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">ما نقدمه لك</h2>
                 <p class="text-lg text-gray-600">منصة شاملة لمساعدتك في تقديم خدماتك للنساء العربيات</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="text-4xl text-d94288 mb-4">
+                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fadeInUp">
+                    <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">جمهور مستهدف</h3>
                     <p class="text-gray-600">الوصول إلى آلاف النساء العربيات المهتمات بخدماتك</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="text-4xl text-d94288 mb-4">
+                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fadeInUp">
+                    <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">نمو الأعمال</h3>
                     <p class="text-gray-600">زيادة مبيعاتك ووصولك إلى عملاء جدد</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="text-4xl text-d94288 mb-4">
+                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fadeInUp">
+                    <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">أدوات متطورة</h3>
                     <p class="text-gray-600">أدوات إدارة متقدمة لتسهيل عملك</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="text-4xl text-d94288 mb-4">
+                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fadeInUp">
+                    <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">دعم فني</h3>
                     <p class="text-gray-600">فريق دعم متخصص لمساعدتك في كل خطوة</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="text-4xl text-d94288 mb-4">
+                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fadeInUp">
+                    <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">أمان وموثوقية</h3>
                     <p class="text-gray-600">بيئة آمنة وموثوقة لجميع المعاملات</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                    <div class="text-4xl text-d94288 mb-4">
+                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fadeInUp">
+                    <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-star"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">تميز وبروز</h3>
@@ -87,10 +89,10 @@
     </section>
 
     <!-- Services We Support -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">الخدمات التي ندعمها</h2>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">الخدمات التي ندعمها</h2>
                 <p class="text-lg text-gray-600">نرحب بمقدمي الخدمات في جميع المجالات</p>
             </div>
             
@@ -395,7 +397,7 @@
     </section>
 
     <!-- Join Form -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
         <div class="max-w-4xl mx-auto px-4">
             <div class="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-2xl">
                 <div class="text-center mb-8">
@@ -499,7 +501,7 @@
                 </div>
                 
                 <div>
-                    <i class="fas fa-clock text-3xl text-d94288 mb-4"></i>
+                    <i class="fas fa-clock text-3xl text-[#A15DBF] mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">ساعات العمل</h3>
                     <p class="text-gray-300">الأحد - الخميس: 9:00 ص - 6:00 م</p>
                 </div>
@@ -508,5 +510,8 @@
     </section>
 
     @include('components.shared-footer')
+
+    <!-- Join Us Interactions JavaScript -->
+    <script src="{{ asset('js/join-us-interactions.js') }}"></script>
 </body>
 </html>

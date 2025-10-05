@@ -1,0 +1,73 @@
+/* Babies Section Color Variables */
+:root {
+    --babies-primary: #A15DBF;
+    --babies-secondary: #8B4A9C;
+    --babies-accent-1: #FAD6E0;
+    --babies-accent-2: #E6A0C3;
+    --babies-accent-3: #B17DC0;
+    --babies-accent-4: #E6DAC8;
+    --babies-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] {
+    background-color: var(--babies-primary) !important;
+}
+
+.bg-\[#8B4A9C\] {
+    background-color: var(--babies-secondary) !important;
+}
+
+.bg-\[#FAD6E0\] {
+    background-color: var(--babies-accent-1) !important;
+}
+
+.bg-\[#E6A0C3\] {
+    background-color: var(--babies-accent-2) !important;
+}
+
+.bg-\[#B17DC0\] {
+    background-color: var(--babies-accent-3) !important;
+}
+
+.bg-\[#E6DAC8\] {
+    background-color: var(--babies-accent-4) !important;
+}
+
+.text-\[#A15DBF\] {
+    color: var(--babies-primary) !important;
+}
+
+.text-\[#8B4A9C\] {
+    color: var(--babies-secondary) !important;
+}
+
+.text-\[#B17DC0\] {
+    color: var(--babies-accent-3) !important;
+}
+
+.border-\[#E6A0C3\] {
+    border-color: var(--babies-accent-2) !important;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    background: linear-gradient(to right, var(--babies-primary), var(--babies-secondary)) !important;
+}
+
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+    background: linear-gradient(to bottom right, var(--babies-accent-1), var(--babies-accent-4)) !important;
+}
+
+/* Hover effects */
+.hover\:from-\[#8B4A9C\]:hover {
+    background: var(--babies-secondary) !important;
+}
+
+.hover\:to-\[#753880\]:hover {
+    background: var(--babies-accent-5) !important;
+}
+
+.hover\:text-\[#8B4A9C\]:hover {
+    color: var(--babies-secondary) !important;
+}

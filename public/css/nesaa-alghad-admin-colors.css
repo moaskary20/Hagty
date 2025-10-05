@@ -1,0 +1,24 @@
+/* Nesaa Alghad Section Color Variables */
+:root {
+    --nesaa-alghad-primary: #A15DBF;
+    --nesaa-alghad-secondary: #8B4A9C;
+    --nesaa-alghad-accent-1: #FAD6E0;
+    --nesaa-alghad-accent-2: #E6A0C3;
+    --nesaa-alghad-accent-3: #B17DC0;
+    --nesaa-alghad-accent-4: #E6DAC8;
+    --nesaa-alghad-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--nesaa-alghad-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--nesaa-alghad-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--nesaa-alghad-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--nesaa-alghad-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--nesaa-alghad-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--nesaa-alghad-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--nesaa-alghad-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--nesaa-alghad-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--nesaa-alghad-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--nesaa-alghad-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--nesaa-alghad-primary), var(--nesaa-alghad-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--nesaa-alghad-accent-1), var(--nesaa-alghad-accent-4)) !important; }

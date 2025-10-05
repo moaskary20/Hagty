@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/wedding-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/wedding-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .menu-item {
@@ -24,7 +26,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -36,26 +38,26 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
         
         .auth-btn-primary:hover {
-            background: #c13a7a;
+            background: #8B4A9C;
             color: white;
         }
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -70,12 +72,12 @@
         /* تخصيص ألوان التركيز */
         .auth-btn-primary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         .auth-btn-secondary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         /* Mobile menu styles */
@@ -92,12 +94,12 @@
         
         .mobile-menu-item:hover {
             background-color: #f3f4f6;
-            color: #d94288;
+            color: #A15DBF;
             transform: translateX(-4px);
         }
         
         .mobile-menu-item.active {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
         }
         
@@ -119,23 +121,23 @@
         }
         
         .mobile-auth-btn.primary {
-            background: linear-gradient(135deg, #d94288, #c13a7a);
+            background: linear-gradient(135deg, #A15DBF, #8B4A9C);
             color: white;
         }
         
         .mobile-auth-btn.primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.3);
+            box-shadow: 0 4px 12px rgba(161, 93, 191, 0.3);
         }
         
         .mobile-auth-btn.secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .mobile-auth-btn.secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
         }
         
@@ -144,37 +146,37 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-rose-50 to-pink-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-rose-500 to-pink-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">💒 قسم الزفاف</h1>
-            <p class="text-xl md:text-2xl mb-8">كل ما تحتاجينه لحفل زفاف أحلامك</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">💒 قسم الزفاف</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">كل ما تحتاجينه لحفل زفاف أحلامك</p>
             
             <!-- Statistics -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $wedding_designers->count() }}</div>
-                    <div class="text-sm">مصممي فساتين</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_designers->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مصممي فساتين</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $wedding_planners->count() }}</div>
-                    <div class="text-sm">منظمي حفلات</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_planners->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">منظمي حفلات</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $makeup_artists->count() }}</div>
-                    <div class="text-sm">فناني مكياج</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $makeup_artists->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فناني مكياج</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $wedding_venues->count() }}</div>
-                    <div class="text-sm">قاعات حفلات</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_venues->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">قاعات حفلات</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $wedding_photographers->count() }}</div>
-                    <div class="text-sm">مصورين</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.7s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_photographers->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مصورين</div>
                 </div>
             </div>
         </div>
@@ -188,29 +190,29 @@
         
         <!-- مصممي فساتين الزفاف -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">👗 مصممي فساتين الزفاف</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">👗 مصممي فساتين الزفاف</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($wedding_designers as $designer)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $designer->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $designer->description }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $designer->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $designer->description }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $designer->address }}</div>
                             <div><i class="fas fa-phone ml-2"></i>{{ $designer->whatsapp_number }}</div>
                             @if($designer->website_url)
-                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $designer->website_url }}" class="text-primary-text hover:underline">الموقع الإلكتروني</a></div>
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $designer->website_url }}" class="text-[#A15DBF] hover:text-[#8B4A9C]">الموقع الإلكتروني</a></div>
                             @endif
                         </div>
                         @if($designer->specialty)
                         <div class="mt-4">
-                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">{{ $designer->specialty }}</span>
+                            <span class="bg-[#E6A0C3] text-[#A15DBF] px-3 py-1 rounded-full text-sm">{{ $designer->specialty }}</span>
                         </div>
                         @endif
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-search text-4xl mb-4"></i>
                     <p>لا توجد مصممات فساتين متاحة حالياً</p>
                 </div>
@@ -220,13 +222,13 @@
 
         <!-- منظمي الحفلات -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎉 منظمي الحفلات</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎉 منظمي الحفلات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($wedding_planners as $planner)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $planner->name }}</h3>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $planner->name }}</h3>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $planner->location }}</div>
                             <div><i class="fas fa-phone ml-2"></i>{{ $planner->phone }}</div>
                             @if($planner->package)
@@ -236,7 +238,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-calendar text-4xl mb-4"></i>
                     <p>لا يوجد منظمي حفلات متاحين حالياً</p>
                 </div>
@@ -246,24 +248,24 @@
 
         <!-- فناني المكياج -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">💄 فناني المكياج</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">💄 فناني المكياج</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($makeup_artists as $artist)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $artist->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $artist->description }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $artist->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $artist->description }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $artist->address }}</div>
                             <div><i class="fas fa-phone ml-2"></i>{{ $artist->phone }}</div>
                             @if($artist->profile_url)
-                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $artist->profile_url }}" class="text-primary-text hover:underline">الملف الشخصي</a></div>
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $artist->profile_url }}" class="text-[#A15DBF] hover:text-[#8B4A9C]">الملف الشخصي</a></div>
                             @endif
                         </div>
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-palette text-4xl mb-4"></i>
                     <p>لا يوجد فناني مكياج متاحين حالياً</p>
                 </div>
@@ -273,14 +275,14 @@
 
         <!-- قاعات الحفلات -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏰 قاعات الحفلات</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏰 قاعات الحفلات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($wedding_venues as $venue)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $venue->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $venue->description }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $venue->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $venue->description }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $venue->address }}</div>
                             <div><i class="fas fa-star ml-2"></i>{{ $venue->stars }} نجوم</div>
                             <div><i class="fas fa-users ml-2"></i>سعة {{ $venue->capacity }} شخص</div>
@@ -289,7 +291,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-building text-4xl mb-4"></i>
                     <p>لا توجد قاعات حفلات متاحة حالياً</p>
                 </div>
@@ -299,14 +301,14 @@
 
         <!-- خدمات التموين -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🍽️ خدمات التموين</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🍽️ خدمات التموين</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($catering_services as $catering)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $catering->company_name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $catering->description }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $catering->company_name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $catering->description }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $catering->address }}</div>
                             <div><i class="fas fa-phone ml-2"></i>{{ is_array($catering->phone_numbers) ? $catering->phone_numbers[0] : ($catering->phone_numbers ? json_decode($catering->phone_numbers)[0] : 'غير متوفر') }}</div>
                             <div><i class="fas fa-users ml-2"></i>أقل عدد ضيوف: {{ $catering->min_guests }}</div>
@@ -315,7 +317,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-utensils text-4xl mb-4"></i>
                     <p>لا توجد خدمات تموين متاحة حالياً</p>
                 </div>
@@ -325,14 +327,14 @@
 
         <!-- المصورين -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📸 المصورين</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">📸 المصورين</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($wedding_photographers as $photographer)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $photographer->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $photographer->description }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $photographer->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $photographer->description }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-camera ml-2"></i>{{ $photographer->specialty }}</div>
                             <div><i class="fas fa-phone ml-2"></i>{{ is_array($photographer->phone_numbers) ? $photographer->phone_numbers[0] : ($photographer->phone_numbers ? json_decode($photographer->phone_numbers)[0] : 'غير متوفر') }}</div>
                             <div><i class="fas fa-dollar-sign ml-2"></i>{{ $photographer->price_range_min }}-{{ $photographer->price_range_max }} ريال</div>
@@ -340,7 +342,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-camera text-4xl mb-4"></i>
                     <p>لا يوجد مصورين متاحين حالياً</p>
                 </div>
@@ -352,16 +354,16 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-gray-50 to-pink-50">
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 أحدث المقالات في الزفاف</h2>
-                <p class="text-gray-600 text-lg">نصائح وأفكار مفيدة حول الزفاف والاحتفالات</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في الزفاف</h2>
+                <p class="text-[#B17DC0] text-lg animate-fadeInUp" style="animation-delay: 0.2s;">نصائح وأفكار مفيدة حول الزفاف والاحتفالات</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
@@ -372,27 +374,27 @@
                     
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="inline-block bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full font-semibold">
+                            <span class="inline-block bg-[#E6A0C3] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
                                 {{ $blog->section_name }}
                             </span>
-                            <span class="text-sm text-gray-500">
+                            <span class="text-sm text-[#8B4A9C]">
                                 <i class="fas fa-clock ml-1"></i>
                                 {{ $blog->published_at->diffForHumans() }}
                             </span>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-pink-600 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-3 line-clamp-2">
+                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-[#8B4A9C] transition-colors duration-300">
                                 {{ $blog->title }}
                             </a>
                         </h3>
                         
-                        <p class="text-gray-600 mb-4 line-clamp-3">
+                        <p class="text-[#B17DC0] mb-4 line-clamp-3">
                             {{ $blog->excerpt }}
                         </p>
                         
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-gray-500">
+                            <div class="flex items-center text-sm text-[#8B4A9C]">
                                 <i class="fas fa-eye ml-1"></i>
                                 <span>{{ $blog->views_count }} مشاهدة</span>
                                 <i class="fas fa-clock mr-2 ml-4"></i>
@@ -400,7 +402,7 @@
                             </div>
                             
                             <a href="{{ route('articles.show', $blog->slug) }}" 
-                               class="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold transition-colors duration-300">
+                               class="inline-flex items-center text-[#A15DBF] hover:text-[#8B4A9C] font-semibold transition-colors duration-300">
                                 اقرأ المزيد
                                 <i class="fas fa-arrow-left mr-2"></i>
                             </a>
@@ -412,8 +414,8 @@
             
             <div class="text-center mt-12">
                 <a href="{{ route('articles.index') }}" 
-                   class="inline-flex items-center bg-gradient-to-r from-pink-600 to-rose-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-pink-700 hover:to-rose-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    <i class="fas fa-newspaper ml-2"></i>
+                   class="inline-flex items-center bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-lg font-bold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-white" style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-weight: 800;">
+                    <i class="fas fa-newspaper ml-2" style="color: #ffffff !important;"></i>
                     تصفح جميع المقالات
                 </a>
             </div>
@@ -423,6 +425,9 @@
 
     @include('components.shared-footer')
 
+    <!-- Wedding Interactions JavaScript -->
+    <script src="{{ asset('js/wedding-interactions.js') }}"></script>
+    
     <!-- Mobile Menu JavaScript -->
     <script>
         // Mobile menu functionality

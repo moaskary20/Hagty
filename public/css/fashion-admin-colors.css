@@ -1,0 +1,73 @@
+/* Fashion Section Color Variables */
+:root {
+    --fashion-primary: #A15DBF;
+    --fashion-secondary: #8B4A9C;
+    --fashion-accent-1: #FAD6E0;
+    --fashion-accent-2: #E6A0C3;
+    --fashion-accent-3: #B17DC0;
+    --fashion-accent-4: #E6DAC8;
+    --fashion-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] {
+    background-color: var(--fashion-primary) !important;
+}
+
+.bg-\[#8B4A9C\] {
+    background-color: var(--fashion-secondary) !important;
+}
+
+.bg-\[#FAD6E0\] {
+    background-color: var(--fashion-accent-1) !important;
+}
+
+.bg-\[#E6A0C3\] {
+    background-color: var(--fashion-accent-2) !important;
+}
+
+.bg-\[#B17DC0\] {
+    background-color: var(--fashion-accent-3) !important;
+}
+
+.bg-\[#E6DAC8\] {
+    background-color: var(--fashion-accent-4) !important;
+}
+
+.text-\[#A15DBF\] {
+    color: var(--fashion-primary) !important;
+}
+
+.text-\[#8B4A9C\] {
+    color: var(--fashion-secondary) !important;
+}
+
+.text-\[#B17DC0\] {
+    color: var(--fashion-accent-3) !important;
+}
+
+.border-\[#E6A0C3\] {
+    border-color: var(--fashion-accent-2) !important;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    background: linear-gradient(to right, var(--fashion-primary), var(--fashion-secondary)) !important;
+}
+
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+    background: linear-gradient(to bottom right, var(--fashion-accent-1), var(--fashion-accent-4)) !important;
+}
+
+/* Hover effects */
+.hover\:from-\[#8B4A9C\]:hover {
+    background: var(--fashion-secondary) !important;
+}
+
+.hover\:to-\[#753880\]:hover {
+    background: var(--fashion-accent-5) !important;
+}
+
+.hover\:text-\[#8B4A9C\]:hover {
+    color: var(--fashion-secondary) !important;
+}

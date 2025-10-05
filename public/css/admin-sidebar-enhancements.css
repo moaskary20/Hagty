@@ -1,0 +1,361 @@
+/* Admin Sidebar Enhancements - تحسينات القائمة الجانبية للإدارة */
+
+/* تعريف متغيرات الألوان */
+:root {
+    --primary-50: #FAD6E0;
+    --primary-100: #E6A0C3;
+    --primary-200: #B17DC0;
+    --primary-300: #A15DBF;
+    --primary-400: #A15DBF;
+    --primary-500: #A15DBF;
+    --primary-600: #8B4A9F;
+    --primary-700: #753A83;
+    --primary-800: #5F2A67;
+    --primary-900: #491A4B;
+    --accent: #E6DAC8;
+}
+
+/* تحسينات القائمة الجانبية */
+
+/* القائمة الجانبية الرئيسية */
+.fi-sidebar {
+    background: linear-gradient(180deg, var(--primary-300) 0%, var(--primary-200) 50%, var(--primary-100) 100%) !important;
+    border-right: 2px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* تأثير توهج للقائمة الجانبية */
+.fi-sidebar::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%) !important;
+    animation: sidebarShimmer 3s ease-in-out infinite !important;
+    pointer-events: none !important;
+}
+
+@keyframes sidebarShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* تحسينات عناصر التنقل */
+.fi-sidebar-nav {
+    padding: 20px 0 !important;
+    background: transparent !important;
+}
+
+/* تحسينات عناصر القائمة */
+.fi-sidebar-nav-item {
+    margin: 8px 15px !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* تأثير hover للعناصر */
+.fi-sidebar-nav-item:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    border-left: 3px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+/* العنصر النشط */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
+    border-left: 4px solid white !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    transform: translateX(8px) scale(1.05) !important;
+}
+
+/* تأثير الموجة للعناصر النشطة */
+.fi-sidebar-nav-item.fi-active::before,
+.fi-sidebar-nav-item[aria-current="page"]::before,
+.fi-sidebar-nav-item.active::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translate(-50%, -50%) !important;
+    animation: rippleEffect 2s ease-in-out infinite !important;
+}
+
+@keyframes rippleEffect {
+    0% { width: 0; height: 0; opacity: 1; }
+    100% { width: 100px; height: 100px; opacity: 0; }
+}
+
+/* تحسينات النصوص في القائمة */
+.fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item-text {
+    color: white !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* تأثير hover للنصوص */
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-text {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    transform: translateX(2px) !important;
+}
+
+/* تحسينات الأيقونات */
+.fi-sidebar-nav-item-icon,
+.fi-icon {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.1rem !important;
+    transition: all 0.3s ease !important;
+    margin-left: 12px !important;
+}
+
+/* تأثير hover للأيقونات */
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item:hover .fi-icon {
+    color: white !important;
+    transform: scale(1.1) rotate(5deg) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* تحسينات المجموعات */
+.fi-sidebar-nav-group {
+    margin: 20px 0 !important;
+    padding: 0 15px !important;
+}
+
+.fi-sidebar-nav-group-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 10px !important;
+    padding: 8px 12px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    border-left: 3px solid rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+/* تحسينات القوائم الفرعية */
+.fi-sidebar-nav-sub-item {
+    margin: 4px 25px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 8px 12px !important;
+}
+
+.fi-sidebar-nav-sub-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(3px) !important;
+    border-left: 2px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.fi-sidebar-nav-sub-item.fi-active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-left: 3px solid white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* تحسينات الشعار */
+.fi-sidebar-brand {
+    padding: 20px 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    margin-bottom: 20px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.fi-sidebar-brand-logo {
+    max-height: 40px !important;
+    filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+    transition: all 0.3s ease !important;
+}
+
+.fi-sidebar-brand-logo:hover {
+    transform: scale(1.05) !important;
+    filter: brightness(1.4) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)) !important;
+}
+
+.fi-sidebar-brand-name {
+    color: white !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    margin-top: 8px !important;
+}
+
+/* تحسينات زر الطي */
+.fi-sidebar-collapse-button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    color: white !important;
+    transition: all 0.3s ease !important;
+    margin: 15px !important;
+    padding: 8px !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.fi-sidebar-collapse-button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* تحسينات القائمة المطوية */
+.fi-sidebar.fi-sidebar-collapsed .fi-sidebar-nav-item {
+    margin: 8px 8px !important;
+    padding: 12px !important;
+    text-align: center !important;
+}
+
+.fi-sidebar.fi-sidebar-collapsed .fi-sidebar-nav-item:hover {
+    transform: scale(1.1) !important;
+}
+
+.fi-sidebar.fi-sidebar-collapsed .fi-sidebar-nav-item-icon {
+    margin: 0 !important;
+    font-size: 1.3rem !important;
+}
+
+/* تحسينات التمرير */
+.fi-sidebar-nav::-webkit-scrollbar {
+    width: 4px !important;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 2px !important;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 2px !important;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* تحسينات الرسوم المتحركة */
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.fi-sidebar-nav-item {
+    animation: slideInFromLeft 0.5s ease-out !important;
+}
+
+.fi-sidebar-nav-item:nth-child(1) { animation-delay: 0.1s !important; }
+.fi-sidebar-nav-item:nth-child(2) { animation-delay: 0.2s !important; }
+.fi-sidebar-nav-item:nth-child(3) { animation-delay: 0.3s !important; }
+.fi-sidebar-nav-item:nth-child(4) { animation-delay: 0.4s !important; }
+.fi-sidebar-nav-item:nth-child(5) { animation-delay: 0.5s !important; }
+
+/* تحسينات التجاوب */
+@media (max-width: 768px) {
+    .fi-sidebar {
+        width: 280px !important;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .fi-sidebar-nav-item {
+        margin: 6px 12px !important;
+        padding: 12px 15px !important;
+    }
+    
+    .fi-sidebar-nav-item-label,
+    .fi-sidebar-nav-item-text {
+        font-size: 1rem !important;
+    }
+    
+    .fi-sidebar-nav-item-icon {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .fi-sidebar {
+        width: 260px !important;
+    }
+    
+    .fi-sidebar-nav-item {
+        margin: 4px 10px !important;
+        padding: 10px 12px !important;
+    }
+    
+    .fi-sidebar-brand {
+        padding: 15px 12px !important;
+    }
+    
+    .fi-sidebar-brand-logo {
+        max-height: 35px !important;
+    }
+    
+    .fi-sidebar-brand-name {
+        font-size: 1rem !important;
+    }
+}
+
+/* تحسينات إضافية */
+.fi-sidebar-nav-item-badge {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--primary-300) !important;
+    border-radius: 12px !important;
+    padding: 2px 8px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    margin-right: 8px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fi-sidebar-nav-item-tooltip {
+    background: rgba(0, 0, 0, 0.9) !important;
+    color: white !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    font-size: 0.85rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* تأثيرات خاصة للعناصر المهمة */
+.fi-sidebar-nav-item.important {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.fi-sidebar-nav-item.important::after {
+    content: '⭐' !important;
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    font-size: 0.8rem !important;
+    opacity: 0.8 !important;
+}

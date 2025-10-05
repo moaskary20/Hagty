@@ -1,0 +1,376 @@
+/* Admin Sidebar Force Remove White Bar - إزالة الشريط الأبيض نهائياً */
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-item[data-active="true"],
+.fi-sidebar-nav-item[aria-selected="true"] {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.active *,
+.fi-sidebar-nav-item[data-active="true"] *,
+.fi-sidebar-nav-item[aria-selected="true"] * {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::before,
+.fi-sidebar-nav-item[aria-current="page"]::before,
+.fi-sidebar-nav-item.active::before,
+.fi-sidebar-nav-item[data-active="true"]::before,
+.fi-sidebar-nav-item[aria-selected="true"]::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::after,
+.fi-sidebar-nav-item[aria-current="page"]::after,
+.fi-sidebar-nav-item.active::after,
+.fi-sidebar-nav-item[data-active="true"]::after,
+.fi-sidebar-nav-item[aria-selected="true"]::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::selection,
+.fi-sidebar-nav-item[aria-current="page"]::selection,
+.fi-sidebar-nav-item.active::selection,
+.fi-sidebar-nav-item[data-active="true"]::selection,
+.fi-sidebar-nav-item[aria-selected="true"]::selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-moz-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-moz-selection,
+.fi-sidebar-nav-item.active::-moz-selection,
+.fi-sidebar-nav-item[data-active="true"]::-moz-selection,
+.fi-sidebar-nav-item[aria-selected="true"]::-moz-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-webkit-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-webkit-selection,
+.fi-sidebar-nav-item.active::-webkit-selection,
+.fi-sidebar-nav-item[data-active="true"]::-webkit-selection,
+.fi-sidebar-nav-item[aria-selected="true"]::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-ms-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-ms-selection,
+.fi-sidebar-nav-item.active::-ms-selection,
+.fi-sidebar-nav-item[data-active="true"]::-ms-selection,
+.fi-sidebar-nav-item[aria-selected="true"]::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-o-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-o-selection,
+.fi-sidebar-nav-item.active::-o-selection,
+.fi-sidebar-nav-item[data-active="true"]::-o-selection,
+.fi-sidebar-nav-item[aria-selected="true"]::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-khtml-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-khtml-selection,
+.fi-sidebar-nav-item.active::-khtml-selection,
+.fi-sidebar-nav-item[data-active="true"]::-khtml-selection,
+.fi-sidebar-nav-item[aria-selected="true"]::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active:hover,
+.fi-sidebar-nav-item[aria-current="page"]:hover,
+.fi-sidebar-nav-item.active:hover,
+.fi-sidebar-nav-item[data-active="true"]:hover,
+.fi-sidebar-nav-item[aria-selected="true"]:hover {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active:focus,
+.fi-sidebar-nav-item[aria-current="page"]:focus,
+.fi-sidebar-nav-item.active:focus,
+.fi-sidebar-nav-item[data-active="true"]:focus,
+.fi-sidebar-nav-item[aria-selected="true"]:focus {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active:active,
+.fi-sidebar-nav-item[aria-current="page"]:active,
+.fi-sidebar-nav-item.active:active,
+.fi-sidebar-nav-item[data-active="true"]:active,
+.fi-sidebar-nav-item[aria-selected="true"]:active {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active:visited,
+.fi-sidebar-nav-item[aria-current="page"]:visited,
+.fi-sidebar-nav-item.active:visited,
+.fi-sidebar-nav-item[data-active="true"]:visited,
+.fi-sidebar-nav-item[aria-selected="true"]:visited {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض نهائياً من جميع العناصر النشطة */
+.fi-sidebar-nav-item.fi-active:link,
+.fi-sidebar-nav-item[aria-current="page"]:link,
+.fi-sidebar-nav-item.active:link,
+.fi-sidebar-nav-item[data-active="true"]:link,
+.fi-sidebar-nav-item[aria-selected="true"]:link {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}

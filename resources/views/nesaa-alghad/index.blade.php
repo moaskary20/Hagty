@@ -8,15 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nesaa-alghad-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nesaa-alghad-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-rose-50 to-pink-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
-    <section class="bg-gradient-to-r from-pink-600 to-rose-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">👩‍🎓 نساء الغد</h1>
-            <p class="text-xl md:text-2xl">تمكين المرأة وبناء مستقبل مشرق</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">👩‍🎓 نساء الغد</h1>
+            <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">تمكين المرأة وبناء مستقبل مشرق</p>
         </div>
     </section>
 
@@ -194,5 +196,8 @@
     @endif
 
     @include('components.shared-footer')
+
+    <!-- Nesaa Alghad Interactions JavaScript -->
+    <script src="{{ asset('js/nesaa-alghad-interactions.js') }}"></script>
 </body>
 </html>

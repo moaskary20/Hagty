@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
     </style>
 </head>
 <body class="bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">

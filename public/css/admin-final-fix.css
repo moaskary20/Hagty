@@ -1,0 +1,189 @@
+/* Admin Panel Final Fix - الزر المنشط وخط Tajawal */
+
+/* تطبيق خط Tajawal على جميع النصوص */
+* {
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* الزر المنشط بخلفية وردية فاتحة ونص أبيض */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-item[aria-selected="true"],
+.fi-sidebar-nav-item[data-active="true"] {
+    background-color: #FAD6E0 !important;
+    color: #A15DBF !important;
+}
+
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.active *,
+.fi-sidebar-nav-item[aria-selected="true"] *,
+.fi-sidebar-nav-item[data-active="true"] * {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
+}
+
+/* تطبيق خاص على العناصر المحددة */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-icon {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
+}
+
+/* تطبيق خاص على النصوص */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-label,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-label,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-label {
+    color: #A15DBF !important;
+}
+
+/* عند الوقوف على أي زر يتغير إلى لون وردي متوسط */
+.fi-sidebar-nav-item:hover {
+    background-color: #E6A0C3 !important;
+    color: white !important;
+}
+
+.fi-sidebar-nav-item:hover * {
+    color: white !important;
+    fill: white !important;
+}
+
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-icon {
+    color: white !important;
+    fill: white !important;
+}
+
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-label {
+    color: white !important;
+}
+
+/* ضمان وضوح النص في المحتوى الرئيسي */
+.fi-main *,
+.fi-content *,
+.fi-card *,
+.fi-section *,
+.fi-table * {
+    color: #333333 !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* استثناءات للنصوص المهمة */
+.fi-sidebar * { 
+    color: white !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+.fi-topbar * { 
+    color: white !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+.fi-btn-primary * { 
+    color: white !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+.fi-badge-primary * { 
+    color: white !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* تطبيق الألوان الجديدة */
+:root {
+    --primary-50: #FAD6E0;
+    --primary-100: #E6A0C3;
+    --primary-200: #B17DC0;
+    --primary-300: #A15DBF;
+    --primary-400: #A15DBF;
+    --primary-500: #A15DBF;
+    --primary-600: #A15DBF;
+    --primary-700: #A15DBF;
+    --primary-800: #A15DBF;
+    --primary-900: #A15DBF;
+    --primary-950: #A15DBF;
+    --accent: #E6DAC8;
+}
+
+/* تطبيق الألوان على عناصر Filament */
+.fi-sidebar { background-color: var(--primary-500) !important; }
+.fi-topbar { background-color: var(--primary-500) !important; }
+.fi-main { background-color: var(--primary-50) !important; }
+.fi-body { background-color: var(--primary-50) !important; }
+.fi-panel { background-color: var(--primary-50) !important; }
+.fi-content { background-color: var(--primary-50) !important; }
+
+/* تطبيق الألوان على الكروت */
+.fi-card { background-color: white !important; }
+.fi-section { background-color: white !important; }
+
+/* تطبيق الألوان على الجداول */
+.fi-table { background-color: white !important; }
+.fi-table-header { background-color: var(--primary-50) !important; }
+.fi-table-row { background-color: white !important; }
+.fi-table-row:hover { background-color: var(--primary-50) !important; }
+
+/* تطبيق الألوان على الأزرار */
+.fi-btn-primary { 
+    background-color: var(--primary-500) !important; 
+    border-color: var(--primary-500) !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+.fi-btn-primary:hover { 
+    background-color: var(--primary-600) !important; 
+    border-color: var(--primary-600) !important;
+}
+
+/* تطبيق الألوان على الحقول */
+.fi-input:focus { 
+    border-color: var(--primary-500) !important; 
+    box-shadow: 0 0 0 1px var(--primary-500) !important;
+}
+
+/* تطبيق الألوان على العناصر التفاعلية */
+.fi-checkbox:checked { 
+    background-color: var(--primary-500) !important; 
+    border-color: var(--primary-500) !important;
+}
+.fi-radio:checked { 
+    background-color: var(--primary-500) !important; 
+    border-color: var(--primary-500) !important;
+}
+.fi-select:focus { 
+    border-color: var(--primary-500) !important; 
+    box-shadow: 0 0 0 1px var(--primary-500) !important;
+}
+
+/* تطبيق الألوان على النوافذ المنبثقة */
+.fi-modal-header { 
+    background-color: var(--primary-500) !important; 
+    color: white !important;
+}
+
+/* تطبيق الألوان على الشارات */
+.fi-badge-primary { 
+    background-color: var(--primary-500) !important; 
+    color: white !important;
+}
+
+/* تطبيق الألوان على التنبيهات */
+.fi-alert-primary { 
+    background-color: var(--primary-50) !important; 
+    border-color: var(--primary-200) !important; 
+    color: var(--primary-800) !important;
+}
+
+/* تطبيق الألوان على التبويبات */
+.fi-tabs-tab-active { 
+    color: var(--primary-500) !important; 
+    border-color: var(--primary-500) !important;
+}
+
+/* تطبيق الألوان على مسار التنقل */
+.fi-breadcrumbs-item { 
+    color: var(--primary-500) !important;
+}
+
+/* تطبيق الألوان على الترقيم */
+.fi-pagination-item-active { 
+    background-color: var(--primary-500) !important; 
+    color: white !important;
+}

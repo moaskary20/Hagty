@@ -1,0 +1,215 @@
+/* Eventaty Section Animations */
+
+/* CSS Variables for Eventaty Colors */
+:root {
+    --eventaty-primary: #A15DBF;
+    --eventaty-secondary: #8B4A9C;
+    --eventaty-accent-1: #FAD6E0;
+    --eventaty-accent-2: #E6A0C3;
+    --eventaty-accent-3: #B17DC0;
+    --eventaty-accent-4: #E6DAC8;
+    --eventaty-accent-5: #753880;
+}
+
+/* Remove header animations as requested */
+header, nav, .navbar {
+    animation: none !important;
+}
+
+/* Enhanced card hover effects */
+.bg-\[#FAD6E0\], .bg-\[#E6DAC8\], .bg-\[#E6A0C3\] {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-\[#FAD6E0\]:hover, .bg-\[#E6DAC8\]:hover, .bg-\[#E6A0C3\]:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(161, 93, 191, 0.3);
+    border-color: var(--eventaty-accent-2);
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Bounce In Animation */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-bounceIn {
+    animation: bounceIn 0.6s ease-out forwards;
+}
+
+/* Slide In Right Animation */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Statistics cards styling */
+.grid.grid-cols-2.md\\:grid-cols-4 > div .text-3xl {
+    color: #000000 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 900;
+    font-family: 'Cairo', sans-serif;
+    filter: contrast(1.2);
+}
+
+.grid.grid-cols-2.md\\:grid-cols-4 > div .text-sm {
+    color: #000000 !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    filter: contrast(1.2);
+}
+
+/* Number pulse animation */
+@keyframes numberPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.grid.grid-cols-2.md\\:grid-cols-4 > div .text-3xl:hover {
+    animation: numberPulse 0.3s ease-in-out;
+}
+
+/* Enhanced text rendering */
+.grid.grid-cols-2.md\\:grid-cols-4 > div .text-3xl,
+.grid.grid-cols-2.md\\:grid-cols-4 > div .text-sm {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Add subtle overlay to statistics cards for better contrast */
+.bg-\[#FAD6E0\]:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Browse all articles button clarity */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 800 !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    filter: contrast(1.2) !important;
+    font-family: 'Cairo', sans-serif !important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] i {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* General white text styling */
+.text-white, a.text-white {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+    font-weight: 600 !important;
+    font-family: 'Cairo', sans-serif !important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* Specific color text styling */
+.text-\[#A15DBF\], .hover\\:text-\[#8B4A9C\]:hover {
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) !important;
+    font-family: 'Cairo', sans-serif !important;
+}
+
+.text-\[#A15DBF\].text-3xl, .text-\[#B17DC0\], .text-\[#8B4A9C\] {
+    font-weight: 600 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) !important;
+    font-family: 'Cairo', sans-serif !important;
+}
+
+/* Eventaty specific animations */
+.eventaty-card {
+    transition: all 0.3s ease;
+}
+
+.eventaty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(161, 93, 191, 0.2);
+}
+
+.eventaty-icon {
+    transition: all 0.3s ease;
+}
+
+.eventaty-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Shimmer effect for cards */
+.bg-\[#FAD6E0\]:hover::before,
+.bg-\[#E6DAC8\]:hover::before,
+.bg-\[#E6A0C3\]:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.bg-\[#FAD6E0\]:hover::before,
+.bg-\[#E6DAC8\]:hover::before,
+.bg-\[#E6A0C3\]:hover::before {
+    left: 100%;
+}

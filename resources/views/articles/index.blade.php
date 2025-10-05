@@ -236,11 +236,11 @@
 <style>
 /* Navigation Styles */
 .primary-color {
-    color: #d94288;
+    color: #A15DBF;
 }
 
 .menu-item {
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     color: white !important;
     transition: all 0.3s ease;
 }
@@ -252,7 +252,7 @@
 }
 
 .auth-btn-primary {
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     color: white;
     transition: all 0.3s ease;
 }
@@ -265,13 +265,13 @@
 
 .auth-btn-secondary {
     background: white;
-    color: #d94288;
-    border: 2px solid #d94288;
+    color: #A15DBF;
+    border: 2px solid #A15DBF;
     transition: all 0.3s ease;
 }
 
 .auth-btn-secondary:hover {
-    background: #d94288;
+    background: #A15DBF;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(217, 66, 136, 0.3);
@@ -290,7 +290,7 @@
 }
 
 .mobile-menu-item:hover {
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     color: white;
     transform: translateX(-4px);
 }
@@ -308,7 +308,7 @@
 }
 
 .mobile-auth-btn.primary {
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     color: white;
 }
 
@@ -319,12 +319,12 @@
 
 .mobile-auth-btn.secondary {
     background: white;
-    color: #d94288;
-    border: 2px solid #d94288;
+    color: #A15DBF;
+    border: 2px solid #A15DBF;
 }
 
 .mobile-auth-btn.secondary:hover {
-    background: #d94288;
+    background: #A15DBF;
     color: white;
     transform: translateX(-4px);
 }
@@ -354,7 +354,7 @@
 .footer-logo-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -368,7 +368,7 @@
 .footer-title {
     font-size: 2.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -399,7 +399,7 @@
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(135deg, #d94288, #9333ea);
+    background: linear-gradient(135deg, #A15DBF, #9333ea);
     border-radius: 2px;
 }
 
@@ -549,15 +549,15 @@
 }
 
 .pagination a:hover {
-    color: #d94288;
+    color: #A15DBF;
     background: #fdf2f8;
-    border-color: #d94288;
+    border-color: #A15DBF;
 }
 
 .pagination .active span {
     color: white;
-    background: #d94288;
-    border: 1px solid #d94288;
+    background: #A15DBF;
+    border: 1px solid #A15DBF;
 }
 
 .pagination .disabled span {

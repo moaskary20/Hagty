@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/family-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/family-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .menu-item {
@@ -24,7 +26,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -36,26 +38,26 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
         
         .auth-btn-primary:hover {
-            background: #c13a7a;
+            background: #8B4A9C;
             color: white;
         }
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -70,12 +72,12 @@
         /* تخصيص ألوان التركيز */
         .auth-btn-primary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         .auth-btn-secondary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         /* Mobile Menu Styles */
@@ -95,8 +97,8 @@
         
         .mobile-menu-item:hover {
             transform: translateX(-4px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.15);
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
+            background: linear-gradient(135deg, #FAD6E0 0%, #E6A0C3 100%);
         }
         
         .mobile-menu-item span {
@@ -119,26 +121,26 @@
         }
         
         .mobile-auth-btn.primary {
-            background: linear-gradient(135deg, #d94288 0%, #c13a7a 100%);
+            background: linear-gradient(135deg, #A15DBF 0%, #8B4A9C 100%);
             color: white;
         }
         
         .mobile-auth-btn.primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.3);
+            box-shadow: 0 6px 20px rgba(161, 93, 191, 0.3);
         }
         
         .mobile-auth-btn.secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .mobile-auth-btn.secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.2);
+            box-shadow: 0 6px 20px rgba(161, 93, 191, 0.2);
         }
         
         .mobile-auth-btn span {
@@ -162,33 +164,33 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-green-50 to-teal-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-green-500 to-teal-600 text-white py-24">
+    <section class="bg-[#8E44AD] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">👨‍👩‍👧‍👦 قسم عائلتي</h1>
-            <p class="text-xl md:text-2xl mb-8">رعاية شاملة لعائلتك ونصائح مفيدة للحياة الأسرية</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">👨‍👩‍👧‍👦 قسم عائلتي</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">رعاية شاملة لعائلتك ونصائح مفيدة للحياة الأسرية</p>
             
             <!-- Statistics -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $family_advices->count() }}</div>
-                    <div class="text-sm">نصيحة عائلية</div>
+                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_advices->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">نصيحة عائلية</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $family_activities->count() }}</div>
-                    <div class="text-sm">نشاط عائلي</div>
+                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_activities->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">نشاط عائلي</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $family_outing_areas->count() }}</div>
-                    <div class="text-sm">منطقة خروج</div>
+                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_outing_areas->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">منطقة خروج</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $family_health_records->count() }}</div>
-                    <div class="text-sm">سجل صحي</div>
+                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_health_records->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">سجل صحي</div>
                 </div>
             </div>
         </div>
@@ -199,14 +201,14 @@
         
         <!-- النصائح العائلية -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">💡 النصائح العائلية</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">💡 النصائح العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_advices as $advice)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $advice->title }}</h3>
-                        <p class="text-gray-600 mb-4">{{ Str::limit($advice->content, 100) }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $advice->title }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($advice->content, 100) }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($advice->expert_name)
                             <div><i class="fas fa-user-tie ml-2"></i>{{ $advice->expert_name }}</div>
                             @endif
@@ -217,13 +219,13 @@
                             <div><i class="fas fa-folder ml-2"></i>{{ $advice->category }}</div>
                             @endif
                             @if($advice->rating)
-                            <div><i class="fas fa-star ml-2 text-yellow-500"></i>{{ $advice->rating }}</div>
+                            <div><i class="fas fa-star ml-2 text-[#A15DBF]"></i>{{ $advice->rating }}</div>
                             @endif
                         </div>
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-lightbulb text-4xl mb-4"></i>
                     <p>لا توجد نصائح عائلية متاحة حالياً</p>
                 </div>
@@ -233,14 +235,14 @@
 
         <!-- الأنشطة العائلية -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎯 الأنشطة العائلية</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎯 الأنشطة العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_activities as $activity)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $activity->activity_name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ Str::limit($activity->description, 100) }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $activity->activity_name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($activity->description, 100) }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($activity->location)
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $activity->location }}</div>
                             @endif
@@ -257,7 +259,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-gamepad text-4xl mb-4"></i>
                     <p>لا توجد أنشطة عائلية متاحة حالياً</p>
                 </div>
@@ -267,14 +269,14 @@
 
         <!-- مناطق الخروج العائلية -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏞️ مناطق الخروج العائلية</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏞️ مناطق الخروج العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_outing_areas as $area)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $area->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ Str::limit($area->description, 100) }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $area->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($area->description, 100) }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($area->address)
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $area->address }}</div>
                             @endif
@@ -285,13 +287,13 @@
                             <div><i class="fas fa-phone ml-2"></i>{{ $area->phone }}</div>
                             @endif
                             @if($area->rating)
-                            <div><i class="fas fa-star ml-2 text-yellow-500"></i>{{ $area->rating }}</div>
+                            <div><i class="fas fa-star ml-2 text-[#A15DBF]"></i>{{ $area->rating }}</div>
                             @endif
                         </div>
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-tree text-4xl mb-4"></i>
                     <p>لا توجد مناطق خروج عائلية متاحة حالياً</p>
                 </div>
@@ -301,14 +303,14 @@
 
         <!-- السجلات الصحية العائلية -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏥 السجلات الصحية العائلية</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏥 السجلات الصحية العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_health_records as $record)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $record->member_name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $record->relationship }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $record->member_name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $record->relationship }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($record->birth_date)
                             <div><i class="fas fa-calendar ml-2"></i>{{ $record->birth_date }}</div>
                             @endif
@@ -325,7 +327,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-heartbeat text-4xl mb-4"></i>
                     <p>لا توجد سجلات صحية عائلية متاحة حالياً</p>
                 </div>
@@ -337,16 +339,16 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-gray-50 to-emerald-50">
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 أحدث المقالات في عائلتي</h2>
-                <p class="text-gray-600 text-lg">نصائح وأفكار مفيدة حول الحياة العائلية والتربية</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في عائلتي</h2>
+                <p class="text-[#B17DC0] text-lg animate-fadeInUp" style="animation-delay: 0.2s;">نصائح وأفكار مفيدة حول الحياة العائلية والتربية</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
@@ -357,27 +359,27 @@
                     
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold">
+                            <span class="inline-block bg-[#E6A0C3] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
                                 {{ $blog->section_name }}
                             </span>
-                            <span class="text-sm text-gray-500">
+                            <span class="text-sm text-[#8B4A9C]">
                                 <i class="fas fa-clock ml-1"></i>
                                 {{ $blog->published_at->diffForHumans() }}
                             </span>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-emerald-600 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-3 line-clamp-2">
+                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-[#8B4A9C] transition-colors duration-300">
                                 {{ $blog->title }}
                             </a>
                         </h3>
                         
-                        <p class="text-gray-600 mb-4 line-clamp-3">
+                        <p class="text-[#B17DC0] mb-4 line-clamp-3">
                             {{ $blog->excerpt }}
                         </p>
                         
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-gray-500">
+                            <div class="flex items-center text-sm text-[#8B4A9C]">
                                 <i class="fas fa-eye ml-1"></i>
                                 <span>{{ $blog->views_count }} مشاهدة</span>
                                 <i class="fas fa-clock mr-2 ml-4"></i>
@@ -385,7 +387,7 @@
                             </div>
                             
                             <a href="{{ route('articles.show', $blog->slug) }}" 
-                               class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold transition-colors duration-300">
+                               class="inline-flex items-center text-[#A15DBF] hover:text-[#8B4A9C] font-semibold transition-colors duration-300">
                                 اقرأ المزيد
                                 <i class="fas fa-arrow-left mr-2"></i>
                             </a>
@@ -397,8 +399,8 @@
             
             <div class="text-center mt-12">
                 <a href="{{ route('articles.index') }}" 
-                   class="inline-flex items-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    <i class="fas fa-newspaper ml-2"></i>
+                   class="inline-flex items-center bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-lg font-bold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-white" style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-weight: 800;">
+                    <i class="fas fa-newspaper ml-2" style="color: #ffffff !important;"></i>
                     تصفح جميع المقالات
                 </a>
             </div>
@@ -408,6 +410,9 @@
 
     @include('components.shared-footer')
 
+    <!-- Family Interactions JavaScript -->
+    <script src="{{ asset('js/family-interactions.js') }}"></script>
+    
     <!-- Mobile Menu JavaScript -->
     <script>
         // Mobile menu functionality

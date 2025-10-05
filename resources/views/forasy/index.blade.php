@@ -8,35 +8,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/forasy-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/forasy-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">💼 فورصى</h1>
-            <p class="text-xl md:text-2xl mb-8">فرص عمل ونصائح مهنية لمستقبل أفضل</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">💼 فورصى</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">فرص عمل ونصائح مهنية لمستقبل أفضل</p>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $jobs->total() }}</div>
-                    <div class="text-sm">فرصة عمل</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $jobs->total() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فرصة عمل</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $featuredJobs->count() }}</div>
-                    <div class="text-sm">وظيفة مميزة</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $featuredJobs->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">وظيفة مميزة</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $advices->count() }}</div>
-                    <div class="text-sm">نصيحة مهنية</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $advices->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">نصيحة مهنية</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $banners->count() }}</div>
-                    <div class="text-sm">عرض خاص</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $banners->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">عرض خاص</div>
                 </div>
             </div>
         </div>
@@ -270,6 +274,9 @@
     @endif
 
     @include('components.shared-footer')
+
+    <!-- Forasy Interactions JavaScript -->
+    <script src="{{ asset('js/forasy-interactions.js') }}"></script>
 </body>
 </html>
 

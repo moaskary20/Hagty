@@ -8,31 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/riadaty-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/riadaty-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-orange-50 to-red-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
-    <section class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">🏃‍♀️ رياضتي</h1>
-            <p class="text-xl md:text-2xl">رحلتك نحو جسم صحي ونشيط</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">🏃‍♀️ رياضتي</h1>
+            <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">رحلتك نحو جسم صحي ونشيط</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $workouts->count() }}</div>
-                    <div class="text-sm">تمرين</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $workouts->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">تمرين</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $plans->count() }}</div>
-                    <div class="text-sm">خطة تدريب</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $plans->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">خطة تدريب</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $videos->count() }}</div>
-                    <div class="text-sm">فيديو تعليمي</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $videos->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فيديو تعليمي</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $challenges->count() }}</div>
-                    <div class="text-sm">تحدي نشط</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $challenges->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">تحدي نشط</div>
                 </div>
             </div>
         </div>
@@ -454,5 +456,8 @@
     @endif
 
     @include('components.shared-footer')
+
+    <!-- Riadaty Interactions JavaScript -->
+    <script src="{{ asset('js/riadaty-interactions.js') }}"></script>
 </body>
 </html>

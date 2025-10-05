@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/health-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/health-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .menu-item {
@@ -24,7 +26,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -36,26 +38,26 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
         
         .auth-btn-primary:hover {
-            background: #c13a7a;
+            background: #8B4A9C;
             color: white;
         }
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -70,12 +72,12 @@
         /* تخصيص ألوان التركيز */
         .auth-btn-primary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         .auth-btn-secondary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         /* Mobile Menu Styles */
@@ -95,7 +97,7 @@
         
         .mobile-menu-item:hover {
             transform: translateX(-4px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.15);
+            box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
             background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
         }
         
@@ -162,54 +164,53 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="relative py-20 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <!-- Main Title -->
-            <div class="text-center mb-16">
-                <h1 class="text-6xl font-bold text-gray-800 mb-6">🏥 قسم الصحة</h1>
-                <p class="text-2xl text-gray-600 mb-8">اكتشفي أفضل الأطباء والمستشفيات والصيدليات والنصائح الصحية</p>
-                
-                <!-- Statistics -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100">
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-user-md text-white text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800">{{ $doctors->count() }}</h3>
-                            <p class="text-gray-600">طبيب متخصص</p>
+            <h1 class="text-6xl font-bold mb-6 animate-fadeInUp">🏥 قسم الصحة</h1>
+            <p class="text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">اكتشفي أفضل الأطباء والمستشفيات والصيدليات والنصائح الصحية</p>
+            
+            <!-- Statistics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-md text-white text-2xl"></i>
                         </div>
+                        <h3 class="text-2xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $doctors->count() }}</h3>
+                        <p class="text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">طبيب متخصص</p>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100">
+                </div>
+                    <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-hospital text-white text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800">{{ $hospitals->count() }}</h3>
-                            <p class="text-gray-600">مستشفى</p>
+                            <h3 class="text-2xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $hospitals->count() }}</h3>
+                            <p class="text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مستشفى</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100">
+                    <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-pills text-white text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800">{{ $pharmacies->count() }}</h3>
-                            <p class="text-gray-600">صيدلية</p>
+                            <h3 class="text-2xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $pharmacies->count() }}</h3>
+                            <p class="text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">صيدلية</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100">
+                    <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
                         <div class="text-center">
-                            <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-lightbulb text-white text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800">{{ $health_tips->count() }}</h3>
-                            <p class="text-gray-600">نصيحة صحية</p>
+                            <h3 class="text-2xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $health_tips->count() }}</h3>
+                            <p class="text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">نصيحة صحية</p>
                         </div>
                     </div>
                 </div>
@@ -541,5 +542,8 @@
     @endif
 
     @include('components.shared-footer')
+
+    <!-- Health Interactions JavaScript -->
+    <script src="{{ asset('js/health-interactions.js') }}"></script>
 </body>
 </html>

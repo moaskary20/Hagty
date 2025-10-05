@@ -1,0 +1,73 @@
+/* Health Section Color Variables */
+:root {
+    --health-primary: #A15DBF;
+    --health-secondary: #8B4A9C;
+    --health-accent-1: #FAD6E0;
+    --health-accent-2: #E6A0C3;
+    --health-accent-3: #B17DC0;
+    --health-accent-4: #E6DAC8;
+    --health-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] {
+    background-color: var(--health-primary) !important;
+}
+
+.bg-\[#8B4A9C\] {
+    background-color: var(--health-secondary) !important;
+}
+
+.bg-\[#FAD6E0\] {
+    background-color: var(--health-accent-1) !important;
+}
+
+.bg-\[#E6A0C3\] {
+    background-color: var(--health-accent-2) !important;
+}
+
+.bg-\[#B17DC0\] {
+    background-color: var(--health-accent-3) !important;
+}
+
+.bg-\[#E6DAC8\] {
+    background-color: var(--health-accent-4) !important;
+}
+
+.text-\[#A15DBF\] {
+    color: var(--health-primary) !important;
+}
+
+.text-\[#8B4A9C\] {
+    color: var(--health-secondary) !important;
+}
+
+.text-\[#B17DC0\] {
+    color: var(--health-accent-3) !important;
+}
+
+.border-\[#E6A0C3\] {
+    border-color: var(--health-accent-2) !important;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    background: linear-gradient(to right, var(--health-primary), var(--health-secondary)) !important;
+}
+
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+    background: linear-gradient(to bottom right, var(--health-accent-1), var(--health-accent-4)) !important;
+}
+
+/* Hover effects */
+.hover\:from-\[#8B4A9C\]:hover {
+    background: var(--health-secondary) !important;
+}
+
+.hover\:to-\[#753880\]:hover {
+    background: var(--health-accent-5) !important;
+}
+
+.hover\:text-\[#8B4A9C\]:hover {
+    color: var(--health-secondary) !important;
+}

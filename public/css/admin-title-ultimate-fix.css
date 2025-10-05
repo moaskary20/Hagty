@@ -1,0 +1,254 @@
+/* Admin Panel Title Ultimate Fix - الإصلاح النهائي للعنوان */
+
+/* تحسين العنوان الرئيسي للصفحة */
+.fi-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 4px 8px rgba(161, 93, 191, 0.4) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين العنوان الفرعي */
+.fi-header-subheading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #B17DC0 !important;
+    margin: 1.5rem 0 2.5rem 0 !important;
+    padding: 1rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.6px !important;
+    text-shadow: 0 2px 4px rgba(177, 125, 192, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين الصفحات الفرعية */
+.fi-page-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 2rem 0 !important;
+    padding: 1.5rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.8px !important;
+    text-shadow: 0 3px 6px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين الأقسام */
+.fi-section-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.5rem 0 !important;
+    padding: 1rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.6px !important;
+    text-shadow: 0 3px 6px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين الكروت */
+.fi-card-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين الجداول */
+.fi-table-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين النماذج */
+.fi-form-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.5rem 0 !important;
+    padding: 1rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.6px !important;
+    text-shadow: 0 3px 6px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين التبويبات */
+.fi-tabs-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين التنبيهات */
+.fi-alert-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين القوائم */
+.fi-menu-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* تحسين عناوين الإحصائيات */
+.fi-stats-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: #A15DBF !important;
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.3) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+}

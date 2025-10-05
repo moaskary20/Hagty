@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fashion-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fashion-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .menu-item {
@@ -24,7 +26,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -36,26 +38,26 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
         
         .auth-btn-primary:hover {
-            background: #c13a7a;
+            background: #8B4A9C;
             color: white;
         }
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -70,12 +72,12 @@
         /* تخصيص ألوان التركيز */
         .auth-btn-primary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         .auth-btn-secondary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         /* Mobile Menu Styles */
@@ -95,7 +97,7 @@
         
         .mobile-menu-item:hover {
             transform: translateX(-4px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.15);
+            box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
             background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
         }
         
@@ -162,29 +164,29 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">👗 قسم الموضة</h1>
-            <p class="text-xl md:text-2xl mb-8">أحدث صيحات الموضة والأزياء</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">👗 قسم الموضة</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">أحدث صيحات الموضة والأزياء</p>
             
             <!-- Statistics -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $fashion_trends->count() }}</div>
-                    <div class="text-sm">صيحات موضة</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $fashion_trends->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">صيحات موضة</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $sponsor_videos->count() }}</div>
-                    <div class="text-sm">فيديوهات دعائية</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $sponsor_videos->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فيديوهات دعائية</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $forasy_courses->count() }}</div>
-                    <div class="text-sm">كورسات موضة</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $forasy_courses->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">كورسات موضة</div>
                 </div>
             </div>
         </div>
@@ -199,36 +201,36 @@
         <!-- صيحات الموضة -->
         <section class="mb-16">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">صيحات الموضة</h2>
-                <p class="text-gray-600">اكتشفي أحدث صيحات الموضة والأزياء</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">👗 صيحات الموضة</h2>
+                <p class="text-[#B17DC0] animate-fadeInUp" style="animation-delay: 0.2s;">اكتشفي أحدث صيحات الموضة والأزياء</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($fashion_trends ?? [] as $trend)
                 @php $__trendIndex = $loop->index; @endphp
-                <div class="bg-white rounded-2xl shadow-lg p-6 border border-blue-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 trend-card {{ $__trendIndex >= 6 ? 'hidden' : '' }}">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp trend-card {{ $__trendIndex >= 6 ? 'hidden' : '' }}">
                     <div class="flex items-center mb-4">
-                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mr-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-tshirt text-white text-2xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900">{{ $trend->title }}</h3>
-                            <p class="text-blue-600 font-medium">صيحة موضة</p>
+                            <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $trend->title }}</h3>
+                            <p class="text-[#8B4A9C] font-medium">صيحة موضة</p>
                         </div>
                     </div>
                     @if($trend->content)
-                    <p class="text-gray-600 mb-4">{{ Str::limit($trend->content, 100) }}</p>
+                    <p class="text-[#B17DC0] mb-4">{{ Str::limit($trend->content, 100) }}</p>
                     @endif
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-500">{{ $trend->season ?? 'جميع المواسم' }}</span>
-                        <button class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg hover:from-indigo-600 hover:to-blue-500 transition-all duration-300">
+                        <span class="text-sm text-[#8B4A9C]">{{ $trend->season ?? 'جميع المواسم' }}</span>
+                        <button class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-4 py-2 rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                             <i class="fas fa-eye ml-2"></i>شاهدي المزيد
                         </button>
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-12">
-                    <i class="fas fa-tshirt text-6xl mb-4 text-gray-300"></i>
+                <div class="col-span-full text-center text-[#A15DBF] py-12">
+                    <i class="fas fa-tshirt text-6xl mb-4"></i>
                     <p class="text-xl">لا توجد صيحات موضة متاحة حالياً</p>
                 </div>
                 @endforelse
@@ -465,5 +467,8 @@
     @endif
 
     @include('components.shared-footer')
+
+    <!-- Fashion Interactions JavaScript -->
+    <script src="{{ asset('js/fashion-interactions.js') }}"></script>
 </body>
 </html>

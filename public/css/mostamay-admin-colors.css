@@ -1,0 +1,24 @@
+/* Mostamay Section Color Variables */
+:root {
+    --mostamay-primary: #A15DBF;
+    --mostamay-secondary: #8B4A9C;
+    --mostamay-accent-1: #FAD6E0;
+    --mostamay-accent-2: #E6A0C3;
+    --mostamay-accent-3: #B17DC0;
+    --mostamay-accent-4: #E6DAC8;
+    --mostamay-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--mostamay-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--mostamay-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--mostamay-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--mostamay-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--mostamay-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--mostamay-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--mostamay-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--mostamay-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--mostamay-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--mostamay-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--mostamay-primary), var(--mostamay-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--mostamay-accent-1), var(--mostamay-accent-4)) !important; }

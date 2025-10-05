@@ -1,0 +1,495 @@
+/* Admin Panel Advanced UI - واجهة متقدمة */
+
+/* تحسينات الشريط الجانبي */
+.fi-sidebar {
+    background: linear-gradient(180deg, 
+        rgba(161, 93, 191, 0.95) 0%, 
+        rgba(139, 74, 159, 0.95) 50%, 
+        rgba(122, 63, 143, 0.95) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 4px 0 30px rgba(161, 93, 191, 0.3) !important;
+}
+
+.fi-sidebar-header {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.fi-sidebar-brand {
+    color: white !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* تحسينات الشريط العلوي */
+.fi-topbar {
+    background: linear-gradient(90deg, 
+        rgba(161, 93, 191, 0.95) 0%, 
+        rgba(139, 74, 159, 0.95) 100%) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 30px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسينات الكروت */
+.fi-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 40px rgba(161, 93, 191, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 60px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسينات الجداول */
+.fi-table {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 32px rgba(161, 93, 191, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.fi-table-header {
+    background: linear-gradient(135deg, 
+        rgba(250, 214, 224, 0.8) 0%, 
+        rgba(230, 160, 195, 0.8) 100%) !important;
+    color: var(--primary-800) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fi-table-row {
+    transition: all 0.3s ease !important;
+    border-bottom: 1px solid rgba(161, 93, 191, 0.1) !important;
+}
+
+.fi-table-row:hover {
+    background: linear-gradient(135deg, 
+        rgba(250, 214, 224, 0.3) 0%, 
+        rgba(161, 93, 191, 0.05) 100%) !important;
+    transform: scale(1.01) !important;
+    box-shadow: 0 4px 20px rgba(161, 93, 191, 0.1) !important;
+}
+
+/* تحسينات الأزرار */
+.fi-btn-primary {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 14px 28px !important;
+    font-weight: 600 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 6px 20px rgba(161, 93, 191, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.fi-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent) !important;
+    transition: left 0.6s !important;
+}
+
+.fi-btn-primary:hover::before {
+    left: 100%;
+}
+
+.fi-btn-primary:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(161, 93, 191, 0.4) !important;
+}
+
+/* تحسينات الحقول */
+.fi-input {
+    border-radius: 16px !important;
+    border: 2px solid rgba(161, 93, 191, 0.2) !important;
+    padding: 14px 18px !important;
+    transition: all 0.4s ease !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    font-weight: 500 !important;
+}
+
+.fi-input:focus {
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 4px rgba(161, 93, 191, 0.1) !important;
+    transform: translateY(-2px) !important;
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+/* تحسينات النوافذ المنبثقة */
+.fi-modal {
+    backdrop-filter: blur(15px) !important;
+}
+
+.fi-modal-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(25px) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 25px 80px rgba(161, 93, 191, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    overflow: hidden !important;
+}
+
+.fi-modal-header {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    border-radius: 24px 24px 0 0 !important;
+    padding: 24px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* تحسينات الشارات */
+.fi-badge-primary {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    border-radius: 24px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(161, 93, 191, 0.3) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* تحسينات التنبيهات */
+.fi-alert-primary {
+    background: linear-gradient(135deg, 
+        rgba(250, 214, 224, 0.8) 0%, 
+        rgba(161, 93, 191, 0.05) 100%) !important;
+    border: 1px solid rgba(161, 93, 191, 0.2) !important;
+    border-radius: 16px !important;
+    color: var(--primary-800) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(161, 93, 191, 0.1) !important;
+}
+
+/* تحسينات التبويبات */
+.fi-tabs-tab {
+    border-radius: 16px !important;
+    transition: all 0.4s ease !important;
+    margin: 6px !important;
+    padding: 12px 20px !important;
+    font-weight: 500 !important;
+}
+
+.fi-tabs-tab-active {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    box-shadow: 0 6px 20px rgba(161, 93, 191, 0.3) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* تحسينات مسار التنقل */
+.fi-breadcrumbs {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    box-shadow: 0 4px 20px rgba(161, 93, 191, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.fi-breadcrumbs-item {
+    color: var(--primary-600) !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fi-breadcrumbs-item:hover {
+    color: var(--primary-700) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* تحسينات الترقيم */
+.fi-pagination {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 16px !important;
+    padding: 12px !important;
+    box-shadow: 0 4px 20px rgba(161, 93, 191, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.fi-pagination-item {
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    margin: 4px !important;
+    padding: 8px 12px !important;
+    font-weight: 500 !important;
+}
+
+.fi-pagination-item-active {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(161, 93, 191, 0.3) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* تحسينات العناصر التفاعلية */
+.fi-checkbox:checked {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 4px 12px rgba(161, 93, 191, 0.3) !important;
+}
+
+.fi-radio:checked {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 4px 12px rgba(161, 93, 191, 0.3) !important;
+}
+
+.fi-select:focus {
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 4px rgba(161, 93, 191, 0.1) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* تحسينات شريط البحث */
+.fi-global-search {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(161, 93, 191, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.fi-global-search-field {
+    border-radius: 16px !important;
+    border: 2px solid rgba(161, 93, 191, 0.2) !important;
+    transition: all 0.4s ease !important;
+    padding: 14px 18px !important;
+    font-weight: 500 !important;
+}
+
+.fi-global-search-field:focus {
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 4px rgba(161, 93, 191, 0.1) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* تحسينات العناوين */
+.fi-header-heading {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 700 !important;
+    font-size: 2.5rem !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* تحسينات الإحصائيات */
+.fi-stats-overview {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 24px !important;
+    margin: 24px 0 !important;
+}
+
+.fi-stats-overview .fi-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(161, 93, 191, 0.05) 100%) !important;
+    border: 1px solid rgba(161, 93, 191, 0.1) !important;
+    transition: all 0.4s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-stats-overview .fi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-stats-overview .fi-card:hover {
+    transform: translateY(-8px) scale(1.03) !important;
+    box-shadow: 0 20px 60px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسينات الأيقونات */
+.fi-icon {
+    transition: all 0.4s ease !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)) !important;
+}
+
+.fi-icon:hover {
+    transform: scale(1.15) rotate(5deg) !important;
+    filter: drop-shadow(0 4px 8px rgba(161, 93, 191, 0.3)) !important;
+}
+
+/* تحسينات الروابط */
+.fi-link {
+    color: var(--primary-600) !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.fi-link:hover {
+    color: var(--primary-700) !important;
+    transform: translateY(-2px) !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسينات النصوص */
+.fi-main * {
+    color: var(--gray-700) !important;
+    font-weight: 500 !important;
+}
+
+.fi-content * {
+    color: var(--gray-700) !important;
+    font-weight: 500 !important;
+}
+
+.fi-card * {
+    color: var(--gray-700) !important;
+    font-weight: 500 !important;
+}
+
+.fi-section * {
+    color: var(--gray-700) !important;
+    font-weight: 500 !important;
+}
+
+.fi-table * {
+    color: var(--gray-700) !important;
+    font-weight: 500 !important;
+}
+
+/* استثناءات للنصوص المهمة */
+.fi-sidebar * { 
+    color: white !important;
+    font-weight: 600 !important;
+}
+.fi-topbar * { 
+    color: white !important;
+    font-weight: 600 !important;
+}
+.fi-btn-primary * { 
+    color: white !important;
+    font-weight: 600 !important;
+}
+.fi-badge-primary * { 
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* تحسينات التمرير */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(161, 93, 191, 0.1);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, 
+        var(--primary-600) 0%, 
+        var(--primary-700) 100%);
+}
+
+/* تحسينات الاستجابة */
+@media (max-width: 768px) {
+    .fi-sidebar {
+        box-shadow: none !important;
+    }
+    
+    .fi-card {
+        margin: 15px !important;
+        border-radius: 16px !important;
+    }
+    
+    .fi-stats-overview {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .fi-header-heading {
+        font-size: 2rem !important;
+    }
+}
+
+/* تحسينات الأداء */
+.fi-card,
+.fi-btn-primary,
+.fi-sidebar-nav-item,
+.fi-table-row {
+    will-change: transform;
+}
+
+/* تحسينات الوصولية */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

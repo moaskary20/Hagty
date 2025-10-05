@@ -1,16 +1,16 @@
 /* Custom CSS for Pink Buttons and Navigation */
 
-/* تخصيص لون النص للكلاسات الرمادية لتكون بيضاء */
+/* تخصيص لون النص للكلاسات الرمادية لتكون واضحة */
 .text-gray-700,
 .text-gray-950,
 .text-gray-700 *,
 .text-gray-950 * {
-    color: white !important;
+    color: #333333 !important;
 }
 
 /* فرض الخط العربي على جميع العناصر */
 * {
-    font-family: 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
     direction: rtl !important;
 }
 
@@ -25,15 +25,15 @@ div.flex.items-center.justify-between,
 div[class*="flex"][class*="items-center"][class*="justify-between"],
 div[class*="gap-x-4"][class*="px-4"][class*="py-3"],
 div[class*="gap-x-4"][class*="px-4"] {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
 
 /* تخصيص لون خلفية شريط أدوات الجدول */
 .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6 {
-    background-color: #dc2175 !important;
+    background-color: #A15DBF !important;
     color: white !important;
 }
 
@@ -47,8 +47,8 @@ div[class*="gap-x-4"][class*="px-4"] {
 .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3,
 .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.sm\:px-6,
 [class*="fi-ta-header-toolbar"] {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
@@ -66,22 +66,22 @@ body .fi-ta-header-toolbar.flex.items-center.justify-between.gap-x-4.px-4.py-3.s
 html body [class*="fi-ta-header-toolbar"],
 html body div[class*="fi-ta-header-toolbar"],
 html body .fi-ta-header-toolbar {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
 /* تخصيص بـ attribute selector */
 [class*="fi-ta-header-toolbar"][class*="flex"] {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
 /* تخصيص عام جداً */
 div[class*="toolbar"][class*="flex"][class*="items-center"] {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
@@ -90,8 +90,8 @@ div[class*="toolbar"][class*="flex"][class*="items-center"] {
 [data-filament-table] [class*="header"],
 .fi-ta-ctn [class*="toolbar"],
 .fi-ta-ctn [class*="header"] {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
@@ -100,57 +100,80 @@ div[class*="fi-ta-header-toolbar"],
 div[class*="header-toolbar"],
 .fi-ta-header-ctn > div,
 .fi-ta-header > div {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
-/* إجبار الألوان الوردية للتنقل */
+/* إجبار الألوان للتنقل */
 .fi-sidebar-nav-item {
     color: white !important;
 }
 
+/* عند الوقوف على أي زر يتغير إلى لون وردي متوسط */
 .fi-sidebar-nav-item:hover {
-    color: #f472b6 !important; /* pink-400 */
-    background-color: rgba(244, 114, 182, 0.05) !important;
+    color: white !important;
+    background-color: #E6A0C3 !important;
 }
 
+/* الزر المنشط بخلفية وردية فاتحة ونص بنفسجي */
 .fi-sidebar-nav-item.fi-active,
-.fi-sidebar-nav-item[aria-current="page"] {
-    color: #f472b6 !important; /* pink-400 */
-    background-color: rgba(244, 114, 182, 0.1) !important;
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-item[aria-selected="true"],
+.fi-sidebar-nav-item[data-active="true"] {
+    color: #A15DBF !important;
+    background-color: #FAD6E0 !important;
 }
 
 .fi-sidebar-nav-item.fi-active *,
-.fi-sidebar-nav-item[aria-current="page"] * {
-    color: #f472b6 !important; /* pink-400 */
-    fill: #f472b6 !important;
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.active *,
+.fi-sidebar-nav-item[aria-selected="true"] *,
+.fi-sidebar-nav-item[data-active="true"] * {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
 }
 
 .fi-sidebar-nav-item:hover * {
-    color: #f472b6 !important; /* pink-400 */
-    fill: #f472b6 !important;
+    color: white !important;
+    fill: white !important;
 }
 
 .fi-sidebar-nav-item:active {
-    color: #db2777 !important; /* pink-600 */
-    background-color: rgba(244, 114, 182, 0.2) !important;
+    color: white !important;
+    background-color: rgba(177, 125, 192, 0.4) !important;
 }
 
 .fi-sidebar-nav-item:active * {
-    color: #db2777 !important; /* pink-600 */
-    fill: #db2777 !important;
+    color: white !important;
+    fill: white !important;
 }
 
-/* Custom CSS for better contrast in dark theme */
+/* تطبيق خاص على العناصر المحددة */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-icon {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
+}
+
+/* تطبيق خاص على النصوص */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-label,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-label,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-label {
+    color: #A15DBF !important;
+}
+
+/* Custom CSS for better contrast */
 .fi-ta-table,
 .fi-ta-table * {
-    color: white !important;
+    color: #333333 !important;
 }
 
 .fi-ta-table th,
 .fi-ta-table td {
-    color: white !important;
+    color: #333333 !important;
 }
 
 /* Logo height fixing */
@@ -167,24 +190,47 @@ div[class*="header-toolbar"],
     color: white !important;
 }
 
+/* عند الوقوف على أي زر يتغير إلى لون وردي متوسط */
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item:hover {
-    color: #f472b6 !important; /* pink-400 */
-    background-color: rgba(244, 114, 182, 0.05) !important;
+    color: white !important;
+    background-color: #E6A0C3 !important;
 }
 
+/* الزر المنشط بخلفية وردية فاتحة ونص بنفسجي */
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active,
-.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] {
-    color: #f472b6 !important; /* pink-400 */
-    background-color: rgba(244, 114, 182, 0.1) !important;
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.active,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-selected="true"],
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[data-active="true"] {
+    color: #A15DBF !important;
+    background-color: #FAD6E0 !important;
 }
 
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active *,
-.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] * {
-    color: #f472b6 !important; /* pink-400 */
-    fill: #f472b6 !important;
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.active *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-selected="true"] *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[data-active="true"] * {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
 }
 
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item:hover * {
-    color: #f472b6 !important; /* pink-400 */
-    fill: #f472b6 !important;
+    color: white !important;
+    fill: white !important;
+}
+
+/* تطبيق خاص على العناصر المحددة */
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-icon,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.active .fi-sidebar-nav-icon {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
+}
+
+/* تطبيق خاص على النصوص */
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active .fi-sidebar-nav-label,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-label,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.active .fi-sidebar-nav-label {
+    color: #A15DBF !important;
 }

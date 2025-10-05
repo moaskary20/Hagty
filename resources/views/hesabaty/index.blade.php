@@ -8,15 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/hesabaty-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/hesabaty-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-green-50 to-emerald-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
-    <section class="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">💰 حساباتى</h1>
-            <p class="text-xl md:text-2xl">إدارة ذكية لأموالك وميزانيتك</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">💰 حساباتى</h1>
+            <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">إدارة ذكية لأموالك وميزانيتك</p>
         </div>
     </section>
 
@@ -435,5 +437,8 @@
     @endauth
 
     @include('components.shared-footer')
+
+    <!-- Hesabaty Interactions JavaScript -->
+    <script src="{{ asset('js/hesabaty-interactions.js') }}"></script>
 </body>
 </html>

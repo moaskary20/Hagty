@@ -8,21 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contact-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-d94288 to-purple-600 text-white py-20">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">تواصل معنا</h1>
-            <p class="text-xl md:text-2xl">نحن هنا لمساعدتك في أي وقت</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">تواصل معنا</h1>
+            <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">نحن هنا لمساعدتك في أي وقت</p>
         </div>
     </section>
 
@@ -32,11 +34,11 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Info -->
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-8">معلومات الاتصال</h2>
+                    <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 animate-fadeInUp">معلومات الاتصال</h2>
                     
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4 space-x-reverse">
-                            <div class="bg-d94288 text-white p-3 rounded-full">
+                            <div class="bg-[#A15DBF] text-white p-3 rounded-full">
                                 <i class="fas fa-phone text-xl"></i>
                             </div>
                             <div>
@@ -47,7 +49,7 @@
                         </div>
                         
                         <div class="flex items-start space-x-4 space-x-reverse">
-                            <div class="bg-d94288 text-white p-3 rounded-full">
+                            <div class="bg-[#A15DBF] text-white p-3 rounded-full">
                                 <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
@@ -58,7 +60,7 @@
                         </div>
                         
                         <div class="flex items-start space-x-4 space-x-reverse">
-                            <div class="bg-d94288 text-white p-3 rounded-full">
+                            <div class="bg-[#A15DBF] text-white p-3 rounded-full">
                                 <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
@@ -69,7 +71,7 @@
                         </div>
                         
                         <div class="flex items-start space-x-4 space-x-reverse">
-                            <div class="bg-d94288 text-white p-3 rounded-full">
+                            <div class="bg-[#A15DBF] text-white p-3 rounded-full">
                                 <i class="fas fa-clock text-xl"></i>
                             </div>
                             <div>
@@ -90,25 +92,25 @@
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">الاسم</label>
                                 <input type="text" id="name" name="name" required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A15DBF] focus:border-[#A15DBF]">
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">البريد الإلكتروني</label>
                                 <input type="email" id="email" name="email" required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A15DBF] focus:border-[#A15DBF]">
                             </div>
                         </div>
                         
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">رقم الهاتف</label>
                             <input type="tel" id="phone" name="phone"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A15DBF] focus:border-[#A15DBF]">
                         </div>
                         
                         <div>
                             <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">الموضوع</label>
                             <select id="subject" name="subject" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288">
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A15DBF] focus:border-[#A15DBF]">
                                 <option value="">اختر الموضوع</option>
                                 <option value="general">استفسار عام</option>
                                 <option value="support">دعم فني</option>
@@ -121,12 +123,12 @@
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-2">الرسالة</label>
                             <textarea id="message" name="message" rows="5" required
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-d94288 focus:border-d94288"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#A15DBF] focus:border-[#A15DBF]"
                                       placeholder="اكتب رسالتك هنا..."></textarea>
                         </div>
                         
                         <button type="submit"
-                                class="w-full bg-d94288 text-white py-3 px-6 rounded-xl font-semibold hover:bg-pink-700 transition-colors duration-300">
+                                class="w-full bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-3 px-6 rounded-xl font-semibold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                             <i class="fas fa-paper-plane ml-2"></i>
                             إرسال الرسالة
                         </button>
@@ -145,22 +147,22 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-6 rounded-xl">
+                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">كيف يمكنني التسجيل في المنصة؟</h3>
                     <p class="text-gray-600">يمكنك التسجيل بسهولة من خلال النقر على زر "الاشتراك" وملء النموذج بالمعلومات المطلوبة.</p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl">
+                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">هل الخدمات مجانية؟</h3>
                     <p class="text-gray-600">نعم، معظم خدماتنا الأساسية مجانية. بعض الخدمات المتقدمة قد تتطلب رسوم رمزية.</p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl">
+                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">كيف يمكنني الحصول على الدعم؟</h3>
                     <p class="text-gray-600">يمكنك التواصل معنا عبر الهاتف أو البريد الإلكتروني أو من خلال نموذج الاتصال أعلاه.</p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl">
+                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">هل بياناتي آمنة؟</h3>
                     <p class="text-gray-600">نعم، نحن نستخدم أحدث تقنيات الحماية لضمان أمان بياناتك وخصوصيتك.</p>
                 </div>
@@ -169,5 +171,8 @@
     </section>
 
     @include('components.shared-footer')
+
+    <!-- Contact Interactions JavaScript -->
+    <script src="{{ asset('js/contact-interactions.js') }}"></script>
 </body>
 </html>

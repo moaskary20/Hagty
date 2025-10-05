@@ -10,17 +10,17 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* تخصيص لون النص للكلاسات الرمادية لتكون بيضاء */
+/* تخصيص لون النص للكلاسات الرمادية لتكون واضحة */
 .text-gray-700,
 .text-gray-950,
 .text-gray-700 *,
 .text-gray-950 * {
-    color: white !important;
+    color: #333333 !important;
 }
 
 /* فرض الخط العربي على جميع العناصر */
 * {
-    font-family: 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
     direction: rtl !important;
 }
 
@@ -46,8 +46,8 @@ div[class*="fi-ta-header-toolbar"],
 div[class*="header-toolbar"],
 .fi-ta-header-ctn > div,
 .fi-ta-header > div {
-    background-color: #dc2175 !important;
-    background: #dc2175 !important;
+    background-color: #A15DBF !important;
+    background: #A15DBF !important;
     color: white !important;
 }
 
@@ -57,23 +57,23 @@ div[class*="header-toolbar"],
 }
 
 .fi-sidebar-nav-item:hover {
-    color: #f472b6 !important;
-    background-color: rgba(244, 114, 182, 0.05) !important;
+    color: #B17DC0 !important;
+    background-color: rgba(177, 125, 192, 0.05) !important;
 }
 
 .fi-sidebar-nav-item.fi-active,
 .fi-sidebar-nav-item[aria-current="page"] {
-    color: #f472b6 !important;
-    background-color: rgba(244, 114, 182, 0.1) !important;
+    color: #B17DC0 !important;
+    background-color: rgba(177, 125, 192, 0.1) !important;
 }
 
 .fi-sidebar-nav-item.fi-active *,
 .fi-sidebar-nav-item[aria-current="page"] * {
-    color: #f472b6 !important;
-    fill: #f472b6 !important;
+    color: #B17DC0 !important;
+    fill: #B17DC0 !important;
 }
 
 .fi-sidebar-nav-item:hover * {
-    color: #f472b6 !important;
-    fill: #f472b6 !important;
+    color: #B17DC0 !important;
+    fill: #B17DC0 !important;
 }

@@ -18,6 +18,8 @@
     
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/accessoraty-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/accessoraty-animations.css') }}">
     
     <!-- Custom CSS -->
     <style>
@@ -26,11 +28,11 @@
         }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .primary-bg {
-            background-color: #d94288;
+            background-color: #A15DBF;
         }
         
         .card-hover {
@@ -54,7 +56,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -210,26 +212,26 @@
         }
         
         .mobile-auth-btn.primary {
-            background: linear-gradient(135deg, #d94288 0%, #c13a7a 100%);
+            background: linear-gradient(135deg, #A15DBF 0%, #8B4A9C 100%);
             color: white;
         }
         
         .mobile-auth-btn.primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.3);
+            box-shadow: 0 6px 20px rgba(161, 93, 191, 0.3);
         }
         
         .mobile-auth-btn.secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .mobile-auth-btn.secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.2);
+            box-shadow: 0 6px 20px rgba(161, 93, 191, 0.2);
         }
         
         .mobile-auth-btn span {
@@ -253,7 +255,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- خلفية متحركة من القلوب والتاج والنجوم -->
     <div class="floating-background">
         <i class="floating-icon heart fas fa-heart" style="top: 10%; left: 5%;"></i>
@@ -274,22 +276,22 @@
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-20">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-4">{{ $section_name }}</h1>
-            <p class="text-xl mb-8">كورسات تعليمية احترافية وإكسسوارات عصرية</p>
+            <h1 class="text-5xl font-bold mb-4 animate-fadeInUp">💍 {{ $section_name }}</h1>
+            <p class="text-xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">كورسات تعليمية احترافية وإكسسوارات عصرية</p>
             <div class="flex justify-center space-x-4 space-x-reverse">
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $courses->count() ?? 0 }}</div>
-                    <div class="text-sm">كورس تعليمي</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $courses->count() ?? 0 }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">كورس تعليمي</div>
                 </div>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $students->count() ?? 0 }}</div>
-                    <div class="text-sm">طالبة مسجلة</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $students->count() ?? 0 }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">طالبة مسجلة</div>
                 </div>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $shops->count() ?? 0 }}</div>
-                    <div class="text-sm">متجر إكسسوارات</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $shops->count() ?? 0 }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">متجر إكسسوارات</div>
                 </div>
             </div>
         </div>
@@ -299,28 +301,28 @@
     @include('components.accessoraty-search-form')
 
     <!-- الكورسات التعليمية -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-[#FAD6E0]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">الكورسات التعليمية</h2>
-                <p class="text-gray-600">تعلمي من أفضل المدربين في مجالات التجميل والموضة والتصميم</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎓 الكورسات التعليمية</h2>
+                <p class="text-[#B17DC0] animate-fadeInUp" style="animation-delay: 0.2s;">تعلمي من أفضل المدربين في مجالات التجميل والموضة والتصميم</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($courses ?? [] as $course)
-                <div class="section-card card-hover">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-gray-900">{{ $course->name }}</h3>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $course->students_count }} طالبة</span>
+                            <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $course->name }}</h3>
+                            <span class="bg-[#E6A0C3] text-[#A15DBF] text-xs font-medium px-2.5 py-0.5 rounded">{{ $course->students_count }} طالبة</span>
                         </div>
                         @if($course->description)
-                        <p class="text-gray-600 mb-4">{{ Str::limit($course->description, 100) }}</p>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($course->description, 100) }}</p>
                         @endif
                         <div class="flex justify-between items-center">
-                            <span class="text-primary-text font-semibold">{{ $course->price ?? 'مجاني' }}</span>
+                            <span class="text-[#A15DBF] font-semibold">{{ $course->price ?? 'مجاني' }}</span>
                             <button onclick="Livewire.dispatch('openCourseRegistration', {courseId: {{ $course->id }}, courseName: '{{ $course->name }}'})" 
-                                    class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-pink-500 transition-all duration-300">
+                                    class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-4 py-2 rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                                 <i class="fas fa-play ml-2"></i>ابدأي التعلم
                             </button>
                         </div>
@@ -337,29 +339,29 @@
     </section>
 
     <!-- متاجر الإكسسوارات -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">متاجر الإكسسوارات</h2>
-                <p class="text-gray-600">اكتشفي أجمل الإكسسوارات من أفضل المتاجر</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🛍️ متاجر الإكسسوارات</h2>
+                <p class="text-[#B17DC0] animate-fadeInUp" style="animation-delay: 0.2s;">اكتشفي أجمل الإكسسوارات من أفضل المتاجر</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($shops ?? [] as $shop)
-                <div class="section-card card-hover">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-gray-900">{{ $shop->brand_name }}</h3>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $shop->category }}</span>
+                            <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $shop->brand_name }}</h3>
+                            <span class="bg-[#E6A0C3] text-[#A15DBF] text-xs font-medium px-2.5 py-0.5 rounded">{{ $shop->category }}</span>
                         </div>
                         @if($shop->location)
-                        <p class="text-gray-600 mb-4">{{ $shop->location }}</p>
+                        <p class="text-[#B17DC0] mb-4">{{ $shop->location }}</p>
                         @endif
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm">{{ $shop->location ?? 'موقع غير محدد' }}</span>
+                            <span class="text-[#8B4A9C] text-sm">{{ $shop->location ?? 'موقع غير محدد' }}</span>
                             @if($shop->shop_url)
                                 <a href="{{ $shop->shop_url }}" target="_blank" 
-                                   class="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-lg hover:from-emerald-600 hover:to-green-500 transition-all duration-300">
+                                   class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-4 py-2 rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                                     <i class="fas fa-shopping-bag ml-2"></i>تسوقي الآن
                                 </a>
                             @else
@@ -381,16 +383,16 @@
     </section>
 
     <!-- إعلانات البانر -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-[#FAD6E0]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">إعلانات البانر</h2>
-                <p class="text-gray-600">اكتشفي أحدث العروض والمنتجات من خلال إعلاناتنا المميزة</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📢 إعلانات البانر</h2>
+                <p class="text-[#B17DC0] animate-fadeInUp" style="animation-delay: 0.2s;">اكتشفي أحدث العروض والمنتجات من خلال إعلاناتنا المميزة</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($banners ?? [] as $banner)
-                <div class="section-card card-hover">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         @if($banner->image)
                         <div class="mb-4">
@@ -407,16 +409,16 @@
                         </div>
                         @endif
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-gray-900">{{ $banner->title ?? 'إعلان مميز' }}</h3>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">إعلان</span>
+                            <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $banner->title ?? 'إعلان مميز' }}</h3>
+                            <span class="bg-[#E6A0C3] text-[#A15DBF] text-xs font-medium px-2.5 py-0.5 rounded">إعلان</span>
                         </div>
                         @if($banner->description)
-                        <p class="text-gray-600 mb-4">{{ Str::limit($banner->description, 100) }}</p>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($banner->description, 100) }}</p>
                         @endif
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm">{{ $banner->location ?? 'موقع غير محدد' }}</span>
+                            <span class="text-[#8B4A9C] text-sm">{{ $banner->location ?? 'موقع غير محدد' }}</span>
                             @if($banner->link)
-                            <a href="{{ $banner->link }}" target="_blank" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg hover:from-indigo-600 hover:to-blue-500 transition-all duration-300">
+                            <a href="{{ $banner->link }}" target="_blank" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-4 py-2 rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                                 <i class="fas fa-external-link-alt ml-2"></i>عرض الإعلان
                             </a>
                             @endif
@@ -434,16 +436,16 @@
     </section>
 
     <!-- إعلانات الفيديو -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">إعلانات الفيديو</h2>
-                <p class="text-gray-600">شاهدي أحدث الإعلانات والفيديوهات المميزة</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎥 إعلانات الفيديو</h2>
+                <p class="text-[#B17DC0] animate-fadeInUp" style="animation-delay: 0.2s;">شاهدي أحدث الإعلانات والفيديوهات المميزة</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($videos ?? [] as $video)
-                <div class="section-card card-hover">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         @if($video->thumbnail)
                         <div class="mb-4 relative">
@@ -453,7 +455,7 @@
                                  onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=300&fit=crop'">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-play text-d94288 text-2xl"></i>
+                                    <i class="fas fa-play text-[#A15DBF] text-2xl"></i>
                                 </div>
                             </div>
                         </div>
@@ -464,22 +466,22 @@
                                  class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-play text-d94288 text-2xl"></i>
+                                    <i class="fas fa-play text-[#A15DBF] text-2xl"></i>
                                 </div>
                             </div>
                         </div>
                         @endif
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-gray-900">{{ $video->title ?? 'فيديو مميز' }}</h3>
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">فيديو</span>
+                            <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $video->title ?? 'فيديو مميز' }}</h3>
+                            <span class="bg-[#E6A0C3] text-[#A15DBF] text-xs font-medium px-2.5 py-0.5 rounded">فيديو</span>
                         </div>
                         @if($video->description)
-                        <p class="text-gray-600 mb-4">{{ Str::limit($video->description, 100) }}</p>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($video->description, 100) }}</p>
                         @endif
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm">{{ $video->duration ?? 'مدة غير محددة' }}</span>
+                            <span class="text-[#8B4A9C] text-sm">{{ $video->duration ?? 'مدة غير محددة' }}</span>
                             @if($video->video_url)
-                            <a href="{{ $video->video_url }}" target="_blank" class="bg-gradient-to-r from-red-500 to-pink-600 text-white px-4 py-2 rounded-lg hover:from-pink-600 hover:to-red-500 transition-all duration-300">
+                            <a href="{{ $video->video_url }}" target="_blank" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-4 py-2 rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                                 <i class="fas fa-play ml-2"></i>شاهدي الفيديو
                             </a>
                             @endif
@@ -495,6 +497,77 @@
             </div>
         </div>
     </section>
+
+    <!-- Latest Blogs Section -->
+    @if($latestBlogs && $latestBlogs->count() > 0)
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في أكسسوراتى</h2>
+                <p class="text-[#B17DC0] text-lg animate-fadeInUp" style="animation-delay: 0.2s;">نصائح وأفكار مفيدة حول الإكسسوارات والموضة</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                @foreach($latestBlogs as $blog)
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                    @if($blog->featured_image)
+                        <div class="h-48 overflow-hidden">
+                            <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
+                                 alt="{{ $blog->title }}"
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                    @endif
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="inline-block bg-[#E6A0C3] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
+                                {{ $blog->section_name }}
+                            </span>
+                            <span class="text-sm text-[#8B4A9C]">
+                                <i class="fas fa-clock ml-1"></i>
+                                {{ $blog->published_at->diffForHumans() }}
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-3 line-clamp-2">
+                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-[#8B4A9C] transition-colors duration-300">
+                                {{ $blog->title }}
+                            </a>
+                        </h3>
+                        
+                        <p class="text-[#B17DC0] mb-4 line-clamp-3">
+                            {{ $blog->excerpt }}
+                        </p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-[#8B4A9C]">
+                                <i class="fas fa-eye ml-1"></i>
+                                <span>{{ $blog->views_count }} مشاهدة</span>
+                                <i class="fas fa-clock mr-2 ml-4"></i>
+                                <span>{{ $blog->reading_time }} دقيقة قراءة</span>
+                            </div>
+                            
+                            <a href="{{ route('articles.show', $blog->slug) }}" 
+                               class="inline-flex items-center text-[#A15DBF] hover:text-[#8B4A9C] font-semibold transition-colors duration-300">
+                                اقرأ المزيد
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="{{ route('articles.index') }}" 
+                   class="inline-flex items-center bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-lg font-bold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-white" style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Cairo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-weight: 800;">
+                    <i class="fas fa-newspaper ml-2" style="color: #ffffff !important;"></i>
+                    تصفح جميع المقالات
+                </a>
+            </div>
+        </div>
+    </section>
+    @endif
 
     @include('components.shared-footer')
 
@@ -563,77 +636,7 @@
         });
     </script>
 
-    <!-- Latest Blogs Section -->
-    @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-gray-50 to-pink-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 أحدث المقالات في أكسسوراتى</h2>
-                <p class="text-gray-600 text-lg">نصائح وأفكار مفيدة حول الإكسسوارات والموضة</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                @foreach($latestBlogs as $blog)
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    @if($blog->featured_image)
-                        <div class="h-48 overflow-hidden">
-                            <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
-                                 alt="{{ $blog->title }}"
-                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                        </div>
-                    @endif
-                    
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="inline-block bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full font-semibold">
-                                {{ $blog->section_name }}
-                            </span>
-                            <span class="text-sm text-gray-500">
-                                <i class="fas fa-clock ml-1"></i>
-                                {{ $blog->published_at->diffForHumans() }}
-                            </span>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-pink-600 transition-colors duration-300">
-                                {{ $blog->title }}
-                            </a>
-                        </h3>
-                        
-                        <p class="text-gray-600 mb-4 line-clamp-3">
-                            {{ $blog->excerpt }}
-                        </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-gray-500">
-                                <i class="fas fa-eye ml-1"></i>
-                                <span>{{ $blog->views_count }} مشاهدة</span>
-                                <i class="fas fa-clock mr-2 ml-4"></i>
-                                <span>{{ $blog->reading_time }} دقيقة قراءة</span>
-                            </div>
-                            
-                            <a href="{{ route('articles.show', $blog->slug) }}" 
-                               class="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold transition-colors duration-300">
-                                اقرأ المزيد
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="{{ route('articles.index') }}" 
-                   class="inline-flex items-center bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    <i class="fas fa-newspaper ml-2"></i>
-                    تصفح جميع المقالات
-                </a>
-            </div>
-        </div>
-    </section>
-    @endif
-
-    @include('components.shared-footer')
+    <!-- Accessoraty Interactions JavaScript -->
+    <script src="{{ asset('js/accessoraty-interactions.js') }}"></script>
 </body>
 </html>

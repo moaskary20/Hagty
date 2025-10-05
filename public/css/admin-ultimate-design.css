@@ -1,0 +1,898 @@
+/* Admin Panel Ultimate Design - التصميم النهائي المتقدم */
+
+/* متغيرات الألوان المتقدمة */
+:root {
+    --primary-50: #FAD6E0;
+    --primary-100: #E6A0C3;
+    --primary-200: #B17DC0;
+    --primary-300: #A15DBF;
+    --primary-400: #A15DBF;
+    --primary-500: #A15DBF;
+    --primary-600: #8B4A9F;
+    --primary-700: #7A3F8F;
+    --primary-800: #69347F;
+    --primary-900: #58296F;
+    --accent: #E6DAC8;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --info: #3B82F6;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+}
+
+/* تطبيق خط Tajawal على جميع النصوص */
+* {
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* تحسينات الشريط الجانبي النهائية */
+.fi-sidebar {
+    background: linear-gradient(180deg, 
+        rgba(161, 93, 191, 0.98) 0%, 
+        rgba(139, 74, 159, 0.98) 50%, 
+        rgba(122, 63, 143, 0.98) 100%) !important;
+    backdrop-filter: blur(30px) !important;
+    border-right: 3px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 8px 0 50px rgba(161, 93, 191, 0.5) !important;
+    position: relative !important;
+}
+
+.fi-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.08) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.08) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 70%) !important;
+    pointer-events: none !important;
+}
+
+/* تحسينات الشريط العلوي النهائية */
+.fi-topbar {
+    background: linear-gradient(90deg, 
+        rgba(161, 93, 191, 0.98) 0%, 
+        rgba(139, 74, 159, 0.98) 100%) !important;
+    backdrop-filter: blur(30px) !important;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 6px 50px rgba(161, 93, 191, 0.4) !important;
+    position: relative !important;
+}
+
+.fi-topbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.08) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.08) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-topbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 70%) !important;
+    pointer-events: none !important;
+}
+
+/* تحسينات الكروت النهائية */
+.fi-card {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(30px) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 15px 60px rgba(161, 93, 191, 0.15) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 25%, 
+        var(--primary-500) 50%, 
+        var(--primary-600) 75%, 
+        var(--primary-500) 100%) !important;
+    background-size: 200% 100% !important;
+    animation: gradientShift 4s ease-in-out infinite !important;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fi-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-card:hover {
+    transform: translateY(-15px) scale(1.04) !important;
+    box-shadow: 0 30px 100px rgba(161, 93, 191, 0.3) !important;
+}
+
+/* تحسينات الجداول النهائية */
+.fi-table {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(30px) !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: 0 15px 50px rgba(161, 93, 191, 0.15) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    position: relative !important;
+}
+
+.fi-table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-table::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-table-header {
+    background: linear-gradient(135deg, 
+        rgba(250, 214, 224, 0.95) 0%, 
+        rgba(230, 160, 195, 0.95) 100%) !important;
+    color: var(--primary-800) !important;
+    font-weight: 800 !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15) !important;
+    position: relative !important;
+}
+
+.fi-table-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.15) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-table-row {
+    transition: all 0.5s ease !important;
+    border-bottom: 2px solid rgba(161, 93, 191, 0.1) !important;
+    position: relative !important;
+}
+
+.fi-table-row:hover {
+    background: linear-gradient(135deg, 
+        rgba(250, 214, 224, 0.5) 0%, 
+        rgba(161, 93, 191, 0.1) 100%) !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 12px 30px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسينات الأزرار النهائية */
+.fi-btn-primary {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    border: none !important;
+    border-radius: 24px !important;
+    padding: 18px 36px !important;
+    font-weight: 800 !important;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 10px 30px rgba(161, 93, 191, 0.4) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.fi-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.5), 
+        transparent) !important;
+    transition: left 0.8s !important;
+}
+
+.fi-btn-primary:hover::before {
+    left: 100%;
+}
+
+.fi-btn-primary:hover {
+    transform: translateY(-5px) scale(1.1) !important;
+    box-shadow: 0 20px 60px rgba(161, 93, 191, 0.6) !important;
+}
+
+/* تحسينات الحقول النهائية */
+.fi-input {
+    border-radius: 24px !important;
+    border: 4px solid rgba(161, 93, 191, 0.2) !important;
+    padding: 18px 24px !important;
+    transition: all 0.6s ease !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    font-weight: 700 !important;
+    position: relative !important;
+}
+
+.fi-input:focus {
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 8px rgba(161, 93, 191, 0.2) !important;
+    transform: translateY(-4px) !important;
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+/* تحسينات النوافذ المنبثقة النهائية */
+.fi-modal {
+    backdrop-filter: blur(25px) !important;
+}
+
+.fi-modal-content {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(35px) !important;
+    border-radius: 32px !important;
+    box-shadow: 0 40px 120px rgba(161, 93, 191, 0.5) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.fi-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-modal-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-modal-header {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    border-radius: 32px 32px 0 0 !important;
+    padding: 32px !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+    position: relative !important;
+}
+
+.fi-modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.15) 100%) !important;
+    pointer-events: none !important;
+}
+
+/* تحسينات الشارات النهائية */
+.fi-badge-primary {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    border-radius: 32px !important;
+    padding: 12px 24px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 8px 20px rgba(161, 93, 191, 0.4) !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-badge-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent) !important;
+    transition: left 0.6s !important;
+}
+
+.fi-badge-primary:hover::before {
+    left: 100%;
+}
+
+/* تحسينات التنبيهات النهائية */
+.fi-alert-primary {
+    background: linear-gradient(135deg, 
+        rgba(250, 214, 224, 0.95) 0%, 
+        rgba(161, 93, 191, 0.1) 100%) !important;
+    border: 3px solid rgba(161, 93, 191, 0.3) !important;
+    border-radius: 24px !important;
+    color: var(--primary-800) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 12px 30px rgba(161, 93, 191, 0.2) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-alert-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+/* تحسينات التبويبات النهائية */
+.fi-tabs-tab {
+    border-radius: 24px !important;
+    transition: all 0.6s ease !important;
+    margin: 10px !important;
+    padding: 16px 28px !important;
+    font-weight: 700 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-tabs-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.15), 
+        transparent) !important;
+    transition: left 0.6s !important;
+}
+
+.fi-tabs-tab:hover::before {
+    left: 100%;
+}
+
+.fi-tabs-tab-active {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    box-shadow: 0 10px 30px rgba(161, 93, 191, 0.4) !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* تحسينات مسار التنقل النهائية */
+.fi-breadcrumbs {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    border-radius: 24px !important;
+    padding: 24px 28px !important;
+    box-shadow: 0 12px 30px rgba(161, 93, 191, 0.2) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-breadcrumbs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-breadcrumbs::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-breadcrumbs-item {
+    color: var(--primary-600) !important;
+    font-weight: 800 !important;
+    transition: all 0.5s ease !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+
+.fi-breadcrumbs-item:hover {
+    color: var(--primary-700) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* تحسينات الترقيم النهائية */
+.fi-pagination {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    border-radius: 24px !important;
+    padding: 20px !important;
+    box-shadow: 0 12px 30px rgba(161, 93, 191, 0.2) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-pagination::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-pagination::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-pagination-item {
+    border-radius: 20px !important;
+    transition: all 0.5s ease !important;
+    margin: 8px !important;
+    padding: 12px 20px !important;
+    font-weight: 700 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-pagination-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.15), 
+        transparent) !important;
+    transition: left 0.6s !important;
+}
+
+.fi-pagination-item:hover::before {
+    left: 100%;
+}
+
+.fi-pagination-item-active {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 20px rgba(161, 93, 191, 0.4) !important;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* تحسينات العناصر التفاعلية النهائية */
+.fi-checkbox:checked {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 8px 20px rgba(161, 93, 191, 0.4) !important;
+}
+
+.fi-radio:checked {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 8px 20px rgba(161, 93, 191, 0.4) !important;
+}
+
+.fi-select:focus {
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 8px rgba(161, 93, 191, 0.2) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* تحسينات شريط البحث النهائية */
+.fi-global-search {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 12px 30px rgba(161, 93, 191, 0.2) !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-global-search::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+}
+
+.fi-global-search::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-global-search-field {
+    border-radius: 24px !important;
+    border: 4px solid rgba(161, 93, 191, 0.2) !important;
+    transition: all 0.6s ease !important;
+    padding: 18px 24px !important;
+    font-weight: 700 !important;
+}
+
+.fi-global-search-field:focus {
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 8px rgba(161, 93, 191, 0.2) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* تحسينات العناوين النهائية */
+.fi-header-heading {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 900 !important;
+    font-size: 3.5rem !important;
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+    position: relative !important;
+}
+
+.fi-header-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 50%, 
+        var(--primary-500) 100%) !important;
+    border-radius: 3px !important;
+}
+
+/* تحسينات الإحصائيات النهائية */
+.fi-stats-overview {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+    gap: 32px !important;
+    margin: 32px 0 !important;
+}
+
+.fi-stats-overview .fi-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(161, 93, 191, 0.1) 100%) !important;
+    border: 3px solid rgba(161, 93, 191, 0.2) !important;
+    transition: all 0.6s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-stats-overview .fi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 25%, 
+        var(--primary-500) 50%, 
+        var(--primary-600) 75%, 
+        var(--primary-500) 100%) !important;
+    background-size: 200% 100% !important;
+    animation: gradientShift 5s ease-in-out infinite !important;
+}
+
+.fi-stats-overview .fi-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+}
+
+.fi-stats-overview .fi-card:hover {
+    transform: translateY(-15px) scale(1.06) !important;
+    box-shadow: 0 30px 100px rgba(161, 93, 191, 0.3) !important;
+}
+
+/* تحسينات الأيقونات النهائية */
+.fi-icon {
+    transition: all 0.6s ease !important;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2)) !important;
+}
+
+.fi-icon:hover {
+    transform: scale(1.25) rotate(15deg) !important;
+    filter: drop-shadow(0 12px 24px rgba(161, 93, 191, 0.5)) !important;
+}
+
+/* تحسينات الروابط النهائية */
+.fi-link {
+    color: var(--primary-600) !important;
+    transition: all 0.5s ease !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    position: relative !important;
+}
+
+.fi-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%) !important;
+    transition: width 0.5s ease !important;
+}
+
+.fi-link:hover::after {
+    width: 100%;
+}
+
+.fi-link:hover {
+    color: var(--primary-700) !important;
+    transform: translateY(-4px) !important;
+    text-shadow: 0 6px 12px rgba(161, 93, 191, 0.4) !important;
+}
+
+/* تحسينات النصوص النهائية */
+.fi-main * {
+    color: var(--gray-700) !important;
+    font-weight: 700 !important;
+}
+
+.fi-content * {
+    color: var(--gray-700) !important;
+    font-weight: 700 !important;
+}
+
+.fi-card * {
+    color: var(--gray-700) !important;
+    font-weight: 700 !important;
+}
+
+.fi-section * {
+    color: var(--gray-700) !important;
+    font-weight: 700 !important;
+}
+
+.fi-table * {
+    color: var(--gray-700) !important;
+    font-weight: 700 !important;
+}
+
+/* استثناءات للنصوص المهمة */
+.fi-sidebar * { 
+    color: white !important;
+    font-weight: 800 !important;
+}
+.fi-topbar * { 
+    color: white !important;
+    font-weight: 800 !important;
+}
+.fi-btn-primary * { 
+    color: white !important;
+    font-weight: 800 !important;
+}
+.fi-badge-primary * { 
+    color: white !important;
+    font-weight: 800 !important;
+}
+
+/* تحسينات التمرير النهائية */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(161, 93, 191, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, 
+        var(--primary-500) 0%, 
+        var(--primary-600) 100%);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, 
+        var(--primary-600) 0%, 
+        var(--primary-700) 100%);
+}
+
+/* تحسينات الاستجابة النهائية */
+@media (max-width: 768px) {
+    .fi-sidebar {
+        box-shadow: none !important;
+    }
+    
+    .fi-card {
+        margin: 25px !important;
+        border-radius: 24px !important;
+    }
+    
+    .fi-stats-overview {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+    
+    .fi-header-heading {
+        font-size: 3rem !important;
+    }
+}
+
+/* تحسينات الأداء النهائية */
+.fi-card,
+.fi-btn-primary,
+.fi-sidebar-nav-item,
+.fi-table-row {
+    will-change: transform;
+}
+
+/* تحسينات الوصولية النهائية */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

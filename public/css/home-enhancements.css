@@ -2,7 +2,7 @@
 
 /* Enhanced Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 50%, #d94288 100%);
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 50%, #A15DBF 100%);
     background-size: 400% 400%;
     animation: gradientShift 8s ease-in-out infinite;
     position: relative;
@@ -95,7 +95,7 @@
 .glow-border {
     position: relative;
     border-radius: 20px;
-    background: linear-gradient(45deg, #d94288, #ff6b9d, #d94288);
+    background: linear-gradient(45deg, #A15DBF, #B17DC0, #A15DBF);
     padding: 3px;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -163,7 +163,7 @@
 
 .transparent-button:hover {
     background: white !important;
-    color: #d94288 !important;
+    color: #A15DBF !important;
     transform: scale(1.05);
     box-shadow: 
         0 10px 25px rgba(255, 255, 255, 0.3),
@@ -190,7 +190,7 @@
 /* Pulse Animation for CTA Buttons */
 .pulse-button {
     animation: pulse 2s infinite;
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%) !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%) !important;
     color: white !important;
     border: none !important;
     font-weight: bold !important;
@@ -210,7 +210,7 @@
 }
 
 .pulse-button:hover {
-    background: linear-gradient(135deg, #ff6b9d 0%, #d94288 100%) !important;
+    background: linear-gradient(135deg, #B17DC0 0%, #A15DBF 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 
         0 15px 35px rgba(217, 66, 136, 0.4),
@@ -226,7 +226,7 @@
 
 /* Search Button Specific Styles */
 button[type="submit"].pulse-button {
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%) !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%) !important;
     color: white !important;
     border: none !important;
     font-weight: bold !important;
@@ -247,7 +247,7 @@ button[type="submit"].pulse-button {
 }
 
 button[type="submit"].pulse-button:hover {
-    background: linear-gradient(135deg, #ff6b9d 0%, #d94288 100%) !important;
+    background: linear-gradient(135deg, #B17DC0 0%, #A15DBF 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 
         0 15px 35px rgba(217, 66, 136, 0.4),
@@ -268,7 +268,7 @@ button[type="submit"].pulse-button i {
 
 /* Search Submit Button - Enhanced Visibility */
 .search-submit-btn {
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%) !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%) !important;
     color: white !important;
     border: none !important;
     font-weight: bold !important;
@@ -289,7 +289,7 @@ button[type="submit"].pulse-button i {
 }
 
 .search-submit-btn:hover {
-    background: linear-gradient(135deg, #ff6b9d 0%, #d94288 100%) !important;
+    background: linear-gradient(135deg, #B17DC0 0%, #A15DBF 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 
         0 15px 35px rgba(217, 66, 136, 0.4),
@@ -310,7 +310,7 @@ button[type="submit"].pulse-button i {
 
 /* Course Start Button - Enhanced Visibility */
 .course-start-btn {
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%) !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%) !important;
     color: white !important;
     border: none !important;
     font-weight: bold !important;
@@ -331,7 +331,7 @@ button[type="submit"].pulse-button i {
 }
 
 .course-start-btn:hover {
-    background: linear-gradient(135deg, #ff6b9d 0%, #d94288 100%) !important;
+    background: linear-gradient(135deg, #B17DC0 0%, #A15DBF 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 
         0 12px 25px rgba(217, 66, 136, 0.4),
@@ -425,7 +425,7 @@ button[type="submit"].pulse-button i {
 .section-divider {
     position: relative;
     height: 120px;
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 50%, #d94288 100%);
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 50%, #A15DBF 100%);
     overflow: hidden;
 }
 
@@ -481,14 +481,14 @@ button[type="submit"].pulse-button i {
 }
 
 .newsletter-input:focus {
-    border-color: #d94288;
+    border-color: #A15DBF;
     box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.1);
     transform: scale(1.02);
 }
 
 /* Newsletter Submit Button - Enhanced Visibility */
 .newsletter-submit-btn {
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%) !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%) !important;
     color: white !important;
     border: none !important;
     font-weight: bold !important;
@@ -519,7 +519,7 @@ button[type="submit"].pulse-button i {
 }
 
 .newsletter-submit-btn:hover {
-    background: linear-gradient(135deg, #ff6b9d 0%, #d94288 100%) !important;
+    background: linear-gradient(135deg, #B17DC0 0%, #A15DBF 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 
         0 15px 35px rgba(217, 66, 136, 0.4),
@@ -564,7 +564,7 @@ button[type="submit"].pulse-button i {
 /* High contrast mode support for newsletter button */
 @media (prefers-contrast: high) {
     .newsletter-submit-btn {
-        background: #d94288 !important;
+        background: #A15DBF !important;
         border: 3px solid white !important;
         color: white !important;
         box-shadow: 
@@ -574,11 +574,11 @@ button[type="submit"].pulse-button i {
     }
     
     .newsletter-submit-btn:hover {
-        background: #ff6b9d !important;
-        border-color: #d94288 !important;
+        background: #B17DC0 !important;
+        border-color: #A15DBF !important;
         box-shadow: 
             0 12px 30px rgba(0, 0, 0, 0.9),
-            0 0 0 3px #d94288 !important;
+            0 0 0 3px #A15DBF !important;
     }
 }
 
@@ -603,7 +603,7 @@ button[type="submit"].pulse-button i {
     top: -10px;
     right: 20px;
     font-size: 80px;
-    color: #d94288;
+    color: #A15DBF;
     opacity: 0.1;
     font-family: serif;
 }
@@ -619,7 +619,7 @@ button[type="submit"].pulse-button i {
 
 /* App Download Section */
 .app-download-section {
-    background: linear-gradient(135deg, #d94288 0%, #ff6b9d 25%, #ff8fab 50%, #ffb3c1 75%, #ffd6e0 100%);
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #ff8fab 50%, #ffb3c1 75%, #ffd6e0 100%);
     position: relative;
     overflow: hidden;
     border-radius: 30px;
@@ -807,7 +807,7 @@ button[type="submit"].pulse-button i {
 
 .download-button {
     background: rgba(255, 255, 255, 0.95);
-    color: #d94288;
+    color: #A15DBF;
     border-radius: 20px;
     padding: 1.5rem 2rem;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -843,8 +843,8 @@ button[type="submit"].pulse-button i {
 .download-button:hover {
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: #d94288;
-    background: linear-gradient(135deg, #d94288, #ff6b9d);
+    border-color: #A15DBF;
+    background: linear-gradient(135deg, #A15DBF, #B17DC0);
     color: white;
 }
 
@@ -1032,7 +1032,7 @@ button[type="submit"].pulse-button i {
     right: 30px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #d94288, #ff6b9d);
+    background: linear-gradient(135deg, #A15DBF, #B17DC0);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1091,7 +1091,7 @@ button[type="submit"].pulse-button i {
     background: #1a1a2e;
     position: relative;
     overflow: hidden;
-    border-top: 3px solid #d94288;
+    border-top: 3px solid #A15DBF;
 }
 
 .enhanced-footer::before {
@@ -1116,7 +1116,7 @@ button[type="submit"].pulse-button i {
 .footer-logo-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #d94288, #ff6b9d, #d94288);
+    background: linear-gradient(135deg, #A15DBF, #B17DC0, #A15DBF);
     background-size: 200% 200%;
     border-radius: 50%;
     display: flex;
@@ -1136,7 +1136,7 @@ button[type="submit"].pulse-button i {
 .footer-title {
     font-size: 3rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #ffffff, #d94288, #ff6b9d);
+    background: linear-gradient(135deg, #ffffff, #A15DBF, #B17DC0);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1160,7 +1160,7 @@ button[type="submit"].pulse-button i {
 .footer-section-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #d94288;
+    color: #A15DBF;
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.75rem;
@@ -1174,7 +1174,7 @@ button[type="submit"].pulse-button i {
     right: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, #d94288, #ff6b9d);
+    background: linear-gradient(90deg, #A15DBF, #B17DC0);
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(217, 66, 136, 0.3);
 }
@@ -1186,7 +1186,7 @@ button[type="submit"].pulse-button i {
     right: 70px;
     width: 25px;
     height: 3px;
-    background: linear-gradient(90deg, #ff6b9d, #d94288);
+    background: linear-gradient(90deg, #B17DC0, #A15DBF);
     border-radius: 2px;
     opacity: 0.7;
     box-shadow: 0 2px 4px rgba(217, 66, 136, 0.2);
@@ -1219,7 +1219,7 @@ button[type="submit"].pulse-button i {
 
 .footer-link:hover i {
     transform: scale(1.2);
-    color: #d94288;
+    color: #A15DBF;
 }
 
 .footer-contact-item {
@@ -1248,7 +1248,7 @@ button[type="submit"].pulse-button i {
 
 .footer-contact-item:hover i {
     transform: scale(1.2);
-    color: #d94288;
+    color: #A15DBF;
 }
 
 .social-media-grid {
@@ -1377,7 +1377,7 @@ button[type="submit"].pulse-button i {
 .app-download-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #d94288;
+    color: #A15DBF;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -1401,8 +1401,8 @@ button[type="submit"].pulse-button i {
 .download-button-footer:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: #d94288;
-    background: linear-gradient(135deg, #d94288, #ff6b9d);
+    border-color: #A15DBF;
+    background: linear-gradient(135deg, #A15DBF, #B17DC0);
     color: white;
 }
 
@@ -1428,7 +1428,7 @@ button[type="submit"].pulse-button i {
     transform: translateX(-50%);
     width: 100px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #d94288, transparent);
+    background: linear-gradient(90deg, transparent, #A15DBF, transparent);
 }
 
 .copyright-text {
@@ -1438,7 +1438,7 @@ button[type="submit"].pulse-button i {
 }
 
 .love-text {
-    color: #d94288;
+    color: #A15DBF;
     font-size: 1.1rem;
     font-weight: 600;
     animation: pulse 2s infinite;
@@ -1543,7 +1543,7 @@ button[type="submit"].pulse-button i {
 .hero-swiper .swiper-button-prev {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #d94288, #ff6b9d);
+    background: linear-gradient(135deg, #A15DBF, #B17DC0);
     backdrop-filter: blur(15px);
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.8);
@@ -1583,13 +1583,13 @@ button[type="submit"].pulse-button i {
 .hero-swiper .swiper-button-next:hover,
 .hero-swiper .swiper-button-prev:hover {
     background: linear-gradient(135deg, #ffffff, #f8fafc);
-    color: #d94288;
+    color: #A15DBF;
     transform: scale(1.15) translateY(-2px);
     box-shadow: 
         0 20px 50px rgba(217, 66, 136, 0.7),
-        0 0 0 2px #d94288,
+        0 0 0 2px #A15DBF,
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    border-color: #d94288;
+    border-color: #A15DBF;
 }
 
 .hero-swiper .swiper-button-next:active,
@@ -1629,7 +1629,7 @@ button[type="submit"].pulse-button i {
     left: 50%;
     width: 0;
     height: 0;
-    background: linear-gradient(135deg, #d94288, #ff6b9d);
+    background: linear-gradient(135deg, #A15DBF, #B17DC0);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.4s ease;
@@ -1637,15 +1637,15 @@ button[type="submit"].pulse-button i {
 
 .hero-swiper .swiper-pagination-bullet:hover {
     background: rgba(255, 255, 255, 1);
-    border-color: #d94288;
+    border-color: #A15DBF;
     transform: scale(1.3);
     box-shadow: 
         0 8px 20px rgba(217, 66, 136, 0.5),
-        0 0 0 2px #d94288;
+        0 0 0 2px #A15DBF;
 }
 
 .hero-swiper .swiper-pagination-bullet-active {
-    background: linear-gradient(135deg, #d94288, #ff6b9d);
+    background: linear-gradient(135deg, #A15DBF, #B17DC0);
     border-color: white;
     transform: scale(1.4);
     box-shadow: 
@@ -1745,7 +1745,7 @@ button[type="submit"].pulse-button i {
 }
 
 .hero-swiper .swiper-pagination-progressbar-fill {
-    background: linear-gradient(90deg, #d94288, #ff6b9d);
+    background: linear-gradient(90deg, #A15DBF, #B17DC0);
     height: 100%;
     border-radius: 2px;
     transition: width 0.3s ease;
@@ -1772,14 +1772,14 @@ button[type="submit"].pulse-button i {
 }
 
 .hero-swiper .swiper-scrollbar-drag {
-    background: linear-gradient(90deg, #d94288, #ff6b9d);
+    background: linear-gradient(90deg, #A15DBF, #B17DC0);
     border-radius: 10px;
     height: 100%;
     transition: all 0.3s ease;
 }
 
 .hero-swiper .swiper-scrollbar-drag:hover {
-    background: linear-gradient(90deg, #ff6b9d, #d94288);
+    background: linear-gradient(90deg, #B17DC0, #A15DBF);
     transform: scaleY(1.2);
 }
 
@@ -1813,11 +1813,11 @@ button[type="submit"].pulse-button i {
     outline: 4px solid rgba(255, 255, 255, 0.9);
     outline-offset: 3px;
     background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
-    color: #d94288 !important;
-    border-color: #d94288 !important;
+    color: #A15DBF !important;
+    border-color: #A15DBF !important;
     box-shadow: 
         0 20px 50px rgba(217, 66, 136, 0.8),
-        0 0 0 3px #d94288 !important;
+        0 0 0 3px #A15DBF !important;
 }
 
 /* Button text enhancement - Maximum readability */
@@ -1850,8 +1850,8 @@ button[type="submit"].pulse-button i {
 .hero-swiper .swiper-button-next.dark-style,
 .hero-swiper .swiper-button-prev.dark-style {
     background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
-    border: 4px solid #d94288 !important;
-    color: #d94288 !important;
+    border: 4px solid #A15DBF !important;
+    color: #A15DBF !important;
     box-shadow: 
         0 15px 35px rgba(0, 0, 0, 0.3),
         0 0 0 2px rgba(217, 66, 136, 0.8) !important;
@@ -1861,7 +1861,7 @@ button[type="submit"].pulse-button i {
 @media (prefers-contrast: high) {
     .hero-swiper .swiper-button-next,
     .hero-swiper .swiper-button-prev {
-        background: #d94288 !important;
+        background: #A15DBF !important;
         border: 5px solid white !important;
         color: white !important;
         box-shadow: 
@@ -1872,12 +1872,12 @@ button[type="submit"].pulse-button i {
     
     .hero-swiper .swiper-pagination-bullet {
         background: white !important;
-        border: 4px solid #d94288 !important;
+        border: 4px solid #A15DBF !important;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9) !important;
     }
     
     .hero-swiper .swiper-pagination-bullet-active {
-        background: #d94288 !important;
+        background: #A15DBF !important;
         border: 4px solid white !important;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9) !important;
     }
@@ -1956,7 +1956,7 @@ button[type="submit"].pulse-button i {
 .hero-swiper .swiper-button-prev {
     width: 70px !important;
     height: 70px !important;
-    background: linear-gradient(135deg, #d94288, #ff6b9d) !important;
+    background: linear-gradient(135deg, #A15DBF, #B17DC0) !important;
     backdrop-filter: blur(15px) !important;
     border-radius: 50% !important;
     border: 3px solid rgba(255, 255, 255, 0.8) !important;
@@ -1999,13 +1999,13 @@ button[type="submit"].pulse-button i {
 .hero-swiper .swiper-button-next:hover,
 .hero-swiper .swiper-button-prev:hover {
     background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
-    color: #d94288 !important;
+    color: #A15DBF !important;
     transform: translateY(-50%) scale(1.15) !important;
     box-shadow: 
         0 20px 50px rgba(217, 66, 136, 0.7),
-        0 0 0 2px #d94288,
+        0 0 0 2px #A15DBF,
         inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
-    border-color: #d94288 !important;
+    border-color: #A15DBF !important;
 }
 
 /* Button icons */
@@ -2079,11 +2079,11 @@ button[type="submit"].pulse-button i {
     outline: 4px solid rgba(255, 255, 255, 0.9) !important;
     outline-offset: 3px !important;
     background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
-    color: #d94288 !important;
-    border-color: #d94288 !important;
+    color: #A15DBF !important;
+    border-color: #A15DBF !important;
     box-shadow: 
         0 20px 50px rgba(217, 66, 136, 0.8),
-        0 0 0 3px #d94288 !important;
+        0 0 0 3px #A15DBF !important;
 }
 
 /* Pagination - Fixed */
@@ -2117,15 +2117,15 @@ button[type="submit"].pulse-button i {
 
 .hero-swiper .swiper-pagination-bullet:hover {
     background: rgba(255, 255, 255, 1) !important;
-    border-color: #d94288 !important;
+    border-color: #A15DBF !important;
     transform: scale(1.3) !important;
     box-shadow: 
         0 8px 20px rgba(217, 66, 136, 0.5),
-        0 0 0 2px #d94288 !important;
+        0 0 0 2px #A15DBF !important;
 }
 
 .hero-swiper .swiper-pagination-bullet-active {
-    background: linear-gradient(135deg, #d94288, #ff6b9d) !important;
+    background: linear-gradient(135deg, #A15DBF, #B17DC0) !important;
     border-color: white !important;
     transform: scale(1.4) !important;
     box-shadow: 

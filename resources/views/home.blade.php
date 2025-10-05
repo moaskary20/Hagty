@@ -27,6 +27,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home-animations.css') }}">
     <style>
         body {
             font-family: 'Cairo', sans-serif;
@@ -85,19 +87,19 @@
         }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .primary-bg {
-            background-color: #d94288;
+            background-color: #A15DBF;
         }
         
         .primary-border {
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%);
+            background: linear-gradient(135deg, #A15DBF 0%, #8B4A9C 100%);
         }
         
         .card-hover {
@@ -313,7 +315,7 @@
         }
         
         .stats-card {
-            background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%);
+            background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%);
             color: white;
             border-radius: 15px;
             padding: 2rem;
@@ -325,7 +327,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -337,7 +339,7 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
@@ -349,14 +351,14 @@
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -570,7 +572,7 @@
         
         /* تأثيرات متحركة للأزرار في Hero Section */
         .hero-cta-button {
-            background: linear-gradient(45deg, #d94288, #ff6b9d);
+            background: linear-gradient(45deg, #A15DBF, #B17DC0);
             border: none;
             padding: 18px 45px;
             border-radius: 50px;
@@ -604,7 +606,7 @@
         .hero-cta-button:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 20px 40px rgba(217, 66, 136, 0.4);
-            background: linear-gradient(45deg, #ff6b9d, #d94288);
+            background: linear-gradient(45deg, #B17DC0, #A15DBF);
         }
         
         .hero-cta-button:active {
@@ -729,7 +731,7 @@
         }
         
         .enhanced-card:hover h4 {
-            color: #d94288;
+            color: #A15DBF;
             transform: translateY(-2px);
         }
         
@@ -780,7 +782,7 @@
         
         /* تأثيرات متحركة للبطاقات الإحصائية */
         .stats-card {
-            background: linear-gradient(135deg, #d94288 0%, #ff6b9d 100%);
+            background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 100%);
             color: white;
             border-radius: 20px;
             padding: 2rem;
@@ -953,7 +955,7 @@
         
         .menu-item:hover {
             transform: rotateX(10deg) rotateY(10deg) translateZ(10px);
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
         }
         
@@ -1091,7 +1093,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- خلفية متحركة من القلوب والتاج والنجوم -->
     <div class="floating-background">
         <div class="floating-icon heart" style="top: 10%; left: 5%;">❤️</div>
@@ -1135,7 +1137,7 @@
                     @foreach($forasy_banners as $banner)
                     <div class="swiper-slide hero-slide" style="background-image: url('{{ \Illuminate\Support\Str::startsWith($banner->banner_image, ['http', 'https']) ? $banner->banner_image : Storage::url($banner->banner_image) }}');">
                         @if($banner->show_overlay)
-                        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="overlay absolute inset-0 bg-gradient-to-t from-[#A15DBF]/50 to-transparent"></div>
                         @endif
                         <div class="absolute inset-0 flex items-center justify-{{ $banner->text_position ?? 'center' }}">
                             <div class="text-center text-white section-fade-in max-w-4xl mx-auto px-4">
@@ -1152,12 +1154,12 @@
                                 @if($banner->button_text)
                                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                     @if($banner->button_url)
-                                    <a href="{{ $banner->button_url }}" class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                    <a href="{{ $banner->button_url }}" class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] hover:from-[#8B4A9C] hover:to-[#753880]" style="color: white;">
                                         <i class="fas fa-arrow-left ml-2"></i>
                                         {{ $banner->button_text }}
                                     </a>
                                     @else
-                                    <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                    <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] hover:from-[#8B4A9C] hover:to-[#753880]" style="color: white;">
                                         <i class="fas fa-arrow-left ml-2"></i>
                                         {{ $banner->button_text }}
                                     </button>
@@ -1212,8 +1214,8 @@
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-20 w-16 h-16 bg-d94288 rounded-full animate-ping"></div>
-            <div class="absolute top-40 right-32 w-12 h-12 bg-purple-500 rounded-full animate-pulse"></div>
-            <div class="absolute bottom-32 left-40 w-20 h-20 bg-pink-400 rounded-full animate-bounce"></div>
+            <div class="absolute top-40 right-32 w-12 h-12 bg-[#A15DBF] rounded-full animate-pulse"></div>
+            <div class="absolute bottom-32 left-40 w-20 h-20 bg-[#E6A0C3] rounded-full animate-bounce"></div>
         </div>
         
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1247,7 +1249,7 @@
                             >
                         </div>
                         <div class="lg:w-auto">
-                            <button type="submit" class="w-full lg:w-auto bg-gradient-to-r from-d94288 to-purple-600 text-white px-10 py-5 rounded-2xl hover:from-purple-600 hover:to-d94288 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-2 pulse-button search-submit-btn">
+                            <button type="submit" class="w-full lg:w-auto bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-10 py-5 rounded-2xl hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-2 pulse-button search-submit-btn">
                                 <i class="fas fa-search ml-3 text-xl"></i>ابحثي الآن
                             </button>
                         </div>
@@ -1586,7 +1588,7 @@
                         @foreach($sponsor_banners as $banner)
                         <div class="swiper-slide hero-slide" style="background-image: url('{{ \Illuminate\Support\Str::startsWith($banner->image, ['http', 'https']) ? $banner->image : Storage::url($banner->image) }}');">
                             @if($banner->show_overlay)
-                            <div class="overlay absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="overlay absolute inset-0 bg-gradient-to-t from-[#A15DBF]/50 to-transparent"></div>
                             @endif
                             <div class="absolute inset-0 flex items-center justify-{{ $banner->text_position ?? 'center' }}">
                                 <div class="text-center text-white section-fade-in max-w-4xl mx-auto px-4">
@@ -1603,12 +1605,12 @@
                                     @if($banner->button_text)
                                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                         @if($banner->link_url)
-                                        <a href="{{ $banner->link_url }}" target="_blank" class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                        <a href="{{ $banner->link_url }}" target="_blank" class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] hover:from-[#8B4A9C] hover:to-[#753880]" style="color: white;">
                                             <i class="fas fa-external-link-alt ml-2"></i>
                                             {{ $banner->button_text }}
                                         </a>
                                         @else
-                                        <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style="background-color: {{ $banner->button_color ?? '#d94288' }}; color: white;">
+                                        <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] hover:from-[#8B4A9C] hover:to-[#753880]" style="color: white;">
                                             <i class="fas fa-external-link-alt ml-2"></i>
                                             {{ $banner->button_text }}
                                         </button>
@@ -1775,7 +1777,7 @@
             <!-- View All Button -->
             <div class="text-center">
                 <a href="{{ route('articles.index') }}" 
-                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-d94288 to-purple-600 text-white font-bold rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white font-bold rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-newspaper ml-2"></i>
                     تصفح المدونة
                 </a>
@@ -1989,7 +1991,7 @@
                             >
                         </div>
                         <div class="lg:w-auto">
-                            <button type="submit" class="newsletter-submit-btn w-full lg:w-auto bg-gradient-to-r from-d94288 to-purple-600 text-white px-8 py-4 rounded-xl hover:from-purple-600 hover:to-d94288 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <button type="submit" class="newsletter-submit-btn w-full lg:w-auto bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-4 rounded-xl hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                 <i class="fas fa-paper-plane ml-2"></i>اشتركي الآن
                             </button>
                         </div>
@@ -2451,7 +2453,7 @@
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <!-- Header -->
-                <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-6 rounded-t-2xl">
+                <div class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white p-6 rounded-t-2xl">
                     <div class="flex justify-between items-center">
                         <h3 class="text-2xl font-bold">حجز موعد خدمة الزفاف</h3>
                         <button onclick="closeWeddingBookingModal()" class="text-white hover:text-gray-200 text-2xl">
@@ -2529,7 +2531,7 @@
                         
                         <div class="flex gap-4 pt-4">
                             <button type="submit" 
-                                    class="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-500 transition-all duration-300">
+                                    class="flex-1 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-3 rounded-xl font-semibold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                                 <i class="fas fa-check ml-2"></i>تأكيد الحجز
                             </button>
                             <button type="button" onclick="closeWeddingBookingModal()" 
@@ -2548,7 +2550,7 @@
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <!-- Header -->
-                <div class="bg-gradient-to-r from-teal-500 to-blue-600 text-white p-6 rounded-t-2xl">
+                <div class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white p-6 rounded-t-2xl">
                     <div class="flex justify-between items-center">
                         <h3 class="text-2xl font-bold">حجز موعد خدمة الأمومة</h3>
                         <button onclick="closeUmomiBookingModal()" class="text-white hover:text-gray-200 text-2xl">
@@ -2654,7 +2656,7 @@
                         
                         <div class="flex gap-4 pt-4">
                             <button type="submit" 
-                                    class="flex-1 bg-gradient-to-r from-teal-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-teal-500 transition-all duration-300">
+                                    class="flex-1 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-3 rounded-xl font-semibold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                                 <i class="fas fa-check ml-2"></i>تأكيد الحجز
                             </button>
                             <button type="button" onclick="closeUmomiBookingModal()" 
@@ -2673,7 +2675,7 @@
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <!-- Header -->
-                <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-t-2xl">
+                <div class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white p-6 rounded-t-2xl">
                     <div class="flex justify-between items-center">
                         <h3 class="text-2xl font-bold">تفاصيل الطفل</h3>
                         <button onclick="closeBabiesDetailsModal()" class="text-white hover:text-gray-200 text-2xl">
@@ -2720,7 +2722,7 @@
                     </div>
                     
                     <!-- Growth Chart -->
-                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 mb-6">
+                    <div class="bg-gradient-to-r from-[#FAD6E0] to-[#E6DAC8] rounded-xl p-4 mb-6">
                         <h4 class="text-lg font-semibold text-gray-900 mb-3">معلومات النمو</h4>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                             <div class="bg-white rounded-lg p-3 shadow-sm">
@@ -2741,7 +2743,7 @@
                     <!-- Action Buttons -->
                     <div class="flex gap-4 pt-4">
                         <button onclick="closeBabiesDetailsModal()" 
-                                class="flex-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold hover:from-orange-500 hover:to-yellow-400 transition-all duration-300">
+                                class="flex-1 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-3 rounded-xl font-semibold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300">
                             <i class="fas fa-check ml-2"></i>إغلاق
                         </button>
                         <button onclick="window.open('{{ route('section', 'babies') }}', '_blank')" 
@@ -3001,7 +3003,7 @@
             
             let buttonContent = '';
             if (popup.show_button && popup.button_text && popup.button_url) {
-                buttonContent = `<a href="${popup.button_url}" target="_blank" class="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-lg hover:from-pink-700 hover:to-rose-700 transition-all font-bold inline-block mt-4">
+                buttonContent = `<a href="${popup.button_url}" target="_blank" class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-6 py-3 rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all font-bold inline-block mt-4">
                     ${popup.button_text}
                 </a>`;
             }
@@ -3037,5 +3039,8 @@
             }
         }
     </script>
+
+    <!-- Home Interactions JavaScript -->
+    <script src="{{ asset('js/home-interactions.js') }}"></script>
 </body>
 </html>

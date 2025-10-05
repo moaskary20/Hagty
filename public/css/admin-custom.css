@@ -1,0 +1,144 @@
+/* Admin Panel Custom Colors */
+:root {
+    --primary-50: #FAD6E0;
+    --primary-100: #E6A0C3;
+    --primary-200: #B17DC0;
+    --primary-300: #A15DBF;
+    --primary-400: #A15DBF;
+    --primary-500: #A15DBF;
+    --primary-600: #A15DBF;
+    --primary-700: #A15DBF;
+    --primary-800: #A15DBF;
+    --primary-900: #A15DBF;
+    --primary-950: #A15DBF;
+    --accent: #E6DAC8;
+}
+
+/* تطبيق الألوان الجديدة على جميع عناصر Filament */
+.fi-primary-50 { color: var(--primary-50) !important; }
+.fi-primary-100 { color: var(--primary-100) !important; }
+.fi-primary-200 { color: var(--primary-200) !important; }
+.fi-primary-300 { color: var(--primary-300) !important; }
+.fi-primary-400 { color: var(--primary-400) !important; }
+.fi-primary-500 { color: var(--primary-500) !important; }
+.fi-primary-600 { color: var(--primary-600) !important; }
+.fi-primary-700 { color: var(--primary-700) !important; }
+.fi-primary-800 { color: var(--primary-800) !important; }
+.fi-primary-900 { color: var(--primary-900) !important; }
+.fi-primary-950 { color: var(--primary-950) !important; }
+
+.bg-primary-50 { background-color: var(--primary-50) !important; }
+.bg-primary-100 { background-color: var(--primary-100) !important; }
+.bg-primary-200 { background-color: var(--primary-200) !important; }
+.bg-primary-300 { background-color: var(--primary-300) !important; }
+.bg-primary-400 { background-color: var(--primary-400) !important; }
+.bg-primary-500 { background-color: var(--primary-500) !important; }
+.bg-primary-600 { background-color: var(--primary-600) !important; }
+.bg-primary-700 { background-color: var(--primary-700) !important; }
+.bg-primary-800 { background-color: var(--primary-800) !important; }
+.bg-primary-900 { background-color: var(--primary-900) !important; }
+.bg-primary-950 { background-color: var(--primary-950) !important; }
+
+.border-primary-50 { border-color: var(--primary-50) !important; }
+.border-primary-100 { border-color: var(--primary-100) !important; }
+.border-primary-200 { border-color: var(--primary-200) !important; }
+.border-primary-300 { border-color: var(--primary-300) !important; }
+.border-primary-400 { border-color: var(--primary-400) !important; }
+.border-primary-500 { border-color: var(--primary-500) !important; }
+.border-primary-600 { border-color: var(--primary-600) !important; }
+.border-primary-700 { border-color: var(--primary-700) !important; }
+.border-primary-800 { border-color: var(--primary-800) !important; }
+.border-primary-900 { border-color: var(--primary-900) !important; }
+.border-primary-950 { border-color: var(--primary-950) !important; }
+
+/* تطبيق الألوان على عناصر Filament المحددة */
+.fi-sidebar { background-color: var(--primary-500) !important; }
+.fi-sidebar-nav-item { color: white !important; }
+.fi-sidebar-nav-item:hover { background-color: var(--primary-600) !important; }
+.fi-sidebar-nav-item-active { background-color: var(--primary-700) !important; }
+
+.fi-topbar { background-color: var(--primary-500) !important; }
+.fi-topbar-item { color: white !important; }
+
+/* تطبيق الألوان على الخلفية الرئيسية */
+.fi-main { background-color: var(--primary-50) !important; }
+.fi-body { background-color: var(--primary-50) !important; }
+.fi-panel { background-color: var(--primary-50) !important; }
+.fi-content { background-color: var(--primary-50) !important; }
+
+/* تطبيق الألوان على الكروت */
+.fi-card { background-color: white !important; }
+.fi-section { background-color: white !important; }
+
+/* تطبيق الألوان على الجداول */
+.fi-table { background-color: white !important; }
+.fi-table-header { background-color: var(--primary-50) !important; }
+.fi-table-row { background-color: white !important; }
+.fi-table-row:hover { background-color: var(--primary-50) !important; }
+
+/* ضمان وضوح النص */
+.fi-main * { color: #333333 !important; }
+.fi-content * { color: #333333 !important; }
+.fi-card * { color: #333333 !important; }
+.fi-section * { color: #333333 !important; }
+.fi-table * { color: #333333 !important; }
+
+/* استثناءات للنصوص المهمة */
+.fi-sidebar * { color: white !important; }
+.fi-topbar * { color: white !important; }
+.fi-btn-primary * { color: white !important; }
+.fi-badge-primary * { color: white !important; }
+
+/* الزر المنشط بخلفية بيضاء ونص أبيض */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"] {
+    background-color: white !important;
+    color: white !important;
+}
+
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] * {
+    color: white !important;
+    fill: white !important;
+}
+
+/* تطبيق خط Tajawal على جميع النصوص */
+* {
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+.fi-btn-primary { background-color: var(--primary-500) !important; border-color: var(--primary-500) !important; }
+.fi-btn-primary:hover { background-color: var(--primary-600) !important; border-color: var(--primary-600) !important; }
+
+.fi-input:focus { border-color: var(--primary-500) !important; box-shadow: 0 0 0 1px var(--primary-500) !important; }
+
+.fi-checkbox:checked { background-color: var(--primary-500) !important; border-color: var(--primary-500) !important; }
+
+.fi-radio:checked { background-color: var(--primary-500) !important; border-color: var(--primary-500) !important; }
+
+.fi-select:focus { border-color: var(--primary-500) !important; box-shadow: 0 0 0 1px var(--primary-500) !important; }
+
+.fi-table-header { background-color: var(--primary-50) !important; }
+.fi-table-row:hover { background-color: var(--primary-50) !important; }
+
+.fi-modal-header { background-color: var(--primary-500) !important; color: white !important; }
+
+.fi-badge-primary { background-color: var(--primary-500) !important; color: white !important; }
+
+.fi-alert-primary { background-color: var(--primary-50) !important; border-color: var(--primary-200) !important; color: var(--primary-800) !important; }
+
+.fi-tabs-tab-active { color: var(--primary-500) !important; border-color: var(--primary-500) !important; }
+
+.fi-breadcrumbs-item { color: var(--primary-500) !important; }
+
+.fi-pagination-item-active { background-color: var(--primary-500) !important; color: white !important; }
+
+/* تطبيق اللون الأساسي على العناصر المهمة */
+.fi-primary { color: var(--primary-500) !important; }
+.bg-fi-primary { background-color: var(--primary-500) !important; }
+.border-fi-primary { border-color: var(--primary-500) !important; }
+
+/* تطبيق اللون المساعد */
+.fi-accent { color: var(--accent) !important; }
+.bg-fi-accent { background-color: var(--accent) !important; }
+.border-fi-accent { border-color: var(--accent) !important; }

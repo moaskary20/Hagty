@@ -29,41 +29,50 @@ html[dir="rtl"] body {
 
 /* تخصيص الألوان الأساسية */
 :root {
-    --primary-50: #fdf2f8;
-    --primary-100: #fce7f3;
-    --primary-200: #fbcfe8;
-    --primary-300: #f9a8d4;
-    --primary-400: #f472b6;
-    --primary-500: #eb6fab;
-    --primary-600: #db2777;
-    --primary-700: #be185d;
-    --primary-800: #9d174d;
-    --primary-900: #831843;
-    --text-primary: #fce7f3;
-    --text-secondary: #f9a8d4;
-    --text-muted: #f472b6;
+    --primary-50: #FAD6E0;
+    --primary-100: #E6A0C3;
+    --primary-200: #B17DC0;
+    --primary-300: #A15DBF;
+    --primary-400: #A15DBF;
+    --primary-500: #A15DBF;
+    --primary-600: #A15DBF;
+    --primary-700: #A15DBF;
+    --primary-800: #A15DBF;
+    --primary-900: #A15DBF;
+    --text-primary: #E6A0C3;
+    --text-secondary: #B17DC0;
+    --text-muted: #A15DBF;
 }
 
-/* خلفية سوداء للتطبيق */
+/* خلفية ملونة للتطبيق */
 .fi-main,
 .fi-panel,
 .fi-body,
 html,
 body {
-    background-color: #000000 !important;
-    color: #fce7f3 !important;
+    background-color: var(--primary-50) !important;
+    color: #333333 !important;
 }
 
-/* شريط جانبي بخلفية سوداء */
+/* ضمان وضوح النص في المحتوى الرئيسي */
+.fi-main *,
+.fi-content *,
+.fi-card *,
+.fi-section *,
+.fi-table * {
+    color: #333333 !important;
+}
+
+/* شريط جانبي بخلفية ملونة */
 .fi-sidebar {
-    background-color: #000000 !important;
-    border-right: 1px solid #eb6fab !important;
+    background-color: var(--primary-500) !important;
+    border-right: 1px solid var(--primary-600) !important;
 }
 
-/* شريط علوي بخلفية سوداء */
+/* شريط علوي بخلفية ملونة */
 .fi-topbar {
-    background-color: #000000 !important;
-    border-bottom: 1px solid #eb6fab !important;
+    background-color: var(--primary-500) !important;
+    border-bottom: 1px solid var(--primary-600) !important;
 }
 
 /* اللوجو والعلامة التجارية */
@@ -72,11 +81,11 @@ body {
 }
 
 .fi-sidebar-header {
-    border-bottom: 1px solid #eb6fab !important;
+    border-bottom: 1px solid var(--primary-600) !important;
 }
 
 .fi-sidebar-brand {
-    color: #fce7f3 !important;
+    color: white !important;
 }
 
 /* تحسين شريط البحث */
@@ -86,47 +95,83 @@ html[dir="rtl"] .fi-global-search-field {
 }
 
 html[dir="rtl"] * {
-    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Tajawal', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 html[dir="rtl"] .fi-header-subheading {
     text-align: right;
 }
 
-/* إضافات للثيم الداكن مع اللون الوردي */
+/* إضافات للثيم الملون */
+/* عند الوقوف على أي زر يتغير إلى لون وردي متوسط */
 .fi-sidebar-nav-item:hover {
-    background-color: #eb6fab !important;
-    color: #000000 !important;
+    background-color: #E6A0C3 !important;
+    color: white !important;
 }
 
-.fi-sidebar-nav-item.active {
-    background-color: #eb6fab !important;
-    color: #000000 !important;
+/* الزر المنشط بخلفية وردية فاتحة ونص بنفسجي */
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item[aria-selected="true"],
+.fi-sidebar-nav-item[data-active="true"] {
+    background-color: #FAD6E0 !important;
+    color: #A15DBF !important;
 }
 
 /* تحسين شكل الأيقونات */
 .fi-sidebar-nav-icon {
-    color: #eb6fab !important;
+    color: white !important;
 }
 
-.fi-sidebar-nav-item:hover .fi-sidebar-nav-icon,
-.fi-sidebar-nav-item.active .fi-sidebar-nav-icon {
-    color: #000000 !important;
+/* عند الوقوف على أي زر يتغير إلى لون وردي متوسط */
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-icon {
+    color: white !important;
+}
+
+/* الزر المنشط بخلفية وردية فاتحة ونص بنفسجي */
+.fi-sidebar-nav-item.active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item[aria-selected="true"] .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item[data-active="true"] .fi-sidebar-nav-icon {
+    color: #A15DBF !important;
+}
+
+/* ضمان تطبيق الزر المنشط بخلفية وردية فاتحة ونص بنفسجي */
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.active *,
+.fi-sidebar-nav-item[aria-selected="true"] *,
+.fi-sidebar-nav-item[data-active="true"] * {
+    color: #A15DBF !important;
+    fill: #A15DBF !important;
+}
+
+/* عند الوقوف على أي زر يتغير إلى لون وردي متوسط */
+.fi-sidebar-nav-item:hover * {
+    color: white !important;
+    fill: white !important;
+}
+
+/* تطبيق خط Tajawal على جميع النصوص */
+* {
+    font-family: 'Tajawal', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif !important;
 }
 
 /* تحسين العناصر التفاعلية */
 .fi-link:hover {
-    color: #eb6fab !important;
+    color: var(--primary-500) !important;
 }
 
 .fi-badge {
-    background-color: #eb6fab !important;
-    color: #000000 !important;
+    background-color: var(--primary-500) !important;
+    color: white !important;
 }
 
 
 
 main.fi-simple-main.my-16.w-full.bg-white.px-6.py-12.shadow-sm.ring-1.ring-gray-950\/5.dark\:bg-gray-900.dark\:ring-white\/10.sm\:rounded-xl.sm\:px-12.max-w-lg{
-    background-color: #eb6fab !important;
-    color: #000000 !important;
+    background-color: var(--primary-500) !important;
+    color: white !important;
 }

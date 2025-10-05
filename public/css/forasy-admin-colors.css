@@ -1,0 +1,73 @@
+/* Forasy Section Color Variables */
+:root {
+    --forasy-primary: #A15DBF;
+    --forasy-secondary: #8B4A9C;
+    --forasy-accent-1: #FAD6E0;
+    --forasy-accent-2: #E6A0C3;
+    --forasy-accent-3: #B17DC0;
+    --forasy-accent-4: #E6DAC8;
+    --forasy-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] {
+    background-color: var(--forasy-primary) !important;
+}
+
+.bg-\[#8B4A9C\] {
+    background-color: var(--forasy-secondary) !important;
+}
+
+.bg-\[#FAD6E0\] {
+    background-color: var(--forasy-accent-1) !important;
+}
+
+.bg-\[#E6A0C3\] {
+    background-color: var(--forasy-accent-2) !important;
+}
+
+.bg-\[#B17DC0\] {
+    background-color: var(--forasy-accent-3) !important;
+}
+
+.bg-\[#E6DAC8\] {
+    background-color: var(--forasy-accent-4) !important;
+}
+
+.text-\[#A15DBF\] {
+    color: var(--forasy-primary) !important;
+}
+
+.text-\[#8B4A9C\] {
+    color: var(--forasy-secondary) !important;
+}
+
+.text-\[#B17DC0\] {
+    color: var(--forasy-accent-3) !important;
+}
+
+.border-\[#E6A0C3\] {
+    border-color: var(--forasy-accent-2) !important;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    background: linear-gradient(to right, var(--forasy-primary), var(--forasy-secondary)) !important;
+}
+
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+    background: linear-gradient(to bottom right, var(--forasy-accent-1), var(--forasy-accent-4)) !important;
+}
+
+/* Hover effects */
+.hover\:from-\[#8B4A9C\]:hover {
+    background: var(--forasy-secondary) !important;
+}
+
+.hover\:to-\[#753880\]:hover {
+    background: var(--forasy-accent-5) !important;
+}
+
+.hover\:text-\[#8B4A9C\]:hover {
+    color: var(--forasy-secondary) !important;
+}

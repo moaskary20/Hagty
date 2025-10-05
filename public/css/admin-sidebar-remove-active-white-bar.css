@@ -1,0 +1,284 @@
+/* Admin Sidebar Remove Active White Bar - إزالة الشريط الأبيض من الزر النشط */
+
+/* إزالة الشريط الأبيض من الزر النشط */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+    transform: translateX(5px) scale(1.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض من الزر النشط */
+.fi-sidebar-nav-item.fi-active::before,
+.fi-sidebar-nav-item[aria-current="page"]::before,
+.fi-sidebar-nav-item.active::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* إزالة الشريط الأبيض من الزر النشط */
+.fi-sidebar-nav-item.fi-active::after,
+.fi-sidebar-nav-item[aria-current="page"]::after,
+.fi-sidebar-nav-item.active::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* إزالة الشريط الأبيض من الزر النشط */
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.active * {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة الشريط الأبيض من الزر النشط */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-text,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-text,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-item-text {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #A15DBF !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.2) !important;
+    transform: translateX(2px) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض من الزر النشط */
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item.fi-active .fi-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-icon,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item.active .fi-icon {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #A15DBF !important;
+    transform: scale(1.1) rotate(5deg) !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض من العناصر الفرعية النشطة */
+.fi-sidebar-nav-sub-item.fi-active {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: 0 2px 8px rgba(230, 218, 200, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض من العناصر الفرعية النشطة */
+.fi-sidebar-nav-sub-item.fi-active::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* إزالة الشريط الأبيض من العناصر الفرعية النشطة */
+.fi-sidebar-nav-sub-item.fi-active::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* إزالة الشريط الأبيض من العناصر الفرعية النشطة */
+.fi-sidebar-nav-sub-item.fi-active * {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة الشريط الأبيض من العناصر الفرعية النشطة */
+.fi-sidebar-nav-sub-item.fi-active .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-sub-item.fi-active .fi-sidebar-nav-item-text {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #A15DBF !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة الشريط الأبيض من العناصر الفرعية النشطة */
+.fi-sidebar-nav-sub-item.fi-active .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-sub-item.fi-active .fi-icon {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #A15DBF !important;
+    transform: scale(1.1) !important;
+    text-shadow: 0 2px 4px rgba(161, 93, 191, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-sub-item.fi-active {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.active *,
+.fi-sidebar-nav-sub-item.fi-active * {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::before,
+.fi-sidebar-nav-item[aria-current="page"]::before,
+.fi-sidebar-nav-item.active::before,
+.fi-sidebar-nav-sub-item.fi-active::before {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::after,
+.fi-sidebar-nav-item[aria-current="page"]::after,
+.fi-sidebar-nav-item.active::after,
+.fi-sidebar-nav-sub-item.fi-active::after {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::selection,
+.fi-sidebar-nav-item[aria-current="page"]::selection,
+.fi-sidebar-nav-item.active::selection,
+.fi-sidebar-nav-sub-item.fi-active::selection {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-moz-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-moz-selection,
+.fi-sidebar-nav-item.active::-moz-selection,
+.fi-sidebar-nav-sub-item.fi-active::-moz-selection {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-webkit-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-webkit-selection,
+.fi-sidebar-nav-item.active::-webkit-selection,
+.fi-sidebar-nav-sub-item.fi-active::-webkit-selection {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-ms-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-ms-selection,
+.fi-sidebar-nav-item.active::-ms-selection,
+.fi-sidebar-nav-sub-item.fi-active::-ms-selection {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-o-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-o-selection,
+.fi-sidebar-nav-item.active::-o-selection,
+.fi-sidebar-nav-sub-item.fi-active::-o-selection {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* إزالة جميع الحدود البيضاء من العناصر النشطة */
+.fi-sidebar-nav-item.fi-active::-khtml-selection,
+.fi-sidebar-nav-item[aria-current="page"]::-khtml-selection,
+.fi-sidebar-nav-item.active::-khtml-selection,
+.fi-sidebar-nav-sub-item.fi-active::-khtml-selection {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    outline: none !important;
+}

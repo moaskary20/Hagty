@@ -1,0 +1,49 @@
+/* Mostashary Section Color Variables */
+:root {
+    --mostashary-primary: #A15DBF;
+    --mostashary-secondary: #8B4A9C;
+    --mostashary-accent-1: #FAD6E0;
+    --mostashary-accent-2: #E6A0C3;
+    --mostashary-accent-3: #B17DC0;
+    --mostashary-accent-4: #E6DAC8;
+    --mostashary-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--mostashary-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--mostashary-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--mostashary-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--mostashary-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--mostashary-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--mostashary-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--mostashary-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--mostashary-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--mostashary-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--mostashary-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--mostashary-primary), var(--mostashary-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--mostashary-accent-1), var(--mostashary-accent-4)) !important; }
+
+/* Override specific colors in sections */
+.bg-teal-100 { background-color: var(--mostashary-accent-1) !important; }
+.text-teal-600 { color: var(--mostashary-primary) !important; }
+.bg-teal-500 { background-color: var(--mostashary-primary) !important; }
+.bg-teal-600 { background-color: var(--mostashary-primary) !important; }
+.bg-teal-700 { background-color: var(--mostashary-secondary) !important; }
+.text-blue-600 { color: var(--mostashary-primary) !important; }
+.bg-blue-500 { background-color: var(--mostashary-primary) !important; }
+.bg-blue-600 { background-color: var(--mostashary-primary) !important; }
+.bg-blue-700 { background-color: var(--mostashary-secondary) !important; }
+.text-pink-600 { color: var(--mostashary-primary) !important; }
+.bg-pink-500 { background-color: var(--mostashary-primary) !important; }
+.bg-pink-600 { background-color: var(--mostashary-primary) !important; }
+.bg-pink-700 { background-color: var(--mostashary-secondary) !important; }
+.text-indigo-600 { color: var(--mostashary-primary) !important; }
+.bg-indigo-500 { background-color: var(--mostashary-primary) !important; }
+.bg-indigo-600 { background-color: var(--mostashary-primary) !important; }
+.bg-indigo-700 { background-color: var(--mostashary-secondary) !important; }
+.text-purple-600 { color: var(--mostashary-primary) !important; }
+.bg-purple-500 { background-color: var(--mostashary-primary) !important; }
+.bg-purple-600 { background-color: var(--mostashary-primary) !important; }
+.bg-purple-700 { background-color: var(--mostashary-secondary) !important; }
+.bg-purple-100 { background-color: var(--mostashary-accent-1) !important; }
+.text-purple-800 { color: var(--mostashary-primary) !important; }

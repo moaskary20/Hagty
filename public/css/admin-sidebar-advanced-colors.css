@@ -1,0 +1,307 @@
+/* Admin Panel Sidebar Advanced Colors - ألوان متقدمة للجوانب */
+
+/* تحسين لون الشريط الجانبي بشكل متقدم */
+.fi-sidebar {
+    background: linear-gradient(180deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    border-right: 3px solid #FAD6E0 !important;
+    box-shadow: 3px 0 25px rgba(161, 93, 191, 0.4) !important;
+    position: relative !important;
+}
+
+/* إضافة تأثير متدرج للشريط الجانبي */
+.fi-sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* تحسين لون خلفية الشريط الجانبي */
+.fi-sidebar-nav {
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون عناصر التنقل في الشريط الجانبي */
+.fi-sidebar-nav-item {
+    background: transparent !important;
+    color: white !important;
+    border-radius: 12px !important;
+    margin: 3px 0 !important;
+    transition: all 0.4s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* إضافة تأثير متدرج لعناصر التنقل */
+.fi-sidebar-nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.6s ease !important;
+}
+
+/* تحسين لون عناصر التنقل عند الوقوف عليها */
+.fi-sidebar-nav-item:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: white !important;
+    transform: translateX(8px) scale(1.02) !important;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* تحسين لون العنصر النشط في الشريط الجانبي */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-item[aria-selected="true"],
+.fi-sidebar-nav-item[data-active="true"] {
+    background: rgba(255, 255, 255, 0.35) !important;
+    color: white !important;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4) !important;
+    transform: translateX(5px) !important;
+}
+
+/* تحسين لون الأيقونات في الشريط الجانبي */
+.fi-sidebar-nav-icon {
+    color: white !important;
+    fill: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+}
+
+/* تحسين لون النصوص في الشريط الجانبي */
+.fi-sidebar-nav-label {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+/* تحسين لون الشريط العلوي بشكل متقدم */
+.fi-topbar {
+    background: linear-gradient(90deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    border-bottom: 3px solid #FAD6E0 !important;
+    box-shadow: 0 3px 25px rgba(161, 93, 191, 0.4) !important;
+    position: relative !important;
+}
+
+/* إضافة تأثير متدرج للشريط العلوي */
+.fi-topbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* تحسين لون عناصر الشريط العلوي */
+.fi-topbar-item {
+    color: white !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون الروابط في الشريط العلوي */
+.fi-topbar-item a {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* تحسين لون الروابط في الشريط العلوي عند الوقوف عليها */
+.fi-topbar-item a:hover {
+    color: #FAD6E0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* تحسين لون الأزرار في الشريط العلوي */
+.fi-topbar-item button {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* تحسين لون الأزرار في الشريط العلوي عند الوقوف عليها */
+.fi-topbar-item button:hover {
+    color: #FAD6E0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* تحسين لون المحتوى الرئيسي بشكل متقدم */
+.fi-main {
+    background: linear-gradient(135deg, #FAD6E0 0%, #E6A0C3 25%, #B17DC0 50%, #A15DBF 75%, #FAD6E0 100%) !important;
+    min-height: 100vh !important;
+    position: relative !important;
+}
+
+/* إضافة تأثير متدرج للمحتوى الرئيسي */
+.fi-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.05) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* تحسين لون المحتوى */
+.fi-content {
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون اللوحة */
+.fi-panel {
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون الجسم */
+.fi-body {
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون الكروت بشكل متقدم */
+.fi-card {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 2px solid rgba(161, 93, 191, 0.3) !important;
+    box-shadow: 0 12px 40px rgba(161, 93, 191, 0.15) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* إضافة تأثير متدرج للكروت */
+.fi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(161, 93, 191, 0.05) 0%, rgba(177, 125, 192, 0.03) 50%, rgba(230, 160, 195, 0.05) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* تحسين لون رؤوس الكروت */
+.fi-card-header {
+    background: linear-gradient(90deg, #FAD6E0 0%, #E6A0C3 50%, #B17DC0 100%) !important;
+    border-bottom: 2px solid rgba(161, 93, 191, 0.3) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون محتوى الكروت */
+.fi-card-content {
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون الجداول بشكل متقدم */
+.fi-table {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 2px solid rgba(161, 93, 191, 0.3) !important;
+    box-shadow: 0 12px 40px rgba(161, 93, 191, 0.15) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* إضافة تأثير متدرج للجداول */
+.fi-table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(161, 93, 191, 0.05) 0%, rgba(177, 125, 192, 0.03) 50%, rgba(230, 160, 195, 0.05) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* تحسين لون رؤوس الجداول */
+.fi-table-header {
+    background: linear-gradient(90deg, #FAD6E0 0%, #E6A0C3 50%, #B17DC0 100%) !important;
+    border-bottom: 2px solid rgba(161, 93, 191, 0.3) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون صفوف الجداول */
+.fi-table-row {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(161, 93, 191, 0.15) !important;
+    position: relative !important;
+    z-index: 2 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* تحسين لون صفوف الجداول عند الوقوف عليها */
+.fi-table-row:hover {
+    background: rgba(161, 93, 191, 0.08) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسين لون النماذج بشكل متقدم */
+.fi-form {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 2px solid rgba(161, 93, 191, 0.3) !important;
+    box-shadow: 0 12px 40px rgba(161, 93, 191, 0.15) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* إضافة تأثير متدرج للنماذج */
+.fi-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(161, 93, 191, 0.05) 0%, rgba(177, 125, 192, 0.03) 50%, rgba(230, 160, 195, 0.05) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* تحسين لون رؤوس النماذج */
+.fi-form-header {
+    background: linear-gradient(90deg, #FAD6E0 0%, #E6A0C3 50%, #B17DC0 100%) !important;
+    border-bottom: 2px solid rgba(161, 93, 191, 0.3) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* تحسين لون محتوى النماذج */
+.fi-form-content {
+    background: transparent !important;
+    position: relative !important;
+    z-index: 2 !important;
+}

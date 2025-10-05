@@ -1,0 +1,24 @@
+/* Riadaty Section Color Variables */
+:root {
+    --riadaty-primary: #A15DBF;
+    --riadaty-secondary: #8B4A9C;
+    --riadaty-accent-1: #FAD6E0;
+    --riadaty-accent-2: #E6A0C3;
+    --riadaty-accent-3: #B17DC0;
+    --riadaty-accent-4: #E6DAC8;
+    --riadaty-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--riadaty-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--riadaty-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--riadaty-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--riadaty-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--riadaty-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--riadaty-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--riadaty-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--riadaty-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--riadaty-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--riadaty-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--riadaty-primary), var(--riadaty-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--riadaty-accent-1), var(--riadaty-accent-4)) !important; }

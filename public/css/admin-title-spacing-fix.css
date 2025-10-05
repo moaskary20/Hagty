@@ -1,0 +1,117 @@
+/* Admin Panel Title Spacing Fix - إصلاح المساحات حول العنوان */
+
+/* تحسين المساحات حول العنوان الرئيسي */
+.fi-header {
+    margin: 2rem 0 !important;
+    padding: 1.5rem 0 !important;
+}
+
+.fi-header-heading {
+    margin: 1.5rem 0 !important;
+    padding: 1rem 0 !important;
+}
+
+/* تحسين المساحات حول العنوان الفرعي */
+.fi-header-subheading {
+    margin: 1rem 0 1.5rem 0 !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين الصفحات الفرعية */
+.fi-page-header {
+    margin: 1.5rem 0 !important;
+    padding: 1rem 0 !important;
+}
+
+.fi-page-header-heading {
+    margin: 1.2rem 0 !important;
+    padding: 0.8rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين الأقسام */
+.fi-section-header {
+    margin: 1rem 0 !important;
+    padding: 0.8rem 0 !important;
+}
+
+.fi-section-header-heading {
+    margin: 1rem 0 !important;
+    padding: 0.6rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين الكروت */
+.fi-card-header {
+    margin: 0.8rem 0 !important;
+    padding: 0.6rem 0 !important;
+}
+
+.fi-card-header-heading {
+    margin: 0.8rem 0 !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين الجداول */
+.fi-table-header {
+    margin: 0.8rem 0 !important;
+    padding: 0.6rem 0 !important;
+}
+
+.fi-table-header-heading {
+    margin: 0.8rem 0 !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين النماذج */
+.fi-form-header {
+    margin: 1rem 0 !important;
+    padding: 0.8rem 0 !important;
+}
+
+.fi-form-header-heading {
+    margin: 1rem 0 !important;
+    padding: 0.8rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين التبويبات */
+.fi-tabs-header {
+    margin: 0.8rem 0 !important;
+    padding: 0.6rem 0 !important;
+}
+
+.fi-tabs-header-heading {
+    margin: 0.8rem 0 !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين التنبيهات */
+.fi-alert-header {
+    margin: 0.8rem 0 !important;
+    padding: 0.6rem 0 !important;
+}
+
+.fi-alert-header-heading {
+    margin: 0.8rem 0 !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين القوائم */
+.fi-menu-header {
+    margin: 0.8rem 0 !important;
+    padding: 0.6rem 0 !important;
+}
+
+.fi-menu-header-heading {
+    margin: 0.8rem 0 !important;
+    padding: 0.5rem 0 !important;
+}
+
+/* تحسين المساحات حول عناوين الإحصائيات */
+.fi-stats-header {
+    margin: 1rem 0 !important;
+    padding: 0.8rem 0 !important;
+}
+
+.fi-stats-header-heading {
+    margin: 0.8rem 0 !important;
+    padding: 0.6rem 0 !important;
+}

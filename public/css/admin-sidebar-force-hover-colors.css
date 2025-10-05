@@ -1,0 +1,280 @@
+/* Admin Sidebar Force Hover Colors - فرض ألوان hover للقائمة الجانبية */
+
+/* إزالة جميع الألوان البيضاء من hover */
+
+/* فرض الألوان الجديدة على جميع عناصر hover */
+.fi-sidebar-nav-item:hover,
+.fi-sidebar-nav-item:hover *,
+.fi-sidebar-nav-item:hover::before,
+.fi-sidebar-nav-item:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* فرض الألوان على النصوص في hover */
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-text,
+.fi-sidebar-nav-item:hover span,
+.fi-sidebar-nav-item:hover div,
+.fi-sidebar-nav-item:hover p {
+    color: #A15DBF !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* فرض الألوان على الأيقونات في hover */
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item:hover .fi-icon,
+.fi-sidebar-nav-item:hover i,
+.fi-sidebar-nav-item:hover svg {
+    color: #A15DBF !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* فرض الألوان على العناصر الفرعية في hover */
+.fi-sidebar-nav-sub-item:hover,
+.fi-sidebar-nav-sub-item:hover *,
+.fi-sidebar-nav-sub-item:hover::before,
+.fi-sidebar-nav-sub-item:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* فرض الألوان على المجموعات في hover */
+.fi-sidebar-nav-group-label:hover,
+.fi-sidebar-nav-group-label:hover *,
+.fi-sidebar-nav-group-label:hover::before,
+.fi-sidebar-nav-group-label:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[class*="hover"]:hover,
+[class*="hover"]:hover *,
+[class*="hover"]:hover::before,
+[class*="hover"]:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover,
+[style*="background-color: #fff"]:hover,
+[style*="background-color: #ffffff"]:hover,
+[style*="background: white"]:hover,
+[style*="background: #fff"]:hover,
+[style*="background: #ffffff"]:hover {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover *,
+[style*="background-color: #fff"]:hover *,
+[style*="background-color: #ffffff"]:hover *,
+[style*="background: white"]:hover *,
+[style*="background: #fff"]:hover *,
+[style*="background: #ffffff"]:hover * {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::before,
+[style*="background-color: #fff"]:hover::before,
+[style*="background-color: #ffffff"]:hover::before,
+[style*="background: white"]:hover::before,
+[style*="background: #fff"]:hover::before,
+[style*="background: #ffffff"]:hover::before {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::after,
+[style*="background-color: #fff"]:hover::after,
+[style*="background-color: #ffffff"]:hover::after,
+[style*="background: white"]:hover::after,
+[style*="background: #fff"]:hover::after,
+[style*="background: #ffffff"]:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::selection,
+[style*="background-color: #fff"]:hover::selection,
+[style*="background-color: #ffffff"]:hover::selection,
+[style*="background: white"]:hover::selection,
+[style*="background: #fff"]:hover::selection,
+[style*="background: #ffffff"]:hover::selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-moz-selection,
+[style*="background-color: #fff"]:hover::-moz-selection,
+[style*="background-color: #ffffff"]:hover::-moz-selection,
+[style*="background: white"]:hover::-moz-selection,
+[style*="background: #fff"]:hover::-moz-selection,
+[style*="background: #ffffff"]:hover::-moz-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-webkit-selection,
+[style*="background-color: #fff"]:hover::-webkit-selection,
+[style*="background-color: #ffffff"]:hover::-webkit-selection,
+[style*="background: white"]:hover::-webkit-selection,
+[style*="background: #fff"]:hover::-webkit-selection,
+[style*="background: #ffffff"]:hover::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-ms-selection,
+[style*="background-color: #fff"]:hover::-ms-selection,
+[style*="background-color: #ffffff"]:hover::-ms-selection,
+[style*="background: white"]:hover::-ms-selection,
+[style*="background: #fff"]:hover::-ms-selection,
+[style*="background: #ffffff"]:hover::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-o-selection,
+[style*="background-color: #fff"]:hover::-o-selection,
+[style*="background-color: #ffffff"]:hover::-o-selection,
+[style*="background: white"]:hover::-o-selection,
+[style*="background: #fff"]:hover::-o-selection,
+[style*="background: #ffffff"]:hover::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-khtml-selection,
+[style*="background-color: #fff"]:hover::-khtml-selection,
+[style*="background-color: #ffffff"]:hover::-khtml-selection,
+[style*="background: white"]:hover::-khtml-selection,
+[style*="background: #fff"]:hover::-khtml-selection,
+[style*="background: #ffffff"]:hover::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-webkit-selection,
+[style*="background-color: #fff"]:hover::-webkit-selection,
+[style*="background-color: #ffffff"]:hover::-webkit-selection,
+[style*="background: white"]:hover::-webkit-selection,
+[style*="background: #fff"]:hover::-webkit-selection,
+[style*="background: #ffffff"]:hover::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-ms-selection,
+[style*="background-color: #fff"]:hover::-ms-selection,
+[style*="background-color: #ffffff"]:hover::-ms-selection,
+[style*="background: white"]:hover::-ms-selection,
+[style*="background: #fff"]:hover::-ms-selection,
+[style*="background: #ffffff"]:hover::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-o-selection,
+[style*="background-color: #fff"]:hover::-o-selection,
+[style*="background-color: #ffffff"]:hover::-o-selection,
+[style*="background: white"]:hover::-o-selection,
+[style*="background: #fff"]:hover::-o-selection,
+[style*="background: #ffffff"]:hover::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-khtml-selection,
+[style*="background-color: #fff"]:hover::-khtml-selection,
+[style*="background-color: #ffffff"]:hover::-khtml-selection,
+[style*="background: white"]:hover::-khtml-selection,
+[style*="background: #fff"]:hover::-khtml-selection,
+[style*="background: #ffffff"]:hover::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-webkit-selection,
+[style*="background-color: #fff"]:hover::-webkit-selection,
+[style*="background-color: #ffffff"]:hover::-webkit-selection,
+[style*="background: white"]:hover::-webkit-selection,
+[style*="background: #fff"]:hover::-webkit-selection,
+[style*="background: #ffffff"]:hover::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-ms-selection,
+[style*="background-color: #fff"]:hover::-ms-selection,
+[style*="background-color: #ffffff"]:hover::-ms-selection,
+[style*="background: white"]:hover::-ms-selection,
+[style*="background: #fff"]:hover::-ms-selection,
+[style*="background: #ffffff"]:hover::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-o-selection,
+[style*="background-color: #fff"]:hover::-o-selection,
+[style*="background-color: #ffffff"]:hover::-o-selection,
+[style*="background: white"]:hover::-o-selection,
+[style*="background: #fff"]:hover::-o-selection,
+[style*="background: #ffffff"]:hover::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+[style*="background-color: white"]:hover::-khtml-selection,
+[style*="background-color: #fff"]:hover::-khtml-selection,
+[style*="background-color: #ffffff"]:hover::-khtml-selection,
+[style*="background: white"]:hover::-khtml-selection,
+[style*="background: #fff"]:hover::-khtml-selection,
+[style*="background: #ffffff"]:hover::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}

@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قسم رحلتي - منصة HAGTY</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/rehlaaty-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/rehlaaty-animations.css') }}">
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        body { font-family: 'Tajawal', sans-serif; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .menu-item {
@@ -24,7 +26,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -36,26 +38,26 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
         
         .auth-btn-primary:hover {
-            background: #c13a7a;
+            background: #8B4A9C;
             color: white;
         }
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -70,12 +72,12 @@
         /* تخصيص ألوان التركيز */
         .auth-btn-primary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         .auth-btn-secondary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         /* Mobile Menu Styles */
@@ -95,8 +97,8 @@
         
         .mobile-menu-item:hover {
             transform: translateX(-4px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.15);
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
+            background: linear-gradient(135deg, #FAD6E0 0%, #E6A0C3 100%);
         }
         
         .mobile-menu-item span {
@@ -119,26 +121,26 @@
         }
         
         .mobile-auth-btn.primary {
-            background: linear-gradient(135deg, #d94288 0%, #c13a7a 100%);
+            background: linear-gradient(135deg, #A15DBF 0%, #8B4A9C 100%);
             color: white;
         }
         
         .mobile-auth-btn.primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.3);
+            box-shadow: 0 6px 20px rgba(161, 93, 191, 0.3);
         }
         
         .mobile-auth-btn.secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .mobile-auth-btn.secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 66, 136, 0.2);
+            box-shadow: 0 6px 20px rgba(161, 93, 191, 0.2);
         }
         
         .mobile-auth-btn span {
@@ -162,37 +164,37 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">✈️ قسم رحلتي</h1>
-            <p class="text-xl md:text-2xl mb-8">اكتشفي العالم مع أفضل العروض والوجهات</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">✈️ قسم رحلتي</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">اكتشفي العالم مع أفضل العروض والوجهات</p>
             
             <!-- Statistics -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $hotels->count() }}</div>
-                    <div class="text-sm">فندق</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $hotels->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فندق</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $tourism_offices->count() }}</div>
-                    <div class="text-sm">مكتب سياحي</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $tourism_offices->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مكتب سياحي</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $travel_offers->count() }}</div>
-                    <div class="text-sm">عرض سفر</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $travel_offers->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">عرض سفر</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $women_camps->count() }}</div>
-                    <div class="text-sm">معسكر نسائي</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $women_camps->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">معسكر نسائي</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $calendar_events->count() }}</div>
-                    <div class="text-sm">حدث</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.7s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $calendar_events->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">حدث</div>
                 </div>
             </div>
         </div>
@@ -203,14 +205,14 @@
         
         <!-- الفنادق -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏨 الفنادق</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏨 الفنادق</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($hotels as $hotel)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $hotel->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $hotel->brand }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $hotel->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $hotel->brand }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $hotel->location }}</div>
                             @if($hotel->offers)
                             <div><i class="fas fa-gift ml-2"></i>{{ $hotel->offers }}</div>
@@ -222,7 +224,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-hotel text-4xl mb-4"></i>
                     <p>لا توجد فنادق متاحة حالياً</p>
                 </div>
@@ -232,25 +234,25 @@
 
         <!-- المكاتب السياحية -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏢 المكاتب السياحية</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏢 المكاتب السياحية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($tourism_offices as $office)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $office->brand }}</h3>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $office->brand }}</h3>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             <div><i class="fas fa-map-marker-alt ml-2"></i>{{ $office->address }}</div>
                             @if($office->phone)
                             <div><i class="fas fa-phone ml-2"></i>{{ $office->phone }}</div>
                             @endif
                             @if($office->page_url)
-                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $office->page_url }}" target="_blank" class="text-blue-600 hover:text-blue-800">زيارة الموقع</a></div>
+                            <div><i class="fas fa-globe ml-2"></i><a href="{{ $office->page_url }}" target="_blank" class="text-[#A15DBF] hover:text-[#8B4A9C]">زيارة الموقع</a></div>
                             @endif
                         </div>
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-building text-4xl mb-4"></i>
                     <p>لا توجد مكاتب سياحية متاحة حالياً</p>
                 </div>
@@ -260,17 +262,17 @@
 
         <!-- عروض السفر -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎫 عروض السفر</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎫 عروض السفر</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($travel_offers as $offer)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $offer->title }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $offer->destination }}</p>
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $offer->title }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $offer->destination }}</p>
                         @if($offer->description)
-                        <p class="text-gray-600 mb-4">{{ Str::limit($offer->description, 100) }}</p>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($offer->description, 100) }}</p>
                         @endif
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($offer->date)
                             <div><i class="fas fa-calendar ml-2"></i>{{ $offer->date }}</div>
                             @endif
@@ -278,13 +280,13 @@
                             <div><i class="fas fa-tag ml-2"></i>{{ $offer->price }}</div>
                             @endif
                             @if($offer->active)
-                            <div><i class="fas fa-check-circle ml-2 text-green-500"></i>متاح</div>
+                            <div><i class="fas fa-check-circle ml-2 text-[#A15DBF]"></i>متاح</div>
                             @endif
                         </div>
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-plane text-4xl mb-4"></i>
                     <p>لا توجد عروض سفر متاحة حالياً</p>
                 </div>
@@ -294,17 +296,17 @@
 
         <!-- المعسكرات النسائية -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🏕️ المعسكرات النسائية</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏕️ المعسكرات النسائية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($women_camps as $camp)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $camp->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $camp->location }}</p>
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $camp->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $camp->location }}</p>
                         @if($camp->description)
-                        <p class="text-gray-600 mb-4">{{ Str::limit($camp->description, 100) }}</p>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($camp->description, 100) }}</p>
                         @endif
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($camp->contact)
                             <div><i class="fas fa-phone ml-2"></i>{{ $camp->contact }}</div>
                             @endif
@@ -315,7 +317,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-campground text-4xl mb-4"></i>
                     <p>لا توجد معسكرات نسائية متاحة حالياً</p>
                 </div>
@@ -325,14 +327,14 @@
 
         <!-- الأحداث -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">📅 الأحداث</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">📅 الأحداث</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($calendar_events as $event)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $event->name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ $event->destination }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $event->name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ $event->destination }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($event->date)
                             <div><i class="fas fa-calendar ml-2"></i>{{ $event->date }}</div>
                             @endif
@@ -343,7 +345,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-calendar-alt text-4xl mb-4"></i>
                     <p>لا توجد أحداث متاحة حالياً</p>
                 </div>
@@ -355,16 +357,16 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 أحدث المقالات في رحلتي</h2>
-                <p class="text-gray-600 text-lg">نصائح وأفكار مفيدة حول السفر والرحلات</p>
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في رحلتي</h2>
+                <p class="text-[#B17DC0] text-lg animate-fadeInUp" style="animation-delay: 0.2s;">نصائح وأفكار مفيدة حول السفر والرحلات</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
@@ -375,27 +377,27 @@
                     
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold">
+                            <span class="inline-block bg-[#E6A0C3] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
                                 {{ $blog->section_name }}
                             </span>
-                            <span class="text-sm text-gray-500">
+                            <span class="text-sm text-[#8B4A9C]">
                                 <i class="fas fa-clock ml-1"></i>
                                 {{ $blog->published_at->diffForHumans() }}
                             </span>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-blue-600 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-3 line-clamp-2">
+                            <a href="{{ route('articles.show', $blog->slug) }}" class="hover:text-[#8B4A9C] transition-colors duration-300">
                                 {{ $blog->title }}
                             </a>
                         </h3>
                         
-                        <p class="text-gray-600 mb-4 line-clamp-3">
+                        <p class="text-[#B17DC0] mb-4 line-clamp-3">
                             {{ $blog->excerpt }}
                         </p>
                         
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-gray-500">
+                            <div class="flex items-center text-sm text-[#8B4A9C]">
                                 <i class="fas fa-eye ml-1"></i>
                                 <span>{{ $blog->views_count }} مشاهدة</span>
                                 <i class="fas fa-clock mr-2 ml-4"></i>
@@ -403,7 +405,7 @@
                             </div>
                             
                             <a href="{{ route('articles.show', $blog->slug) }}" 
-                               class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">
+                               class="inline-flex items-center text-[#A15DBF] hover:text-[#8B4A9C] font-semibold transition-colors duration-300">
                                 اقرأ المزيد
                                 <i class="fas fa-arrow-left mr-2"></i>
                             </a>
@@ -415,8 +417,8 @@
             
             <div class="text-center mt-12">
                 <a href="{{ route('articles.index') }}" 
-                   class="inline-flex items-center bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    <i class="fas fa-newspaper ml-2"></i>
+                   class="inline-flex items-center bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-lg font-bold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-white" style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Tajawal', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-weight: 800;">
+                    <i class="fas fa-newspaper ml-2" style="color: #ffffff !important;"></i>
                     تصفح جميع المقالات
                 </a>
             </div>
@@ -426,6 +428,9 @@
 
     @include('components.shared-footer')
 
+    <!-- Rehlaaty Interactions JavaScript -->
+    <script src="{{ asset('js/rehlaaty-interactions.js') }}"></script>
+    
     <!-- Mobile Menu JavaScript -->
     <script>
         // Mobile menu functionality

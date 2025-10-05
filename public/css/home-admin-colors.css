@@ -1,0 +1,41 @@
+/* Home Page Color Variables */
+:root {
+    --home-primary: #A15DBF;
+    --home-secondary: #8B4A9C;
+    --home-accent-1: #FAD6E0;
+    --home-accent-2: #E6A0C3;
+    --home-accent-3: #B17DC0;
+    --home-accent-4: #E6DAC8;
+    --home-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--home-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--home-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--home-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--home-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--home-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--home-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--home-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--home-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--home-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--home-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--home-primary), var(--home-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--home-accent-1), var(--home-accent-4)) !important; }
+
+/* Override old colors */
+.bg-gradient-to-r.from-d94288 { background: linear-gradient(to right, var(--home-primary), var(--home-secondary)) !important; }
+.text-d94288 { color: var(--home-primary) !important; }
+.bg-d94288 { background-color: var(--home-primary) !important; }
+.bg-purple-500 { background-color: var(--home-primary) !important; }
+.bg-pink-400 { background-color: var(--home-accent-2) !important; }
+.bg-blue-50 { background-color: var(--home-accent-1) !important; }
+.bg-indigo-50 { background-color: var(--home-accent-4) !important; }
+.bg-teal-500 { background-color: var(--home-primary) !important; }
+.bg-blue-600 { background-color: var(--home-secondary) !important; }
+.bg-yellow-400 { background-color: var(--home-primary) !important; }
+.bg-orange-500 { background-color: var(--home-secondary) !important; }
+.bg-pink-500 { background-color: var(--home-primary) !important; }
+.bg-purple-600 { background-color: var(--home-secondary) !important; }
+.bg-pink-600 { background-color: var(--home-primary) !important; }
+.bg-rose-600 { background-color: var(--home-secondary) !important; }

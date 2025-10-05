@@ -1,0 +1,419 @@
+/* Admin Panel Title Ultra Final Fix - الإصلاح الفائق النهائي للعنوان */
+
+/* تحسين العنوان الرئيسي للصفحة */
+.fi-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 4rem 0 !important;
+    padding: 3.5rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1.8px !important;
+    text-shadow: 0 8px 16px rgba(161, 93, 191, 0.7) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 6px 12px rgba(161, 93, 191, 0.4)) !important;
+    animation: titleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 8px 16px rgba(161, 93, 191, 0.7) !important;
+    }
+    100% {
+        text-shadow: 0 12px 24px rgba(161, 93, 191, 0.9) !important;
+    }
+}
+
+/* تحسين العنوان الفرعي */
+.fi-header-subheading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #B17DC0 !important;
+    margin: 3rem 0 4rem 0 !important;
+    padding: 2.5rem 0 !important;
+    text-align: right !important;
+    line-height: 1.2 !important;
+    letter-spacing: 1.2px !important;
+    text-shadow: 0 6px 12px rgba(177, 125, 192, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #B17DC0 0%, #E6A0C3 50%, #FAD6E0 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 4px 8px rgba(177, 125, 192, 0.4)) !important;
+    animation: subtitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes subtitleGlow {
+    0% {
+        text-shadow: 0 6px 12px rgba(177, 125, 192, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 8px 16px rgba(177, 125, 192, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين الصفحات الفرعية */
+.fi-page-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 4rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 3.5rem 0 !important;
+    padding: 3rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1.5px !important;
+    text-shadow: 0 7px 14px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 5px 10px rgba(161, 93, 191, 0.4)) !important;
+    animation: pageTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes pageTitleGlow {
+    0% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 10px 20px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين الأقسام */
+.fi-section-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 3rem 0 !important;
+    padding: 2.5rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1.2px !important;
+    text-shadow: 0 6px 12px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 4px 8px rgba(161, 93, 191, 0.4)) !important;
+    animation: sectionTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes sectionTitleGlow {
+    0% {
+        text-shadow: 0 6px 12px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 8px 16px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين الكروت */
+.fi-card-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 6px rgba(161, 93, 191, 0.4)) !important;
+    animation: cardTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes cardTitleGlow {
+    0% {
+        text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين الجداول */
+.fi-table-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 6px rgba(161, 93, 191, 0.4)) !important;
+    animation: tableTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes tableTitleGlow {
+    0% {
+        text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين النماذج */
+.fi-form-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 3rem 0 !important;
+    padding: 2.5rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1.2px !important;
+    text-shadow: 0 6px 12px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 4px 8px rgba(161, 93, 191, 0.4)) !important;
+    animation: formTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes formTitleGlow {
+    0% {
+        text-shadow: 0 6px 12px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 8px 16px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين التبويبات */
+.fi-tabs-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 6px rgba(161, 93, 191, 0.4)) !important;
+    animation: tabTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes tabTitleGlow {
+    0% {
+        text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين التنبيهات */
+.fi-alert-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 6px rgba(161, 93, 191, 0.4)) !important;
+    animation: alertTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes alertTitleGlow {
+    0% {
+        text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين القوائم */
+.fi-menu-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 6px rgba(161, 93, 191, 0.4)) !important;
+    animation: menuTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes menuTitleGlow {
+    0% {
+        text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.8) !important;
+    }
+}
+
+/* تحسين عناوين الإحصائيات */
+.fi-stats-header-heading {
+    font-family: 'Tajawal', 'Arial', sans-serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    color: #A15DBF !important;
+    margin: 2.5rem 0 !important;
+    padding: 2rem 0 !important;
+    text-align: right !important;
+    line-height: 1.1 !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    font-smooth: always !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(135deg, #A15DBF 0%, #B17DC0 25%, #E6A0C3 50%, #FAD6E0 75%, #A15DBF 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 6px rgba(161, 93, 191, 0.4)) !important;
+    animation: statsTitleGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes statsTitleGlow {
+    0% {
+        text-shadow: 0 5px 10px rgba(161, 93, 191, 0.6) !important;
+    }
+    100% {
+        text-shadow: 0 7px 14px rgba(161, 93, 191, 0.8) !important;
+    }
+}

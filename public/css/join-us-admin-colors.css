@@ -1,0 +1,28 @@
+/* Join Us Page Color Variables */
+:root {
+    --join-us-primary: #A15DBF;
+    --join-us-secondary: #8B4A9C;
+    --join-us-accent-1: #FAD6E0;
+    --join-us-accent-2: #E6A0C3;
+    --join-us-accent-3: #B17DC0;
+    --join-us-accent-4: #E6DAC8;
+    --join-us-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--join-us-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--join-us-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--join-us-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--join-us-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--join-us-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--join-us-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--join-us-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--join-us-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--join-us-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--join-us-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--join-us-primary), var(--join-us-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--join-us-accent-1), var(--join-us-accent-4)) !important; }
+
+/* Override old colors */
+.bg-gradient-to-r.from-d94288 { background: linear-gradient(to right, var(--join-us-primary), var(--join-us-secondary)) !important; }
+.text-d94288 { color: var(--join-us-primary) !important; }

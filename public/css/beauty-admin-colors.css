@@ -1,0 +1,518 @@
+/* Beauty Section - Admin Panel Colors - ألوان محدثة لصفحة الجمال */
+
+/* متغيرات الألوان المحددة */
+:root {
+    --primary-50: #FAD6E0;
+    --primary-100: #E6A0C3;
+    --primary-200: #B17DC0;
+    --primary-300: #A15DBF;
+    --primary-400: #A15DBF;
+    --primary-500: #A15DBF;
+    --primary-600: #8B4A9C;
+    --primary-700: #753880;
+    --primary-800: #5F2664;
+    --primary-900: #491448;
+    --accent: #E6DAC8;
+}
+
+/* تطبيق الألوان على الخلفية العامة */
+body {
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--accent) 100%) !important;
+    font-family: 'Cairo', 'Tajawal', sans-serif !important;
+}
+
+/* تطبيق الألوان على الـ Hero Section */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%) !important;
+}
+
+/* تطبيق الألوان على البطاقات */
+.bg-\[#FAD6E0\] {
+    background: var(--primary-50) !important;
+    border: 2px solid var(--primary-100) !important;
+}
+
+/* تطبيق الألوان على النصوص */
+.text-\[#A15DBF\] {
+    color: var(--primary-500) !important;
+}
+
+.text-\[#B17DC0\] {
+    color: var(--primary-200) !important;
+}
+
+.text-\[#8B4A9C\] {
+    color: var(--primary-600) !important;
+}
+
+/* تطبيق الألوان على الأزرار */
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] {
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%) !important;
+}
+
+.hover\:from-\[#8B4A9C\].hover\:to-\[#753880\]:hover {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%) !important;
+}
+
+/* تطبيق الألوان على الروابط */
+a {
+    color: var(--primary-500) !important;
+}
+
+a:hover {
+    color: var(--primary-700) !important;
+}
+
+/* تطبيق الألوان على العناصر التفاعلية */
+.bg-\[#E6A0C3\] {
+    background: var(--primary-100) !important;
+}
+
+/* تطبيق الألوان على الخلفيات */
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--accent) 100%) !important;
+}
+
+/* إزالة أي ألوان أخرى غير المحددة */
+.text-gray-800,
+.text-gray-900,
+.text-gray-700,
+.text-gray-600,
+.text-gray-500,
+.text-gray-400,
+.text-gray-300,
+.text-gray-200,
+.text-gray-100,
+.text-gray-50 {
+    color: var(--primary-800) !important;
+}
+
+.text-rose-600,
+.text-rose-700,
+.text-rose-800,
+.text-pink-600,
+.text-pink-700,
+.text-pink-800 {
+    color: var(--primary-500) !important;
+}
+
+.text-rose-100,
+.text-pink-100 {
+    background: var(--primary-100) !important;
+}
+
+.text-rose-800,
+.text-pink-800 {
+    color: var(--primary-800) !important;
+}
+
+.text-yellow-500 {
+    color: var(--primary-500) !important;
+}
+
+/* تطبيق الألوان على العناصر المحددة */
+.bg-white {
+    background: var(--primary-50) !important;
+    border: 2px solid var(--primary-100) !important;
+}
+
+.bg-rose-50,
+.bg-pink-50,
+.bg-gray-50 {
+    background: var(--primary-50) !important;
+}
+
+.bg-rose-100,
+.bg-pink-100,
+.bg-gray-100 {
+    background: var(--primary-100) !important;
+}
+
+.bg-rose-200,
+.bg-pink-200,
+.bg-gray-200 {
+    background: var(--primary-200) !important;
+}
+
+.bg-rose-300,
+.bg-pink-300,
+.bg-gray-300 {
+    background: var(--primary-300) !important;
+}
+
+.bg-rose-400,
+.bg-pink-400,
+.bg-gray-400 {
+    background: var(--primary-400) !important;
+}
+
+.bg-rose-500,
+.bg-pink-500,
+.bg-gray-500 {
+    background: var(--primary-500) !important;
+}
+
+.bg-rose-600,
+.bg-pink-600,
+.bg-gray-600 {
+    background: var(--primary-600) !important;
+}
+
+.bg-rose-700,
+.bg-pink-700,
+.bg-gray-700 {
+    background: var(--primary-700) !important;
+}
+
+.bg-rose-800,
+.bg-pink-800,
+.bg-gray-800 {
+    background: var(--primary-800) !important;
+}
+
+.bg-rose-900,
+.bg-pink-900,
+.bg-gray-900 {
+    background: var(--primary-900) !important;
+}
+
+/* تطبيق الألوان على الحدود */
+.border-rose-500,
+.border-pink-500,
+.border-gray-500 {
+    border-color: var(--primary-500) !important;
+}
+
+.border-rose-600,
+.border-pink-600,
+.border-gray-600 {
+    border-color: var(--primary-600) !important;
+}
+
+.border-rose-700,
+.border-pink-700,
+.border-gray-700 {
+    border-color: var(--primary-700) !important;
+}
+
+.border-rose-800,
+.border-pink-800,
+.border-gray-800 {
+    border-color: var(--primary-800) !important;
+}
+
+/* تطبيق الألوان على الظلال */
+.shadow-rose-500,
+.shadow-pink-500,
+.shadow-gray-500 {
+    box-shadow: 0 4px 14px 0 rgba(161, 93, 191, 0.39) !important;
+}
+
+.shadow-rose-600,
+.shadow-pink-600,
+.shadow-gray-600 {
+    box-shadow: 0 4px 14px 0 rgba(139, 74, 156, 0.39) !important;
+}
+
+.shadow-rose-700,
+.shadow-pink-700,
+.shadow-gray-700 {
+    box-shadow: 0 4px 14px 0 rgba(117, 56, 128, 0.39) !important;
+}
+
+.shadow-rose-800,
+.shadow-pink-800,
+.shadow-gray-800 {
+    box-shadow: 0 4px 14px 0 rgba(95, 38, 100, 0.39) !important;
+}
+
+/* تطبيق الألوان على التدرجات */
+.from-rose-50,
+.from-pink-50,
+.from-gray-50 {
+    --tw-gradient-from: var(--primary-50) !important;
+}
+
+.from-rose-100,
+.from-pink-100,
+.from-gray-100 {
+    --tw-gradient-from: var(--primary-100) !important;
+}
+
+.from-rose-200,
+.from-pink-200,
+.from-gray-200 {
+    --tw-gradient-from: var(--primary-200) !important;
+}
+
+.from-rose-300,
+.from-pink-300,
+.from-gray-300 {
+    --tw-gradient-from: var(--primary-300) !important;
+}
+
+.from-rose-400,
+.from-pink-400,
+.from-gray-400 {
+    --tw-gradient-from: var(--primary-400) !important;
+}
+
+.from-rose-500,
+.from-pink-500,
+.from-gray-500 {
+    --tw-gradient-from: var(--primary-500) !important;
+}
+
+.from-rose-600,
+.from-pink-600,
+.from-gray-600 {
+    --tw-gradient-from: var(--primary-600) !important;
+}
+
+.from-rose-700,
+.from-pink-700,
+.from-gray-700 {
+    --tw-gradient-from: var(--primary-700) !important;
+}
+
+.from-rose-800,
+.from-pink-800,
+.from-gray-800 {
+    --tw-gradient-from: var(--primary-800) !important;
+}
+
+.from-rose-900,
+.from-pink-900,
+.from-gray-900 {
+    --tw-gradient-from: var(--primary-900) !important;
+}
+
+.to-rose-50,
+.to-pink-50,
+.to-gray-50 {
+    --tw-gradient-to: var(--primary-50) !important;
+}
+
+.to-rose-100,
+.to-pink-100,
+.to-gray-100 {
+    --tw-gradient-to: var(--primary-100) !important;
+}
+
+.to-rose-200,
+.to-pink-200,
+.to-gray-200 {
+    --tw-gradient-to: var(--primary-200) !important;
+}
+
+.to-rose-300,
+.to-pink-300,
+.to-gray-300 {
+    --tw-gradient-to: var(--primary-300) !important;
+}
+
+.to-rose-400,
+.to-pink-400,
+.to-gray-400 {
+    --tw-gradient-to: var(--primary-400) !important;
+}
+
+.to-rose-500,
+.to-pink-500,
+.to-gray-500 {
+    --tw-gradient-to: var(--primary-500) !important;
+}
+
+.to-rose-600,
+.to-pink-600,
+.to-gray-600 {
+    --tw-gradient-to: var(--primary-600) !important;
+}
+
+.to-rose-700,
+.to-pink-700,
+.to-gray-700 {
+    --tw-gradient-to: var(--primary-700) !important;
+}
+
+.to-rose-800,
+.to-pink-800,
+.to-gray-800 {
+    --tw-gradient-to: var(--primary-800) !important;
+}
+
+.to-rose-900,
+.to-pink-900,
+.to-gray-900 {
+    --tw-gradient-to: var(--primary-900) !important;
+}
+
+/* تطبيق الألوان على العناصر المحددة */
+.hover\:text-rose-600:hover,
+.hover\:text-pink-600:hover {
+    color: var(--primary-600) !important;
+}
+
+.hover\:text-rose-700:hover,
+.hover\:text-pink-700:hover {
+    color: var(--primary-700) !important;
+}
+
+.hover\:text-rose-800:hover,
+.hover\:text-pink-800:hover {
+    color: var(--primary-800) !important;
+}
+
+.hover\:bg-rose-50:hover,
+.hover\:bg-pink-50:hover {
+    background-color: var(--primary-50) !important;
+}
+
+.hover\:bg-rose-100:hover,
+.hover\:bg-pink-100:hover {
+    background-color: var(--primary-100) !important;
+}
+
+.hover\:bg-rose-200:hover,
+.hover\:bg-pink-200:hover {
+    background-color: var(--primary-200) !important;
+}
+
+.hover\:bg-rose-300:hover,
+.hover\:bg-pink-300:hover {
+    background-color: var(--primary-300) !important;
+}
+
+.hover\:bg-rose-400:hover,
+.hover\:bg-pink-400:hover {
+    background-color: var(--primary-400) !important;
+}
+
+.hover\:bg-rose-500:hover,
+.hover\:bg-pink-500:hover {
+    background-color: var(--primary-500) !important;
+}
+
+.hover\:bg-rose-600:hover,
+.hover\:bg-pink-600:hover {
+    background-color: var(--primary-600) !important;
+}
+
+.hover\:bg-rose-700:hover,
+.hover\:bg-pink-700:hover {
+    background-color: var(--primary-700) !important;
+}
+
+.hover\:bg-rose-800:hover,
+.hover\:bg-pink-800:hover {
+    background-color: var(--primary-800) !important;
+}
+
+.hover\:bg-rose-900:hover,
+.hover\:bg-pink-900:hover {
+    background-color: var(--primary-900) !important;
+}
+
+/* تطبيق الألوان على العناصر المحددة */
+.focus\:ring-rose-500:focus,
+.focus\:ring-pink-500:focus {
+    --tw-ring-color: var(--primary-500) !important;
+}
+
+.focus\:ring-rose-600:focus,
+.focus\:ring-pink-600:focus {
+    --tw-ring-color: var(--primary-600) !important;
+}
+
+.focus\:ring-rose-700:focus,
+.focus\:ring-pink-700:focus {
+    --tw-ring-color: var(--primary-700) !important;
+}
+
+.focus\:ring-rose-800:focus,
+.focus\:ring-pink-800:focus {
+    --tw-ring-color: var(--primary-800) !important;
+}
+
+.focus\:ring-rose-900:focus,
+.focus\:ring-pink-900:focus {
+    --tw-ring-color: var(--primary-900) !important;
+}
+
+/* تطبيق الألوان على العناصر المحددة */
+.active\:bg-rose-500:active,
+.active\:bg-pink-500:active {
+    background-color: var(--primary-500) !important;
+}
+
+.active\:bg-rose-600:active,
+.active\:bg-pink-600:active {
+    background-color: var(--primary-600) !important;
+}
+
+.active\:bg-rose-700:active,
+.active\:bg-pink-700:active {
+    background-color: var(--primary-700) !important;
+}
+
+.active\:bg-rose-800:active,
+.active\:bg-pink-800:active {
+    background-color: var(--primary-800) !important;
+}
+
+.active\:bg-rose-900:active,
+.active\:bg-pink-900:active {
+    background-color: var(--primary-900) !important;
+}
+
+/* تطبيق الألوان على العناصر المحددة */
+.checked\:bg-rose-500:checked,
+.checked\:bg-pink-500:checked {
+    background-color: var(--primary-500) !important;
+}
+
+.checked\:bg-rose-600:checked,
+.checked\:bg-pink-600:checked {
+    background-color: var(--primary-600) !important;
+}
+
+.checked\:bg-rose-700:checked,
+.checked\:bg-pink-700:checked {
+    background-color: var(--primary-700) !important;
+}
+
+.checked\:bg-rose-800:checked,
+.checked\:bg-pink-800:checked {
+    background-color: var(--primary-800) !important;
+}
+
+.checked\:bg-rose-900:checked,
+.checked\:bg-pink-900:checked {
+    background-color: var(--primary-900) !important;
+}
+
+/* تطبيق الألوان على العناصر المحددة */
+.disabled\:bg-rose-500:disabled,
+.disabled\:bg-pink-500:disabled {
+    background-color: var(--primary-500) !important;
+}
+
+.disabled\:bg-rose-600:disabled,
+.disabled\:bg-pink-600:disabled {
+    background-color: var(--primary-600) !important;
+}
+
+.disabled\:bg-rose-700:disabled,
+.disabled\:bg-pink-700:disabled {
+    background-color: var(--primary-700) !important;
+}
+
+.disabled\:bg-rose-800:disabled,
+.disabled\:bg-pink-800:disabled {
+    background-color: var(--primary-800) !important;
+}
+
+.disabled\:bg-rose-900:disabled,
+.disabled\:bg-pink-900:disabled {
+    background-color: var(--primary-900) !important;
+}

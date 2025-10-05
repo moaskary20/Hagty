@@ -1,0 +1,364 @@
+/* Admin Sidebar Ultimate Remove White - إزالة الشريط الأبيض نهائياً */
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"],
+*[class*="current"],
+*[aria-current="page"],
+*[data-active="true"],
+*[aria-selected="true"] {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"] *,
+*[class*="current"] *,
+*[aria-current="page"] *,
+*[data-active="true"] *,
+*[aria-selected="true"] * {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::before,
+*[class*="current"]::before,
+*[aria-current="page"]::before,
+*[data-active="true"]::before,
+*[aria-selected="true"]::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::after,
+*[class*="current"]::after,
+*[aria-current="page"]::after,
+*[data-active="true"]::after,
+*[aria-selected="true"]::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::selection,
+*[class*="current"]::selection,
+*[aria-current="page"]::selection,
+*[data-active="true"]::selection,
+*[aria-selected="true"]::selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::-moz-selection,
+*[class*="current"]::-moz-selection,
+*[aria-current="page"]::-moz-selection,
+*[data-active="true"]::-moz-selection,
+*[aria-selected="true"]::-moz-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::-webkit-selection,
+*[class*="current"]::-webkit-selection,
+*[aria-current="page"]::-webkit-selection,
+*[data-active="true"]::-webkit-selection,
+*[aria-selected="true"]::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::-ms-selection,
+*[class*="current"]::-ms-selection,
+*[aria-current="page"]::-ms-selection,
+*[data-active="true"]::-ms-selection,
+*[aria-selected="true"]::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::-o-selection,
+*[class*="current"]::-o-selection,
+*[aria-current="page"]::-o-selection,
+*[data-active="true"]::-o-selection,
+*[aria-selected="true"]::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]::-khtml-selection,
+*[class*="current"]::-khtml-selection,
+*[aria-current="page"]::-khtml-selection,
+*[data-active="true"]::-khtml-selection,
+*[aria-selected="true"]::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]:hover,
+*[class*="current"]:hover,
+*[aria-current="page"]:hover,
+*[data-active="true"]:hover,
+*[aria-selected="true"]:hover {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]:focus,
+*[class*="current"]:focus,
+*[aria-current="page"]:focus,
+*[data-active="true"]:focus,
+*[aria-selected="true"]:focus {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]:active,
+*[class*="current"]:active,
+*[aria-current="page"]:active,
+*[data-active="true"]:active,
+*[aria-selected="true"]:active {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]:visited,
+*[class*="current"]:visited,
+*[aria-current="page"]:visited,
+*[data-active="true"]:visited,
+*[aria-selected="true"]:visited {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}
+
+/* إزالة جميع الألوان البيضاء من العناصر النشطة */
+*[class*="active"]:link,
+*[class*="current"]:link,
+*[aria-current="page"]:link,
+*[data-active="true"]:link,
+*[aria-selected="true"]:link {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(230, 218, 200, 0.3) !important;
+}

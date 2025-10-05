@@ -1,0 +1,42 @@
+/* Mashroay Section Color Variables */
+:root {
+    --mashroay-primary: #A15DBF;
+    --mashroay-secondary: #8B4A9C;
+    --mashroay-accent-1: #FAD6E0;
+    --mashroay-accent-2: #E6A0C3;
+    --mashroay-accent-3: #B17DC0;
+    --mashroay-accent-4: #E6DAC8;
+    --mashroay-accent-5: #753880;
+}
+
+/* Override Tailwind classes with custom colors */
+.bg-\[#A15DBF\] { background-color: var(--mashroay-primary) !important; }
+.bg-\[#8B4A9C\] { background-color: var(--mashroay-secondary) !important; }
+.bg-\[#FAD6E0\] { background-color: var(--mashroay-accent-1) !important; }
+.bg-\[#E6A0C3\] { background-color: var(--mashroay-accent-2) !important; }
+.bg-\[#B17DC0\] { background-color: var(--mashroay-accent-3) !important; }
+.bg-\[#E6DAC8\] { background-color: var(--mashroay-accent-4) !important; }
+.text-\[#A15DBF\] { color: var(--mashroay-primary) !important; }
+.text-\[#8B4A9C\] { color: var(--mashroay-secondary) !important; }
+.text-\[#B17DC0\] { color: var(--mashroay-accent-3) !important; }
+.border-\[#E6A0C3\] { border-color: var(--mashroay-accent-2) !important; }
+.bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--mashroay-primary), var(--mashroay-secondary)) !important; }
+.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--mashroay-accent-1), var(--mashroay-accent-4)) !important; }
+
+/* Override old blue colors */
+.bg-indigo-600, .bg-blue-600 { background-color: var(--mashroay-primary) !important; }
+.bg-indigo-700, .bg-blue-700 { background-color: var(--mashroay-secondary) !important; }
+.bg-indigo-50, .bg-blue-50 { background-color: var(--mashroay-accent-1) !important; }
+.bg-indigo-100, .bg-blue-100 { background-color: var(--mashroay-accent-1) !important; }
+.text-indigo-600, .text-blue-600 { color: var(--mashroay-primary) !important; }
+.text-indigo-700, .text-blue-700 { color: var(--mashroay-secondary) !important; }
+.text-indigo-800, .text-blue-800 { color: var(--mashroay-primary) !important; }
+.hover\:text-indigo-600:hover, .hover\:text-blue-600:hover { color: var(--mashroay-primary) !important; }
+.hover\:text-indigo-700:hover, .hover\:text-blue-700:hover { color: var(--mashroay-secondary) !important; }
+.hover\:text-indigo-800:hover, .hover\:text-blue-800:hover { color: var(--mashroay-primary) !important; }
+.hover\:bg-indigo-600:hover, .hover\:bg-blue-600:hover { background-color: var(--mashroay-primary) !important; }
+.hover\:bg-indigo-700:hover, .hover\:bg-blue-700:hover { background-color: var(--mashroay-secondary) !important; }
+.hover\:from-indigo-600:hover, .hover\:from-blue-600:hover { background: var(--mashroay-primary) !important; }
+.hover\:from-indigo-700:hover, .hover\:from-blue-700:hover { background: var(--mashroay-secondary) !important; }
+.hover\:to-indigo-600:hover, .hover\:to-blue-600:hover { background: var(--mashroay-primary) !important; }
+.hover\:to-indigo-700:hover, .hover\:to-blue-700:hover { background: var(--mashroay-secondary) !important; }

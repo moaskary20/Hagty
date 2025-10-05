@@ -1,0 +1,192 @@
+/* Admin Panel Ultimate Final Design Ultimate Final Ultimate - التحسينات النهائية المتقدمة */
+
+/* تحسينات نهائية متقدمة للكروت */
+.fi-card {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: fadeInUp 1.5s ease-out !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسينات نهائية متقدمة للأزرار */
+.fi-btn-primary {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: left 1s;
+}
+
+.fi-btn-primary:hover::before {
+    left: 100%;
+}
+
+/* تحسينات نهائية متقدمة للتنقل */
+.fi-sidebar-nav-item {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-sidebar-nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 1s;
+}
+
+.fi-sidebar-nav-item:hover::before {
+    left: 100%;
+}
+
+/* تحسينات نهائية متقدمة للجداول */
+.fi-table-row {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للحقول */
+.fi-input {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للنوافذ المنبثقة */
+.fi-modal {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للتبويبات */
+.fi-tabs-tab {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للشارات */
+.fi-badge {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للروابط */
+.fi-link {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للأيقونات */
+.fi-icon {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة لشريط البحث */
+.fi-global-search-field {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة لمسار التنقل */
+.fi-breadcrumbs-item {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للترقيم */
+.fi-pagination-item {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للعناصر التفاعلية */
+.fi-checkbox, .fi-radio {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للقوائم المنسدلة */
+.fi-select {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للتنبيهات */
+.fi-alert {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للإحصائيات */
+.fi-stats-overview .fi-card {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للعناوين */
+.fi-header-heading {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للصور */
+.fi-image img {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للملفات */
+.fi-file-upload {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للنماذج */
+.fi-form {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للقوائم */
+.fi-menu {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للأقسام */
+.fi-section {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للمحتوى */
+.fi-content {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للشريط الجانبي */
+.fi-sidebar {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للشريط العلوي */
+.fi-topbar {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للمحتوى الرئيسي */
+.fi-main {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للوحة */
+.fi-panel {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* تحسينات نهائية متقدمة للجسم */
+.fi-body {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}

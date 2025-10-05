@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/auth-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/joy-admin-colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/joy-animations.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
-        .primary-bg { background-color: #d94288; }
-        .primary-text { color: #d94288; }
-        .primary-border { border-color: #d94288; }
+        .primary-bg { background-color: #A15DBF; }
+        .primary-text { color: #A15DBF; }
+        .primary-border { border-color: #A15DBF; }
         
         .primary-color {
-            color: #d94288;
+            color: #A15DBF;
         }
         
         .menu-item {
@@ -24,7 +26,7 @@
         }
         
         .menu-item:hover {
-            background-color: #d94288;
+            background-color: #A15DBF;
             color: white;
             transform: scale(1.05);
         }
@@ -36,26 +38,26 @@
         
         /* تخصيص ألوان الأزرار */
         .auth-btn-primary {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
             border: none;
         }
         
         .auth-btn-primary:hover {
-            background: #c13a7a;
+            background: #8B4A9C;
             color: white;
         }
         
         .auth-btn-secondary {
             background: white;
-            color: #d94288;
-            border: 2px solid #d94288;
+            color: #A15DBF;
+            border: 2px solid #A15DBF;
         }
         
         .auth-btn-secondary:hover {
-            background: #d94288;
+            background: #A15DBF;
             color: white;
-            border-color: #d94288;
+            border-color: #A15DBF;
         }
         
         /* منع ظهور الألوان الافتراضية للمتصفح */
@@ -70,12 +72,12 @@
         /* تخصيص ألوان التركيز */
         .auth-btn-primary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         .auth-btn-secondary:focus {
             outline: none !important;
-            box-shadow: 0 0 0 3px rgba(217, 66, 136, 0.3) !important;
+            box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.3) !important;
         }
         
         /* Mobile Menu Styles */
@@ -95,7 +97,7 @@
         
         .mobile-menu-item:hover {
             transform: translateX(-4px);
-            box-shadow: 0 4px 12px rgba(217, 66, 136, 0.15);
+            box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
             background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
         }
         
@@ -162,29 +164,29 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-50 to-pink-50 min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-purple-500 to-pink-600 text-white py-24">
+    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">🎉 قسم فرحي</h1>
-            <p class="text-xl md:text-2xl mb-8">احتفالات وموسيقى وترفيه لجميع المناسبات</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">🎉 قسم فرحي</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">احتفالات وموسيقى وترفيه لجميع المناسبات</p>
             
             <!-- Statistics -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $dj_wedding_packages->count() }}</div>
-                    <div class="text-sm">باقة دي جي</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $dj_wedding_packages->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">باقة دي جي</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $dj_banners->count() }}</div>
-                    <div class="text-sm">لافتة إعلانية</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $dj_banners->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">لافتة إعلانية</div>
                 </div>
-                <div class="bg-white bg-opacity-20 rounded-lg p-4">
-                    <div class="text-3xl font-bold">{{ $dj_video_ads->count() }}</div>
-                    <div class="text-sm">إعلان فيديو</div>
+                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $dj_video_ads->count() }}</div>
+                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">إعلان فيديو</div>
                 </div>
             </div>
         </div>
@@ -195,14 +197,14 @@
         
         <!-- باقات الدي جي -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">🎵 باقات الدي جي</h2>
+            <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎵 باقات الدي جي</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($dj_wedding_packages as $package)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ $package->package_name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ Str::limit($package->package_description, 100) }}</p>
-                        <div class="space-y-2 text-sm text-gray-500">
+                        <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $package->package_name }}</h3>
+                        <p class="text-[#B17DC0] mb-4">{{ Str::limit($package->package_description, 100) }}</p>
+                        <div class="space-y-2 text-sm text-[#8B4A9C]">
                             @if($package->price)
                             <div><i class="fas fa-tag ml-2"></i>{{ $package->price }} ريال</div>
                             @endif
@@ -210,7 +212,7 @@
                             <div><i class="fas fa-clock ml-2"></i>{{ $package->duration_hours }} ساعة</div>
                             @endif
                             @if($package->is_popular)
-                            <div><i class="fas fa-star ml-2 text-yellow-500"></i>الأكثر شعبية</div>
+                            <div><i class="fas fa-star ml-2 text-[#A15DBF]"></i>الأكثر شعبية</div>
                             @endif
                             @if($package->includes)
                             <div><i class="fas fa-list ml-2"></i>{{ implode(', ', array_slice($package->includes, 0, 2)) }}</div>
@@ -219,7 +221,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-span-full text-center text-gray-500 py-8">
+                <div class="col-span-full text-center text-[#A15DBF] py-8">
                     <i class="fas fa-music text-4xl mb-4"></i>
                     <p>لا توجد باقات دي جي متاحة حالياً</p>
                 </div>
@@ -371,6 +373,9 @@
 
     @include('components.shared-footer')
 
+    <!-- Joy Interactions JavaScript -->
+    <script src="{{ asset('js/joy-interactions.js') }}"></script>
+    
     <!-- Mobile Menu JavaScript -->
     <script>
         // Mobile menu functionality

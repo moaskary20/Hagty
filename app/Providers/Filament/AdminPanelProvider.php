@@ -27,12 +27,12 @@ class AdminPanelProvider extends PanelProvider
         try {
             $siteName = Setting::get('site_name', 'منصة HAGTY');
             $logoPath = Setting::get('site_logo', 'images/hagty-logo.png');
-            $primaryColor = Setting::get('primary_color', '#eb6fab');
+            $primaryColor = Setting::get('primary_color', '#A15DBF');
         } catch (\Exception $e) {
             // القيم الافتراضية في حالة عدم وجود جدول settings
             $siteName = 'منصة HAGTY';
             $logoPath = 'images/hagty-logo.png';
-            $primaryColor = '#eb6fab';
+            $primaryColor = '#A15DBF';
         }
 
         return $panel
@@ -41,7 +41,19 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Pink,
+                'primary' => [
+                    50 => '#FAD6E0',
+                    100 => '#E6A0C3',
+                    200 => '#B17DC0',
+                    300 => '#A15DBF',
+                    400 => '#A15DBF',
+                    500 => '#A15DBF',
+                    600 => '#A15DBF',
+                    700 => '#A15DBF',
+                    800 => '#A15DBF',
+                    900 => '#A15DBF',
+                    950 => '#A15DBF',
+                ],
             ])
             ->brandName($siteName)
             ->brandLogo(asset($logoPath))
@@ -49,10 +61,45 @@ class AdminPanelProvider extends PanelProvider
             ->favicon(asset($logoPath))
             ->darkMode(false)
             ->sidebarCollapsibleOnDesktop()
-            ->renderHook(
-                'panels::styles.before',
-                fn () => '<link rel="stylesheet" href="' . asset('css/arabic-rtl.css') . '">'
-            )
+        ->renderHook(
+            'panels::styles.before',
+            fn () => '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap">
+            <link rel="stylesheet" href="' . asset('css/arabic-rtl.css') . '">
+            <link rel="stylesheet" href="' . asset('css/filament-custom.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-custom.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-final-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-modern-design.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-animations.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-advanced-ui.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-final-enhancements.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-design.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-enhancements.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design-ultimate.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design-ultimate-final.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design-ultimate-final-ultimate.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design-ultimate-final-ultimate-final.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design-ultimate-final-ultimate-final-ultimate.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-ultimate-final-design-ultimate-final-ultimate-final-ultimate-final.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-spacing-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-font-clarity-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-specific-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-ultimate-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-final-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-super-final-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-ultra-final-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-title-complete-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-enhancements.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-hover-colors.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-force-hover-colors.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-remove-white-hover.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-active-hover-color.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-remove-active-white-bar.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-force-remove-white-bar.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-ultimate-remove-white.css') . '">'
+        )
             ->renderHook(
                 'panels::body.start',
                 fn () => '<script>
@@ -81,6 +128,22 @@ class AdminPanelProvider extends PanelProvider
                     });
                 </script>'
             )
+        ->renderHook(
+            'panels::body.end',
+            fn () => '<script src="' . asset('js/admin-enhancements.js') . '"></script>
+            <script src="' . asset('js/admin-advanced-interactions.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-interactions.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-interactions.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-design.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-design-ultimate.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-design-ultimate-final.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-design-ultimate-final-ultimate.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-design-ultimate-final-ultimate-final.js') . '"></script>
+            <script src="' . asset('js/admin-ultimate-final-design-ultimate-final-ultimate-final-ultimate.js') . '"></script>
+            <script src="' . asset('js/admin-sidebar-interactions.js') . '"></script>
+            <script src="' . asset('js/admin-sidebar-remove-white-bar.js') . '"></script>'
+        )
             ->navigationGroups([
                 'إدارة النظام',
                 'المحتوى', 

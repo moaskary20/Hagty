@@ -1,0 +1,211 @@
+/* Admin Sidebar Remove White Hover - إزالة اللون الأبيض من hover */
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover * {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::before {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::-moz-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-item:hover::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover * {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::before {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::-moz-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-sub-item:hover::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover * {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::before {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::after {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::-moz-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::-webkit-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::-ms-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::-o-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
+
+/* إزالة جميع الألوان البيضاء من hover */
+.fi-sidebar-nav-group-label:hover::-khtml-selection {
+    background: #E6DAC8 !important;
+    background-color: #E6DAC8 !important;
+    color: #A15DBF !important;
+}
