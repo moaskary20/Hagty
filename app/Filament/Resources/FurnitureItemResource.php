@@ -7,13 +7,12 @@ use App\Filament\Resources\FurnitureItemResource\RelationManagers;
 use App\Models\FurnitureItem;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FurnitureItemResource extends Resource
+class FurnitureItemResource extends BaseResource
 {
     protected static ?string $model = FurnitureItem::class;
 

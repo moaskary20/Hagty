@@ -7,12 +7,11 @@ use App\Models\EventBooking;
 use App\Models\Event;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Forms\Components\Section;
 
-class EventBookingResource extends Resource
+class EventBookingResource extends BaseResource
 {
     protected static ?string $model = EventBooking::class;
 

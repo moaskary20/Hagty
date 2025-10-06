@@ -7,13 +7,12 @@ use App\Filament\Resources\DesignerResource\RelationManagers;
 use App\Models\Designer;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class DesignerResource extends Resource
+class DesignerResource extends BaseResource
 {
     protected static ?string $model = Designer::class;
 

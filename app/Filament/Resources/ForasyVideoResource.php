@@ -7,13 +7,12 @@ use App\Filament\Resources\ForasyVideoResource\RelationManagers;
 use App\Models\ForasyVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ForasyVideoResource extends Resource
+class ForasyVideoResource extends BaseResource
 {
     protected static ?string $model = ForasyVideo::class;
 

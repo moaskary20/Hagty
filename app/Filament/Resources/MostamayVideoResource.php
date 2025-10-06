@@ -7,13 +7,12 @@ use App\Filament\Resources\MostamayVideoResource\RelationManagers;
 use App\Models\MostamayVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MostamayVideoResource extends Resource
+class MostamayVideoResource extends BaseResource
 {
     protected static ?string $model = MostamayVideo::class;
 

@@ -7,13 +7,12 @@ use App\Filament\Resources\HomeDecorResource\RelationManagers;
 use App\Models\HomeDecor;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class HomeDecorResource extends Resource
+class HomeDecorResource extends BaseResource
 {
     protected static ?string $model = HomeDecor::class;
 

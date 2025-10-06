@@ -337,6 +337,170 @@
 
     </div>
 
+    <!-- Promotional Ads Section -->
+    @if($family_promotional_ads && $family_promotional_ads->count() > 0)
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎯 الإعلانات الدعائية</h2>
+                <p class="text-[#B17DC0] text-lg animate-fadeInUp" style="animation-delay: 0.2s;">عروض وخدمات مميزة للعائلات</p>
+            </div>
+            
+            <!-- Featured Ads -->
+            @php
+                $featuredAds = $family_promotional_ads->where('is_featured', true);
+                $regularAds = $family_promotional_ads->where('is_featured', false);
+            @endphp
+            
+            @if($featuredAds->count() > 0)
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-[#8B4A9C] mb-6 text-center animate-fadeInUp">⭐ العروض المميزة</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach($featuredAds as $ad)
+                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#A15DBF] rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp relative">
+                        @if($ad->is_featured)
+                        <div class="absolute top-3 right-3 z-10">
+                            <span class="bg-[#A15DBF] text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                <i class="fas fa-star ml-1"></i>
+                                مميز
+                            </span>
+                        </div>
+                        @endif
+                        
+                        @if($ad->ad_type === 'video' && $ad->video_url)
+                        <div class="relative">
+                            <div class="aspect-video bg-gray-200">
+                                <iframe 
+                                    src="{{ $ad->video_url }}" 
+                                    class="w-full h-full rounded-t-xl"
+                                    frameborder="0" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        @else
+                        <div class="relative">
+                            <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                                @if($ad->image_url)
+                                    <img src="{{ $ad->image_url }}" alt="{{ $ad->title }}" class="w-full h-full object-cover rounded-t-xl">
+                                @else
+                                    <i class="fas fa-image text-[#A15DBF] text-6xl"></i>
+                                @endif
+                            </div>
+                        </div>
+                        @endif
+                        
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-[#E6A0C3] text-[#A15DBF] px-3 py-1 rounded-full text-xs font-semibold">
+                                    {{ ucfirst($ad->category) }}
+                                </span>
+                                @if($ad->discount_percentage)
+                                <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                    -{{ $ad->discount_percentage }}
+                                </span>
+                                @endif
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-[#A15DBF] mb-3">{{ $ad->title }}</h3>
+                            @if($ad->description)
+                                <p class="text-gray-700 mb-4 line-clamp-3">{{ $ad->description }}</p>
+                            @endif
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                @if($ad->price)
+                                <div class="flex items-center">
+                                    <span class="text-lg font-bold text-[#8B4A9C]">{{ number_format($ad->price, 0) }} ج.م</span>
+                                </div>
+                                @endif
+                                
+                                @if($ad->end_date)
+                                <div class="text-sm text-[#8B4A9C]">
+                                    <i class="fas fa-clock ml-1"></i>
+                                    ينتهي: {{ $ad->end_date->format('Y-m-d') }}
+                                </div>
+                                @endif
+                            </div>
+                            
+                            <div class="flex space-x-2 space-x-reverse">
+                                @if($ad->link_url)
+                                <a href="{{ $ad->link_url }}" class="flex-1 bg-[#A15DBF] text-white px-4 py-2 rounded-lg hover:bg-[#8B4A9C] transition-colors duration-300 text-center text-sm font-semibold">
+                                    <i class="fas fa-external-link-alt ml-1"></i>
+                                    عرض التفاصيل
+                                </a>
+                                @endif
+                                <button class="bg-[#E6A0C3] text-[#A15DBF] px-4 py-2 rounded-lg hover:bg-[#B17DC0] transition-colors duration-300 text-sm">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="bg-[#E6A0C3] text-[#A15DBF] px-4 py-2 rounded-lg hover:bg-[#B17DC0] transition-colors duration-300 text-sm">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            @endif
+            
+            @if($regularAds->count() > 0)
+            <div>
+                <h3 class="text-2xl font-bold text-[#8B4A9C] mb-6 text-center animate-fadeInUp">🛍️ عروض أخرى</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    @foreach($regularAds as $ad)
+                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:scale-102 transition-all duration-300 animate-fadeInUp">
+                        <div class="relative">
+                            <div class="aspect-square bg-gray-200 flex items-center justify-center">
+                                @if($ad->image_url)
+                                    <img src="{{ $ad->image_url }}" alt="{{ $ad->title }}" class="w-full h-full object-cover">
+                                @else
+                                    <i class="fas fa-image text-[#A15DBF] text-4xl"></i>
+                                @endif
+                            </div>
+                            @if($ad->discount_percentage)
+                            <div class="absolute top-2 left-2">
+                                <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                                    -{{ $ad->discount_percentage }}
+                                </span>
+                            </div>
+                            @endif
+                        </div>
+                        
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="bg-[#E6A0C3] text-[#A15DBF] px-2 py-1 rounded-full text-xs font-semibold">
+                                    {{ ucfirst($ad->category) }}
+                                </span>
+                            </div>
+                            
+                            <h4 class="text-sm font-bold text-[#A15DBF] mb-2 line-clamp-2">{{ $ad->title }}</h4>
+                            
+                            @if($ad->price)
+                            <div class="text-sm font-bold text-[#8B4A9C] mb-2">
+                                {{ number_format($ad->price, 0) }} ج.م
+                            </div>
+                            @endif
+                            
+                            <div class="flex space-x-1 space-x-reverse">
+                                @if($ad->link_url)
+                                <a href="{{ $ad->link_url }}" class="flex-1 bg-[#A15DBF] text-white px-3 py-1 rounded text-center text-xs hover:bg-[#8B4A9C] transition-colors duration-300">
+                                    عرض
+                                </a>
+                                @endif
+                                <button class="bg-[#E6A0C3] text-[#A15DBF] px-2 py-1 rounded text-xs hover:bg-[#B17DC0] transition-colors duration-300">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            @endif
+        </div>
+    </section>
+    @endif
+
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
     <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">

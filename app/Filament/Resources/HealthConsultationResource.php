@@ -7,13 +7,12 @@ use App\Filament\Resources\HealthConsultationResource\RelationManagers;
 use App\Models\HealthConsultation;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class HealthConsultationResource extends Resource
+class HealthConsultationResource extends BaseResource
 {
     protected static ?string $model = HealthConsultation::class;
 

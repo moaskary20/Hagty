@@ -1,0 +1,178 @@
+/* Admin Panel Delete Buttons Ultimate Fix */
+/* This CSS will force delete buttons to work */
+
+/* Target all possible delete button selectors */
+.fi-ac-action-delete,
+.fi-ac-action-delete-bulk,
+.fi-ta-action-delete,
+.fi-ta-action-delete-bulk,
+[data-action="delete"],
+[data-action="delete-bulk"],
+.fi-ac-action-delete button,
+.fi-ac-action-delete-bulk button,
+button[data-action="delete"],
+button[data-action="delete-bulk"],
+.fi-ac-action-delete .fi-icon,
+.fi-ac-action-delete-bulk .fi-icon,
+.fi-ta-actions .fi-ac-action-delete,
+.fi-ta-bulk-actions .fi-ac-action-delete-bulk,
+.fi-ac-action-delete[data-action="delete"],
+.fi-ac-action-delete-bulk[data-action="delete-bulk"] {
+    /* Force enable all interactions */
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    
+    /* Remove any disabled states */
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    
+    /* Ensure text is visible */
+    color: inherit !important;
+    
+    /* Force clickable */
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    
+    /* Remove any transforms that might interfere */
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Force remove disabled states */
+.fi-ac-action-delete[disabled],
+.fi-ac-action-delete-bulk[disabled],
+.fi-ac-action-delete button[disabled],
+.fi-ac-action-delete-bulk button[disabled],
+button[data-action="delete"][disabled],
+button[data-action="delete-bulk"][disabled] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+    border: 1px solid #ef4444 !important;
+}
+
+/* Remove any classes that disable buttons */
+.fi-ac-action-delete.disabled,
+.fi-ac-action-delete-bulk.disabled,
+.fi-ac-action-delete.opacity-50,
+.fi-ac-action-delete-bulk.opacity-50,
+.fi-ac-action-delete.pointer-events-none,
+.fi-ac-action-delete-bulk.pointer-events-none {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+}
+
+/* Fix hover states */
+.fi-ac-action-delete:hover,
+.fi-ac-action-delete-bulk:hover,
+.fi-ac-action-delete button:hover,
+.fi-ac-action-delete-bulk button:hover,
+button[data-action="delete"]:hover,
+button[data-action="delete-bulk"]:hover {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+    transform: scale(1.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Fix focus states */
+.fi-ac-action-delete:focus,
+.fi-ac-action-delete-bulk:focus,
+.fi-ac-action-delete button:focus,
+.fi-ac-action-delete-bulk button:focus,
+button[data-action="delete"]:focus,
+button[data-action="delete-bulk"]:focus {
+    outline: 2px solid #ef4444 !important;
+    outline-offset: 2px !important;
+}
+
+/* Fix table actions container */
+.fi-ta-actions {
+    z-index: 10 !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.fi-ta-bulk-actions {
+    z-index: 10 !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Fix table containers */
+.fi-ta-table-container {
+    overflow: visible !important;
+}
+
+.fi-ta-table {
+    overflow: visible !important;
+}
+
+/* Fix modals */
+.fi-modal {
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
+
+.fi-modal-overlay {
+    z-index: 99998 !important;
+    pointer-events: auto !important;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+    .fi-ac-action-delete,
+    .fi-ac-action-delete-bulk,
+    button[data-action="delete"],
+    button[data-action="delete-bulk"] {
+        min-width: 44px !important;
+        min-height: 44px !important;
+        padding: 8px !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+}
+
+/* Force all delete buttons to be interactive */
+*[data-action="delete"] *,
+*[data-action="delete-bulk"] *,
+.fi-ac-action-delete *,
+.fi-ac-action-delete-bulk * {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Remove any overlay that might block clicks */
+.fi-ac-action-delete::before,
+.fi-ac-action-delete-bulk::before,
+.fi-ac-action-delete::after,
+.fi-ac-action-delete-bulk::after {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* Force enable all delete related elements */
+.fi-ac-action-delete svg,
+.fi-ac-action-delete-bulk svg,
+.fi-ac-action-delete i,
+.fi-ac-action-delete-bulk i {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    display: block !important;
+}

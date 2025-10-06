@@ -17,6 +17,16 @@
         .primary-text { color: #A15DBF; }
         .primary-border { border-color: #A15DBF; }
         
+        /* Disable all animations/motion on this page */
+        .no-motion *, .no-motion *::before, .no-motion *::after {
+            animation: none !important;
+            animation-play-state: paused !important;
+            transition: none !important;
+            transition-property: none !important;
+            transform: none !important; /* neutralize any transforms */
+            scroll-behavior: auto !important;
+        }
+        
         .primary-color {
             color: #A15DBF;
         }
@@ -146,7 +156,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen no-motion">
     <!-- Navigation -->
     @include('components.shared-header')
 

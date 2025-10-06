@@ -54,6 +54,9 @@ use App\Models\FamilyOutingArea;
 use App\Models\FamilyHealthRecord;
 use App\Models\ForasyBanner;
 use App\Models\Blog;
+use App\Models\PromoVideo;
+use App\Models\PromotionVideo;
+use App\Models\FamilyPromotionalAd;
 use App\BlogHelper;
 
 class HomeController extends Controller
@@ -251,6 +254,8 @@ class HomeController extends Controller
                     'travel_offers' => TravelOffer::all(),
                     'women_camps' => WomenCamp::all(),
                     'calendar_events' => CalendarEvent::all(),
+                    'promo_videos' => PromoVideo::active()->get(),
+                    'promotion_videos' => PromotionVideo::all(),
                     'latestBlogs' => $this->getLatestBlogsForSection('rehlaaty', 3),
                 ];
                 
@@ -260,6 +265,7 @@ class HomeController extends Controller
                     'family_activities' => FamilyActivity::all(),
                     'family_outing_areas' => FamilyOutingArea::all(),
                     'family_health_records' => FamilyHealthRecord::all(),
+                    'family_promotional_ads' => FamilyPromotionalAd::active()->ordered()->get(),
                     'latestBlogs' => $this->getLatestBlogsForSection('family', 3),
                 ];
                 

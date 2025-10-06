@@ -1,0 +1,149 @@
+/* Admin Panel Delete Buttons Fix */
+/* Ensure delete buttons are clickable and visible */
+
+/* Delete action buttons - Force enable */
+.fi-ta-action-delete,
+.fi-ac-action-delete,
+.fi-ac-action-delete-bulk,
+[data-action="delete"],
+[data-action="delete-bulk"],
+.fi-ac-action-delete button,
+.fi-ac-action-delete-bulk button,
+button[data-action="delete"],
+button[data-action="delete-bulk"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    z-index: 999 !important;
+    position: relative !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+/* Force remove any disabled states */
+.fi-ac-action-delete[disabled],
+.fi-ac-action-delete-bulk[disabled],
+.fi-ac-action-delete button[disabled],
+.fi-ac-action-delete-bulk button[disabled],
+button[data-action="delete"][disabled],
+button[data-action="delete-bulk"][disabled] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+}
+
+/* Delete buttons in table actions */
+.fi-ta-actions .fi-ac-action-delete {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+}
+
+/* Bulk delete actions */
+.fi-ta-bulk-actions .fi-ac-action-delete-bulk {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+}
+
+/* Delete action icons */
+.fi-ac-action-delete .fi-icon,
+.fi-ac-action-delete-bulk .fi-icon {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Remove any disabled states that might prevent clicking */
+.fi-ac-action-delete[disabled],
+.fi-ac-action-delete-bulk[disabled] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+}
+
+/* Ensure delete modals work */
+.fi-modal {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+.fi-modal-overlay {
+    z-index: 9998 !important;
+    pointer-eevents: auto !important;
+}
+
+/* Fix any JavaScript event handling issues */
+.fi-ac-action-delete:hover,
+.fi-ac-action-delete-bulk:hover {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+}
+
+/* Ensure delete buttons are not hidden by other elements */
+.fi-ta-actions {
+    z-index: 10 !important;
+    position: relative !important;
+}
+
+/* Fix any overflow issues that might hide delete buttons */
+.fi-ta-table-container {
+    overflow: visible !important;
+}
+
+.fi-ta-table {
+    overflow: visible !important;
+}
+
+/* Ensure delete buttons work on mobile */
+@media (max-width: 768px) {
+    .fi-ac-action-delete,
+    .fi-ac-action-delete-bulk {
+        min-width: 44px !important;
+        min-height: 44px !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+}
+
+/* Force delete buttons to be interactive */
+button[data-action="delete"],
+button[data-action="delete-bulk"],
+.fi-ac-action-delete button,
+.fi-ac-action-delete-bulk button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-flex !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+/* Remove any transform or filter that might interfere */
+.fi-ac-action-delete,
+.fi-ac-action-delete-bulk {
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Ensure delete buttons have proper focus states */
+.fi-ac-action-delete:focus,
+.fi-ac-action-delete-bulk:focus {
+    outline: 2px solid #ef4444 !important;
+    outline-offset: 2px !important;
+}

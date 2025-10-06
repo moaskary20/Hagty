@@ -7,13 +7,12 @@ use App\Filament\Resources\WomenSuccessStoryResource\RelationManagers;
 use App\Models\WomenSuccessStory;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class WomenSuccessStoryResource extends Resource
+class WomenSuccessStoryResource extends BaseResource
 {
     protected static ?string $model = WomenSuccessStory::class;
 

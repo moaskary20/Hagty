@@ -1,0 +1,16 @@
+/* Disable all animations, transitions, and transforms in Admin Panel */
+html.admin-panel-disable-animations *,
+html.admin-panel-disable-animations *::before,
+html.admin-panel-disable-animations *::after {
+    animation: none !important;
+    animation-play-state: paused !important;
+    transition: none !important;
+    transition-property: none !important;
+    transform: none !important;
+    scroll-behavior: auto !important;
+}
+
+/* Apply class automatically via JS hook to avoid affecting front site */
+@layer base {
+}
+

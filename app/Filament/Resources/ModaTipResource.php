@@ -7,13 +7,12 @@ use App\Filament\Resources\ModaTipResource\RelationManagers;
 use App\Models\ModaTip;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ModaTipResource extends Resource
+class ModaTipResource extends BaseResource
 {
     protected static ?string $model = ModaTip::class;
 

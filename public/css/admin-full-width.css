@@ -1,0 +1,162 @@
+/* Admin Panel Full Width Styles */
+.fi-main {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.fi-main-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1rem !important;
+}
+
+.fi-main-ctn {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.fi-main-grid {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.fi-main-content > div {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Tables Full Width */
+.fi-ta-table {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-ta-content {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-ta-table-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Resource Pages */
+.fi-resource {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-resource-list-records {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Remove any container max-width constraints */
+.container,
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-3xl,
+.max-w-2xl,
+.max-w-xl,
+.max-w-lg,
+.max-w-md,
+.max-w-sm {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Ensure body and html take full width */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Admin layout adjustments */
+.fi-app {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-app-main {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Sidebar and content area */
+.fi-sidebar + .fi-main {
+    width: calc(100% - 16rem) !important;
+    max-width: calc(100% - 16rem) !important;
+}
+
+/* When sidebar is collapsed */
+.fi-sidebar-collapsed + .fi-main {
+    width: calc(100% - 4rem) !important;
+    max-width: calc(100% - 4rem) !important;
+}
+
+/* Table specific full width */
+.fi-ta-table table {
+    width: 100% !important;
+    table-layout: auto !important;
+}
+
+.fi-ta-table th,
+.fi-ta-table td {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Resource list container */
+.fi-resource-list-records-page {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Page header */
+.fi-page-header {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Content area */
+.fi-page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Remove any padding/margin that might restrict width */
+.fi-main-content,
+.fi-main-ctn,
+.fi-main-grid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fi-main {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .fi-sidebar + .fi-main {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .fi-main-content,
+    .fi-main-ctn,
+    .fi-main-grid {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}

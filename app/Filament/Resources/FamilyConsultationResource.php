@@ -7,19 +7,18 @@ use App\Filament\Resources\FamilyConsultationResource\RelationManagers;
 use App\Models\FamilyConsultation;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FamilyConsultationResource extends Resource
+class FamilyConsultationResource extends BaseResource
 {
     protected static ?string $model = FamilyConsultation::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-home-modern';
     protected static ?string $navigationLabel = 'استشارات عائلية';
-    protected static ?string $navigationGroup = 'مستشاري';
+    protected static ?string $navigationGroup = 'عائلتى';
     protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form

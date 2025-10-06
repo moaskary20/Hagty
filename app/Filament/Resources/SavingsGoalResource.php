@@ -7,13 +7,12 @@ use App\Filament\Resources\SavingsGoalResource\RelationManagers;
 use App\Models\SavingsGoal;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SavingsGoalResource extends Resource
+class SavingsGoalResource extends BaseResource
 {
     protected static ?string $model = SavingsGoal::class;
 

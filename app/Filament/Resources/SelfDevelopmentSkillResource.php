@@ -7,13 +7,12 @@ use App\Filament\Resources\SelfDevelopmentSkillResource\RelationManagers;
 use App\Models\SelfDevelopmentSkill;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SelfDevelopmentSkillResource extends Resource
+class SelfDevelopmentSkillResource extends BaseResource
 {
     protected static ?string $model = SelfDevelopmentSkill::class;
 

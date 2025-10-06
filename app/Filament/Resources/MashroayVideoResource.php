@@ -7,13 +7,12 @@ use App\Filament\Resources\MashroayVideoResource\RelationManagers;
 use App\Models\MashroayVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MashroayVideoResource extends Resource
+class MashroayVideoResource extends BaseResource
 {
     protected static ?string $model = MashroayVideo::class;
 

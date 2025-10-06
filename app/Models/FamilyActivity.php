@@ -29,7 +29,6 @@ class FamilyActivity extends Model
 
     protected $casts = [
         'requirements' => 'array',
-        'cost' => 'decimal:2',
         'available_from' => 'date',
         'available_to' => 'date',
         'is_seasonal' => 'boolean',

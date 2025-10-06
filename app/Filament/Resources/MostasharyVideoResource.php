@@ -7,13 +7,12 @@ use App\Filament\Resources\MostasharyVideoResource\RelationManagers;
 use App\Models\MostasharyVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MostasharyVideoResource extends Resource
+class MostasharyVideoResource extends BaseResource
 {
     protected static ?string $model = MostasharyVideo::class;
 

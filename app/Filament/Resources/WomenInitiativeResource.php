@@ -7,13 +7,12 @@ use App\Filament\Resources\WomenInitiativeResource\RelationManagers;
 use App\Models\WomenInitiative;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class WomenInitiativeResource extends Resource
+class WomenInitiativeResource extends BaseResource
 {
     protected static ?string $model = WomenInitiative::class;
 

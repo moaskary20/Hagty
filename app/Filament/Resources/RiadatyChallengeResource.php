@@ -7,13 +7,12 @@ use App\Filament\Resources\RiadatyChallengeResource\RelationManagers;
 use App\Models\RiadatyChallenge;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RiadatyChallengeResource extends Resource
+class RiadatyChallengeResource extends BaseResource
 {
     protected static ?string $model = RiadatyChallenge::class;
 

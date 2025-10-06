@@ -13,7 +13,23 @@ class EditPopupNotification extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make()
+                ->requiresConfirmation(false)
+                ->action(function ($record) {
+                    try {
+                        $record->delete();
+                        \Filament\Notifications\Notification::make()
+                            ->title('تم الحذف بنجاح')
+                            ->success()
+                            ->send();
+                        return redirect()->route('filament.admin.resources.popup-notifications.index');
+                    } catch (\Exception $e) {
+                        \Filament\Notifications\Notification::make()
+                            ->title('خطأ في الحذف: ' . $e->getMessage())
+                            ->danger()
+                            ->send();
+                    }
+                }),
         ];
     }
 }

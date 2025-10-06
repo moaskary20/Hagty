@@ -1,278 +1,607 @@
-/* تصميم محسن لصفحة تسجيل الدخول في لوحة الإدارة */
+/* Enhanced Admin Login Page Design - Premium Version */
 
-/* إعدادات الخط الأساسية */
+/* Import Cairo Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Root Variables */
+:root {
+    --primary-color: #A15DBF;
+    --primary-light: #D94288;
+    --primary-dark: #764ba2;
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --bg-white: #ffffff;
+    --bg-gray: #f9fafb;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.2);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Body and HTML Styling */
 body, html {
-    font-family: 'Cairo', 'Tajawal', sans-serif !important;
+    font-family: 'Cairo', sans-serif !important;
     direction: rtl !important;
     text-align: right !important;
-}
-
-/* خلفية الصفحة الرئيسية */
-.fi-main {
-    background: linear-gradient(135deg, #FAD6E0 0%, #E6DAC8 100%) !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #D94288 100%) !important;
     min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    overflow-x: hidden !important;
 }
 
-/* تصميم نموذج تسجيل الدخول */
-.fi-form {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px) !important;
-    border-radius: 20px !important;
-    box-shadow: 0 20px 40px rgba(161, 93, 191, 0.2) !important;
-    border: 2px solid rgba(161, 93, 191, 0.1) !important;
+/* Animated Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(161, 93, 191, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(217, 66, 136, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(147, 51, 234, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: backgroundPulse 15s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Floating Decorative Elements */
+body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(161, 93, 191, 0.2), transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatBubble {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translate(100px, 100px) scale(1.1);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translate(200px, -50px) scale(0.9);
+        opacity: 0.4;
+    }
+    75% { 
+        transform: translate(50px, 150px) scale(1.05);
+        opacity: 0.45;
+    }
+}
+
+/* Main Container */
+.fi-main {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Login Container */
+.fi-simple-layout {
+    background: transparent !important;
+    min-height: 100vh !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     padding: 2rem !important;
-    margin: 2rem auto !important;
-    max-width: 400px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 2 !important;
 }
 
-/* العنوان الرئيسي */
-.fi-form h1,
-.fi-form h2,
-.fi-form .fi-heading {
-    color: #A15DBF !important;
-    font-weight: 800 !important;
+/* Login Card - Enhanced Design */
+.fi-simple-main {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 32px !important;
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 1px 0 rgba(255, 255, 255, 0.3) inset !important;
+    padding: 3.5rem !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin: auto !important;
+    transform: translateY(0) !important;
+    transition: var(--transition-base) !important;
+}
+
+.fi-simple-main:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 
+        0 50px 100px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset !important;
+}
+
+/* Card Top Gradient Border */
+.fi-simple-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gradient-start), #A15DBF, var(--primary-light));
+    background-size: 200% 100%;
+    animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Card Decorative Corner */
+.fi-simple-main::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(161, 93, 191, 0.15), rgba(217, 66, 136, 0.1));
+    border-radius: 50%;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Brand Section */
+.fi-simple-header {
     text-align: center !important;
-    margin-bottom: 1.5rem !important;
-    font-size: 1.75rem !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 3rem !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
-/* حقول الإدخال */
-.fi-input,
-.fi-field-input {
-    background: #ffffff !important;
-    border: 2px solid #E6A0C3 !important;
+/* Logo Styling */
+.fi-simple-header img {
+    height: 90px !important;
+    width: auto !important;
+    margin-bottom: 1.5rem !important;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15)) !important;
+    animation: logoFloat 3s ease-in-out infinite !important;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Title Styling */
+.fi-simple-header h1 {
+    font-size: 2.75rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, #000000 50%, var(--primary-light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+    animation: titleShine 3s ease-in-out infinite !important;
+}
+
+@keyframes titleShine {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+}
+
+/* Subtitle Styling */
+.fi-simple-header p {
+    font-size: 1.125rem !important;
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+    margin-bottom: 1.5rem !important;
+    opacity: 0.9 !important;
+}
+
+/* Decorative Line */
+.fi-simple-header::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 3px;
+    margin: 0 auto;
+    animation: lineExpand 2s ease-in-out infinite;
+}
+
+@keyframes lineExpand {
+    0%, 100% { width: 100px; opacity: 0.5; }
+    50% { width: 150px; opacity: 1; }
+}
+
+/* Form Container */
+.fi-simple-main-content {
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Form Styling */
+.fi-form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+}
+
+/* Input Container */
+.fi-fo-field-wrp {
+    margin-bottom: 0 !important;
+    position: relative !important;
+}
+
+/* Label Styling */
+.fi-fo-field-wrp-label {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 0.875rem !important;
+    font-size: 1.05rem !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: var(--transition-base) !important;
+}
+
+.fi-fo-field-wrp:focus-within .fi-fo-field-wrp-label {
+    color: var(--primary-color) !important;
+}
+
+/* Input Styling - Enhanced */
+.fi-fo-text-input input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 16px !important;
+    padding: 1rem 1.25rem 1rem 3.5rem !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    width: 100% !important;
+}
+
+.fi-fo-text-input input:hover {
+    border-color: #cbd5e0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fi-fo-text-input input:focus {
+    border-color: var(--primary-color) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 
+        0 0 0 4px rgba(161, 93, 191, 0.15),
+        0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Input Icons */
+.fi-fo-text-input .fi-icon {
+    color: var(--text-light) !important;
+    transition: all 0.3s ease !important;
+    font-size: 1.25rem !important;
+}
+
+.fi-fo-text-input:focus-within .fi-icon {
+    color: var(--primary-color) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Checkbox Styling */
+.fi-fo-checkbox {
+    margin-top: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.fi-fo-checkbox input[type="checkbox"] {
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    accent-color: var(--primary-color) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: var(--transition-base) !important;
+}
+
+.fi-fo-checkbox input[type="checkbox"]:hover {
+    transform: scale(1.1) !important;
+}
+
+.fi-fo-checkbox label {
+    font-weight: 500 !important;
+    color: var(--text-secondary) !important;
+    margin-right: 0.75rem !important;
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+/* Button Styling - Premium Design */
+.fi-btn {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, #A15DBF 50%, var(--primary-light) 100%) !important;
+    background-size: 200% 200% !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 1.125rem 2.5rem !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    color: white !important;
+    width: 100% !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 
+        0 12px 30px rgba(161, 93, 191, 0.4),
+        0 0 0 0 rgba(161, 93, 191, 0.5) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    animation: buttonGradient 3s ease infinite !important;
+}
+
+@keyframes buttonGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.fi-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.fi-btn:hover::before {
+    left: 100%;
+}
+
+.fi-btn:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 
+        0 18px 40px rgba(161, 93, 191, 0.5),
+        0 0 0 6px rgba(161, 93, 191, 0.1) !important;
+}
+
+.fi-btn:active {
+    transform: translateY(-2px) scale(0.98) !important;
+}
+
+.fi-btn:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    animation: buttonPulse 2s ease-in-out infinite !important;
+}
+
+@keyframes buttonPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+}
+
+/* Error Messages - Enhanced */
+.fi-fo-field-wrp-error-message {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(252, 165, 165, 0.1)) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
     border-radius: 12px !important;
     padding: 0.875rem 1rem !important;
-    font-size: 1rem !important;
-    color: #333333 !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 8px rgba(161, 93, 191, 0.1) !important;
+    margin-top: 0.75rem !important;
+    color: #dc2626 !important;
+    font-size: 0.925rem !important;
+    font-weight: 500 !important;
+    animation: shake 0.5s ease !important;
 }
 
-.fi-input:focus,
-.fi-field-input:focus {
-    border-color: #A15DBF !important;
-    box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.2) !important;
-    outline: none !important;
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
 }
 
-/* تسميات الحقول */
-.fi-label,
-.fi-field-label {
-    color: #A15DBF !important;
-    font-weight: 600 !important;
-    margin-bottom: 0.5rem !important;
-    font-size: 0.95rem !important;
-}
-
-/* زر تسجيل الدخول */
-.fi-btn-primary,
-.fi-button-primary,
-.fi-primary-button {
-    background: linear-gradient(135deg, #A15DBF 0%, #8B4A9C 100%) !important;
-    color: #ffffff !important;
-    border: none !important;
+/* Success Messages */
+.fi-notification {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(134, 239, 172, 0.1)) !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
     border-radius: 12px !important;
-    padding: 0.875rem 2rem !important;
-    font-weight: 700 !important;
-    font-size: 1rem !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
-    box-shadow: 0 4px 15px rgba(161, 93, 191, 0.3) !important;
-    transition: all 0.3s ease !important;
-    width: 100% !important;
-    margin-top: 1rem !important;
+    padding: 0.875rem 1rem !important;
+    color: #059669 !important;
+    font-weight: 500 !important;
+    animation: slideDown 0.5s ease !important;
 }
 
-.fi-btn-primary:hover,
-.fi-button-primary:hover,
-.fi-primary-button:hover {
-    background: linear-gradient(135deg, #8B4A9C 0%, #753880 100%) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(161, 93, 191, 0.4) !important;
+@keyframes slideDown {
+    from { 
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* مربع التذكر */
-.fi-checkbox,
-.fi-field-checkbox {
-    accent-color: #A15DBF !important;
+/* Footer */
+.fi-simple-footer {
+    text-align: center !important;
+    margin-top: 2.5rem !important;
+    padding-top: 2rem !important;
+    border-top: 1px solid rgba(229, 231, 235, 0.5) !important;
 }
 
-.fi-checkbox-label,
-.fi-field-checkbox-label {
-    color: #666666 !important;
+.fi-simple-footer p {
+    color: var(--text-secondary) !important;
+    font-size: 0.925rem !important;
     font-weight: 500 !important;
 }
 
-/* روابط إضافية */
-.fi-link,
-.fi-field-link,
-a {
-    color: #A15DBF !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    transition: color 0.3s ease !important;
-}
-
-.fi-link:hover,
-.fi-field-link:hover,
-a:hover {
-    color: #8B4A9C !important;
-    text-decoration: underline !important;
-}
-
-/* رسائل الخطأ */
-.fi-error,
-.fi-field-error,
-.fi-validation-error {
-    background: #FEF2F2 !important;
-    color: #DC2626 !important;
-    border: 1px solid #FECACA !important;
-    border-radius: 8px !important;
-    padding: 0.75rem !important;
-    margin-top: 0.5rem !important;
-    font-size: 0.9rem !important;
-}
-
-/* رسائل النجاح */
-.fi-success,
-.fi-field-success {
-    background: #F0FDF4 !important;
-    color: #16A34A !important;
-    border: 1px solid #BBF7D0 !important;
-    border-radius: 8px !important;
-    padding: 0.75rem !important;
-    margin-top: 0.5rem !important;
-    font-size: 0.9rem !important;
-}
-
-/* تحسينات اللوجو */
-.fi-brand-logo {
-    filter: none !important;
-    max-height: 60px !important;
-    width: auto !important;
-}
-
-/* تحسينات النص */
-.fi-text,
-.fi-field-text,
-p, span, div {
-    color: #333333 !important;
-    line-height: 1.6 !important;
-}
-
-/* تحسينات الاستجابة */
-@media (max-width: 768px) {
-    .fi-form {
+/* Responsive Design */
+@media (max-width: 640px) {
+    .fi-simple-main {
+        padding: 2.5rem 1.75rem !important;
         margin: 1rem !important;
-        padding: 1.5rem !important;
-        border-radius: 16px !important;
+        border-radius: 24px !important;
     }
     
-    .fi-form h1,
-    .fi-form h2,
-    .fi-form .fi-heading {
-        font-size: 1.5rem !important;
+    .fi-simple-header h1 {
+        font-size: 2.25rem !important;
     }
     
-    .fi-input,
-    .fi-field-input {
-        padding: 0.75rem !important;
-        font-size: 0.95rem !important;
+    .fi-simple-header p {
+        font-size: 1rem !important;
+    }
+    
+    .fi-simple-header img {
+        height: 70px !important;
     }
 }
 
-/* تحسينات إضافية للوضوح */
-.fi-form * {
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-}
-
-/* إزالة أي حدود افتراضية غير مرغوب فيها */
-.fi-form input,
-.fi-form button,
-.fi-form select,
-.fi-form textarea {
+/* Focus Styles */
+*:focus {
     outline: none !important;
 }
 
-/* تحسينات للعناصر التفاعلية */
-.fi-form input:focus,
-.fi-form button:focus,
-.fi-form select:focus,
-.fi-form textarea:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.2) !important;
+*:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
 }
 
-/* تحسينات للشعار والعنوان */
-.fi-brand-name,
-.fi-brand-logo + div {
-    color: #A15DBF !important;
-    font-weight: 800 !important;
-    text-align: center !important;
-    margin-bottom: 1rem !important;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
 
-/* تحسينات للفاصل */
-.fi-divider {
-    border-color: #E6A0C3 !important;
-    margin: 1.5rem 0 !important;
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
-/* تحسينات للعناصر المساعدة */
-.fi-help-text,
-.fi-field-help {
-    color: #666666 !important;
-    font-size: 0.9rem !important;
-    margin-top: 0.25rem !important;
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-color), var(--primary-light));
+    border-radius: 5px;
+    transition: var(--transition-base);
 }
 
-/* تحسينات خاصة بـ Filament */
-.fi-panel {
-    background: transparent !important;
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-light), var(--primary-color));
 }
 
-.fi-main-content {
-    background: transparent !important;
+/* Input Shimmer Effect */
+.fi-fo-text-input {
+    position: relative;
+    overflow: hidden;
 }
 
-/* إزالة الخلفيات البيضاء غير المرغوب فيها */
-.fi-card,
-.fi-section,
-.fi-widget {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid rgba(161, 93, 191, 0.1) !important;
-    border-radius: 12px !important;
+.fi-fo-text-input::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(161, 93, 191, 0.1), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
 }
 
-/* تحسينات للعناصر المحددة */
-.fi-form .fi-input-group {
-    margin-bottom: 1rem !important;
+.fi-fo-text-input:focus-within::after {
+    left: 100%;
 }
 
-.fi-form .fi-input-group:last-child {
-    margin-bottom: 0 !important;
+/* Button Ripple Effect on Click */
+.fi-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
 }
 
-/* تحسينات للزر */
-.fi-form button[type="submit"] {
-    position: relative !important;
-    overflow: hidden !important;
+.fi-btn:active::after {
+    width: 400px;
+    height: 400px;
 }
 
-.fi-form button[type="submit"]::before {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: -100% !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
-    transition: left 0.5s ease !important;
+/* Additional Floating Bubble */
+.fi-simple-layout::before {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(217, 66, 136, 0.2), transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 25s ease-in-out infinite;
+    animation-delay: -5s;
+    pointer-events: none;
 }
 
-.fi-form button[type="submit"]:hover::before {
-    left: 100% !important;
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.fi-simple-main-ctn.flex.w-full.flex-grow.items-center.justify-center {
+    width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+    .fi-simple-main-ctn.flex.w-full.flex-grow.items-center.justify-center {
+        width: 100%;
+    }
 }

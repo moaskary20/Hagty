@@ -1,0 +1,56 @@
+/* Ensure admin fills full viewport with no black gutters */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background: linear-gradient(135deg, #FAD6E0 0%, #E6DAC8 100%) !important;
+    background-color: #FAD6E0 !important; /* fallback */
+}
+
+#app, body > div:first-child {
+    min-height: 100vh !important;
+    background: inherit !important;
+}
+
+/* Filament containers */
+.fi-app,
+.fi-body,
+.fi-layout,
+.fi-app-main,
+.fi-sidebar + .fi-main,
+.fi-main,
+.fi-main-ctn,
+.fi-main-grid,
+.fi-main-content,
+.fi-page,
+.fi-page-header,
+.fi-page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    background: inherit !important;
+}
+
+/* Data table wrappers */
+.fi-ta-content,
+.fi-ta-table,
+.fi-ta-table-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Ensure no default black backgrounds on pseudo-elements */
+html::before, html::after,
+body::before, body::after {
+    background: inherit !important;
+}
+
+/* Root background as fallback */
+:root {
+    background: linear-gradient(135deg, #FAD6E0 0%, #E6DAC8 100%) !important;
+}
+

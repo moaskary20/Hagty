@@ -7,13 +7,12 @@ use App\Filament\Resources\HesabatyVideoResource\RelationManagers;
 use App\Models\HesabatyVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class HesabatyVideoResource extends Resource
+class HesabatyVideoResource extends BaseResource
 {
     protected static ?string $model = HesabatyVideo::class;
 

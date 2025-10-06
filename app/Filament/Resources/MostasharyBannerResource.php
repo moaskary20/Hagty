@@ -7,13 +7,12 @@ use App\Filament\Resources\MostasharyBannerResource\RelationManagers;
 use App\Models\MostasharyBanner;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MostasharyBannerResource extends Resource
+class MostasharyBannerResource extends BaseResource
 {
     protected static ?string $model = MostasharyBanner::class;
 

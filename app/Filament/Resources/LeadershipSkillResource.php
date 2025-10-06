@@ -7,13 +7,12 @@ use App\Filament\Resources\LeadershipSkillResource\RelationManagers;
 use App\Models\LeadershipSkill;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class LeadershipSkillResource extends Resource
+class LeadershipSkillResource extends BaseResource
 {
     protected static ?string $model = LeadershipSkill::class;
 

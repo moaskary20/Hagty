@@ -7,13 +7,12 @@ use App\Filament\Resources\FashionistaVideoResource\RelationManagers;
 use App\Models\FashionistaVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FashionistaVideoResource extends Resource
+class FashionistaVideoResource extends BaseResource
 {
     protected static ?string $model = FashionistaVideo::class;
 

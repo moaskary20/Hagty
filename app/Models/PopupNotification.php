@@ -46,4 +46,47 @@ class PopupNotification extends Model
         
         return true;
     }
+
+    // Accessor لضمان عرض الصورة بشكل صحيح
+    public function getMediaUrlAttribute($value)
+    {
+        if (!$value) {
+            return null;
+        }
+
+        // إذا كان المسار يبدأ بـ http أو https، ارجعه كما هو
+        if (str_starts_with($value, 'http')) {
+            return $value;
+        }
+
+        // إذا كان المسار يبدأ بـ /، ارجعه كما هو
+        if (str_starts_with($value, '/')) {
+            return $value;
+        }
+
+        // وإلا، استخدم Storage::url
+        return \Storage::url($value);
+    }
+
+    // Scope للإشعارات النشطة
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
+    // Scope للإشعارات المحددة زمنياً
+    public function scopeCurrentlyActive($query)
+    {
+        $now = now();
+        
+        return $query->where('is_active', true)
+                    ->where(function($q) use ($now) {
+                        $q->whereNull('start_date')
+                          ->orWhere('start_date', '<=', $now);
+                    })
+                    ->where(function($q) use ($now) {
+                        $q->whereNull('end_date')
+                          ->orWhere('end_date', '>=', $now);
+                    });
+    }
 }

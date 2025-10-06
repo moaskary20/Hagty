@@ -6,12 +6,11 @@ use App\Filament\Resources\EventVideoResource\Pages;
 use App\Models\EventVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Forms\Components\Section;
 
-class EventVideoResource extends Resource
+class EventVideoResource extends BaseResource
 {
     protected static ?string $model = EventVideo::class;
 

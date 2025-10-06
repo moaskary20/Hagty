@@ -7,13 +7,12 @@ use App\Filament\Resources\MainScreenElementResource\RelationManagers;
 use App\Models\MainScreenElement;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MainScreenElementResource extends Resource
+class MainScreenElementResource extends BaseResource
 {
     protected static ?string $model = MainScreenElement::class;
 

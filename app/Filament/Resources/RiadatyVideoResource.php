@@ -7,13 +7,12 @@ use App\Filament\Resources\RiadatyVideoResource\RelationManagers;
 use App\Models\RiadatyVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RiadatyVideoResource extends Resource
+class RiadatyVideoResource extends BaseResource
 {
     protected static ?string $model = RiadatyVideo::class;
 

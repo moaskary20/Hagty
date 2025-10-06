@@ -7,13 +7,12 @@ use App\Filament\Resources\CommunityPostResource\RelationManagers;
 use App\Models\CommunityPost;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CommunityPostResource extends Resource
+class CommunityPostResource extends BaseResource
 {
     protected static ?string $model = CommunityPost::class;
 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار زر الحذف</title>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .delete-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .delete-btn:hover {
+            background: #dc2626;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 اختبار أزرار الحذف</h1>
+        <p>اضغط على الأزرار أدناه لاختبار وظائف الحذف:</p>
+        
+        <button class="delete-btn" onclick="testDelete1()">زر الحذف 1</button>
+        <button class="delete-btn" onclick="testDelete2()">زر الحذف 2</button>
+        <button class="delete-btn" onclick="testDelete3()">زر الحذف 3</button>
+        
+        <div id="result"></div>
+        
+        <h3>🔧 معلومات التصحيح:</h3>
+        <div id="debug"></div>
+    </div>
+
+    <script>
+        function showResult(message, type = 'success') {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<div class="result ${type}">${message}</div>`;
+        }
+        
+        function addDebug(message) {
+            const debugDiv = document.getElementById('debug');
+            debugDiv.innerHTML += `<div style="margin: 5px 0; font-size: 12px; color: #666;">${message}</div>`;
+        }
+        
+        function testDelete1() {
+            addDebug('تم الضغط على زر الحذف 1');
+            showResult('✅ زر الحذف 1 يعمل بشكل طبيعي', 'success');
+        }
+        
+        function testDelete2() {
+            addDebug('تم الضغط على زر الحذف 2');
+            showResult('✅ زر الحذف 2 يعمل بشكل طبيعي', 'success');
+        }
+        
+        function testDelete3() {
+            addDebug('تم الضغط على زر الحذف 3');
+            showResult('✅ زر الحذف 3 يعمل بشكل طبيعي', 'success');
+        }
+        
+        // Test page load
+        addDebug('تم تحميل صفحة الاختبار بنجاح');
+        addDebug('إذا كانت هذه الأزرار تعمل، فالمشكلة في Filament وليس في المتصفح');
+        
+        // Test console
+        console.log('🔧 Test page loaded successfully');
+        console.log('🔧 If these buttons work, the issue is with Filament, not the browser');
+    </script>
+</body>
+</html>

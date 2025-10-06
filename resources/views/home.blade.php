@@ -73,17 +73,26 @@
             position: absolute;
             top: 10px;
             right: 15px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(161, 93, 191, 0.9);
             color: white;
             border: none;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .popup-close:hover {
+            background: rgba(161, 93, 191, 1);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
         
         .primary-color {
@@ -2956,12 +2965,47 @@
         
         // Popup Notifications
         @if(isset($popup_notifications) && $popup_notifications->count() > 0)
-        @foreach($popup_notifications as $popup)
-        setTimeout(function() {
-            showPopupNotification(@json($popup));
-        }, {{ $popup->display_delay * 1000 }});
-        @endforeach
+        document.addEventListener('DOMContentLoaded', function() {
+            @foreach($popup_notifications as $popup)
+            setTimeout(function() {
+                try {
+                    showPopupNotification(@json($popup));
+                } catch (error) {
+                    console.error('خطأ في عرض الـ popup:', error);
+                    // عرض الـ popup بطريقة بديلة في حالة الخطأ
+                    showFallbackPopup(@json($popup));
+                }
+            }, {{ $popup->display_delay * 1000 }});
+            @endforeach
+        });
         @endif
+        
+        // دالة بديلة لعرض الـ popup في حالة الخطأ
+        function showFallbackPopup(popup) {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            overlay.innerHTML = `
+                <div style="background: white; padding: 20px; border-radius: 10px; max-width: 500px; text-align: center;">
+                    <h3 style="color: #A15DBF; margin-bottom: 15px;">${popup.title || 'إشعار مهم'}</h3>
+                    <p style="color: #666; margin-bottom: 20px;">${popup.content || ''}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #A15DBF; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">إغلاق</button>
+                </div>
+            `;
+            
+            document.body.appendChild(overlay);
+        }
         
         function setCookie(name, value, days) {
             const d = new Date();
@@ -2992,13 +3036,28 @@
             let mediaContent = '';
             if (popup.media_url) {
                 if (popup.type === 'video') {
-                    mediaContent = `<video controls style="width: 100%; max-height: 400px; object-fit: cover;">
-                        <source src="{{ Storage::url('') }}${popup.media_url}" type="video/mp4">
-                        متصفحك لا يدعم تشغيل الفيديو
-                    </video>`;
+                    mediaContent = `<div class="relative">
+                        <video controls style="width: 100%; max-height: 400px; object-fit: cover;">
+                            <source src="${popup.media_url}" type="video/mp4">
+                            متصفحك لا يدعم تشغيل الفيديو
+                        </video>
+                    </div>`;
                 } else {
-                    mediaContent = `<img src="{{ Storage::url('') }}${popup.media_url}" alt="${popup.title || ''}" style="width: 100%; max-height: 400px; object-fit: cover;">`;
+                    mediaContent = `<div class="relative">
+                        <img src="${popup.media_url}" alt="${popup.title || ''}" style="width: 100%; max-height: 400px; object-fit: cover;" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display: none; width: 100%; height: 200px; background: linear-gradient(135deg, #A15DBF, #E6A0C3); align-items: center; justify-content: center; color: white; font-size: 18px;">
+                            <i class="fas fa-image text-4xl mb-2"></i><br>
+                            ${popup.title || 'صورة الإعلان'}
+                        </div>
+                    </div>`;
                 }
+            } else {
+                // إذا لم تكن هناك صورة، اعرض placeholder جميل
+                mediaContent = `<div style="width: 100%; height: 200px; background: linear-gradient(135deg, #A15DBF, #E6A0C3); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
+                    <i class="fas fa-bell text-6xl mb-4"></i><br>
+                    ${popup.title || 'إشعار مهم'}
+                </div>`;
             }
             
             let buttonContent = '';
@@ -3009,8 +3068,8 @@
             }
             
             overlay.innerHTML = `
-                <div class="popup-content" style="position: relative; max-width: 600px;">
-                    <button class="popup-close" onclick="closePopupNotification(${popup.id})">&times;</button>
+                <div class="popup-content" style="position: relative; max-width: 600px;" onclick="event.stopPropagation();">
+                    <button class="popup-close" onclick="closePopupNotification(${popup.id})" title="إغلاق">&times;</button>
                     ${mediaContent}
                     <div class="p-6">
                         ${popup.title ? `<h3 class="text-2xl font-bold mb-3 text-gray-800">${popup.title}</h3>` : ''}
@@ -3019,6 +3078,22 @@
                     </div>
                 </div>
             `;
+            
+            // إضافة إمكانية إغلاق الـ popup بالضغط على الـ overlay
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closePopupNotification(popup.id);
+                }
+            });
+            
+            // إضافة إمكانية إغلاق الـ popup بالضغط على مفتاح Escape
+            const handleKeyPress = function(e) {
+                if (e.key === 'Escape') {
+                    closePopupNotification(popup.id);
+                    document.removeEventListener('keydown', handleKeyPress);
+                }
+            };
+            document.addEventListener('keydown', handleKeyPress);
             
             document.body.appendChild(overlay);
             document.body.style.overflow = 'hidden';
@@ -3034,7 +3109,11 @@
         function closePopupNotification(popupId) {
             const overlay = document.getElementById('popup-overlay-' + popupId);
             if (overlay) {
-                overlay.remove();
+                // إزالة جميع الـ event listeners
+                const newOverlay = overlay.cloneNode(true);
+                overlay.parentNode.replaceChild(newOverlay, overlay);
+                newOverlay.remove();
+                
                 document.body.style.overflow = 'auto';
             }
         }

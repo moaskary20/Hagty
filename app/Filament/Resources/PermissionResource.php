@@ -7,13 +7,12 @@ use App\Filament\Resources\PermissionResource\RelationManagers;
 use Spatie\Permission\Models\Permission;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PermissionResource extends Resource
+class PermissionResource extends BaseResource
 {
     protected static ?string $model = Permission::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

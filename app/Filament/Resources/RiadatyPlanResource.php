@@ -7,13 +7,12 @@ use App\Filament\Resources\RiadatyPlanResource\RelationManagers;
 use App\Models\RiadatyPlan;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RiadatyPlanResource extends Resource
+class RiadatyPlanResource extends BaseResource
 {
     protected static ?string $model = RiadatyPlan::class;
 

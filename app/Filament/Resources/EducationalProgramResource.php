@@ -7,13 +7,12 @@ use App\Filament\Resources\EducationalProgramResource\RelationManagers;
 use App\Models\EducationalProgram;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class EducationalProgramResource extends Resource
+class EducationalProgramResource extends BaseResource
 {
     protected static ?string $model = EducationalProgram::class;
 

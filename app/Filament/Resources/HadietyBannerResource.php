@@ -7,13 +7,12 @@ use App\Filament\Resources\HadietyBannerResource\RelationManagers;
 use App\Models\HadietyBanner;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class HadietyBannerResource extends Resource
+class HadietyBannerResource extends BaseResource
 {
     protected static ?string $model = HadietyBanner::class;
 

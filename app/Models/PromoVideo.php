@@ -15,4 +15,9 @@ class PromoVideo extends Model
         'video_url',
         'status',
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
 }

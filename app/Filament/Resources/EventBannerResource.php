@@ -6,12 +6,11 @@ use App\Filament\Resources\EventBannerResource\Pages;
 use App\Models\EventBanner;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Forms\Components\Section;
 
-class EventBannerResource extends Resource
+class EventBannerResource extends BaseResource
 {
     protected static ?string $model = EventBanner::class;
 

@@ -7,13 +7,12 @@ use App\Filament\Resources\CoachingSessionResource\RelationManagers;
 use App\Models\CoachingSession;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CoachingSessionResource extends Resource
+class CoachingSessionResource extends BaseResource
 {
     protected static ?string $model = CoachingSession::class;
 

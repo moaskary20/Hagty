@@ -355,6 +355,125 @@
 
     </div>
 
+    <!-- Promotional Videos Section -->
+    @if(($promo_videos && $promo_videos->count() > 0) || ($promotion_videos && $promotion_videos->count() > 0))
+    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎬 الفيديوهات الترويجية</h2>
+                <p class="text-[#B17DC0] text-lg animate-fadeInUp" style="animation-delay: 0.2s;">شاهدي أحدث الفيديوهات الترويجية للرحلات والوجهات السياحية</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @if($promo_videos && $promo_videos->count() > 0)
+                    @foreach($promo_videos as $video)
+                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                        <div class="relative">
+                            <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                                @if($video->video_url)
+                                    <iframe 
+                                        src="{{ $video->video_url }}" 
+                                        class="w-full h-full"
+                                        frameborder="0" 
+                                        allowfullscreen>
+                                    </iframe>
+                                @else
+                                    <i class="fas fa-play-circle text-[#A15DBF] text-6xl"></i>
+                                @endif
+                            </div>
+                            <div class="absolute top-2 right-2">
+                                <span class="bg-[#A15DBF] text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    ترويجي
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#A15DBF] mb-3">{{ $video->title }}</h3>
+                            @if($video->description)
+                                <p class="text-gray-700 mb-4 line-clamp-3">{{ $video->description }}</p>
+                            @endif
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-[#8B4A9C]">
+                                    <i class="fas fa-calendar-alt ml-1"></i>
+                                    {{ $video->created_at->format('Y-m-d') }}
+                                </span>
+                                <div class="flex space-x-2 space-x-reverse">
+                                    <button class="bg-[#A15DBF] text-white px-4 py-2 rounded-lg hover:bg-[#8B4A9C] transition-colors duration-300 text-sm">
+                                        <i class="fas fa-share-alt ml-1"></i>
+                                        مشاركة
+                                    </button>
+                                    <button class="bg-[#E6A0C3] text-[#A15DBF] px-4 py-2 rounded-lg hover:bg-[#B17DC0] transition-colors duration-300 text-sm">
+                                        <i class="fas fa-heart ml-1"></i>
+                                        إعجاب
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @endif
+
+                @if($promotion_videos && $promotion_videos->count() > 0)
+                    @foreach($promotion_videos as $video)
+                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                        <div class="relative">
+                            <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                                @if($video->url)
+                                    <iframe 
+                                        src="{{ $video->url }}" 
+                                        class="w-full h-full"
+                                        frameborder="0" 
+                                        allowfullscreen>
+                                    </iframe>
+                                @else
+                                    <i class="fas fa-play-circle text-[#A15DBF] text-6xl"></i>
+                                @endif
+                            </div>
+                            <div class="absolute top-2 right-2">
+                                <span class="bg-[#8B4A9C] text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    إعلاني
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#A15DBF] mb-3">{{ $video->title }}</h3>
+                            @if($video->desc)
+                                <p class="text-gray-700 mb-4 line-clamp-3">{{ $video->desc }}</p>
+                            @endif
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-[#8B4A9C]">
+                                    <i class="fas fa-calendar-alt ml-1"></i>
+                                    {{ $video->created_at->format('Y-m-d') }}
+                                </span>
+                                <div class="flex space-x-2 space-x-reverse">
+                                    <button class="bg-[#A15DBF] text-white px-4 py-2 rounded-lg hover:bg-[#8B4A9C] transition-colors duration-300 text-sm">
+                                        <i class="fas fa-share-alt ml-1"></i>
+                                        مشاركة
+                                    </button>
+                                    <button class="bg-[#E6A0C3] text-[#A15DBF] px-4 py-2 rounded-lg hover:bg-[#B17DC0] transition-colors duration-300 text-sm">
+                                        <i class="fas fa-heart ml-1"></i>
+                                        إعجاب
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @endif
+            </div>
+            
+            @if(($promo_videos && $promo_videos->count() > 6) || ($promotion_videos && $promotion_videos->count() > 6))
+            <div class="text-center mt-8">
+                <button class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-xl font-bold hover:from-[#8B4A9C] hover:to-[#753880] focus:outline-none focus:ring-2 focus:ring-[#A15DBF] focus:ring-offset-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                    <i class="fas fa-play-circle ml-2"></i>
+                    عرض جميع الفيديوهات
+                </button>
+            </div>
+            @endif
+        </div>
+    </section>
+    @endif
+
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
     <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">

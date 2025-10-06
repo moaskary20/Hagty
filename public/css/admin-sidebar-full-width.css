@@ -1,0 +1,281 @@
+/* Admin Sidebar Full Width Fix - إصلاح عرض القائمة الجانبية */
+
+/* إصلاح عرض القائمة الجانبية */
+.fi-sidebar {
+    width: 16rem !important;
+    min-width: 16rem !important;
+    max-width: 16rem !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    height: 100vh !important;
+    z-index: 10 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    float: right !important;
+}
+
+/* إصلاح المحتوى الرئيسي */
+.fi-main {
+    width: calc(100% - 16rem) !important;
+    min-height: 100vh !important;
+    transition: width 0.3s ease !important;
+    float: left !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* عندما تكون القائمة مطوية */
+.fi-sidebar.fi-sidebar-collapsed {
+    width: 4rem !important;
+    min-width: 4rem !important;
+    max-width: 4rem !important;
+}
+
+.fi-sidebar.fi-sidebar-collapsed + .fi-main {
+    width: calc(100% - 4rem) !important;
+}
+
+/* إصلاح المحتوى الداخلي للقائمة */
+.fi-sidebar-nav {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 1rem 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* إصلاح عناصر القائمة */
+.fi-sidebar-nav-item {
+    width: calc(100% - 2rem) !important;
+    margin: 0.25rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+/* إصلاح النصوص */
+.fi-sidebar-nav-item-label {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    flex: 1 !important;
+}
+
+/* إصلاح الأيقونات */
+.fi-sidebar-nav-item-icon {
+    flex-shrink: 0 !important;
+    margin-left: 0.75rem !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+}
+
+/* إصلاح المجموعات */
+.fi-sidebar-nav-group {
+    width: 100% !important;
+    margin: 1rem 0 !important;
+    padding: 0 1rem !important;
+}
+
+.fi-sidebar-nav-group-label {
+    width: 100% !important;
+    padding: 0.5rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* إصلاح العناصر الفرعية */
+.fi-sidebar-nav-sub-item {
+    width: calc(100% - 2rem) !important;
+    margin: 0.125rem 1rem 0.125rem 2rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+}
+
+/* إصلاح الشعار */
+.fi-sidebar-brand {
+    width: 100% !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-bottom: 1rem !important;
+}
+
+.fi-sidebar-brand-logo {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 2.5rem !important;
+}
+
+/* إصلاح زر الطي */
+.fi-sidebar-collapse-button {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 0.375rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* إصلاح التجاوب */
+@media (max-width: 1024px) {
+    .fi-sidebar {
+        width: 14rem !important;
+        min-width: 14rem !important;
+        max-width: 14rem !important;
+    }
+    
+    .fi-main {
+        width: calc(100% - 14rem) !important;
+    }
+    
+    .fi-sidebar.fi-sidebar-collapsed {
+        width: 3.5rem !important;
+        min-width: 3.5rem !important;
+        max-width: 3.5rem !important;
+    }
+    
+    .fi-sidebar.fi-sidebar-collapsed + .fi-main {
+        width: calc(100% - 3.5rem) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .fi-sidebar {
+        width: 12rem !important;
+        min-width: 12rem !important;
+        max-width: 12rem !important;
+    }
+    
+    .fi-main {
+        width: calc(100% - 12rem) !important;
+    }
+    
+    .fi-sidebar.fi-sidebar-collapsed {
+        width: 3rem !important;
+        min-width: 3rem !important;
+        max-width: 3rem !important;
+    }
+    
+    .fi-sidebar.fi-sidebar-collapsed + .fi-main {
+        width: calc(100% - 3rem) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .fi-sidebar {
+        width: 10rem !important;
+        min-width: 10rem !important;
+        max-width: 10rem !important;
+    }
+    
+    .fi-main {
+        width: calc(100% - 10rem) !important;
+    }
+    
+    .fi-sidebar.fi-sidebar-collapsed {
+        width: 2.5rem !important;
+        min-width: 2.5rem !important;
+        max-width: 2.5rem !important;
+    }
+    
+    .fi-sidebar.fi-sidebar-collapsed + .fi-main {
+        width: calc(100% - 2.5rem) !important;
+    }
+}
+
+/* إصلاح التمرير */
+.fi-sidebar-nav::-webkit-scrollbar {
+    width: 4px !important;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 2px !important;
+}
+
+.fi-sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* إصلاح التخطيط العام */
+.fi-app {
+    display: block !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.fi-app-main {
+    width: 100% !important;
+    display: block !important;
+    clear: both !important;
+}
+
+/* إصلاح الحاوي الرئيسي */
+.fi-main-ctn {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    clear: both !important;
+}
+
+/* إصلاح الشبكة الرئيسية */
+.fi-main-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+/* إصلاح المحتوى */
+.fi-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+}
+
+.fi-page-header {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* إصلاح الجداول */
+.fi-ta-table {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-ta-table table {
+    width: 100% !important;
+    table-layout: auto !important;
+}
+
+/* إصلاح النماذج */
+.fi-form {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.fi-form-section {
+    width: 100% !important;
+    max-width: 100% !important;
+}

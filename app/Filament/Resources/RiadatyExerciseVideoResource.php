@@ -7,13 +7,12 @@ use App\Filament\Resources\RiadatyExerciseVideoResource\RelationManagers;
 use App\Models\RiadatyExerciseVideo;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RiadatyExerciseVideoResource extends Resource
+class RiadatyExerciseVideoResource extends BaseResource
 {
     protected static ?string $model = RiadatyExerciseVideo::class;
 
