@@ -9,7 +9,7 @@ html[dir="rtl"] {
 html[dir="rtl"] body {
     font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     direction: rtl;
-    background-color: #000000 !important;
+    background-color: #FAD6E0 !important;
 }
 
 /* إخفاء شريط الوثائق العلوي */
@@ -50,7 +50,7 @@ html[dir="rtl"] body {
 .fi-body,
 html,
 body {
-    background-color: var(--primary-50) !important;
+    background-color: #FAD6E0 !important;
     color: #333333 !important;
 }
 
