@@ -13,8 +13,8 @@ class ArabicBlogSeeder extends Seeder
      */
     public function run(): void
     {
-        // حذف البيانات الموجودة أولاً
-        Blog::truncate();
+        // حذف البيانات الموجودة أولاً مع تجنب مشاكل foreign key
+        Blog::query()->delete();
 
         // مقالات عربية شاملة ومتنوعة
         $arabicBlogs = [
