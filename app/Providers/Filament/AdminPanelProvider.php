@@ -106,7 +106,7 @@ class AdminPanelProvider extends PanelProvider
             <link rel="stylesheet" href="' . asset('css/admin-sidebar-ultimate-remove-white.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-sidebar-full-width.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-disable-animations.css') . '">
-            <link rel="stylesheet" href="' . asset('css/admin-login-page.css') . '">'
+            <link rel="stylesheet" href="' . asset('css/admin-modern-login.css') . '">'
         )
             ->renderHook(
                 'panels::body.end',
