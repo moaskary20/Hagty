@@ -1,0 +1,278 @@
+/* تصميم محسن لصفحة تسجيل الدخول في لوحة الإدارة */
+
+/* إعدادات الخط الأساسية */
+body, html {
+    font-family: 'Cairo', 'Tajawal', sans-serif !important;
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* خلفية الصفحة الرئيسية */
+.fi-main {
+    background: linear-gradient(135deg, #FAD6E0 0%, #E6DAC8 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* تصميم نموذج تسجيل الدخول */
+.fi-form {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 40px rgba(161, 93, 191, 0.2) !important;
+    border: 2px solid rgba(161, 93, 191, 0.1) !important;
+    padding: 2rem !important;
+    margin: 2rem auto !important;
+    max-width: 400px !important;
+}
+
+/* العنوان الرئيسي */
+.fi-form h1,
+.fi-form h2,
+.fi-form .fi-heading {
+    color: #A15DBF !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.75rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* حقول الإدخال */
+.fi-input,
+.fi-field-input {
+    background: #ffffff !important;
+    border: 2px solid #E6A0C3 !important;
+    border-radius: 12px !important;
+    padding: 0.875rem 1rem !important;
+    font-size: 1rem !important;
+    color: #333333 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(161, 93, 191, 0.1) !important;
+}
+
+.fi-input:focus,
+.fi-field-input:focus {
+    border-color: #A15DBF !important;
+    box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.2) !important;
+    outline: none !important;
+}
+
+/* تسميات الحقول */
+.fi-label,
+.fi-field-label {
+    color: #A15DBF !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.95rem !important;
+}
+
+/* زر تسجيل الدخول */
+.fi-btn-primary,
+.fi-button-primary,
+.fi-primary-button {
+    background: linear-gradient(135deg, #A15DBF 0%, #8B4A9C 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.875rem 2rem !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(161, 93, 191, 0.3) !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+}
+
+.fi-btn-primary:hover,
+.fi-button-primary:hover,
+.fi-primary-button:hover {
+    background: linear-gradient(135deg, #8B4A9C 0%, #753880 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(161, 93, 191, 0.4) !important;
+}
+
+/* مربع التذكر */
+.fi-checkbox,
+.fi-field-checkbox {
+    accent-color: #A15DBF !important;
+}
+
+.fi-checkbox-label,
+.fi-field-checkbox-label {
+    color: #666666 !important;
+    font-weight: 500 !important;
+}
+
+/* روابط إضافية */
+.fi-link,
+.fi-field-link,
+a {
+    color: #A15DBF !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: color 0.3s ease !important;
+}
+
+.fi-link:hover,
+.fi-field-link:hover,
+a:hover {
+    color: #8B4A9C !important;
+    text-decoration: underline !important;
+}
+
+/* رسائل الخطأ */
+.fi-error,
+.fi-field-error,
+.fi-validation-error {
+    background: #FEF2F2 !important;
+    color: #DC2626 !important;
+    border: 1px solid #FECACA !important;
+    border-radius: 8px !important;
+    padding: 0.75rem !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.9rem !important;
+}
+
+/* رسائل النجاح */
+.fi-success,
+.fi-field-success {
+    background: #F0FDF4 !important;
+    color: #16A34A !important;
+    border: 1px solid #BBF7D0 !important;
+    border-radius: 8px !important;
+    padding: 0.75rem !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.9rem !important;
+}
+
+/* تحسينات اللوجو */
+.fi-brand-logo {
+    filter: none !important;
+    max-height: 60px !important;
+    width: auto !important;
+}
+
+/* تحسينات النص */
+.fi-text,
+.fi-field-text,
+p, span, div {
+    color: #333333 !important;
+    line-height: 1.6 !important;
+}
+
+/* تحسينات الاستجابة */
+@media (max-width: 768px) {
+    .fi-form {
+        margin: 1rem !important;
+        padding: 1.5rem !important;
+        border-radius: 16px !important;
+    }
+    
+    .fi-form h1,
+    .fi-form h2,
+    .fi-form .fi-heading {
+        font-size: 1.5rem !important;
+    }
+    
+    .fi-input,
+    .fi-field-input {
+        padding: 0.75rem !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* تحسينات إضافية للوضوح */
+.fi-form * {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* إزالة أي حدود افتراضية غير مرغوب فيها */
+.fi-form input,
+.fi-form button,
+.fi-form select,
+.fi-form textarea {
+    outline: none !important;
+}
+
+/* تحسينات للعناصر التفاعلية */
+.fi-form input:focus,
+.fi-form button:focus,
+.fi-form select:focus,
+.fi-form textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(161, 93, 191, 0.2) !important;
+}
+
+/* تحسينات للشعار والعنوان */
+.fi-brand-name,
+.fi-brand-logo + div {
+    color: #A15DBF !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+/* تحسينات للفاصل */
+.fi-divider {
+    border-color: #E6A0C3 !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* تحسينات للعناصر المساعدة */
+.fi-help-text,
+.fi-field-help {
+    color: #666666 !important;
+    font-size: 0.9rem !important;
+    margin-top: 0.25rem !important;
+}
+
+/* تحسينات خاصة بـ Filament */
+.fi-panel {
+    background: transparent !important;
+}
+
+.fi-main-content {
+    background: transparent !important;
+}
+
+/* إزالة الخلفيات البيضاء غير المرغوب فيها */
+.fi-card,
+.fi-section,
+.fi-widget {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(161, 93, 191, 0.1) !important;
+    border-radius: 12px !important;
+}
+
+/* تحسينات للعناصر المحددة */
+.fi-form .fi-input-group {
+    margin-bottom: 1rem !important;
+}
+
+.fi-form .fi-input-group:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* تحسينات للزر */
+.fi-form button[type="submit"] {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-form button[type="submit"]::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.fi-form button[type="submit"]:hover::before {
+    left: 100% !important;
+}

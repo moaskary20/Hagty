@@ -61,10 +61,12 @@ class AdminPanelProvider extends PanelProvider
             ->favicon(asset($logoPath))
             ->darkMode(false)
             ->sidebarCollapsibleOnDesktop()
+            ->maxContentWidth('full')
         ->renderHook(
             'panels::styles.before',
             fn () => '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap">
             <link rel="stylesheet" href="' . asset('css/arabic-rtl.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-full-viewport.css') . '">
             <link rel="stylesheet" href="' . asset('css/filament-custom.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-custom.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-final-fix.css') . '">
@@ -97,14 +99,31 @@ class AdminPanelProvider extends PanelProvider
             <link rel="stylesheet" href="' . asset('css/admin-sidebar-remove-white-hover.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-sidebar-active-hover-color.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-sidebar-remove-active-white-bar.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-full-width.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-delete-buttons-fix.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-delete-buttons-ultimate-fix.css') . '">
             <link rel="stylesheet" href="' . asset('css/admin-sidebar-force-remove-white-bar.css') . '">
-            <link rel="stylesheet" href="' . asset('css/admin-sidebar-ultimate-remove-white.css') . '">'
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-ultimate-remove-white.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-sidebar-full-width.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-disable-animations.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-login-design.css') . '">
+            <link rel="stylesheet" href="' . asset('css/admin-login-enhancements.css') . '">'
         )
+            ->renderHook(
+                'panels::body.end',
+                fn () => '<script src="' . asset('js/admin-delete-buttons-fix.js') . '"></script>
+                <script src="' . asset('js/admin-delete-buttons-ultimate-fix.js') . '"></script>'
+            )
+            ->renderHook(
+                'panels::head.end',
+                fn () => '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; script-src \'self\' \'unsafe-inline\' \'unsafe-eval\' https:; style-src \'self\' \'unsafe-inline\' https:; img-src \'self\' data: https:; font-src \'self\' https:; connect-src \'self\' https:; frame-src \'self\' https:;">'
+            )
             ->renderHook(
                 'panels::body.start',
                 fn () => '<script>
                     document.documentElement.setAttribute("dir", "rtl"); 
                     document.documentElement.setAttribute("lang", "ar");
+                    document.documentElement.classList.add("admin-panel-disable-animations");
                     
                     // إخفاء عناصر التوثيق بعد تحميل الصفحة
                     document.addEventListener("DOMContentLoaded", function() {
