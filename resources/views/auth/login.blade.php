@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/admin-modern-login.css') }}">
     <style>
         body { font-family: 'Cairo', sans-serif; }
         .primary-bg { background-color: #A15DBF; }
@@ -18,16 +19,16 @@
     @include('components.shared-header')
 
     <!-- Login Form -->
-    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="fi-main">
         <div class="max-w-md w-full space-y-8">
             <div>
-                <div class="mx-auto h-20 w-20 bg-gradient-to-r from-d94288 to-purple-600 rounded-full flex items-center justify-center">
+                <div class="avatar-circle mx-auto h-20 w-20 bg-gradient-to-r from-d94288 to-purple-600 rounded-full flex items-center justify-center">
                     <i class="fas fa-heart text-white text-3xl"></i>
                 </div>
-                <h2 class="mt-6 text-center text-3xl font-bold text-gray-900">
+                <h2 class="fi-heading mt-6 text-center text-3xl font-bold text-gray-900">
                     مرحباً بك في منصة HAGTY
                 </h2>
-                <p class="mt-2 text-center text-sm text-gray-600">
+                <p class="subtitle mt-2 text-center text-sm text-gray-600">
                     سجل دخولك للوصول إلى جميع الميزات
                 </p>
             </div>
@@ -48,7 +49,7 @@
             </div>
             @endif
 
-            <form class="mt-8 space-y-6" action="{{ route('login') }}" method="POST">
+            <form class="fi-form mt-8 space-y-6" action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="space-y-4">
                     <div>
@@ -70,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between">
+                <div class="form-options flex items-center justify-between">
                     <div class="flex items-center">
                         <input id="remember_me" name="remember" type="checkbox" 
                                class="h-4 w-4 text-d94288 focus:ring-d94288 border-gray-300 rounded">
@@ -80,7 +81,7 @@
                     </div>
 
                     <div class="text-sm">
-                        <a href="#" class="font-medium text-d94288 hover:text-purple-600 transition duration-300">
+                        <a href="#" class="forgot-password font-medium text-d94288 hover:text-purple-600 transition duration-300">
                             نسيت كلمة المرور؟
                         </a>
                     </div>
@@ -88,7 +89,7 @@
 
                 <div>
                     <button type="submit" 
-                            class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-to-r from-d94288 to-purple-600 hover:from-purple-600 hover:to-d94288 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-d94288 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            class="fi-btn-primary group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-to-r from-d94288 to-purple-600 hover:from-purple-600 hover:to-d94288 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-d94288 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                         <span class="absolute left-0 inset-y-0 flex items-center pr-4">
                             <i class="fas fa-sign-in-alt text-white text-lg"></i>
                         </span>
@@ -96,7 +97,7 @@
                     </button>
                 </div>
 
-                <div class="text-center">
+                <div class="register-link text-center">
                     <p class="text-sm text-gray-600">
                         ليس لديك حساب؟
                         <a href="{{ route('register') }}" class="font-bold text-d94288 hover:text-purple-600 transition duration-300 underline decoration-2 underline-offset-4 hover:decoration-purple-600">
