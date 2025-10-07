@@ -32,7 +32,11 @@
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="{{ asset('images/hagty-logo.png') }}" alt="HAGTY Logo" class="h-12">
+                        @php
+                            $logoPath = \App\Models\Setting::get('site_logo', 'images/hagty-logo.png');
+                            $siteName = \App\Models\Setting::get('site_name', 'HAGTY');
+                        @endphp
+                        <img src="{{ asset($logoPath) }}" alt="{{ $siteName }}" class="h-12">
                     </a>
                 </div>
                 <div class="flex items-center space-x-4 space-x-reverse">
