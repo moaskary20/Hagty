@@ -78,7 +78,7 @@ html[dir="rtl"] *,
 }
 
 .fi-sidebar-nav-item:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -93,7 +93,7 @@ html[dir="rtl"] *,
 .fi-sidebar-nav-item.fi-active,
 .fi-sidebar-nav-item[aria-current="page"],
 .fi-sidebar-nav-item[aria-selected="true"] {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -127,7 +127,7 @@ html[dir="rtl"] *,
 }
 
 .fi-topbar-actions button:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -183,8 +183,8 @@ html[dir="rtl"] *,
 .fi-input:focus,
 .fi-select:focus,
 .fi-textarea:focus {
-    border-color: #4C0A6E !important;
-    box-shadow: 0 0 0 1px #4C0A6E !important;
+    border-color: #E6A0C4 !important;
+    box-shadow: 0 0 0 1px #E6A0C4 !important;
 }
 
 /* التسميات */
@@ -202,20 +202,20 @@ html[dir="rtl"] *,
 }
 
 .fi-btn:hover {
-    background-color: #4C0A6E !important;
-    border-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
+    border-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
 .fi-btn-primary {
-    background-color: #4C0A6E !important;
-    border-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
+    border-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
 .fi-btn-primary:hover {
-    background-color: #3A0854 !important;
-    border-color: #3A0854 !important;
+    background-color: #D18AB0 !important;
+    border-color: #D18AB0 !important;
     color: #FFFFFF !important;
 }
 
@@ -225,7 +225,7 @@ html[dir="rtl"] *,
 }
 
 .fi-link:hover {
-    color: #4C0A6E !important;
+    color: #E6A0C4 !important;
 }
 
 /* الشارات */
@@ -246,8 +246,8 @@ html[dir="rtl"] *,
 
 .fi-tabs-item:hover,
 .fi-tabs-item[aria-selected="true"] {
-    color: #4C0A6E !important;
-    border-bottom-color: #4C0A6E !important;
+    color: #E6A0C4 !important;
+    border-bottom-color: #E6A0C4 !important;
 }
 
 /* العناوين */
@@ -272,7 +272,7 @@ html[dir="rtl"] *,
 }
 
 .fi-dropdown-item:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -321,18 +321,18 @@ html[dir="rtl"] *,
 }
 
 .fi-global-search:focus {
-    border-color: #4C0A6E !important;
+    border-color: #E6A0C4 !important;
 }
 
 /* تحسينات إضافية */
 .fi-resource-header-actions .fi-btn:hover,
 .fi-page-header-actions .fi-btn:hover,
 .fi-header-actions .fi-btn:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
-/* تطبيق hover بنفسجي على جميع الأزرار */
+/* تطبيق hover وردي على جميع الأزرار */
 button:hover,
 .fi-btn:hover,
 .fi-action:hover,
@@ -343,9 +343,9 @@ button[type="submit"]:hover,
 a.fi-btn:hover,
 .fi-topbar-action:hover,
 .fi-notification-action:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
-    border-color: #4C0A6E !important;
+    border-color: #E6A0C4 !important;
 }
 
 button:hover *,
@@ -360,7 +360,7 @@ button[type="submit"]:hover * {
 /* أزرار القائمة الجانبية */
 .fi-sidebar-nav-group-label:hover,
 .fi-sidebar-collapse-button:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -372,7 +372,7 @@ button[type="submit"]:hover * {
 /* أزرار الإجراءات في الجداول */
 .fi-ta-action:hover,
 .fi-ta-row-action:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -383,7 +383,7 @@ button[type="submit"]:hover * {
 
 /* أزرار Bulk Actions */
 .fi-bulk-actions-action:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -393,7 +393,7 @@ button[type="submit"]:hover * {
 
 /* أزرار Pagination */
 .fi-pagination-item:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -403,19 +403,19 @@ button[type="submit"]:hover * {
 
 /* أزرار Toggle */
 .fi-toggle:hover {
-    border-color: #4C0A6E !important;
+    border-color: #E6A0C4 !important;
 }
 
 /* أزرار Checkbox و Radio */
 .fi-checkbox:hover,
 .fi-radio:hover {
-    border-color: #4C0A6E !important;
+    border-color: #E6A0C4 !important;
 }
 
 /* أزرار Modal */
 .fi-modal-close:hover,
 .fi-modal-action:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -427,7 +427,7 @@ button[type="submit"]:hover * {
 /* أزرار Dropdown */
 .fi-dropdown-button:hover,
 .fi-dropdown-trigger:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
@@ -438,9 +438,9 @@ button[type="submit"]:hover * {
 
 /* أزرار File Upload */
 .fi-file-upload-button:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
-    border-color: #4C0A6E !important;
+    border-color: #E6A0C4 !important;
 }
 
 .fi-file-upload-button:hover * {
@@ -450,7 +450,7 @@ button[type="submit"]:hover * {
 /* أزرار إضافية في النماذج */
 .fi-select-option:hover,
 .fi-listbox-option:hover {
-    background-color: #4C0A6E !important;
+    background-color: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
