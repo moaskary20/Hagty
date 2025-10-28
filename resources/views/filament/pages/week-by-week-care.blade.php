@@ -1,41 +1,41 @@
-<x-filament-panels::page>
-<div class="week-by-week-care-main space-y-6 min-h-screen p-4" style="background-color: #1a1a1a;">
+<x-filament::page>
+<div class="space-y-6">
     <!-- مقدمة الصفحة -->
-    <div class="rounded-xl shadow-lg border border-orange-400 p-6" style="background-color: #2a2a2a;">
-        <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white p-4 rounded-t-xl -m-6 mb-6">
+    <div class="fi-card p-6 mb-6">
+        <div class="p-4 border-b mb-4">
             <h2 class="text-xl font-bold">📅 العناية أسبوعياً - تطور طفلك</h2>
         </div>
-        <p class="text-gray-300 text-lg mb-4">تابعي تطور طفلك أسبوعاً بأسبوع واتبعي النصائح الغذائية والصحية المهمة لكل مرحلة من مراحل الحمل.</p>
+        <p class="text-gray-600 text-lg mb-4">تابعي تطور طفلك أسبوعاً بأسبوع واتبعي النصائح الغذائية والصحية المهمة لكل مرحلة من مراحل الحمل.</p>
         
         <!-- أدوات التنقل السريع -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <button onclick="scrollToWeeks()" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+            <button onclick="scrollToWeeks()" class="fi-btn bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
                 📅 الأسابيع
             </button>
-            <button onclick="scrollToNutrition()" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
+            <button onclick="scrollToNutrition()" class="fi-btn bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
                 🥗 التغذية
             </button>
-            <button onclick="scrollToWarnings()" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300">
+            <button onclick="scrollToWarnings()" class="fi-btn bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
                 ⚠️ التحذيرات
             </button>
-            <button onclick="openAddWeekModal()" class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
+            <button onclick="openAddWeekModal()" class="fi-btn bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
                 ➕ إضافة أسبوع
             </button>
         </div>
     </div>
 
     <!-- قسم الأسابيع -->
-    <div id="weeksSection" class="rounded-xl shadow-lg border border-blue-400" style="background-color: #2a2a2a;">
-        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-t-xl flex justify-between items-center">
+    <div id="weeksSection" class="fi-card mb-6">
+        <div class="p-6 border-b flex justify-between items-center">
             <h2 class="text-xl font-bold">📅 تطور الطفل أسبوعياً</h2>
             <div class="flex gap-2">
-                <select id="weekSelector" onchange="selectWeek(this.value)" class="text-black px-3 py-1 rounded-lg">
+                <select id="weekSelector" onchange="selectWeek(this.value)" class="fi-input px-3 py-1">
                     <option value="">اختر الأسبوع...</option>
                     @for($week = 1; $week <= 42; $week++)
                         <option value="{{ $week }}">الأسبوع {{ $week }}</option>
                     @endfor
                 </select>
-                <button onclick="openAddWeekModal()" class="text-blue-400 px-4 py-2 rounded-lg hover:bg-gray-700 border border-blue-400 shadow-md font-semibold transition-all duration-300" style="background-color: #1a1a1a;">
+                <button onclick="openAddWeekModal()" class="fi-btn bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
                     ➕ إضافة
                 </button>
             </div>
@@ -44,26 +44,26 @@
         <div class="p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="weeksContainer">
                 @forelse($weeklyBabyCare as $weekData)
-                    <div class="week-card border-2 border-blue-400 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300" style="background: linear-gradient(145deg, #333333, #2a2a2a);" data-week="{{ $weekData->week_number }}">
+                    <div class="fi-card p-4 hover:shadow-lg transition-all duration-300" data-week="{{ $weekData->week_number }}">
                         @if($weekData->images && count($weekData->images) > 0)
                             <img src="{{ asset('storage/' . $weekData->images[0]) }}" 
                                  alt="الأسبوع {{ $weekData->week_number }}" 
                                  class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                         @else
-                            <div class="w-full h-48 flex items-center justify-center" style="background: linear-gradient(145deg, #444444, #333333);">
+                            <div class="w-full h-48 flex items-center justify-center bg-gray-100 rounded-lg">
                                 <div class="text-center">
                                     <div class="text-4xl mb-2">👶</div>
-                                    <p class="text-blue-400 font-bold">الأسبوع {{ $weekData->week_number }}</p>
+                                    <p class="text-blue-600 font-bold">الأسبوع {{ $weekData->week_number }}</p>
                                 </div>
                             </div>
                         @endif
                         
                         <div class="p-6">
-                            <h3 class="text-white font-bold text-xl mb-2">الأسبوع {{ $weekData->week_number }}</h3>
-                            <h4 class="text-blue-400 font-semibold mb-3">{{ $weekData->title ?? 'تطور الطفل' }}</h4>
+                            <h3 class="font-bold text-xl mb-2">الأسبوع {{ $weekData->week_number }}</h3>
+                            <h4 class="text-blue-600 font-semibold mb-3">{{ $weekData->title ?? 'تطور الطفل' }}</h4>
                             
                             @if($weekData->baby_size_comparison)
-                                <div class="bg-gradient-to-r from-yellow-600 to-yellow-700 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                                <div class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
                                     📏 حجم الطفل: {{ $weekData->baby_size_comparison }}
                                 </div>
                             @endif
@@ -99,16 +99,16 @@
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openWeekDetailsModal('{{ $weekData->id }}')" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                                <button onclick="openWeekDetailsModal('{{ $weekData->id }}')" class="fi-btn bg-blue-500 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
                                 
-                                <button onclick="openEditWeekModal('{{ $weekData->id }}')" class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditWeekModal('{{ $weekData->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                                 
                                 @if($weekData->videos && count($weekData->videos) > 0)
-                                    <button onclick="openVideoModal('{{ $weekData->id }}')" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                                    <button onclick="openVideoModal('{{ $weekData->id }}')" class="fi-btn bg-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
                                         📹 فيديو
                                     </button>
                                 @endif
@@ -130,10 +130,10 @@
     </div>
 
     <!-- قسم التغذية -->
-    <div id="nutritionSection" class="rounded-xl shadow-lg border border-green-400" style="background-color: #2a2a2a;">
-        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-t-xl flex justify-between items-center">
+    <div id="nutritionSection" class="fi-card mb-6">
+        <div class="p-6 border-b flex justify-between items-center">
             <h2 class="text-xl font-bold">🥗 ماذا يجب أن آكل؟</h2>
-            <button onclick="openAddNutritionModal()" class="text-green-400 px-6 py-2 rounded-lg hover:bg-gray-700 border border-green-400 shadow-md font-semibold transition-all duration-300" style="background-color: #1a1a1a;">
+            <button onclick="openAddNutritionModal()" class="fi-btn bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
                 ➕ إضافة نصيحة غذائية
             </button>
         </div>
@@ -141,13 +141,13 @@
         <div class="p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($nutritionTips as $tip)
-                    <div class="border-2 border-green-400 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300" style="background: linear-gradient(145deg, #333333, #2a2a2a);">
+                    <div class="fi-card p-4 hover:shadow-lg transition-all duration-300">
                         @if($tip->images && count($tip->images) > 0)
                             <img src="{{ asset('storage/' . $tip->images[0]) }}" 
                                  alt="{{ $tip->title }}" 
                                  class="w-full h-40 object-cover hover:scale-105 transition-transform duration-300">
                         @else
-                            <div class="w-full h-40 flex items-center justify-center" style="background: linear-gradient(145deg, #444444, #333333);">
+                            <div class="w-full h-40 flex items-center justify-center bg-gray-100 rounded-lg">
                                 <div class="text-4xl">🥗</div>
                             </div>
                         @endif
@@ -155,9 +155,9 @@
                         <div class="p-4">
                             <div class="flex items-center gap-2 mb-2">
                                 @if($tip->is_recommended)
-                                    <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ موصى به</span>
+                                    <span class="fi-btn bg-green-400 to-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ موصى به</span>
                                 @endif
-                                <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-2 py-1 rounded-full text-xs">{{ $tip->category ?? 'عام' }}</span>
+                                <span class="fi-btn bg-blue-500 to-blue-600 text-white px-2 py-1 rounded-full text-xs">{{ $tip->category ?? 'عام' }}</span>
                             </div>
                             
                             <h3 class="text-white font-bold text-lg mb-2">{{ $tip->title }}</h3>
@@ -168,7 +168,7 @@
                                     <p class="text-green-400 font-semibold text-sm mb-1">🍎 الأطعمة:</p>
                                     <div class="flex flex-wrap gap-1">
                                         @foreach(array_slice($tip->food_items, 0, 3) as $food)
-                                            <span class="bg-gradient-to-r from-green-600 to-green-700 text-white px-2 py-1 rounded text-xs">{{ $food }}</span>
+                                            <span class="fi-btn bg-green-600 to-green-700 text-white px-2 py-1 rounded text-xs">{{ $food }}</span>
                                         @endforeach
                                         @if(count($tip->food_items) > 3)
                                             <span class="text-green-400 text-xs">+{{ count($tip->food_items) - 3 }} المزيد</span>
@@ -178,10 +178,10 @@
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openNutritionDetailsModal('{{ $tip->id }}')" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                                <button onclick="openNutritionDetailsModal('{{ $tip->id }}')" class="fi-btn bg-green-500 to-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
-                                <button onclick="openEditNutritionModal('{{ $tip->id }}')" class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditNutritionModal('{{ $tip->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                             </div>
@@ -202,10 +202,10 @@
     </div>
 
     <!-- قسم التحذيرات الصحية -->
-    <div id="warningsSection" class="rounded-xl shadow-lg border border-red-400" style="background-color: #2a2a2a;">
-        <div class="bg-gradient-to-r from-red-500 to-red-600 text-white p-6 rounded-t-xl flex justify-between items-center">
+    <div id="warningsSection" class="fi-card mb-6">
+        <div class="p-6 border-b flex justify-between items-center">
             <h2 class="text-xl font-bold">⚠️ ما هو ممنوع لصحة الطفل؟</h2>
-            <button onclick="openAddWarningModal()" class="text-red-400 px-6 py-2 rounded-lg hover:bg-gray-700 border border-red-400 shadow-md font-semibold transition-all duration-300" style="background-color: #1a1a1a;">
+            <button onclick="openAddWarningModal()" class="fi-btn bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">
                 ➕ إضافة تحذير
             </button>
         </div>
@@ -213,13 +213,13 @@
         <div class="p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($healthWarnings as $warning)
-                    <div class="border-2 border-red-400 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300" style="background: linear-gradient(145deg, #333333, #2a2a2a);">
+                    <div class="fi-card p-4 hover:shadow-lg transition-all duration-300">
                         @if($warning->images && count($warning->images) > 0)
                             <img src="{{ asset('storage/' . $warning->images[0]) }}" 
                                  alt="{{ $warning->title }}" 
                                  class="w-full h-40 object-cover hover:scale-105 transition-transform duration-300">
                         @else
-                            <div class="w-full h-40 flex items-center justify-center" style="background: linear-gradient(145deg, #444444, #333333);">
+                            <div class="w-full h-40 flex items-center justify-center bg-gray-100 rounded-lg">
                                 <div class="text-4xl">⚠️</div>
                             </div>
                         @endif
@@ -227,11 +227,11 @@
                         <div class="p-4">
                             <div class="flex items-center gap-2 mb-2">
                                 @if($warning->is_critical)
-                                    <span class="bg-gradient-to-r from-red-500 to-red-600 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">🚨 حرج</span>
+                                    <span class="fi-btn bg-red-500 to-red-600 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">🚨 حرج</span>
                                 @endif
-                                <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded-full text-xs">{{ $warning->warning_type ?? 'تحذير عام' }}</span>
+                                <span class="fi-btn bg-orange-500 to-red-500 text-white px-2 py-1 rounded-full text-xs">{{ $warning->warning_type ?? 'تحذير عام' }}</span>
                                 @if($warning->risk_level)
-                                    <span class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-2 py-1 rounded-full text-xs">مستوى {{ $warning->risk_level }}</span>
+                                    <span class="fi-btn bg-yellow-500 to-orange-500 text-white px-2 py-1 rounded-full text-xs">مستوى {{ $warning->risk_level }}</span>
                                 @endif
                             </div>
                             
@@ -243,7 +243,7 @@
                                     <p class="text-red-400 font-semibold text-sm mb-1">🚫 ممنوع:</p>
                                     <div class="flex flex-wrap gap-1">
                                         @foreach(array_slice($warning->forbidden_items, 0, 3) as $item)
-                                            <span class="bg-gradient-to-r from-red-600 to-red-700 text-white px-2 py-1 rounded text-xs">{{ $item }}</span>
+                                            <span class="fi-btn bg-red-600 to-red-700 text-white px-2 py-1 rounded text-xs">{{ $item }}</span>
                                         @endforeach
                                         @if(count($warning->forbidden_items) > 3)
                                             <span class="text-red-400 text-xs">+{{ count($warning->forbidden_items) - 3 }} المزيد</span>
@@ -253,10 +253,10 @@
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openWarningDetailsModal('{{ $warning->id }}')" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                                <button onclick="openWarningDetailsModal('{{ $warning->id }}')" class="fi-btn bg-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
-                                <button onclick="openEditWarningModal('{{ $warning->id }}')" class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditWarningModal('{{ $warning->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                             </div>
@@ -278,17 +278,17 @@
 
     <!-- مودال إضافة أسبوع جديد -->
     <div id="addWeekModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onclick="closeOnBackdrop(event, ['addWeekModal'])">
-        <div class="bg-gray-800 rounded-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();" style="background-color: #2a2a2a;">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-xl font-bold text-white">📅 إضافة أسبوع جديد</h3>
-                <button onclick="closeAddWeekModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+        <div class="fi-card p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h3 class="text-xl font-bold">📅 إضافة أسبوع جديد</h3>
+                <button onclick="closeAddWeekModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
             </div>
             
             <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">رقم الأسبوع</label>
-                        <select name="week_number" class="w-full rounded-lg border-2 border-blue-400 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm" style="background-color: #1a1a1a;">
+                        <label class="block text-sm font-semibold mb-2">رقم الأسبوع</label>
+                        <select name="week_number" class="fi-input w-full">
                             <option value="">اختر الأسبوع...</option>
                             @for($week = 1; $week <= 42; $week++)
                                 <option value="{{ $week }}">الأسبوع {{ $week }}</option>
@@ -296,28 +296,28 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">العنوان</label>
-                        <input type="text" name="title" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="عنوان الأسبوع...">
+                        <label class="block text-sm font-semibold mb-2">العنوان</label>
+                        <input type="text" name="title" class="fi-input w-full" placeholder="عنوان الأسبوع...">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-blue-400 text-sm font-semibold mb-2">وصف تطور الطفل</label>
-                    <textarea name="baby_development_description" rows="4" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="وصف تطور الطفل في هذا الأسبوع..."></textarea>
+                    <textarea name="baby_development_description" rows="4" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm"  placeholder="وصف تطور الطفل في هذا الأسبوع..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">مقارنة الحجم</label>
-                        <input type="text" name="baby_size_comparison" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="مثل حبة الأرز...">
+                        <label class="block text-sm font-semibold mb-2">مقارنة الحجم</label>
+                        <input type="text" name="baby_size_comparison" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm"  placeholder="مثل حبة الأرز...">
                     </div>
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">الوزن المتوقع</label>
-                        <input type="text" name="baby_weight_range" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="2-3 جرام">
+                        <label class="block text-sm font-semibold mb-2">الوزن المتوقع</label>
+                        <input type="text" name="baby_weight_range" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm"  placeholder="2-3 جرام">
                     </div>
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">الطول المتوقع</label>
-                        <input type="text" name="baby_length_range" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="4-5 ملم">
+                        <label class="block text-sm font-semibold mb-2">الطول المتوقع</label>
+                        <input type="text" name="baby_length_range" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm"  placeholder="4-5 ملم">
                     </div>
                 </div>
 
@@ -325,7 +325,7 @@
                     <button type="submit" class="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-indigo-700 font-semibold transition-all duration-300">
                         ✅ إضافة الأسبوع
                     </button>
-                    <button type="button" onclick="closeAddWeekModal()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddWeekModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -420,7 +420,6 @@
     <style>
         /* أنماط الحاوي الرئيسي */
         .week-by-week-care-main {
-            background-color: #1a1a1a;
             color: #f9fafb;
             min-height: 100vh;
         }
@@ -480,14 +479,10 @@
         }
 
         .dark-select option {
-            background-color: #1a1a1a;
             color: #f9fafb;
         }
 
         .dark-card {
-            background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
-            border: 1px solid #333333;
-        }
     </style>
 </div>
-</x-filament-panels::page>
+</x-filament::page>
