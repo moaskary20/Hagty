@@ -177,7 +177,15 @@ class MaternityDoctorResource extends Resource
                 Tables\Filters\SelectFilter::make('specialty')
                     ->label('التخصص')
                     ->options(function () {
-                        return MaternityDoctor::distinct()->pluck('specialty', 'specialty')->toArray();
+                        return MaternityDoctor::query()
+                            ->whereNotNull('specialty')
+                            ->where('specialty', '!=', '')
+                            ->distinct()
+                            ->orderBy('specialty')
+                            ->pluck('specialty')
+                            ->filter(fn ($value) => !is_null($value) && $value !== '')
+                            ->mapWithKeys(fn ($value) => [(string) $value => (string) $value])
+                            ->toArray();
                     }),
 
                 Tables\Filters\TernaryFilter::make('is_verified')
