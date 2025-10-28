@@ -14,16 +14,16 @@ class TrainingVideosPage extends Page
         $query = \App\Models\TrainingVideo::query();
         if (request()->filled('search')) {
             $search = request('search');
-            $query->where('title', 'like', "%$search%")
-                  ->orWhere('sector', 'like', "%$search%")
-                  ->orWhere('description', 'like', "%$search%")
+            $query->where('عنوان_الفيديو', 'like', "%$search%")
+                  ->orWhere('التصنيف', 'like', "%$search%")
+                  ->orWhere('وصف_الفيديو', 'like', "%$search%")
                   ;
         }
         if (request()->filled('sector')) {
-            $query->where('sector', request('sector'));
+            $query->where('التصنيف', request('sector'));
         }
         $videos = $query->orderBy('created_at', 'desc')->get();
-        $sectors = \App\Models\TrainingVideo::select('sector')->distinct()->pluck('sector');
+        $sectors = \App\Models\TrainingVideo::select('التصنيف')->distinct()->whereNotNull('التصنيف')->pluck('التصنيف');
         return compact('videos','sectors');
     }
 }
