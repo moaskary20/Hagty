@@ -70,27 +70,27 @@
 
                             @if($weekData->baby_weight_range)
                                 <div class="mb-3">
-                                    <p class="text-blue-400 font-semibold text-sm">⚖️ الوزن المتوقع:</p>
-                                    <p class="text-gray-300 text-sm">{{ $weekData->baby_weight_range }}</p>
+                                    <p class="text-blue-600 font-semibold text-sm">⚖️ الوزن المتوقع:</p>
+                                    <p class="text-gray-700 text-sm">{{ $weekData->baby_weight_range }}</p>
                                 </div>
                             @endif
 
                             @if($weekData->baby_length_range)
                                 <div class="mb-3">
-                                    <p class="text-blue-400 font-semibold text-sm">📐 الطول المتوقع:</p>
-                                    <p class="text-gray-300 text-sm">{{ $weekData->baby_length_range }}</p>
+                                    <p class="text-blue-600 font-semibold text-sm">📐 الطول المتوقع:</p>
+                                    <p class="text-gray-700 text-sm">{{ $weekData->baby_length_range }}</p>
                                 </div>
                             @endif
 
-                            <p class="text-gray-400 text-sm mb-4">{{ Str::limit($weekData->baby_development_description, 120) }}</p>
+                            <p class="text-gray-600 text-sm mb-4">{{ Str::limit($weekData->baby_development_description, 120) }}</p>
 
                             @if($weekData->development_milestones && count($weekData->development_milestones) > 0)
                                 <div class="mb-4">
-                                    <p class="text-blue-400 font-semibold text-sm mb-2">🎯 معالم التطور:</p>
-                                    <ul class="text-gray-300 text-sm space-y-1">
+                                    <p class="text-blue-600 font-semibold text-sm mb-2">🎯 معالم التطور:</p>
+                                    <ul class="text-gray-700 text-sm space-y-1">
                                         @foreach(array_slice($weekData->development_milestones, 0, 3) as $milestone)
                                             <li class="flex items-start gap-2">
-                                                <span class="text-green-400">•</span>
+                                                <span class="text-green-600">•</span>
                                                 <span>{{ $milestone }}</span>
                                             </li>
                                         @endforeach
@@ -99,16 +99,16 @@
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openWeekDetailsModal('{{ $weekData->id }}')" class="fi-btn bg-blue-500 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                                <button onclick="openWeekDetailsModal('{{ $weekData->id }}')" class="fi-btn bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
                                 
-                                <button onclick="openEditWeekModal('{{ $weekData->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditWeekModal('{{ $weekData->id }}')" class="fi-btn bg-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                                 
                                 @if($weekData->videos && count($weekData->videos) > 0)
-                                    <button onclick="openVideoModal('{{ $weekData->id }}')" class="fi-btn bg-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                                    <button onclick="openVideoModal('{{ $weekData->id }}')" class="fi-btn bg-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-all duration-300">
                                         📹 فيديو
                                     </button>
                                 @endif
@@ -118,9 +118,9 @@
                 @empty
                     <div class="col-span-full text-center py-12">
                         <div class="text-6xl mb-4">👶</div>
-                        <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد بيانات أسبوعية حالياً</h3>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد بيانات أسبوعية حالياً</h3>
                         <p class="text-gray-500">سيتم إضافة بيانات الأسابيع قريباً...</p>
-                        <button onclick="openAddWeekModal()" class="mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-blue-600 hover:to-indigo-700 transition-all duration-300">
+                        <button onclick="openAddWeekModal()" class="mt-4 fi-btn bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300">
                             ➕ إضافة أول أسبوع
                         </button>
                     </div>
@@ -155,33 +155,33 @@
                         <div class="p-4">
                             <div class="flex items-center gap-2 mb-2">
                                 @if($tip->is_recommended)
-                                    <span class="fi-btn bg-green-400 to-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ موصى به</span>
+                                    <span class="fi-btn bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ موصى به</span>
                                 @endif
-                                <span class="fi-btn bg-blue-500 to-blue-600 text-white px-2 py-1 rounded-full text-xs">{{ $tip->category ?? 'عام' }}</span>
+                                <span class="fi-btn bg-blue-600 text-white px-2 py-1 rounded-full text-xs">{{ $tip->category ?? 'عام' }}</span>
                             </div>
                             
                             <h3 class="text-white font-bold text-lg mb-2">{{ $tip->title }}</h3>
-                            <p class="text-gray-400 text-sm mb-3">{{ Str::limit($tip->description, 100) }}</p>
+                            <p class="text-gray-600 text-sm mb-3">{{ Str::limit($tip->description, 100) }}</p>
 
                             @if($tip->food_items && count($tip->food_items) > 0)
                                 <div class="mb-3">
-                                    <p class="text-green-400 font-semibold text-sm mb-1">🍎 الأطعمة:</p>
+                                    <p class="text-green-600 font-semibold text-sm mb-1">🍎 الأطعمة:</p>
                                     <div class="flex flex-wrap gap-1">
                                         @foreach(array_slice($tip->food_items, 0, 3) as $food)
-                                            <span class="fi-btn bg-green-600 to-green-700 text-white px-2 py-1 rounded text-xs">{{ $food }}</span>
+                                            <span class="fi-btn bg-green-700 text-white px-2 py-1 rounded text-xs">{{ $food }}</span>
                                         @endforeach
                                         @if(count($tip->food_items) > 3)
-                                            <span class="text-green-400 text-xs">+{{ count($tip->food_items) - 3 }} المزيد</span>
+                                            <span class="text-green-600 text-xs">+{{ count($tip->food_items) - 3 }} المزيد</span>
                                         @endif
                                     </div>
                                 </div>
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openNutritionDetailsModal('{{ $tip->id }}')" class="fi-btn bg-green-500 to-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                                <button onclick="openNutritionDetailsModal('{{ $tip->id }}')" class="fi-btn bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
-                                <button onclick="openEditNutritionModal('{{ $tip->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditNutritionModal('{{ $tip->id }}')" class="fi-btn bg-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                             </div>
@@ -190,9 +190,9 @@
                 @empty
                     <div class="col-span-full text-center py-12">
                         <div class="text-6xl mb-4">🥗</div>
-                        <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد نصائح غذائية حالياً</h3>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد نصائح غذائية حالياً</h3>
                         <p class="text-gray-500">سيتم إضافة النصائح الغذائية قريباً...</p>
-                        <button onclick="openAddNutritionModal()" class="mt-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300">
+                        <button onclick="openAddNutritionModal()" class="mt-4 fi-btn bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-all duration-300">
                             ➕ إضافة أول نصيحة
                         </button>
                     </div>
@@ -227,36 +227,36 @@
                         <div class="p-4">
                             <div class="flex items-center gap-2 mb-2">
                                 @if($warning->is_critical)
-                                    <span class="fi-btn bg-red-500 to-red-600 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">🚨 حرج</span>
+                                    <span class="fi-btn bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">🚨 حرج</span>
                                 @endif
-                                <span class="fi-btn bg-orange-500 to-red-500 text-white px-2 py-1 rounded-full text-xs">{{ $warning->warning_type ?? 'تحذير عام' }}</span>
+                                <span class="fi-btn bg-orange-600 text-white px-2 py-1 rounded-full text-xs">{{ $warning->warning_type ?? 'تحذير عام' }}</span>
                                 @if($warning->risk_level)
-                                    <span class="fi-btn bg-yellow-500 to-orange-500 text-white px-2 py-1 rounded-full text-xs">مستوى {{ $warning->risk_level }}</span>
+                                    <span class="fi-btn bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">مستوى {{ $warning->risk_level }}</span>
                                 @endif
                             </div>
                             
                             <h3 class="text-white font-bold text-lg mb-2">{{ $warning->title }}</h3>
-                            <p class="text-gray-400 text-sm mb-3">{{ Str::limit($warning->description, 100) }}</p>
+                            <p class="text-gray-600 text-sm mb-3">{{ Str::limit($warning->description, 100) }}</p>
 
                             @if($warning->forbidden_items && count($warning->forbidden_items) > 0)
                                 <div class="mb-3">
-                                    <p class="text-red-400 font-semibold text-sm mb-1">🚫 ممنوع:</p>
+                                    <p class="text-red-600 font-semibold text-sm mb-1">🚫 ممنوع:</p>
                                     <div class="flex flex-wrap gap-1">
                                         @foreach(array_slice($warning->forbidden_items, 0, 3) as $item)
-                                            <span class="fi-btn bg-red-600 to-red-700 text-white px-2 py-1 rounded text-xs">{{ $item }}</span>
+                                            <span class="fi-btn bg-red-700 text-white px-2 py-1 rounded text-xs">{{ $item }}</span>
                                         @endforeach
                                         @if(count($warning->forbidden_items) > 3)
-                                            <span class="text-red-400 text-xs">+{{ count($warning->forbidden_items) - 3 }} المزيد</span>
+                                            <span class="text-red-600 text-xs">+{{ count($warning->forbidden_items) - 3 }} المزيد</span>
                                         @endif
                                     </div>
                                 </div>
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openWarningDetailsModal('{{ $warning->id }}')" class="fi-btn bg-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                                <button onclick="openWarningDetailsModal('{{ $warning->id }}')" class="fi-btn bg-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
-                                <button onclick="openEditWarningModal('{{ $warning->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditWarningModal('{{ $warning->id }}')" class="fi-btn bg-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                             </div>
@@ -265,9 +265,9 @@
                 @empty
                     <div class="col-span-full text-center py-12">
                         <div class="text-6xl mb-4">⚠️</div>
-                        <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد تحذيرات صحية حالياً</h3>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد تحذيرات صحية حالياً</h3>
                         <p class="text-gray-500">سيتم إضافة التحذيرات الصحية قريباً...</p>
-                        <button onclick="openAddWarningModal()" class="mt-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                        <button onclick="openAddWarningModal()" class="mt-4 fi-btn bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all duration-300">
                             ➕ إضافة أول تحذير
                         </button>
                     </div>
@@ -302,7 +302,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">وصف تطور الطفل</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">وصف تطور الطفل</label>
                     <textarea name="baby_development_description" rows="4" class="w-full rounded-lg border-2 border-blue-400 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 shadow-sm"  placeholder="وصف تطور الطفل في هذا الأسبوع..."></textarea>
                 </div>
 
@@ -322,10 +322,10 @@
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-indigo-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-semibold transition-all duration-300">
                         ✅ إضافة الأسبوع
                     </button>
-                    <button type="button" onclick="closeAddWeekModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddWeekModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -467,22 +467,6 @@
         }
 
         /* تحسينات إضافية للثيم الداكن */
-        .dark-input {
-            background-color: #1a1a1a !important;
-            border-color: #374151;
-            color: #f9fafb;
-        }
-
-        .dark-input:focus {
-            border-color: #6366f1;
-            background-color: #1a1a1a !important;
-        }
-
-        .dark-select option {
-            color: #f9fafb;
-        }
-
-        .dark-card {
     </style>
 </div>
 </x-filament::page>

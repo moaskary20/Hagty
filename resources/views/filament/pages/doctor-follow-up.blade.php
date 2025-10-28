@@ -78,8 +78,8 @@
                         </div>
                         
                         <h3 class="font-bold text-xl mb-2">{{ $doctor->name }}</h3>
-                        <p class="text-gray-300 text-sm mb-2">{{ $doctor->title ?? 'طبيب أمومة' }}</p>
-                        <p class="text-blue-400 text-sm mb-2">{{ $doctor->specialty ?? 'نساء وولادة' }}</p>
+                        <p class="text-gray-700 text-sm mb-2">{{ $doctor->title ?? 'طبيب أمومة' }}</p>
+                        <p class="text-blue-600 text-sm mb-2">{{ $doctor->specialty ?? 'نساء وولادة' }}</p>
                         
                         @if($doctor->rating)
                             <div class="flex items-center gap-2 mb-3">
@@ -94,7 +94,7 @@
                                         @endif
                                     @endfor
                                 </div>
-                                <span class="text-gray-400 text-sm">({{ $doctor->rating }}/5)</span>
+                                <span class="text-gray-600 text-sm">({{ $doctor->rating }}/5)</span>
                             </div>
                         @endif
 
@@ -106,14 +106,14 @@
 
                         @if($doctor->clinic_name)
                             <div class="mb-3">
-                                <p class="text-blue-400 font-semibold text-sm">🏥 العيادة:</p>
-                                <p class="text-gray-300 text-sm">{{ $doctor->clinic_name }}</p>
+                                <p class="text-blue-600 font-semibold text-sm">🏥 العيادة:</p>
+                                <p class="text-gray-700 text-sm">{{ $doctor->clinic_name }}</p>
                             </div>
                         @endif
 
                         @if($doctor->phone_numbers && count($doctor->phone_numbers) > 0)
                             <div class="mb-3">
-                                <p class="text-blue-400 font-semibold text-sm mb-1">📞 أرقام التواصل:</p>
+                                <p class="text-blue-600 font-semibold text-sm mb-1">📞 أرقام التواصل:</p>
                                 @foreach($doctor->phone_numbers as $phone)
                                     <a href="tel:{{ $phone }}" class="text-green-400 hover:text-green-300 text-sm block">{{ $phone }}</a>
                                 @endforeach
@@ -122,22 +122,22 @@
 
                         @if($doctor->clinic_address)
                             <div class="mb-3">
-                                <p class="text-blue-400 font-semibold text-sm">📍 العنوان:</p>
-                                <p class="text-gray-300 text-sm">{{ Str::limit($doctor->clinic_address, 100) }}</p>
+                                <p class="text-blue-600 font-semibold text-sm">📍 العنوان:</p>
+                                <p class="text-gray-700 text-sm">{{ Str::limit($doctor->clinic_address, 100) }}</p>
                             </div>
                         @endif
 
                         <div class="flex gap-2 mt-4">
-                            <button onclick="openReminderModal('{{ $doctor->id }}')" class="fi-btn bg-purple-500 to-purple-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
+                            <button onclick="openReminderModal('{{ $doctor->id }}')" class="fi-btn bg-purple-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-all duration-300">
                                 📅 تذكير موعد
                             </button>
                             
-                            <button onclick="openDeliveryAlertModal('{{ $doctor->id }}')" class="fi-btn bg-pink-500 to-pink-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-pink-600 hover:to-pink-700 transition-all duration-300">
+                            <button onclick="openDeliveryAlertModal('{{ $doctor->id }}')" class="fi-btn bg-pink-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition-all duration-300">
                                 🚨 تنبيه ولادة
                             </button>
                             
                             @if($doctor->google_maps_url)
-                                <a href="{{ $doctor->google_maps_url }}" target="_blank" class="fi-btn bg-green-500 to-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                                <a href="{{ $doctor->google_maps_url }}" target="_blank" class="fi-btn bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-all duration-300">
                                     🗺️ خريطة
                                 </a>
                             @endif
@@ -147,7 +147,7 @@
             @empty
                 <div class="col-span-full text-center py-12">
                     <div class="text-6xl mb-4">👨‍⚕️</div>
-                    <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد أطباء حالياً</h3>
+                    <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد أطباء حالياً</h3>
                     <p class="text-gray-500">سيتم إضافة الأطباء قريباً...</p>
                 </div>
             @endforelse
@@ -157,7 +157,7 @@
     <!-- قسم التذكيرات القادمة -->
     @if(isset($checkupReminders) && $checkupReminders->count() > 0)
         <div class="rounded-xl shadow-lg border border-purple-400" >
-            <div class="fi-btn bg-purple-500 to-purple-600 text-white p-4 rounded-t-xl">
+            <div class="fi-btn bg-purple-600 text-white p-4 rounded-t-xl">
                 <h2 class="text-xl font-bold">📅 التذكيرات القادمة</h2>
             </div>
             <div class="p-6">
@@ -166,9 +166,9 @@
                         <div class="rounded-xl p-4 border border-purple-400" >
                             <h4 class="text-white font-bold text-sm mb-2">{{ $reminder->checkup_type ?? 'فحص دوري' }}</h4>
                             <p class="text-purple-400 text-sm mb-1">📅 {{ $reminder->checkup_date?->format('Y/m/d') }}</p>
-                            <p class="text-gray-300 text-sm mb-2">👨‍⚕️ {{ $reminder->doctor->name ?? 'غير محدد' }}</p>
+                            <p class="text-gray-700 text-sm mb-2">👨‍⚕️ {{ $reminder->doctor->name ?? 'غير محدد' }}</p>
                             @if($reminder->notes)
-                                <p class="text-gray-400 text-xs">{{ Str::limit($reminder->notes, 80) }}</p>
+                                <p class="text-gray-600 text-xs">{{ Str::limit($reminder->notes, 80) }}</p>
                             @endif
                         </div>
                     @endforeach
@@ -180,7 +180,7 @@
     <!-- قسم تنبيهات الولادة -->
     @if(isset($deliveryAlerts) && $deliveryAlerts->count() > 0)
         <div class="rounded-xl shadow-lg border border-pink-400" >
-            <div class="fi-btn bg-pink-500 to-pink-600 text-white p-4 rounded-t-xl">
+            <div class="fi-btn bg-pink-600 text-white p-4 rounded-t-xl">
                 <h2 class="text-xl font-bold">🚨 تنبيهات الولادة</h2>
             </div>
             <div class="p-6">
@@ -189,7 +189,7 @@
                         <div class="rounded-xl p-4 border border-pink-400" >
                             <h4 class="text-white font-bold text-sm mb-2">{{ $alert->patient_name }}</h4>
                             <p class="text-pink-400 text-sm mb-1">🗓️ {{ $alert->delivery_date?->format('Y/m/d') }}</p>
-                            <p class="text-gray-300 text-sm mb-2">🏥 {{ $alert->hospital_name }}</p>
+                            <p class="text-gray-700 text-sm mb-2">🏥 {{ $alert->hospital_name }}</p>
                             <p class="text-yellow-400 text-xs">⏰ تنبيه قبل {{ $alert->alert_before_days }} أيام</p>
                         </div>
                     @endforeach
@@ -236,7 +236,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">عنوان العيادة</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">عنوان العيادة</label>
                     <textarea name="clinic_address" rows="3" class="fi-input w-full"  placeholder="العنوان الكامل للعيادة..."></textarea>
                 </div>
 
@@ -252,18 +252,18 @@
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">أرقام الهاتف</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">أرقام الهاتف</label>
                     <div id="phoneNumbers">
                         <input type="text" name="phone_numbers[]" class="fi-input w-full"  placeholder="رقم الهاتف...">
                     </div>
-                    <button type="button" onclick="addPhoneField()" class="mt-2 text-blue-400 hover:text-blue-300 text-sm">+ إضافة رقم آخر</button>
+                    <button type="button" onclick="addPhoneField()" class="mt-2 text-blue-600 hover:text-blue-300 text-sm">+ إضافة رقم آخر</button>
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-indigo-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-semibold transition-all duration-300">
                         ✅ إضافة الطبيب
                     </button>
-                    <button type="button" onclick="closeAddDoctorModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddDoctorModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -322,10 +322,10 @@
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-purple-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-purple-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 font-semibold transition-all duration-300">
                         ✅ إضافة التذكير
                     </button>
-                    <button type="button" onclick="closeReminderModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeReminderModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -405,10 +405,10 @@
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-pink-500 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-pink-600 hover:to-pink-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-pink-600 text-white py-2 px-4 rounded-lg hover:bg-pink-700 font-semibold transition-all duration-300">
                         ✅ إضافة التنبيه
                     </button>
-                    <button type="button" onclick="closeDeliveryAlertModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeDeliveryAlertModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>

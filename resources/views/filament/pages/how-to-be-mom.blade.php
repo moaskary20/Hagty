@@ -1,17 +1,17 @@
-<x-filament-panels::page>
-    <div class="space-y-8">
+<x-filament::page>
+    <div class="space-y-6">
         {{-- عنوان الصفحة --}}
-        <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg p-6">
-            <h1 class="text-3xl font-bold">كيف تكونين أمًا</h1>
-            <p class="mt-2 text-pink-100">دليلكِ الشامل للأمومة الحديثة والصحيحة</p>
+        <div class="fi-card p-6 mb-6">
+            <h3 class="text-lg font-bold">كيف تكونين أمًا</h3>
+            <p class="text-sm text-gray-600 mt-2">دليلكِ الشامل للأمومة الحديثة والصحيحة</p>
         </div>
 
         {{-- قسم نصائح الخبراء --}}
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <div class="fi-card p-6 mb-6">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">نصائح الخبراء</h2>
+                <h2 class="text-2xl font-bold text-gray-800">نصائح الخبراء</h2>
                 <button wire:click="openExpertAdviceModal" 
-                        class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg">
+                        class="fi-btn bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700">
                     إضافة نصيحة جديدة
                 </button>
             </div>
@@ -19,7 +19,7 @@
             @if($this->expertAdvices && $this->expertAdvices->count() > 0)
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     @foreach($this->expertAdvices as $advice)
-                    <div class="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 border border-pink-200 dark:border-gray-600">
+                    <div class="fi-card p-6 border border-pink-200">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center gap-3">
                                 @if($advice->expert_image)
@@ -31,8 +31,8 @@
                                     </div>
                                 @endif
                                 <div>
-                                    <h3 class="font-semibold text-gray-900 dark:text-white">{{ $advice->expert_name }}</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-300">{{ $advice->expert_title }}</p>
+                                    <h3 class="font-semibold text-gray-800">{{ $advice->expert_name }}</h3>
+                                    <p class="text-sm text-gray-600">{{ $advice->expert_title }}</p>
                                 </div>
                             </div>
                             <button wire:click="editExpertAdvice({{ $advice->id }})" 
@@ -42,8 +42,8 @@
                                 </svg>
                             </button>
                         </div>
-                        <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">{{ $advice->title }}</h4>
-                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{{ Str::limit($advice->content, 150) }}</p>
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">{{ $advice->title }}</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed">{{ Str::limit($advice->content, 150) }}</p>
                         @if($advice->video_url)
                             <div class="mt-4">
                                 <a href="{{ $advice->video_url }}" target="_blank" 
@@ -58,23 +58,23 @@
                     </div>
                 @empty
                     <div class="col-span-full text-center py-12">
-                        <div class="text-gray-400 mb-4">
+                        <div class="text-gray-600 mb-4">
                             <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">لا توجد نصائح خبراء متاحة حالياً</p>
+                        <p class="text-gray-500">لا توجد نصائح خبراء متاحة حالياً</p>
                     </div>
                 @endforelse
             </div>
         </div>
 
         {{-- Grandma Advice Section --}}
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <div class="fi-card p-6 mb-6">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">استمعي لجدتك</h2>
+                <h2 class="text-2xl font-bold text-gray-800">استمعي لجدتك</h2>
                 <button wire:click="openGrandmaAdviceModal" 
-                        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                        class="fi-btn bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
@@ -84,7 +84,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 @forelse($this->grandmaAdvices as $advice)
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 border border-amber-200 dark:border-gray-600">
+                    <div class="fi-card p-6 border border-amber-200">
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
@@ -93,8 +93,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold text-gray-900 dark:text-white">{{ $advice->grandma_name }}</h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-300">{{ $advice->region }}</p>
+                                    <h3 class="font-semibold text-gray-800">{{ $advice->grandma_name }}</h3>
+                                    <p class="text-sm text-gray-600">{{ $advice->region }}</p>
                                 </div>
                             </div>
                             <button wire:click="editGrandmaAdvice({{ $advice->id }})" 
@@ -104,32 +104,32 @@
                                 </svg>
                             </button>
                         </div>
-                        <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">{{ $advice->title }}</h4>
-                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{{ Str::limit($advice->content, 150) }}</p>
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">{{ $advice->title }}</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed">{{ Str::limit($advice->content, 150) }}</p>
                         <div class="mt-4 flex items-center justify-between">
-                            <span class="text-xs text-amber-600 dark:text-amber-400 font-medium">{{ $advice->category }}</span>
+                            <span class="text-xs text-amber-600 text-amber-600 font-medium">{{ $advice->category }}</span>
                             <span class="text-xs text-gray-500">{{ $advice->created_at->diffForHumans() }}</span>
                         </div>
                     </div>
                 @empty
                     <div class="col-span-full text-center py-12">
-                        <div class="text-gray-400 mb-4">
+                        <div class="text-gray-600 mb-4">
                             <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">لا توجد نصائح من الجدات متاحة حالياً</p>
+                        <p class="text-gray-500">لا توجد نصائح من الجدات متاحة حالياً</p>
                     </div>
                 @endforelse
             </div>
         </div>
 
         {{-- Podcast Episodes Section --}}
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <div class="fi-card p-6 mb-6">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">حلقات بودكاست</h2>
+                <h2 class="text-2xl font-bold text-gray-800">حلقات بودكاست</h2>
                 <button wire:click="openPodcastModal" 
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                        class="fi-btn bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
@@ -139,7 +139,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($this->podcastEpisodes as $episode)
-                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-lg p-6 border border-indigo-200 dark:border-gray-600">
+                    <div class="fi-card p-6 border border-indigo-200">
                         <div class="flex justify-between items-start mb-4">
                             @if($episode->cover_image)
                                 <img src="{{ Storage::url($episode->cover_image) }}" alt="{{ $episode->title }}" 
@@ -158,10 +158,10 @@
                                 </svg>
                             </button>
                         </div>
-                        <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">{{ $episode->title }}</h4>
-                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">{{ Str::limit($episode->description, 100) }}</p>
+                        <h4 class="font-bold text-lg text-gray-800 mb-2">{{ $episode->title }}</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-4">{{ Str::limit($episode->description, 100) }}</p>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-sm text-indigo-600 dark:text-indigo-400 font-medium">{{ $episode->duration }} دقيقة</span>
+                            <span class="text-sm text-indigo-600 text-indigo-600 font-medium">{{ $episode->duration }} دقيقة</span>
                             <span class="text-xs text-gray-500">{{ $episode->created_at->diffForHumans() }}</span>
                         </div>
                         @if($episode->audio_url)
@@ -176,12 +176,12 @@
                     </div>
                 @empty
                     <div class="col-span-full text-center py-12">
-                        <div class="text-gray-400 mb-4">
+                        <div class="text-gray-600 mb-4">
                             <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">لا توجد حلقات بودكاست متاحة حالياً</p>
+                        <p class="text-gray-500">لا توجد حلقات بودكاست متاحة حالياً</p>
                     </div>
                 @endforelse
             </div>
@@ -190,11 +190,11 @@
 
     {{-- Modals --}}
     @if($showExpertAdviceModal)
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div class="fi-card w-full max-w-2xl max-h-[90vh] overflow-y-auto">
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                        <h3 class="text-xl font-bold text-gray-800">
                             {{ $editingExpertAdvice ? 'تعديل نصيحة الخبير' : 'إضافة نصيحة خبير جديدة' }}
                         </h3>
                         <button wire:click="closeExpertAdviceModal" class="text-gray-500 hover:text-gray-700">
@@ -206,38 +206,38 @@
                     
                     <form wire:submit.prevent="saveExpertAdvice" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">اسم الخبير</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم الخبير</label>
                             <input type="text" wire:model="expertAdviceForm.expert_name" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                             @error('expertAdviceForm.expert_name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">المسمى الوظيفي</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">المسمى الوظيفي</label>
                             <input type="text" wire:model="expertAdviceForm.expert_title" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">عنوان النصيحة</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">عنوان النصيحة</label>
                             <input type="text" wire:model="expertAdviceForm.title" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                             @error('expertAdviceForm.title') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">المحتوى</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">المحتوى</label>
                             <textarea wire:model="expertAdviceForm.content" rows="4" 
-                                      class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"></textarea>
+                                      class="fi-input w-full"></textarea>
                             @error('expertAdviceForm.content') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">رابط الفيديو (اختياري)</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">رابط الفيديو (اختياري)</label>
                             <input type="url" wire:model="expertAdviceForm.video_url" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                         </div>
                         <div class="flex justify-end gap-3 pt-4">
                             <button type="button" wire:click="closeExpertAdviceModal" 
-                                    class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900">إلغاء</button>
+                                    class="fi-btn bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">إلغاء</button>
                             <button type="submit" 
-                                    class="px-6 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg">
+                                    class="fi-btn bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700">
                                 {{ $editingExpertAdvice ? 'تحديث' : 'حفظ' }}
                             </button>
                         </div>
@@ -248,11 +248,11 @@
     @endif
 
     @if($showGrandmaAdviceModal)
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div class="fi-card w-full max-w-2xl max-h-[90vh] overflow-y-auto">
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                        <h3 class="text-xl font-bold text-gray-800">
                             {{ $editingGrandmaAdvice ? 'تعديل نصيحة الجدة' : 'إضافة نصيحة جدة جديدة' }}
                         </h3>
                         <button wire:click="closeGrandmaAdviceModal" class="text-gray-500 hover:text-gray-700">
@@ -264,32 +264,32 @@
                     
                     <form wire:submit.prevent="saveGrandmaAdvice" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">اسم الجدة</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم الجدة</label>
                             <input type="text" wire:model="grandmaAdviceForm.grandma_name" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                             @error('grandmaAdviceForm.grandma_name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">المنطقة</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">المنطقة</label>
                             <input type="text" wire:model="grandmaAdviceForm.region" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">عنوان النصيحة</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">عنوان النصيحة</label>
                             <input type="text" wire:model="grandmaAdviceForm.title" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                             @error('grandmaAdviceForm.title') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">المحتوى</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">المحتوى</label>
                             <textarea wire:model="grandmaAdviceForm.content" rows="4" 
-                                      class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"></textarea>
+                                      class="fi-input w-full"></textarea>
                             @error('grandmaAdviceForm.content') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">الفئة</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">الفئة</label>
                             <select wire:model="grandmaAdviceForm.category" 
-                                    class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                    class="fi-input w-full">
                                 <option value="">اختر الفئة</option>
                                 <option value="تغذية">تغذية</option>
                                 <option value="صحة">صحة</option>
@@ -300,9 +300,9 @@
                         </div>
                         <div class="flex justify-end gap-3 pt-4">
                             <button type="button" wire:click="closeGrandmaAdviceModal" 
-                                    class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900">إلغاء</button>
+                                    class="px-4 py-2 text-gray-700 hover:text-gray-800">إلغاء</button>
                             <button type="submit" 
-                                    class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg">
+                                    class="fi-btn bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700">
                                 {{ $editingGrandmaAdvice ? 'تحديث' : 'حفظ' }}
                             </button>
                         </div>
@@ -313,11 +313,11 @@
     @endif
 
     @if($showPodcastModal)
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div class="fi-card w-full max-w-2xl max-h-[90vh] overflow-y-auto">
                 <div class="p-6">
                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                        <h3 class="text-xl font-bold text-gray-800">
                             {{ $editingPodcast ? 'تعديل حلقة البودكاست' : 'إضافة حلقة بودكاست جديدة' }}
                         </h3>
                         <button wire:click="closePodcastModal" class="text-gray-500 hover:text-gray-700">
@@ -329,33 +329,33 @@
                     
                     <form wire:submit.prevent="savePodcast" class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">عنوان الحلقة</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">عنوان الحلقة</label>
                             <input type="text" wire:model="podcastForm.title" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                             @error('podcastForm.title') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">الوصف</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">الوصف</label>
                             <textarea wire:model="podcastForm.description" rows="3" 
-                                      class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"></textarea>
+                                      class="fi-input w-full"></textarea>
                             @error('podcastForm.description') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">رابط الصوت</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">رابط الصوت</label>
                             <input type="url" wire:model="podcastForm.audio_url" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                             @error('podcastForm.audio_url') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">المدة (بالدقائق)</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">المدة (بالدقائق)</label>
                             <input type="number" wire:model="podcastForm.duration" 
-                                   class="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                                   class="fi-input w-full">
                         </div>
                         <div class="flex justify-end gap-3 pt-4">
                             <button type="button" wire:click="closePodcastModal" 
-                                    class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900">إلغاء</button>
+                                    class="px-4 py-2 text-gray-700 hover:text-gray-800">إلغاء</button>
                             <button type="submit" 
-                                    class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg">
+                                    class="fi-btn bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
                                 {{ $editingPodcast ? 'تحديث' : 'حفظ' }}
                             </button>
                         </div>
@@ -367,9 +367,6 @@
 
     {{-- Custom Styles --}}
     <style>
-        .dark {
-            background-color: #1a1a1a !important;
-        }
         
         /* RTL Support */
         [dir="rtl"] .space-y-6 > * + * {
@@ -481,4 +478,4 @@
             });
         });
     </script>
-</x-filament-panels::page>
+</x-filament::page>

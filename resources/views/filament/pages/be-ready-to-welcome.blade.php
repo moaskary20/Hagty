@@ -63,16 +63,16 @@
 
                             @if($preparation->preparation_steps && count($preparation->preparation_steps) > 0)
                                 <div class="mb-4">
-                                    <p class="text-purple-400 font-semibold text-sm mb-2">🔹 الخطوات:</p>
-                                    <ul class="text-gray-300 text-sm space-y-1">
+                                    <p class="text-purple-600 font-semibold text-sm mb-2">🔹 الخطوات:</p>
+                                    <ul class="text-gray-700 text-sm space-y-1">
                                         @foreach(array_slice($preparation->preparation_steps, 0, 3) as $step)
                                             <li class="flex items-start gap-2">
-                                                <span class="text-purple-400">•</span>
+                                                <span class="text-purple-600">•</span>
                                                 <span>{{ $step }}</span>
                                             </li>
                                         @endforeach
                                         @if(count($preparation->preparation_steps) > 3)
-                                            <li class="text-purple-400 text-xs">+{{ count($preparation->preparation_steps) - 3 }} خطوات أخرى</li>
+                                            <li class="text-purple-600 text-xs">+{{ count($preparation->preparation_steps) - 3 }} خطوات أخرى</li>
                                         @endif
                                     </ul>
                                 </div>
@@ -80,26 +80,26 @@
 
                             @if($preparation->timeline && count($preparation->timeline) > 0)
                                 <div class="mb-4">
-                                    <p class="text-purple-400 font-semibold text-sm mb-2">⏰ التوقيت:</p>
+                                    <p class="text-purple-600 font-semibold text-sm mb-2">⏰ التوقيت:</p>
                                     <div class="flex flex-wrap gap-1">
                                         @foreach(array_slice($preparation->timeline, 0, 3) as $time)
-                                            <span class="fi-btn bg-blue-600 to-blue-700 text-white px-2 py-1 rounded text-xs">{{ $time }}</span>
+                                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">{{ $time }}</span>
                                         @endforeach
                                     </div>
                                 </div>
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openPreparationDetailsModal('{{ $preparation->id }}')" class="fi-btn bg-purple-500 to-purple-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
+                                <button onclick="openPreparationDetailsModal('{{ $preparation->id }}')" class="fi-btn bg-purple-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
                                 
-                                <button onclick="openEditPreparationModal('{{ $preparation->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditPreparationModal('{{ $preparation->id }}')" class="fi-btn bg-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                                 
                                 @if($preparation->videos && count($preparation->videos) > 0)
-                                    <button onclick="openVideoModal('{{ $preparation->id }}')" class="fi-btn bg-red-500 to-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                                    <button onclick="openVideoModal('{{ $preparation->id }}')" class="fi-btn bg-red-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition-all duration-300">
                                         📹 فيديو
                                     </button>
                                 @endif
@@ -109,9 +109,9 @@
                 @empty
                     <div class="col-span-full text-center py-12">
                         <div class="text-6xl mb-4">📝</div>
-                        <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد نصائح حالياً</h3>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد نصائح حالياً</h3>
                         <p class="text-gray-500">سيتم إضافة نصائح الاستعداد قريباً...</p>
-                        <button onclick="openAddPreparationModal()" class="mt-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-600 hover:to-indigo-700 transition-all duration-300">
+                        <button onclick="openAddPreparationModal()" class="mt-4 fi-btn bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-all duration-300">
                             ➕ إضافة أول نصيحة
                         </button>
                     </div>
@@ -145,27 +145,27 @@
                         
                         <div class="p-4">
                             <div class="flex items-center gap-2 mb-2">
-                                <span class="fi-btn bg-blue-500 to-blue-600 text-white px-2 py-1 rounded-full text-xs">{{ $bag->bag_type ?? 'حقيبة عامة' }}</span>
+                                <span class="fi-btn bg-blue-600 text-white px-2 py-1 rounded-full text-xs">{{ $bag->bag_type ?? 'حقيبة عامة' }}</span>
                                 @if($bag->priority_level)
-                                    <span class="fi-btn bg-green-500 to-green-600 text-white px-2 py-1 rounded-full text-xs">أولوية {{ $bag->priority_level }}</span>
+                                    <span class="fi-btn bg-green-600 text-white px-2 py-1 rounded-full text-xs">أولوية {{ $bag->priority_level }}</span>
                                 @endif
                             </div>
                             
                             <h3 class="text-white font-bold text-lg mb-2">{{ $bag->title }}</h3>
-                            <p class="text-gray-400 text-sm mb-3">{{ Str::limit($bag->description, 100) }}</p>
+                            <p class="text-gray-600 text-sm mb-3">{{ Str::limit($bag->description, 100) }}</p>
 
                             @if($bag->essential_items && count($bag->essential_items) > 0)
                                 <div class="mb-3">
-                                    <p class="text-blue-400 font-semibold text-sm mb-1">✅ الأساسيات:</p>
-                                    <ul class="text-gray-300 text-sm space-y-1">
+                                    <p class="text-blue-600 font-semibold text-sm mb-1">✅ الأساسيات:</p>
+                                    <ul class="text-gray-700 text-sm space-y-1">
                                         @foreach(array_slice($bag->essential_items, 0, 3) as $item)
                                             <li class="flex items-start gap-2">
-                                                <span class="text-green-400">•</span>
+                                                <span class="text-green-600">•</span>
                                                 <span>{{ $item }}</span>
                                             </li>
                                         @endforeach
                                         @if(count($bag->essential_items) > 3)
-                                            <li class="text-blue-400 text-xs">+{{ count($bag->essential_items) - 3 }} عناصر أخرى</li>
+                                            <li class="text-blue-600 text-xs">+{{ count($bag->essential_items) - 3 }} عناصر أخرى</li>
                                         @endif
                                     </ul>
                                 </div>
@@ -173,16 +173,16 @@
 
                             @if($bag->when_to_pack)
                                 <div class="mb-3">
-                                    <p class="text-blue-400 font-semibold text-sm">📅 موعد التحضير:</p>
-                                    <p class="text-gray-300 text-sm">{{ $bag->when_to_pack }}</p>
+                                    <p class="text-blue-600 font-semibold text-sm">📅 موعد التحضير:</p>
+                                    <p class="text-gray-700 text-sm">{{ $bag->when_to_pack }}</p>
                                 </div>
                             @endif
 
                             <div class="flex gap-2 mt-4">
-                                <button onclick="openBagDetailsModal('{{ $bag->id }}')" class="fi-btn bg-blue-500 to-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                                <button onclick="openBagDetailsModal('{{ $bag->id }}')" class="fi-btn bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-all duration-300">
                                     👁️ التفاصيل
                                 </button>
-                                <button onclick="openEditBagModal('{{ $bag->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditBagModal('{{ $bag->id }}')" class="fi-btn bg-yellow-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition-all duration-300">
                                     ✏️ تعديل
                                 </button>
                             </div>
@@ -191,9 +191,9 @@
                 @empty
                     <div class="col-span-full text-center py-12">
                         <div class="text-6xl mb-4">🧳</div>
-                        <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد حقائب حالياً</h3>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد حقائب حالياً</h3>
                         <p class="text-gray-500">سيتم إضافة قوائم حقائب المستشفى قريباً...</p>
-                        <button onclick="openAddBagModal()" class="mt-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-6 py-2 rounded-lg hover:from-blue-600 hover:to-cyan-700 transition-all duration-300">
+                        <button onclick="openAddBagModal()" class="mt-4 fi-btn bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300">
                             ➕ إضافة أول حقيبة
                         </button>
                     </div>
@@ -214,22 +214,22 @@
         <div class="p-6">
             <!-- فلاتر الفئات -->
             <div class="mb-6 flex flex-wrap gap-2">
-                <button onclick="filterItems('all')" class="filter-btn active bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                <button onclick="filterItems('all')" class="filter-btn active fi-btn bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
                     الكل
                 </button>
-                <button onclick="filterItems('الملابس')" class="filter-btn bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                <button onclick="filterItems('الملابس')" class="filter-btn fi-btn bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
                     👕 الملابس
                 </button>
-                <button onclick="filterItems('التغذية')" class="filter-btn bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                <button onclick="filterItems('التغذية')" class="filter-btn fi-btn bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
                     🍼 التغذية
                 </button>
-                <button onclick="filterItems('النوم')" class="filter-btn bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                <button onclick="filterItems('النوم')" class="filter-btn fi-btn bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
                     😴 النوم
                 </button>
-                <button onclick="filterItems('النظافة')" class="filter-btn bg-gradient-to-r from-pink-500 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                <button onclick="filterItems('النظافة')" class="filter-btn fi-btn bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
                     🧼 النظافة
                 </button>
-                <button onclick="filterItems('اللعب')" class="filter-btn bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                <button onclick="filterItems('اللعب')" class="filter-btn fi-btn bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
                     🧸 اللعب
                 </button>
             </div>
@@ -250,42 +250,42 @@
                         <div class="p-4">
                             <div class="flex items-center gap-1 mb-2">
                                 @if($item->is_essential)
-                                    <span class="fi-btn bg-red-500 to-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ ضروري</span>
+                                    <span class="fi-btn bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ ضروري</span>
                                 @endif
-                                <span class="fi-btn bg-green-500 to-green-600 text-white px-2 py-1 rounded-full text-xs">{{ $item->category ?? 'عام' }}</span>
+                                <span class="fi-btn bg-green-600 text-white px-2 py-1 rounded-full text-xs">{{ $item->category ?? 'عام' }}</span>
                             </div>
                             
                             <h3 class="text-white font-bold text-sm mb-1">{{ $item->item_name }}</h3>
-                            <p class="text-gray-400 text-xs mb-2">{{ Str::limit($item->description, 60) }}</p>
+                            <p class="text-gray-600 text-xs mb-2">{{ Str::limit($item->description, 60) }}</p>
 
                             @if($item->suggested_quantity)
                                 <div class="mb-2">
-                                    <p class="text-green-400 font-semibold text-xs">🔢 الكمية المقترحة:</p>
-                                    <p class="text-gray-300 text-xs">{{ $item->suggested_quantity }}</p>
+                                    <p class="text-green-600 font-semibold text-xs">🔢 الكمية المقترحة:</p>
+                                    <p class="text-gray-700 text-xs">{{ $item->suggested_quantity }}</p>
                                 </div>
                             @endif
 
                             @if($item->price_range)
                                 <div class="mb-2">
-                                    <p class="text-green-400 font-semibold text-xs">💰 نطاق السعر:</p>
-                                    <p class="text-gray-300 text-xs">{{ $item->price_range }}</p>
+                                    <p class="text-green-600 font-semibold text-xs">💰 نطاق السعر:</p>
+                                    <p class="text-gray-700 text-xs">{{ $item->price_range }}</p>
                                 </div>
                             @endif
 
                             @if($item->importance_rating)
                                 <div class="mb-2">
                                     <div class="flex items-center gap-1">
-                                        <span class="text-yellow-400 text-xs">⭐</span>
-                                        <span class="text-gray-300 text-xs">{{ $item->importance_rating }}/5</span>
+                                        <span class="text-yellow-600 text-xs">⭐</span>
+                                        <span class="text-gray-700 text-xs">{{ $item->importance_rating }}/5</span>
                                     </div>
                                 </div>
                             @endif
 
                             <div class="flex gap-1 mt-3">
-                                <button onclick="openItemDetailsModal('{{ $item->id }}')" class="fi-btn bg-green-500 to-green-600 text-white px-2 py-1 rounded-lg text-xs font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                                <button onclick="openItemDetailsModal('{{ $item->id }}')" class="fi-btn bg-green-600 text-white px-2 py-1 rounded-lg text-xs font-semibold hover:bg-green-700 transition-all duration-300">
                                     👁️
                                 </button>
-                                <button onclick="openEditItemModal('{{ $item->id }}')" class="fi-btn bg-yellow-500 to-yellow-600 text-white px-2 py-1 rounded-lg text-xs font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300">
+                                <button onclick="openEditItemModal('{{ $item->id }}')" class="fi-btn bg-yellow-600 text-white px-2 py-1 rounded-lg text-xs font-semibold hover:bg-yellow-700 transition-all duration-300">
                                     ✏️
                                 </button>
                             </div>
@@ -294,9 +294,9 @@
                 @empty
                     <div class="col-span-full text-center py-12">
                         <div class="text-6xl mb-4">🍼</div>
-                        <h3 class="text-xl font-bold text-gray-400 mb-2">لا توجد مستلزمات حالياً</h3>
+                        <h3 class="text-xl font-bold text-gray-600 mb-2">لا توجد مستلزمات حالياً</h3>
                         <p class="text-gray-500">سيتم إضافة قائمة مستلزمات الطفل قريباً...</p>
-                        <button onclick="openAddBabyItemModal()" class="mt-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300">
+                        <button onclick="openAddBabyItemModal()" class="mt-4 fi-btn bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-all duration-300">
                             ➕ إضافة أول مستلزم
                         </button>
                     </div>
@@ -310,17 +310,17 @@
         <div class="bg-gray-800 rounded-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();" >
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-bold text-white">📝 إضافة نصيحة جديدة</h3>
-                <button onclick="closeAddPreparationModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                <button onclick="closeAddPreparationModal()" class="text-gray-600 hover:text-white text-2xl">&times;</button>
             </div>
             
             <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-purple-400 text-sm font-semibold mb-2">العنوان</label>
+                        <label class="block text-purple-600 text-sm font-semibold mb-2">العنوان</label>
                         <input type="text" name="title" class="fi-input w-full"  placeholder="عنوان النصيحة...">
                     </div>
                     <div>
-                        <label class="block text-purple-400 text-sm font-semibold mb-2">الفئة</label>
+                        <label class="block text-purple-600 text-sm font-semibold mb-2">الفئة</label>
                         <select name="category" class="fi-input w-full" >
                             <option value="">اختر الفئة...</option>
                             <option value="نصائح ولادة">نصائح ولادة</option>
@@ -332,13 +332,13 @@
                 </div>
 
                 <div>
-                    <label class="block text-purple-400 text-sm font-semibold mb-2">الوصف</label>
+                    <label class="block text-purple-600 text-sm font-semibold mb-2">الوصف</label>
                     <textarea name="description" rows="4" class="fi-input w-full"  placeholder="وصف النصيحة..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-purple-400 text-sm font-semibold mb-2">مستوى الأهمية (1-5)</label>
+                        <label class="block text-purple-600 text-sm font-semibold mb-2">مستوى الأهمية (1-5)</label>
                         <select name="importance_level" class="fi-input w-full" >
                             <option value="">اختر مستوى الأهمية...</option>
                             <option value="1">1 - منخفض</option>
@@ -349,7 +349,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-purple-400 text-sm font-semibold mb-2">نصيحة مميزة؟</label>
+                        <label class="block text-purple-600 text-sm font-semibold mb-2">نصيحة مميزة؟</label>
                         <div class="flex items-center gap-4 mt-3">
                             <label class="flex items-center gap-2">
                                 <input type="radio" name="is_featured" value="1" class="text-purple-500">
@@ -364,10 +364,10 @@
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-indigo-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 font-semibold transition-all duration-300">
                         ✅ إضافة النصيحة
                     </button>
-                    <button type="button" onclick="closeAddPreparationModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddPreparationModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -380,17 +380,17 @@
         <div class="bg-gray-800 rounded-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();" >
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-bold text-white">🧳 إضافة حقيبة مستشفى جديدة</h3>
-                <button onclick="closeAddBagModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                <button onclick="closeAddBagModal()" class="text-gray-600 hover:text-white text-2xl">&times;</button>
             </div>
             
             <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">عنوان الحقيبة</label>
+                        <label class="block text-blue-600 text-sm font-semibold mb-2">عنوان الحقيبة</label>
                         <input type="text" name="title" class="fi-input w-full"  placeholder="حقيبة الأم، حقيبة الطفل...">
                     </div>
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">نوع الحقيبة</label>
+                        <label class="block text-blue-600 text-sm font-semibold mb-2">نوع الحقيبة</label>
                         <select name="bag_type" class="fi-input w-full" >
                             <option value="">اختر نوع الحقيبة...</option>
                             <option value="حقيبة الأم">حقيبة الأم</option>
@@ -403,13 +403,13 @@
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">وصف الحقيبة</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">وصف الحقيبة</label>
                     <textarea name="description" rows="3" class="fi-input w-full"  placeholder="وصف محتويات الحقيبة والغرض منها..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">مستوى الأولوية (1-5)</label>
+                        <label class="block text-blue-600 text-sm font-semibold mb-2">مستوى الأولوية (1-5)</label>
                         <select name="priority_level" class="fi-input w-full" >
                             <option value="">اختر مستوى الأولوية...</option>
                             <option value="1">1 - منخفض</option>
@@ -420,7 +420,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-blue-400 text-sm font-semibold mb-2">الحجم المقترح للحقيبة</label>
+                        <label class="block text-blue-600 text-sm font-semibold mb-2">الحجم المقترح للحقيبة</label>
                         <select name="bag_size_recommendation" class="fi-input w-full" >
                             <option value="">اختر الحجم...</option>
                             <option value="صغيرة">صغيرة (حقيبة يد)</option>
@@ -432,28 +432,28 @@
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">الأغراض الأساسية (واحد في كل سطر)</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">الأغراض الأساسية (واحد في كل سطر)</label>
                     <div id="essentialItems">
                         <textarea name="essential_items" rows="4" class="fi-input w-full"  placeholder="مثال:&#10;ملابس داخلية&#10;فوط صحية&#10;مناديل مبللة&#10;شحن الهاتف"></textarea>
                     </div>
-                    <p class="text-gray-400 text-xs mt-1">اكتب كل غرض في سطر منفصل</p>
+                    <p class="text-gray-600 text-xs mt-1">اكتب كل غرض في سطر منفصل</p>
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">الأغراض الاختيارية (واحد في كل سطر)</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">الأغراض الاختيارية (واحد في كل سطر)</label>
                     <div id="optionalItems">
                         <textarea name="optional_items" rows="3" class="fi-input w-full"  placeholder="مثال:&#10;كتاب للقراءة&#10;وجبات خفيفة&#10;كاميرا"></textarea>
                     </div>
-                    <p class="text-gray-400 text-xs mt-1">اكتب كل غرض في سطر منفصل</p>
+                    <p class="text-gray-600 text-xs mt-1">اكتب كل غرض في سطر منفصل</p>
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">نصائح التحضير</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">نصائح التحضير</label>
                     <textarea name="packing_tips" rows="3" class="fi-input w-full"  placeholder="نصائح مهمة لتحضير هذه الحقيبة..."></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-blue-400 text-sm font-semibold mb-2">متى يجب تحضير هذه الحقيبة؟</label>
+                    <label class="block text-blue-600 text-sm font-semibold mb-2">متى يجب تحضير هذه الحقيبة؟</label>
                     <select name="when_to_pack" class="fi-input w-full" >
                         <option value="">اختر التوقيت...</option>
                         <option value="في الأسبوع 32-34">في الأسبوع 32-34</option>
@@ -466,10 +466,10 @@
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-blue-500 to-cyan-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-cyan-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 font-semibold transition-all duration-300">
                         ✅ إضافة الحقيبة
                     </button>
-                    <button type="button" onclick="closeAddBagModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddBagModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -482,17 +482,17 @@
         <div class="bg-gray-800 rounded-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();" >
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-bold text-white">🍼 إضافة مستلزم طفل جديد</h3>
-                <button onclick="closeAddBabyItemModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                <button onclick="closeAddBabyItemModal()" class="text-gray-600 hover:text-white text-2xl">&times;</button>
             </div>
             
             <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">اسم المستلزم</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">اسم المستلزم</label>
                         <input type="text" name="item_name" class="fi-input w-full"  placeholder="اسم المستلزم...">
                     </div>
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">الفئة</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">الفئة</label>
                         <select name="category" class="fi-input w-full" >
                             <option value="">اختر الفئة...</option>
                             <option value="الملابس">👕 الملابس</option>
@@ -508,21 +508,21 @@
                 </div>
 
                 <div>
-                    <label class="block text-green-400 text-sm font-semibold mb-2">وصف المستلزم</label>
+                    <label class="block text-green-600 text-sm font-semibold mb-2">وصف المستلزم</label>
                     <textarea name="description" rows="3" class="fi-input w-full"  placeholder="وصف المستلزم وفوائده..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">الكمية المقترحة</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">الكمية المقترحة</label>
                         <input type="number" name="suggested_quantity" class="fi-input w-full"  placeholder="3">
                     </div>
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">نطاق السعر</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">نطاق السعر</label>
                         <input type="text" name="price_range" class="fi-input w-full"  placeholder="50-100 ريال">
                     </div>
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">تقييم الأهمية (1-5)</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">تقييم الأهمية (1-5)</label>
                         <select name="importance_rating" class="fi-input w-full" >
                             <option value="">اختر التقييم...</option>
                             <option value="1">1 - اختياري</option>
@@ -536,7 +536,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">المناسب للعمر</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">المناسب للعمر</label>
                         <select name="age_suitability" class="fi-input w-full" >
                             <option value="">اختر العمر المناسب...</option>
                             <option value="0-3 شهور">0-3 شهور</option>
@@ -547,7 +547,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-green-400 text-sm font-semibold mb-2">هل هو ضروري؟</label>
+                        <label class="block text-green-600 text-sm font-semibold mb-2">هل هو ضروري؟</label>
                         <div class="flex items-center gap-4 mt-3">
                             <label class="flex items-center gap-2">
                                 <input type="radio" name="is_essential" value="1" class="text-green-500">
@@ -562,31 +562,31 @@
                 </div>
 
                 <div>
-                    <label class="block text-green-400 text-sm font-semibold mb-2">أماكن الشراء المقترحة (واحد في كل سطر)</label>
+                    <label class="block text-green-600 text-sm font-semibold mb-2">أماكن الشراء المقترحة (واحد في كل سطر)</label>
                     <textarea name="where_to_buy" rows="3" class="fi-input w-full"  placeholder="مثال:&#10;محل الأطفال&#10;الصيدلية&#10;المتاجر الإلكترونية"></textarea>
-                    <p class="text-gray-400 text-xs mt-1">اكتب كل مكان في سطر منفصل</p>
+                    <p class="text-gray-600 text-xs mt-1">اكتب كل مكان في سطر منفصل</p>
                 </div>
 
                 <div>
-                    <label class="block text-green-400 text-sm font-semibold mb-2">البدائل المتاحة (واحد في كل سطر)</label>
+                    <label class="block text-green-600 text-sm font-semibold mb-2">البدائل المتاحة (واحد في كل سطر)</label>
                     <textarea name="alternatives" rows="2" class="fi-input w-full"  placeholder="البدائل المتاحة لهذا المستلزم..."></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-green-400 text-sm font-semibold mb-2">ملاحظات السلامة</label>
+                    <label class="block text-green-600 text-sm font-semibold mb-2">ملاحظات السلامة</label>
                     <textarea name="safety_notes" rows="2" class="fi-input w-full"  placeholder="ملاحظات مهمة حول سلامة الطفل..."></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-green-400 text-sm font-semibold mb-2">الماركات المقترحة (واحدة في كل سطر)</label>
+                    <label class="block text-green-600 text-sm font-semibold mb-2">الماركات المقترحة (واحدة في كل سطر)</label>
                     <textarea name="brand_recommendations" rows="2" class="fi-input w-full"  placeholder="الماركات الموثوقة لهذا المستلزم..."></textarea>
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-emerald-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-semibold transition-all duration-300">
                         ✅ إضافة المستلزم
                     </button>
-                    <button type="button" onclick="closeAddBabyItemModal()" class="fi-btn bg-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddBabyItemModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold transition-all duration-300">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -759,7 +759,6 @@
             color: #f9fafb;
         }
 
-        .dark-card {
     </style>
 </div>
 </x-filament::page>

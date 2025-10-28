@@ -1,35 +1,35 @@
-<x-filament-panels::page>
-<div class="wedding-dress-designers-main space-y-6 min-h-screen p-4" style="background-color: #1a1a1a;">
+<x-filament::page>
+<div class="space-y-6">
     <!-- إعلانات الفيديو برعاية -->
     @if(isset($videoAds) && $videoAds->count() > 0)
-        <div class="rounded-xl shadow-lg border border-yellow-400" style="background-color: #2a2a2a;">
-            <div class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white p-4 rounded-t-xl">
+        <div class="fi-card mb-6">
+            <div class="p-4 border-b">
                 <h2 class="text-xl font-bold">📺 إعلانات فيديو برعاية</h2>
             </div>
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach($videoAds as $ad)
-                        <div class="rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300" style="background: linear-gradient(145deg, #333333, #2a2a2a); border: 2px solid #fbbf24;">
+                        <div class="fi-card p-4 hover:shadow-lg transition-all duration-300 border border-yellow-300">
                             @if($ad->thumbnail_image)
-                                <img src="{{ asset('storage/' . $ad->thumbnail_image) }}" alt="{{ $ad->title }}" class="w-full h-40 object-cover">
+                                <img src="{{ asset('storage/' . $ad->thumbnail_image) }}" alt="{{ $ad->title }}" class="w-full h-40 object-cover rounded-lg mb-2">
                             @endif
-                            <div class="p-4">
+                            <div class="p-2">
                                 <div class="flex items-center gap-2 mb-2">
                                     @if($ad->sponsor_logo)
                                         <img src="{{ asset('storage/' . $ad->sponsor_logo) }}" alt="الراعي" class="w-8 h-8 rounded-full">
                                     @endif
-                                    <span class="text-yellow-400 font-semibold text-sm">{{ $ad->sponsor_name ?? 'راعي مميز' }}</span>
+                                    <span class="text-yellow-600 font-semibold text-sm">{{ $ad->sponsor_name ?? 'راعي مميز' }}</span>
                                 </div>
-                                <h3 class="text-white font-bold text-lg mb-2">{{ $ad->title }}</h3>
-                                <p class="text-gray-300 text-sm mb-3">{{ Str::limit($ad->description, 100) }}</p>
+                                <h3 class="text-gray-900 font-bold text-lg mb-2">{{ $ad->title }}</h3>
+                                <p class="text-gray-700 text-sm mb-3">{{ Str::limit($ad->description, 100) }}</p>
                                 <div class="flex gap-2">
                                     @if($ad->video_url || $ad->video_file)
-                                        <button class="bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
+                                        <button class="fi-btn bg-red-500 to-red-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-300">
                                             ▶️ مشاهدة
                                         </button>
                                     @endif
                                     @if($ad->sponsor_website)
-                                        <a href="{{ $ad->sponsor_website }}" target="_blank" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                                        <a href="{{ $ad->sponsor_website }}" target="_blank" class="fi-btn bg-blue-500 to-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
                                             🌐 الموقع
                                         </a>
                                     @endif
@@ -39,7 +39,7 @@
                     @endforeach
                 </div>
                 <div class="text-center mt-6">
-                    <button class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-2 rounded-lg hover:from-yellow-600 hover:to-orange-600 shadow-md transition-all duration-300">
+                    <button class="fi-btn bg-yellow-500 to-orange-500 text-white px-6 py-2 rounded-lg hover:from-yellow-600 hover:to-orange-600 shadow-md transition-all duration-300">
                         🎬 عرض المزيد من الإعلانات
                     </button>
                 </div>
@@ -49,34 +49,34 @@
 
     <!-- لافتات التصاميم والعروض -->
     @if(isset($banners) && $banners->count() > 0)
-        <div class="rounded-xl shadow-lg border border-pink-400" style="background-color: #2a2a2a;">
-            <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 rounded-t-xl">
+        <div class="fi-card mb-6">
+            <div class="p-4 border-b">
                 <h2 class="text-xl font-bold">🎨 لافتات التصاميم والعروض</h2>
             </div>
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     @foreach($banners as $banner)
-                        <div class="rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300" style="background: linear-gradient(145deg, #333333, #2a2a2a); border: 2px solid #ec4899;">
+                        <div class="fi-card p-3 hover:shadow-lg transition-all duration-300 border border-pink-300">
                             <img src="{{ asset('storage/' . $banner->image_url) }}" 
                                  alt="{{ $banner->title }}" 
-                                 class="w-full h-32 object-cover">
-                            <div class="p-3">
-                                <h4 class="text-white font-bold text-sm mb-1">{{ $banner->title }}</h4>
-                                <p class="text-gray-400 text-xs mb-2">{{ Str::limit($banner->description, 50) }}</p>
+                                 class="w-full h-32 object-cover rounded mb-2">
+                            <div class="p-2">
+                                <h4 class="text-gray-900 font-bold text-sm mb-1">{{ $banner->title }}</h4>
+                                <p class="text-gray-600 text-xs mb-2">{{ Str::limit($banner->description, 50) }}</p>
                                 <div class="flex justify-between items-center">
                                     @if($banner->link_url)
-                                        <a href="{{ $banner->link_url }}" target="_blank" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-2 py-1 rounded text-xs font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300">
+                                        <a href="{{ $banner->link_url }}" target="_blank" class="fi-btn bg-pink-600 text-white px-2 py-1 rounded text-xs hover:bg-pink-700">
                                             👗 زيارة
                                         </a>
                                     @endif
-                                    <span class="text-pink-400 text-xs">{{ $banner->designer->name ?? 'مصمم مميز' }}</span>
+                                    <span class="text-pink-600 text-xs">{{ $banner->designer->name ?? 'مصمم مميز' }}</span>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
                 <div class="text-center mt-6">
-                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-pink-600 hover:to-purple-700 shadow-md transition-all duration-300">
+                    <button class="fi-btn bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700">
                         🎨 عرض المزيد من اللافتات
                     </button>
                 </div>
@@ -85,19 +85,18 @@
     @endif
 
     <!-- شريط البحث -->
-    <div class="rounded-xl shadow-lg border border-rose-400 p-6" style="background-color: #2a2a2a;">
+    <div class="fi-card p-6 mb-6">
         <form method="GET" class="flex gap-4">
             <div class="flex-1">
                 <input type="text" name="search" value="{{ request('search') }}" 
                        placeholder="البحث في مصممي فساتين الزفاف..." 
-                       class="w-full rounded-lg border-2 border-rose-400 text-white placeholder-gray-300 focus:border-rose-500 focus:ring-rose-500 shadow-sm" 
-                       style="background-color: #1a1a1a;">
+                       class="fi-input w-full">
             </div>
-            <button type="submit" class="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-6 py-2 rounded-lg hover:from-rose-600 hover:to-pink-700 shadow-md transition-all duration-300">
+            <button type="submit" class="fi-btn bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700">
                 🔍 بحث
             </button>
             @if(request('search'))
-                <a href="{{ url()->current() }}" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 py-2 rounded-lg hover:from-gray-700 hover:to-gray-800 shadow-md transition-all duration-300">
+                <a href="{{ url()->current() }}" class="fi-btn bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
                     إعادة تعيين
                 </a>
             @endif
@@ -105,23 +104,23 @@
     </div>
 
     <!-- قسم المصممين -->
-    <div class="rounded-xl shadow-lg border border-indigo-400" style="background-color: #2a2a2a;">
-        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-t-xl flex justify-between items-center">
+    <div class="fi-card mb-6">
+        <div class="p-6 border-b flex justify-between items-center">
             <h2 class="text-xl font-bold">👗 ورش ومصممو فساتين الزفاف</h2>
-            <button onclick="openAddModal()" class="text-indigo-400 px-6 py-2 rounded-lg hover:bg-gray-700 border border-indigo-400 shadow-md font-semibold transition-all duration-300" style="background-color: #1a1a1a;">
+            <button onclick="openAddModal()" class="fi-btn bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
                 ➕ إضافة مصمم جديد
             </button>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
             @forelse($designers as $designer)
-                <div class="border-2 border-indigo-400 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300" style="background: linear-gradient(145deg, #333333, #2a2a2a);">
+                <div class="fi-card p-4 hover:shadow-lg transition-all duration-300">
                     @if($designer->portfolio_images && count($designer->portfolio_images) > 0)
                         <img src="{{ asset('storage/' . $designer->portfolio_images[0]) }}" 
                              alt="{{ $designer->name }}" 
                              class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                     @else
-                        <div class="w-full h-48 flex items-center justify-center" style="background: linear-gradient(145deg, #444444, #333333);">
+                        <div class="w-full h-48 flex items-center justify-center bg-gray-100 rounded-lg">
                             <div class="text-6xl">👗</div>
                         </div>
                     @endif
@@ -129,10 +128,10 @@
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-3">
                             @if($designer->is_featured)
-                                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ مميز</span>
+                                <span class="fi-btn bg-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">⭐ مميز</span>
                             @endif
                             @if($designer->is_verified)
-                                <span class="bg-gradient-to-r from-green-400 to-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">✅ موثق</span>
+                                <span class="fi-btn bg-green-400 to-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">✅ موثق</span>
                             @endif
                         </div>
                         
@@ -157,7 +156,7 @@
                         @endif
 
                         @if($designer->price_range)
-                            <div class="bg-gradient-to-r from-green-600 to-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                            <div class="fi-btn bg-green-600 to-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
                                 💰 {{ $designer->price_range }}
                             </div>
                         @endif
@@ -185,7 +184,7 @@
                                 <p class="text-indigo-400 font-semibold text-sm mb-2">📏 المقاسات المتوفرة:</p>
                                 <div class="flex flex-wrap gap-1">
                                     @foreach($designer->available_sizes as $size)
-                                        <span class="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-2 py-1 rounded text-xs">{{ $size }}</span>
+                                        <span class="fi-btn bg-purple-600 to-purple-700 text-white px-2 py-1 rounded text-xs">{{ $size }}</span>
                                     @endforeach
                                 </div>
                             </div>
@@ -193,14 +192,14 @@
 
                         <div class="flex gap-2 mt-4">
                             @if($designer->website_url)
-                                <a href="{{ $designer->website_url }}" target="_blank" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                                <a href="{{ $designer->website_url }}" target="_blank" class="fi-btn bg-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
                                     🌐 الموقع
                                 </a>
                             @endif
                             
                             @if($designer->social_media && count($designer->social_media) > 0)
                                 @foreach($designer->social_media as $platform => $link)
-                                    <a href="{{ $link }}" target="_blank" class="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
+                                    <a href="{{ $link }}" target="_blank" class="fi-btn bg-purple-500 to-purple-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
                                         📱 {{ ucfirst($platform) }}
                                     </a>
                                 @endforeach
@@ -220,37 +219,37 @@
 
     <!-- مودال إضافة مصمم جديد -->
     <div id="addModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onclick="closeOnBackdrop(event, ['addModal'])">
-        <div class="bg-gray-800 rounded-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();" style="background-color: #2a2a2a;">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-xl font-bold text-white">➕ إضافة مصمم جديد</h3>
-                <button onclick="closeAddModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+        <div class="fi-card p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto mx-4" onclick="event.stopPropagation();">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h3 class="text-xl font-bold">➕ إضافة مصمم جديد</h3>
+                <button onclick="closeAddModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
             </div>
             
             <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-indigo-400 text-sm font-semibold mb-2">اسم المصمم</label>
-                        <input type="text" name="name" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="اسم المصمم...">
+                        <label class="block text-sm font-semibold mb-2">اسم المصمم</label>
+                        <input type="text" name="name" class="fi-input w-full"  placeholder="اسم المصمم...">
                     </div>
                     <div>
-                        <label class="block text-indigo-400 text-sm font-semibold mb-2">التخصص</label>
-                        <input type="text" name="specialty" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="التخصص...">
+                        <label class="block text-sm font-semibold mb-2">التخصص</label>
+                        <input type="text" name="specialty" class="fi-input w-full"  placeholder="التخصص...">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-indigo-400 text-sm font-semibold mb-2">الوصف</label>
-                    <textarea name="description" rows="3" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="وصف المصمم وخدماته..."></textarea>
+                    <label class="block text-sm font-semibold mb-2">الوصف</label>
+                    <textarea name="description" rows="3" class="fi-input w-full"  placeholder="وصف المصمم وخدماته..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-indigo-400 text-sm font-semibold mb-2">الموقع</label>
-                        <input type="text" name="location" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="الموقع...">
+                        <label class="block text-sm font-semibold mb-2">الموقع</label>
+                        <input type="text" name="location" class="fi-input w-full"  placeholder="الموقع...">
                     </div>
                     <div>
-                        <label class="block text-indigo-400 text-sm font-semibold mb-2">نطاق الأسعار</label>
-                        <select name="price_range" class="w-full rounded-lg border-2 border-indigo-400 text-white focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;">
+                        <label class="block text-sm font-semibold mb-2">نطاق الأسعار</label>
+                        <select name="price_range" class="fi-input w-full">
                             <option value="">اختر نطاق السعر...</option>
                             <option value="أقل من 1000 ريال">أقل من 1000 ريال</option>
                             <option value="1000 - 3000 ريال">1000 - 3000 ريال</option>
@@ -261,37 +260,37 @@
                 </div>
 
                 <div>
-                    <label class="block text-indigo-400 text-sm font-semibold mb-2">أرقام الهاتف</label>
+                    <label class="block text-sm font-semibold mb-2">أرقام الهاتف</label>
                     <div id="phoneNumbers">
-                        <input type="text" name="phone_numbers[]" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="رقم الهاتف...">
+                        <input type="text" name="phone_numbers[]" class="fi-input w-full"  placeholder="رقم الهاتف...">
                     </div>
-                    <button type="button" onclick="addPhoneField()" class="mt-2 text-indigo-400 hover:text-indigo-300 text-sm">+ إضافة رقم آخر</button>
+                    <button type="button" onclick="addPhoneField()" class="mt-2 text-indigo-600 hover:text-indigo-700 text-sm">+ إضافة رقم آخر</button>
                 </div>
 
                 <div>
-                    <label class="block text-indigo-400 text-sm font-semibold mb-2">المقاسات المتوفرة</label>
+                    <label class="block text-sm font-semibold mb-2">المقاسات المتوفرة</label>
                     <div id="availableSizes">
-                        <input type="text" name="available_sizes[]" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="مقاس...">
+                        <input type="text" name="available_sizes[]" class="fi-input w-full"  placeholder="مقاس...">
                     </div>
-                    <button type="button" onclick="addSizeField()" class="mt-2 text-indigo-400 hover:text-indigo-300 text-sm">+ إضافة مقاس آخر</button>
+                    <button type="button" onclick="addSizeField()" class="mt-2 text-indigo-600 hover:text-indigo-700 text-sm">+ إضافة مقاس آخر</button>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-indigo-400 text-sm font-semibold mb-2">موقع الويب</label>
-                        <input type="url" name="website_url" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="https://...">
+                        <label class="block text-sm font-semibold mb-2">موقع الويب</label>
+                        <input type="url" name="website_url" class="fi-input w-full"  placeholder="https://...">
                     </div>
                     <div>
-                        <label class="block text-indigo-400 text-sm font-semibold mb-2">رابط الإنستجرام</label>
-                        <input type="url" name="instagram_url" class="w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm" style="background-color: #1a1a1a;" placeholder="https://instagram.com/...">
+                        <label class="block text-sm font-semibold mb-2">رابط الإنستجرام</label>
+                        <input type="url" name="instagram_url" class="fi-input w-full"  placeholder="https://instagram.com/...">
                     </div>
                 </div>
 
                 <div class="flex gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-indigo-600 hover:to-purple-700 font-semibold transition-all duration-300">
+                    <button type="submit" class="flex-1 fi-btn bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 font-semibold">
                         ✅ إضافة المصمم
                     </button>
-                    <button type="button" onclick="closeAddModal()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white py-2 px-4 rounded-lg hover:from-gray-700 hover:to-gray-800 font-semibold transition-all duration-300">
+                    <button type="button" onclick="closeAddModal()" class="fi-btn bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 font-semibold">
                         ❌ إلغاء
                     </button>
                 </div>
@@ -315,8 +314,7 @@
             const input = document.createElement('input');
             input.type = 'text';
             input.name = 'phone_numbers[]';
-            input.className = 'w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm text-sm py-2 px-3 mt-2';
-            input.style.backgroundColor = '#1a1a1a';
+            input.className = 'fi-input w-full mt-2';
             container.appendChild(input);
         }
 
@@ -325,8 +323,7 @@
             const input = document.createElement('input');
             input.type = 'text';
             input.name = 'available_sizes[]';
-            input.className = 'w-full rounded-lg border-2 border-indigo-400 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm text-sm py-2 px-3 mt-2';
-            input.style.backgroundColor = '#1a1a1a';
+            input.className = 'fi-input w-full mt-2';
             input.placeholder = 'مقاس آخر...';
             container.appendChild(input);
         }
@@ -414,4 +411,4 @@
         }
     </style>
 </div>
-</x-filament-panels::page>
+</x-filament::page>

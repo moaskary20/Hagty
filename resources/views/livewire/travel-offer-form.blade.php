@@ -1,47 +1,47 @@
-<div style="background: linear-gradient(135deg, #ec6da9 0%, #a259c3 100%); padding:2rem; border-radius:12px; color:#fff;">
+<div class="fi-card p-6">
     @if($success)
-        <div style="color: #ffd700; margin-bottom: 1rem;">{{ $offer_id ? 'تم تعديل العرض بنجاح!' : 'تم إضافة العرض بنجاح!' }}</div>
+        <div class="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded mb-4">{{ $offer_id ? 'تم تعديل العرض بنجاح!' : 'تم إضافة العرض بنجاح!' }}</div>
     @endif
-    <form wire:submit.prevent="save">
-        <div style="margin-bottom:1rem;">
-            <label>الوجهة:</label>
-            <input type="text" wire:model="destination" class="form-control" required>
-            @error('destination') <span style="color:#ffd700">{{ $message }}</span> @enderror
+    <form wire:submit.prevent="save" class="space-y-4">
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">الوجهة:</label>
+            <input type="text" wire:model="destination" class="fi-input w-full" required>
+            @error('destination') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>التاريخ:</label>
-            <input type="date" wire:model="date" class="form-control" required>
-            @error('date') <span style="color:#ffd700">{{ $message }}</span> @enderror
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">التاريخ:</label>
+            <input type="date" wire:model="date" class="fi-input w-full" required>
+            @error('date') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>عنوان العرض:</label>
-            <input type="text" wire:model="title" class="form-control" required>
-            @error('title') <span style="color:#ffd700">{{ $message }}</span> @enderror
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">عنوان العرض:</label>
+            <input type="text" wire:model="title" class="fi-input w-full" required>
+            @error('title') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>وصف العرض:</label>
-            <textarea wire:model="description" class="form-control" rows="2"></textarea>
-            @error('description') <span style="color:#ffd700">{{ $message }}</span> @enderror
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">وصف العرض:</label>
+            <textarea wire:model="description" class="fi-input w-full" rows="2"></textarea>
+            @error('description') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>رابط صورة:</label>
-            <input type="text" wire:model="image" class="form-control">
-            @error('image') <span style="color:#ffd700">{{ $message }}</span> @enderror
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">رابط صورة:</label>
+            <input type="text" wire:model="image" class="fi-input w-full">
+            @error('image') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>رابط فيديو:</label>
-            <input type="text" wire:model="video" class="form-control">
-            @error('video') <span style="color:#ffd700">{{ $message }}</span> @enderror
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">رابط فيديو:</label>
+            <input type="text" wire:model="video" class="fi-input w-full">
+            @error('video') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>السعر:</label>
-            <input type="number" wire:model="price" class="form-control">
-            @error('price') <span style="color:#ffd700">{{ $message }}</span> @enderror
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">السعر:</label>
+            <input type="number" wire:model="price" class="fi-input w-full">
+            @error('price') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
         </div>
-        <div style="margin-bottom:1rem;">
-            <label>نشط:</label>
-            <input type="checkbox" wire:model="active">
+        <div class="flex items-center gap-2">
+            <input type="checkbox" wire:model="active" class="fi-checkbox">
+            <label class="block text-sm font-medium text-gray-700">نشط</label>
         </div>
-        <button type="submit" class="btn btn-pink">{{ $offer_id ? 'تعديل العرض' : 'حفظ العرض' }}</button>
+        <button type="submit" class="fi-btn bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700">{{ $offer_id ? 'تعديل العرض' : 'حفظ العرض' }}</button>
     </form>
 </div>
