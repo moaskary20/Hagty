@@ -59,7 +59,8 @@ class AdminPanelProvider extends PanelProvider
                 fn () => '<script>
                     document.documentElement.setAttribute("dir", "rtl"); 
                     document.documentElement.setAttribute("lang", "ar");
-                </script>'
+                </script>
+                <script src="' . asset('js/navigation-group-icons.js') . '"></script>'
             )
             ->navigationGroups([
                 'إدارة النظام',
