@@ -1,0 +1,358 @@
+/* Filament Admin Panel Custom Theme */
+
+/* خلفية بيضاء كاملة */
+html,
+body,
+.fi-main,
+.fi-panel,
+.fi-body,
+.fi-app {
+    background-color: #FFFFFF !important;
+}
+
+/* جميع الكتابة والخطوط باللون الأسود */
+html[dir="rtl"] *,
+.fi-main *,
+.fi-content *,
+.fi-card *,
+.fi-section *,
+.fi-table *,
+.fi-form *,
+.fi-field *,
+.fi-input *,
+.fi-select *,
+.fi-textarea *,
+.fi-label,
+.fi-heading,
+.fi-title,
+.fi-subtitle,
+.fi-text,
+.fi-link,
+.fi-button,
+.fi-badge,
+.fi-tabs *,
+.fi-sidebar *,
+.fi-topbar * {
+    color: #000000 !important;
+}
+
+/* استثناءات للحفاظ على الوضوح */
+.fi-sidebar-brand,
+.fi-topbar-actions button,
+.fi-sidebar-nav-label {
+    color: #000000 !important;
+}
+
+/* القائمة الجانبية */
+.fi-sidebar {
+    background-color: #FFFFFF !important;
+    border-right: 1px solid #E6A0C4 !important;
+}
+
+.fi-sidebar-header {
+    border-bottom: 1px solid #E6A0C4 !important;
+    background-color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav {
+    background-color: #FFFFFF !important;
+}
+
+/* عناصر القائمة الجانبية */
+.fi-sidebar-nav-item {
+    color: #000000 !important;
+    background-color: transparent !important;
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+}
+
+.fi-sidebar-nav-item:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-label,
+.fi-sidebar-nav-item:hover * {
+    color: #FFFFFF !important;
+}
+
+/* العنصر النشط في القائمة الجانبية */
+.fi-sidebar-nav-item.active,
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item[aria-selected="true"] {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item.active *,
+.fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item[aria-selected="true"] * {
+    color: #FFFFFF !important;
+}
+
+/* الأيقونات في القائمة الجانبية */
+.fi-sidebar-nav-icon {
+    color: #000000 !important;
+}
+
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon {
+    color: #FFFFFF !important;
+}
+
+/* الشريط العلوي */
+.fi-topbar {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+.fi-topbar-actions button {
+    color: #000000 !important;
+}
+
+.fi-topbar-actions button:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+/* الصفحات - خلفية رمادية فاتحة مع حدود */
+.fi-main-content,
+.fi-page,
+.fi-section {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+/* البطاقات */
+.fi-card {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+    border-radius: 8px;
+    color: #000000 !important;
+}
+
+/* الجداول */
+.fi-ta-table {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+}
+
+.fi-ta-header-cell,
+.fi-ta-cell {
+    color: #000000 !important;
+    border-color: #E6A0C4 !important;
+}
+
+/* النماذج */
+.fi-section-content,
+.fi-form-section {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* حقول الإدخال */
+.fi-input,
+.fi-select,
+.fi-textarea {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+.fi-input:focus,
+.fi-select:focus,
+.fi-textarea:focus {
+    border-color: #4C0A6E !important;
+    box-shadow: 0 0 0 1px #4C0A6E !important;
+}
+
+/* التسميات */
+.fi-label {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+/* الأزرار */
+.fi-btn {
+    background-color: transparent !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+    transition: all 0.2s ease;
+}
+
+.fi-btn:hover {
+    background-color: #4C0A6E !important;
+    border-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-btn-primary {
+    background-color: #4C0A6E !important;
+    border-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-btn-primary:hover {
+    background-color: #3A0854 !important;
+    border-color: #3A0854 !important;
+    color: #FFFFFF !important;
+}
+
+/* الروابط */
+.fi-link {
+    color: #000000 !important;
+}
+
+.fi-link:hover {
+    color: #4C0A6E !important;
+}
+
+/* الشارات */
+.fi-badge {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+/* التبويبات */
+.fi-tabs {
+    border-bottom: 1px solid #E6A0C4 !important;
+}
+
+.fi-tabs-item {
+    color: #000000 !important;
+}
+
+.fi-tabs-item:hover,
+.fi-tabs-item[aria-selected="true"] {
+    color: #4C0A6E !important;
+    border-bottom-color: #4C0A6E !important;
+}
+
+/* العناوين */
+.fi-header-heading,
+.fi-section-header-heading {
+    color: #000000 !important;
+}
+
+.fi-header-subheading,
+.fi-section-header-subheading {
+    color: #000000 !important;
+}
+
+/* القوائم المنسدلة */
+.fi-dropdown {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E6A0C4 !important;
+}
+
+.fi-dropdown-item {
+    color: #000000 !important;
+}
+
+.fi-dropdown-item:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+/* محرر النصوص */
+.fi-rich-editor {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+/* رسائل التنبيه */
+.fi-notification {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+/* الأيقونات */
+.fi-icon {
+    color: #000000 !important;
+}
+
+.fi-btn:hover .fi-icon,
+.fi-sidebar-nav-item:hover .fi-icon {
+    color: #FFFFFF !important;
+}
+
+/* محدد التاريخ والوقت */
+.fi-date-time-picker {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+/* ملفات الرفع */
+.fi-file-upload {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+}
+
+/* حقل البحث */
+.fi-global-search {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E6A0C4 !important;
+    color: #000000 !important;
+}
+
+.fi-global-search:focus {
+    border-color: #4C0A6E !important;
+}
+
+/* تحسينات إضافية */
+.fi-resource-header-actions .fi-btn:hover,
+.fi-page-header-actions .fi-btn:hover,
+.fi-header-actions .fi-btn:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+/* إزالة أي خلفيات ملونة */
+.fi-app-blade,
+.fi-main-ctn,
+.fi-body {
+    background-color: #FFFFFF !important;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+    .fi-main-content,
+    .fi-page,
+    .fi-section {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+}
+
+/* تحسينات للوضوح */
+.fi-field-wrapper,
+.fi-section-content-ctn {
+    background-color: #F5F4F4 !important;
+    border: 1px solid #E6A0C4 !important;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* إزالة أي ظلال ملونة */
+.fi-card,
+.fi-section,
+.fi-page {
+    box-shadow: none !important;
+}
+
