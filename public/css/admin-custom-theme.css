@@ -68,8 +68,10 @@ html[dir="rtl"] *,
     background-color: #FFFFFF !important;
 }
 
-/* عناصر القائمة الجانبية */
-.fi-sidebar-nav-item {
+/* عناصر القائمة الجانبية - قواعد قوية جداً */
+.fi-sidebar-nav-item,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item,
+.fi-sidebar-nav .fi-sidebar-nav-item {
     color: #000000 !important;
     background-color: transparent !important;
     border-radius: 8px;
@@ -77,42 +79,181 @@ html[dir="rtl"] *,
     transition: all 0.2s ease;
 }
 
-.fi-sidebar-nav-item:hover {
+/* Hover للقائمة الجانبية - قواعد قوية جداً */
+.fi-sidebar-nav-item:hover,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item:hover,
+.fi-sidebar-nav .fi-sidebar-nav-item:hover,
+.fi-sidebar-nav-item:focus:hover,
+.fi-sidebar-nav-item[type="button"]:hover {
     background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
 .fi-sidebar-nav-item:hover .fi-sidebar-nav-icon,
 .fi-sidebar-nav-item:hover .fi-sidebar-nav-label,
-.fi-sidebar-nav-item:hover * {
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-text,
+.fi-sidebar-nav-item:hover *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item:hover *,
+.fi-sidebar-nav .fi-sidebar-nav-item:hover *,
+.fi-sidebar-nav-item:hover svg,
+.fi-sidebar-nav-item:hover path,
+.fi-sidebar-nav-item:hover fill {
     color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
 }
 
-/* العنصر النشط في القائمة الجانبية */
+/* العنصر النشط في القائمة الجانبية - قواعد قوية جداً */
 .fi-sidebar-nav-item.active,
 .fi-sidebar-nav-item.fi-active,
 .fi-sidebar-nav-item[aria-current="page"],
-.fi-sidebar-nav-item[aria-selected="true"] {
+.fi-sidebar-nav-item[aria-selected="true"],
+.fi-sidebar-nav-item[data-active="true"],
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav .fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"],
+.fi-sidebar-nav-item:where(.fi-active, [aria-current="page"], [data-active="true"]) {
     background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
 .fi-sidebar-nav-item.active *,
 .fi-sidebar-nav-item.fi-active *,
 .fi-sidebar-nav-item[aria-current="page"] *,
-.fi-sidebar-nav-item[aria-selected="true"] * {
+.fi-sidebar-nav-item[aria-selected="true"] *,
+.fi-sidebar-nav-item[data-active="true"] *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active *,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav .fi-sidebar-nav-item.fi-active *,
+.fi-sidebar-nav .fi-sidebar-nav-item[aria-current="page"] *,
+.fi-sidebar-nav-item.fi-active svg,
+.fi-sidebar-nav-item[aria-current="page"] svg,
+.fi-sidebar-nav-item.active svg,
+.fi-sidebar-nav-item.fi-active path,
+.fi-sidebar-nav-item[aria-current="page"] path,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-label,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-label,
+.fi-sidebar-nav-item.active .fi-sidebar-nav-label,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-label,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-text,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-text {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
+/* Hover على العنصر النشط */
+.fi-sidebar-nav-item.fi-active:hover,
+.fi-sidebar-nav-item[aria-current="page"]:hover,
+.fi-sidebar-nav-item.active:hover,
+.fi-sidebar-nav-item[aria-selected="true"]:hover {
+    background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
     color: #FFFFFF !important;
 }
 
+.fi-sidebar-nav-item.fi-active:hover *,
+.fi-sidebar-nav-item[aria-current="page"]:hover *,
+.fi-sidebar-nav-item.active:hover * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
 /* الأيقونات في القائمة الجانبية */
-.fi-sidebar-nav-icon {
+.fi-sidebar-nav-icon,
+.fi-sidebar-nav-item-icon {
     color: #000000 !important;
 }
 
 .fi-sidebar-nav-item:hover .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-icon,
 .fi-sidebar-nav-item.active .fi-sidebar-nav-icon,
-.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon {
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-icon,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-icon {
     color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* CSS Variables override */
+.fi-sidebar-nav-item.fi-active,
+.fi-sidebar-nav-item[aria-current="page"] {
+    --fi-sidebar-nav-item-active-color: #E6A0C4 !important;
+    --fi-sidebar-nav-item-color: #FFFFFF !important;
+    --c-600: 230, 160, 196 !important;
+    --primary-600: 230, 160, 196 !important;
+}
+
+/* Sub-items */
+.fi-sidebar-nav-sub-item.fi-active,
+.fi-sidebar-nav-sub-item[aria-current="page"] {
+    background-color: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-sub-item.fi-active *,
+.fi-sidebar-nav-sub-item[aria-current="page"] * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-sub-item:hover {
+    background-color: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-sub-item:hover * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* أزرار داخل عناصر القائمة الجانبية */
+.fi-sidebar-nav-item button,
+.fi-sidebar-nav-item .fi-sidebar-nav-item-button,
+.fi-sidebar-nav-item a {
+    color: #000000 !important;
+}
+
+.fi-sidebar-nav-item:hover button,
+.fi-sidebar-nav-item:hover .fi-sidebar-nav-item-button,
+.fi-sidebar-nav-item:hover a,
+.fi-sidebar-nav-item.fi-active button,
+.fi-sidebar-nav-item.fi-active .fi-sidebar-nav-item-button,
+.fi-sidebar-nav-item.fi-active a,
+.fi-sidebar-nav-item[aria-current="page"] button,
+.fi-sidebar-nav-item[aria-current="page"] .fi-sidebar-nav-item-button,
+.fi-sidebar-nav-item[aria-current="page"] a {
+    background-color: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item:hover button:hover,
+.fi-sidebar-nav-item.fi-active button:hover,
+.fi-sidebar-nav-item[aria-current="page"] button:hover {
+    background-color: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+/* Override any inline styles */
+.fi-sidebar-nav-item.fi-active[style],
+.fi-sidebar-nav-item[aria-current="page"][style] {
+    background-color: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item.fi-active[style] *,
+.fi-sidebar-nav-item[aria-current="page"][style] * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
 }
 
 /* الشريط العلوي */

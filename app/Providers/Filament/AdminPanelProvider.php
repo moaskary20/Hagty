@@ -48,8 +48,11 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop()
             ->renderHook(
                 'panels::styles.before',
-                fn () => '<link rel="stylesheet" href="' . asset('css/arabic-rtl.css') . '">
-            <link rel="stylesheet" href="' . asset('css/admin-custom-theme.css') . '">'
+                fn () => '<link rel="stylesheet" href="' . asset('css/arabic-rtl.css') . '">'
+            )
+            ->renderHook(
+                'panels::styles.after',
+                fn () => '<link rel="stylesheet" href="' . asset('css/admin-custom-theme.css') . '">'
             )
             ->renderHook(
                 'panels::body.start',
