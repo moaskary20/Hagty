@@ -332,6 +332,133 @@ html[dir="rtl"] *,
     color: #FFFFFF !important;
 }
 
+/* تطبيق hover بنفسجي على جميع الأزرار */
+button:hover,
+.fi-btn:hover,
+.fi-action:hover,
+.fi-icon-btn:hover,
+.fi-link-btn:hover,
+button[type="button"]:hover,
+button[type="submit"]:hover,
+a.fi-btn:hover,
+.fi-topbar-action:hover,
+.fi-notification-action:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+    border-color: #4C0A6E !important;
+}
+
+button:hover *,
+.fi-btn:hover *,
+.fi-action:hover *,
+.fi-icon-btn:hover *,
+button[type="button"]:hover *,
+button[type="submit"]:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار القائمة الجانبية */
+.fi-sidebar-nav-group-label:hover,
+.fi-sidebar-collapse-button:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-group-label:hover *,
+.fi-sidebar-collapse-button:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار الإجراءات في الجداول */
+.fi-ta-action:hover,
+.fi-ta-row-action:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-ta-action:hover *,
+.fi-ta-row-action:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار Bulk Actions */
+.fi-bulk-actions-action:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-bulk-actions-action:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار Pagination */
+.fi-pagination-item:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-pagination-item:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار Toggle */
+.fi-toggle:hover {
+    border-color: #4C0A6E !important;
+}
+
+/* أزرار Checkbox و Radio */
+.fi-checkbox:hover,
+.fi-radio:hover {
+    border-color: #4C0A6E !important;
+}
+
+/* أزرار Modal */
+.fi-modal-close:hover,
+.fi-modal-action:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-modal-close:hover *,
+.fi-modal-action:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار Dropdown */
+.fi-dropdown-button:hover,
+.fi-dropdown-trigger:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-dropdown-button:hover *,
+.fi-dropdown-trigger:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار File Upload */
+.fi-file-upload-button:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+    border-color: #4C0A6E !important;
+}
+
+.fi-file-upload-button:hover * {
+    color: #FFFFFF !important;
+}
+
+/* أزرار إضافية في النماذج */
+.fi-select-option:hover,
+.fi-listbox-option:hover {
+    background-color: #4C0A6E !important;
+    color: #FFFFFF !important;
+}
+
+.fi-select-option:hover *,
+.fi-listbox-option:hover * {
+    color: #FFFFFF !important;
+}
+
 /* إزالة أي خلفيات ملونة */
 .fi-app-blade,
 .fi-main-ctn,
