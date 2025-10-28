@@ -256,6 +256,82 @@ html[dir="rtl"] *,
     fill: #FFFFFF !important;
 }
 
+/* Override .bg-gray-100 class in sidebar navigation */
+.fi-sidebar-nav-item.bg-gray-100,
+.fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.bg-gray-100,
+.fi-sidebar-nav .fi-sidebar-nav-item.bg-gray-100,
+.bg-gray-100.fi-sidebar-nav-item {
+    background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item.bg-gray-100 *,
+.fi-sidebar-nav-item.bg-gray-100 svg,
+.fi-sidebar-nav-item.bg-gray-100 path,
+.fi-sidebar-nav-item.bg-gray-100 .fi-sidebar-nav-icon,
+.fi-sidebar-nav-item.bg-gray-100 .fi-sidebar-nav-label,
+.fi-sidebar-nav-item.bg-gray-100 .fi-sidebar-nav-item-label,
+.bg-gray-100.fi-sidebar-nav-item * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
+/* Hover على .bg-gray-100 */
+.fi-sidebar-nav-item.bg-gray-100:hover,
+.fi-sidebar-nav-item.bg-gray-100:focus:hover,
+.bg-gray-100.fi-sidebar-nav-item:hover {
+    background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-nav-item.bg-gray-100:hover *,
+.fi-sidebar-nav-item.bg-gray-100:hover svg,
+.fi-sidebar-nav-item.bg-gray-100:hover path,
+.bg-gray-100.fi-sidebar-nav-item:hover * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
+/* Override .bg-gray-100 بشكل عام في القائمة الجانبية */
+.fi-sidebar .bg-gray-100,
+.fi-sidebar-nav .bg-gray-100,
+.fi-sidebar * .bg-gray-100 {
+    background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar .bg-gray-100 *,
+.fi-sidebar-nav .bg-gray-100 * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+.fi-sidebar .bg-gray-100:hover,
+.fi-sidebar-nav .bg-gray-100:hover,
+.fi-sidebar * .bg-gray-100:hover {
+    background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar .bg-gray-100:hover *,
+.fi-sidebar-nav .bg-gray-100:hover * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* Override عام لـ .bg-gray-100 في أي سياق داخل sidebar */
+.fi-sidebar [class*="bg-gray-100"],
+.fi-sidebar-nav [class*="bg-gray-100"] {
+    background-color: #E6A0C4 !important;
+    background: #E6A0C4 !important;
+}
+
 /* الشريط العلوي */
 .fi-topbar {
     background-color: #FFFFFF !important;
