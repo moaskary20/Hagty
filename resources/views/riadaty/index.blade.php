@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/riadaty-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
@@ -20,25 +20,28 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">🏃‍♀️ رياضتي</h1>
             <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">رحلتك نحو جسم صحي ونشيط</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $workouts->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">تمرين</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $plans->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">خطة تدريب</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $videos->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فيديو تعليمي</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $challenges->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">تحدي نشط</div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Search Form -->
+    @include('components.riadaty-search-form')
 
     <!-- Workouts -->
     @if($workouts->count() > 0)

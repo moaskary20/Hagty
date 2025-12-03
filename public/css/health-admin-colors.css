@@ -2,7 +2,7 @@
 :root {
     --health-primary: #A15DBF;
     --health-secondary: #8B4A9C;
-    --health-accent-1: #FAD6E0;
+    --health-accent-1: #ffffff;
     --health-accent-2: #E6A0C3;
     --health-accent-3: #B17DC0;
     --health-accent-4: #E6DAC8;
@@ -18,7 +18,7 @@
     background-color: var(--health-secondary) !important;
 }
 
-.bg-\[#FAD6E0\] {
+.bg-\[#ffffff\] {
     background-color: var(--health-accent-1) !important;
 }
 
@@ -55,7 +55,7 @@
     background: linear-gradient(to right, var(--health-primary), var(--health-secondary)) !important;
 }
 
-.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+.bg-gradient-to-br.from-\[#ffffff\].to-\[#E6DAC8\] {
     background: linear-gradient(to bottom right, var(--health-accent-1), var(--health-accent-4)) !important;
 }
 

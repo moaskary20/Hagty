@@ -7,8 +7,8 @@ html, body {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
-    background: linear-gradient(135deg, #FAD6E0 0%, #E6DAC8 100%) !important;
-    background-color: #FAD6E0 !important; /* fallback */
+    background: linear-gradient(135deg, #ffffff 0%, #E6DAC8 100%) !important;
+    background-color: #ffffff !important; /* fallback */
 }
 
 #app, body > div:first-child {
@@ -51,6 +51,6 @@ body::before, body::after {
 
 /* Root background as fallback */
 :root {
-    background: linear-gradient(135deg, #FAD6E0 0%, #E6DAC8 100%) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #E6DAC8 100%) !important;
 }
 

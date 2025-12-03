@@ -2,7 +2,7 @@
 :root {
     --joy-primary: #A15DBF;
     --joy-secondary: #8B4A9C;
-    --joy-accent-1: #FAD6E0;
+    --joy-accent-1: #ffffff;
     --joy-accent-2: #E6A0C3;
     --joy-accent-3: #B17DC0;
     --joy-accent-4: #E6DAC8;
@@ -18,7 +18,7 @@
     background-color: var(--joy-secondary) !important;
 }
 
-.bg-\[#FAD6E0\] {
+.bg-\[#ffffff\] {
     background-color: var(--joy-accent-1) !important;
 }
 
@@ -55,7 +55,7 @@
     background: linear-gradient(to right, var(--joy-primary), var(--joy-secondary)) !important;
 }
 
-.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+.bg-gradient-to-br.from-\[#ffffff\].to-\[#E6DAC8\] {
     background: linear-gradient(to bottom right, var(--joy-accent-1), var(--joy-accent-4)) !important;
 }
 

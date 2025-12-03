@@ -2,7 +2,7 @@
 
 /* متغيرات الألوان المحددة */
 :root {
-    --primary-50: #FAD6E0;
+    --primary-50: #ffffff;
     --primary-100: #E6A0C3;
     --primary-200: #B17DC0;
     --primary-300: #A15DBF;
@@ -36,7 +36,7 @@ body {
     border: 2px solid var(--primary-100) !important;
 }
 
-.bg-\[#FAD6E0\] {
+.bg-\[#ffffff\] {
     background: var(--primary-50) !important;
     border: 2px solid var(--primary-100) !important;
 }
@@ -78,7 +78,7 @@ a:hover {
 }
 
 /* تطبيق الألوان على الخلفيات */
-.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+.bg-gradient-to-br.from-\[#ffffff\].to-\[#E6DAC8\] {
     background: linear-gradient(135deg, var(--primary-50) 0%, var(--accent) 100%) !important;
 }
 

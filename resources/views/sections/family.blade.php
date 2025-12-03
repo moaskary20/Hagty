@@ -98,7 +98,7 @@
         .mobile-menu-item:hover {
             transform: translateX(-4px);
             box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
-            background: linear-gradient(135deg, #FAD6E0 0%, #E6A0C3 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #E6A0C3 100%);
         }
         
         .mobile-menu-item span {
@@ -164,37 +164,40 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-white min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
-    <!-- Hero Section -->
-    <section class="bg-[#8E44AD] text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">👨‍👩‍👧‍👦 قسم عائلتي</h1>
-            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">رعاية شاملة لعائلتك ونصائح مفيدة للحياة الأسرية</p>
+    <!-- Statistics Section -->
+    <section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #9345ab 0%, #7a3690 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white animate-fadeInUp">👨‍👩‍👧‍👦 قسم عائلتي</h1>
+            <p class="text-xl md:text-2xl mb-12 text-white opacity-90 animate-fadeInUp" style="animation-delay: 0.2s;">رعاية شاملة لعائلتك ونصائح مفيدة للحياة الأسرية</p>
             
-            <!-- Statistics -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_advices->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">نصيحة عائلية</div>
+            <!-- Statistics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $family_advices->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">نصيحة عائلية</div>
                 </div>
-                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_activities->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">نشاط عائلي</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $family_activities->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">نشاط عائلي</div>
                 </div>
-                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_outing_areas->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">منطقة خروج</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $family_outing_areas->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">منطقة خروج</div>
                 </div>
-                <div class="bg-[#FCE4EC] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $family_health_records->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">سجل صحي</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $family_health_records->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">سجل صحي</div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Search Form -->
+    @include('components.family-search-form')
 
     <!-- Content Sections -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -204,7 +207,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">💡 النصائح العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_advices as $advice)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $advice->title }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ Str::limit($advice->content, 100) }}</p>
@@ -238,7 +241,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎯 الأنشطة العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_activities as $activity)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $activity->activity_name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ Str::limit($activity->description, 100) }}</p>
@@ -272,7 +275,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏞️ مناطق الخروج العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_outing_areas as $area)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $area->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ Str::limit($area->description, 100) }}</p>
@@ -306,7 +309,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏥 السجلات الصحية العائلية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($family_health_records as $record)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $record->member_name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $record->relationship }}</p>
@@ -339,7 +342,7 @@
 
     <!-- Promotional Ads Section -->
     @if($family_promotional_ads && $family_promotional_ads->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎯 الإعلانات الدعائية</h2>
@@ -357,7 +360,7 @@
                 <h3 class="text-2xl font-bold text-[#8B4A9C] mb-6 text-center animate-fadeInUp">⭐ العروض المميزة</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach($featuredAds as $ad)
-                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#A15DBF] rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp relative">
+                    <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] border-2 border-[#A15DBF] rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp relative">
                         @if($ad->is_featured)
                         <div class="absolute top-3 right-3 z-10">
                             <span class="bg-[#A15DBF] text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
@@ -448,7 +451,7 @@
                 <h3 class="text-2xl font-bold text-[#8B4A9C] mb-6 text-center animate-fadeInUp">🛍️ عروض أخرى</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach($regularAds as $ad)
-                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:scale-102 transition-all duration-300 animate-fadeInUp">
+                    <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:scale-102 transition-all duration-300 animate-fadeInUp">
                         <div class="relative">
                             <div class="aspect-square bg-gray-200 flex items-center justify-center">
                                 @if($ad->image_url)
@@ -503,7 +506,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في عائلتي</h2>
@@ -512,7 +515,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 

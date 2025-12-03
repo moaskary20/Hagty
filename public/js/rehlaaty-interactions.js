@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // متغيرات الألوان المحددة
     const colors = {
-        primary50: '#FAD6E0',
+        primary50: '#ffffff',
         primary100: '#E6A0C3',
         primary200: '#B17DC0',
         primary300: '#A15DBF',
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // تطبيق الحركات على البطاقات
     function animateCards() {
-        const cards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const cards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         cards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
             card.classList.add('animate-fadeInUp');
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initParallax() {
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+            const parallaxElements = document.querySelectorAll('.bg-\\[#ffffff\\]');
             
             parallaxElements.forEach((element, index) => {
                 const speed = 0.5 + (index * 0.1);
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // تشغيل الحركات عند التمرير
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const parallaxElements = document.querySelectorAll('.bg-\\[#ffffff\\]');
         
         parallaxElements.forEach((element, index) => {
             const speed = 0.5 + (index * 0.1);

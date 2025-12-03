@@ -2,7 +2,7 @@
 :root {
     --fashion-primary: #A15DBF;
     --fashion-secondary: #8B4A9C;
-    --fashion-accent-1: #FAD6E0;
+    --fashion-accent-1: #ffffff;
     --fashion-accent-2: #E6A0C3;
     --fashion-accent-3: #B17DC0;
     --fashion-accent-4: #E6DAC8;
@@ -18,7 +18,7 @@
     background-color: var(--fashion-secondary) !important;
 }
 
-.bg-\[#FAD6E0\] {
+.bg-\[#ffffff\] {
     background-color: var(--fashion-accent-1) !important;
 }
 
@@ -55,7 +55,7 @@
     background: linear-gradient(to right, var(--fashion-primary), var(--fashion-secondary)) !important;
 }
 
-.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+.bg-gradient-to-br.from-\[#ffffff\].to-\[#E6DAC8\] {
     background: linear-gradient(to bottom right, var(--fashion-accent-1), var(--fashion-accent-4)) !important;
 }
 

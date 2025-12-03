@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/mashroay-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
@@ -21,6 +21,9 @@
             <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">ابدأي مشروعك الخاص بثقة ونجاح</p>
         </div>
     </section>
+    
+    <!-- Search Form -->
+    @include('components.mashroay-search-form')
 
     @if($ideas->count() > 0)
     <section class="py-16 bg-white">
@@ -57,7 +60,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($advices as $advice)
                 <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all">
-                    @if($advice->category)<span class="bg-[#FAD6E0] text-[#A15DBF] px-3 py-1 rounded-full text-xs mb-3 inline-block">{{ $advice->category }}</span>@endif
+                    @if($advice->category)<span class="bg-[#FFFFFF] text-[#A15DBF] px-3 py-1 rounded-full text-xs mb-3 inline-block">{{ $advice->category }}</span>@endif
                     <h3 class="font-bold text-lg mb-3">{{ $advice->title }}</h3>
                     <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ Str::limit($advice->content, 100) }}</p>
                     @if($advice->author)<p class="text-xs text-gray-500 mb-3"><i class="fas fa-user ml-1"></i>{{ $advice->author }}</p>@endif
@@ -77,7 +80,7 @@
             <h2 class="text-3xl font-bold text-center mb-8">📝 خطط <span style="color: #d94288">العمل</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($plans as $plan)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-lg shadow-lg p-8 hover:shadow-2xl transition-all">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-lg shadow-lg p-8 hover:shadow-2xl transition-all">
                     <i class="fas fa-file-alt text-4xl text-[#A15DBF] mb-4"></i>
                     <h3 class="font-bold text-xl mb-3">{{ $plan->plan_name }}</h3>
                     <p class="text-gray-700 mb-4">{{ $plan->description }}</p>
@@ -141,7 +144,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 أحدث المقالات في مشروعي</h2>
@@ -161,7 +164,7 @@
                     
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="inline-block bg-[#FAD6E0] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
+                            <span class="inline-block bg-[#FFFFFF] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
                                 {{ $blog->section_name }}
                             </span>
                             <span class="text-sm text-gray-500">

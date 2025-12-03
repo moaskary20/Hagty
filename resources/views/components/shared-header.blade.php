@@ -1,5 +1,5 @@
 <!-- Enhanced Header -->
-<header class="bg-white shadow-lg sticky top-0 z-50">
+<header class="bg-white sticky top-0 z-50">
 <style>
     /* Mobile Menu Styles */
     #mobile-menu {
@@ -35,11 +35,11 @@
     }
 </style>
     <!-- Top Bar -->
-    <div class="bg-gray-800 text-white py-2">
+    <div style="background-color: #a15dbf;" class="text-white py-2">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center text-sm">
                 <div class="flex items-center space-x-4 space-x-reverse">
-                    <span><i class="fas fa-phone ml-1"></i> +20 123 456 7890</span>
+                    <span><i class="fas fa-phone ml-1"></i> +201234567890</span>
                     <span><i class="fas fa-envelope ml-1"></i> info@hagty.com</span>
                 </div>
             </div>
@@ -63,16 +63,16 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-                    <a href="{{ route('home') }}" class="text-gray-700 hover:text-d94288 transition-colors font-medium">
+                    <a href="{{ route('home') }}" class="transition-colors font-medium" style="color: #374151;" onmouseover="this.style.color='#a15dbf'" onmouseout="this.style.color='#374151'">
                         الرئيسية
                     </a>
-                    <a href="{{ route('about') }}" class="text-gray-700 hover:text-d94288 transition-colors font-medium">
+                    <a href="{{ route('about') }}" class="transition-colors font-medium" style="color: #374151;" onmouseover="this.style.color='#a15dbf'" onmouseout="this.style.color='#374151'">
                         عنا
                     </a>
-                    <a href="{{ route('contact') }}" class="text-gray-700 hover:text-d94288 transition-colors font-medium">
+                    <a href="{{ route('contact') }}" class="transition-colors font-medium" style="color: #374151;" onmouseover="this.style.color='#a15dbf'" onmouseout="this.style.color='#374151'">
                         الاتصال بنا
                     </a>
-                    <a href="{{ route('join-us') }}" class="text-gray-700 hover:text-d94288 transition-colors font-medium">
+                    <a href="{{ route('join-us') }}" class="transition-colors font-medium" style="color: #374151;" onmouseover="this.style.color='#a15dbf'" onmouseout="this.style.color='#374151'">
                         انضم لنا
                     </a>
                 </div>
@@ -80,12 +80,18 @@
                 <!-- Auth Buttons -->
                 <div class="hidden md:flex items-center space-x-4 space-x-reverse">
                     <a href="{{ route('register') }}" 
-                       class="bg-white border-2 border-d94288 text-d94288 px-6 py-2 rounded-full font-semibold hover:bg-d94288 hover:text-white transition-all duration-300 flex items-center">
+                       class="px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center"
+                       style="background: white; border: 2px solid #a15dbf; color: #a15dbf;"
+                       onmouseover="this.style.background='#a15dbf'; this.style.color='white';"
+                       onmouseout="this.style.background='white'; this.style.color='#a15dbf';">
                         <i class="fas fa-user-plus ml-2"></i>
                         الاشتراك
                     </a>
                     <a href="{{ route('login') }}" 
-                       class="bg-d94288 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-700 transition-all duration-300 flex items-center">
+                       class="px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center text-white"
+                       style="background: linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%);"
+                       onmouseover="this.style.background='linear-gradient(135deg, #8B4A9C 0%, #753880 100%)';"
+                       onmouseout="this.style.background='linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%)';">
                         <i class="fas fa-arrow-left ml-2"></i>
                         الدخول
                     </a>
@@ -93,7 +99,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-d94288 focus:outline-none">
+                    <button id="mobile-menu-button" class="focus:outline-none" style="color: #374151;" onmouseover="this.style.color='#a15dbf'" onmouseout="this.style.color='#374151'">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -103,26 +109,28 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
             <div class="px-4 py-4 space-y-4">
-                <a href="{{ route('home') }}" class="block text-gray-700 hover:text-d94288 transition-colors font-medium py-2">
+                <a href="{{ route('home') }}" class="block transition-colors font-medium py-2" style="color: #374151;">
                     الرئيسية
                 </a>
-                <a href="{{ route('about') }}" class="block text-gray-700 hover:text-d94288 transition-colors font-medium py-2">
+                <a href="{{ route('about') }}" class="block transition-colors font-medium py-2" style="color: #374151;">
                     عنا
                 </a>
-                <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-d94288 transition-colors font-medium py-2">
+                <a href="{{ route('contact') }}" class="block transition-colors font-medium py-2" style="color: #374151;">
                     الاتصال بنا
                 </a>
-                <a href="{{ route('join-us') }}" class="block text-gray-700 hover:text-d94288 transition-colors font-medium py-2">
+                <a href="{{ route('join-us') }}" class="block transition-colors font-medium py-2" style="color: #374151;">
                     انضم لنا
                 </a>
                 <div class="pt-4 border-t border-gray-200 space-y-3">
                     <a href="{{ route('register') }}" 
-                       class="block bg-white border-2 border-d94288 text-d94288 px-6 py-2 rounded-full font-semibold hover:bg-d94288 hover:text-white transition-all duration-300 text-center">
+                       class="block px-6 py-2 rounded-full font-semibold transition-all duration-300 text-center"
+                       style="background: white; border: 2px solid #a15dbf; color: #a15dbf;">
                         <i class="fas fa-user-plus ml-2"></i>
                         الاشتراك
                     </a>
                     <a href="{{ route('login') }}" 
-                       class="block bg-d94288 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-700 transition-all duration-300 text-center">
+                       class="block px-6 py-2 rounded-full font-semibold transition-all duration-300 text-center text-white"
+                       style="background: linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%);">
                         <i class="fas fa-arrow-left ml-2"></i>
                         الدخول
                     </a>

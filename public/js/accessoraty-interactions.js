@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = {
         primary: '#A15DBF',
         secondary: '#8B4A9C',
-        accent: '#FAD6E0',
+        accent: '#ffffff',
         light: '#E6A0C3',
         dark: '#B17DC0',
         background: '#E6DAC8'
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // تحريك البطاقات
     function animateCards() {
-        const cards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const cards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         cards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
             card.classList.add('animate-fadeInUp');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // تأثيرات خاصة للإكسسوارات
     function addAccessoryEffects() {
         // تأثير اللمعان للمجوهرات
-        const jewelryCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const jewelryCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         jewelryCards.forEach(card => {
             if (card.textContent.includes('مجوهرات') || card.textContent.includes('ذهب') || card.textContent.includes('فضة')) {
                 card.classList.add('jewelry-shine');
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير التوهج للساعات
-        const watchCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const watchCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         watchCards.forEach(card => {
             if (card.textContent.includes('ساعة') || card.textContent.includes('وقت')) {
                 card.classList.add('watch-glow');
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير النعومة للأحذية
-        const shoeCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const shoeCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         shoeCards.forEach(card => {
             if (card.textContent.includes('حذاء') || card.textContent.includes('كعب')) {
                 card.classList.add('shoe-soft');
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير الأناقة للحقائب
-        const bagCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const bagCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         bagCards.forEach(card => {
             if (card.textContent.includes('حقيبة') || card.textContent.includes('شنطة')) {
                 card.classList.add('bag-elegant');

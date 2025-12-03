@@ -118,7 +118,7 @@ class HomeController extends Controller
             'weekly_baby_cares' => WeeklyBabyCare::take(6)->get(),
             'delivery_preparations' => DeliveryPreparation::take(6)->get(),
             
-            // الإشعارات المتبثقة
+            // الإشعارات 
             'popup_notifications' => PopupNotification::where('is_active', true)
                 ->where(function($query) {
                     $query->whereNull('start_date')

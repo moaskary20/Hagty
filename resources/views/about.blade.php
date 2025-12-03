@@ -17,7 +17,7 @@
         .primary-border { border-color: #A15DBF; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <!-- Hero Section -->
@@ -43,7 +43,7 @@
                         اليومية في مكان واحد مريح وسهل الاستخدام.
                     </p>
                 </div>
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-8 rounded-2xl animate-fadeInUp" style="animation-delay: 0.3s;">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] p-8 rounded-2xl animate-fadeInUp" style="animation-delay: 0.3s;">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center" 
                          alt="منصة HAGTY" 
                          class="w-full h-64 object-cover rounded-xl">
@@ -61,7 +61,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-gift"></i>
                     </div>
@@ -69,7 +69,7 @@
                     <p class="text-gray-600">أفكار هدايا رائعة ودليل تسوق ذكي</p>
                 </div>
                 
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.1s;">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.1s;">
                     <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-home"></i>
                     </div>
@@ -77,7 +77,7 @@
                     <p class="text-gray-600">ديكورات وأفكار لتجميل منزلك</p>
                 </div>
                 
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.2s;">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.2s;">
                     <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-calculator"></i>
                     </div>
@@ -85,7 +85,7 @@
                     <p class="text-gray-600">إدارة مالية ذكية ومتطورة</p>
                 </div>
                 
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.3s;">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.3s;">
                     <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-dumbbell"></i>
                     </div>
@@ -93,7 +93,7 @@
                     <p class="text-gray-600">خطط تدريب وتمارين مخصصة</p>
                 </div>
                 
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp" style="animation-delay: 0.4s;">
                     <div class="text-4xl text-[#A15DBF] mb-4">
                         <i class="fas fa-briefcase"></i>
                     </div>

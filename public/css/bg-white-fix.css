@@ -1,0 +1,33 @@
+/* Ensure .bg-white always has white background */
+.bg-white {
+    background-color: #ffffff !important;
+    border: 0px !important;
+}
+
+/* Ensure bg-white works with Tailwind utilities */
+body.bg-white {
+    background-color: #ffffff !important;
+    border: 0px !important;
+}
+
+section.bg-white {
+    background-color: #ffffff !important;
+    border: 0px !important;
+}
+
+div.bg-white {
+    background-color: #ffffff !important;
+    border: 0px !important;
+}
+
+nav.bg-white {
+    background-color: white !important;
+    border: 0px !important;
+}
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    /* Override any conflicting styles */
+[class*="bg-white"] {
+    background-color: #ffffff !important;
+    border: 0px !important;
+}
+

@@ -85,9 +85,12 @@
             <!-- Search Button -->
             <div class="text-center pt-4">
                 <button type="submit" 
-                        class="bg-gradient-to-r from-d94288 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-c13a7a hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-d94288 focus:ring-offset-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        class="text-white px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                        style="background: linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%);"
+                        onmouseover="this.style.background='linear-gradient(135deg, #8B4A9C 0%, #753880 100%)'"
+                        onmouseout="this.style.background='linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%)'">
                     <i class="fas fa-search ml-2"></i>
-                    البحث
+                    البحث الآن
                 </button>
             </div>
             

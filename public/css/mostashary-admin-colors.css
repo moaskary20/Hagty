@@ -2,7 +2,7 @@
 :root {
     --mostashary-primary: #A15DBF;
     --mostashary-secondary: #8B4A9C;
-    --mostashary-accent-1: #FAD6E0;
+    --mostashary-accent-1: #ffffff;
     --mostashary-accent-2: #E6A0C3;
     --mostashary-accent-3: #B17DC0;
     --mostashary-accent-4: #E6DAC8;
@@ -12,7 +12,7 @@
 /* Override Tailwind classes with custom colors */
 .bg-\[#A15DBF\] { background-color: var(--mostashary-primary) !important; }
 .bg-\[#8B4A9C\] { background-color: var(--mostashary-secondary) !important; }
-.bg-\[#FAD6E0\] { background-color: var(--mostashary-accent-1) !important; }
+.bg-\[#ffffff\] { background-color: var(--mostashary-accent-1) !important; }
 .bg-\[#E6A0C3\] { background-color: var(--mostashary-accent-2) !important; }
 .bg-\[#B17DC0\] { background-color: var(--mostashary-accent-3) !important; }
 .bg-\[#E6DAC8\] { background-color: var(--mostashary-accent-4) !important; }
@@ -21,7 +21,7 @@
 .text-\[#B17DC0\] { color: var(--mostashary-accent-3) !important; }
 .border-\[#E6A0C3\] { border-color: var(--mostashary-accent-2) !important; }
 .bg-gradient-to-r.from-\[#A15DBF\].to-\[#8B4A9C\] { background: linear-gradient(to right, var(--mostashary-primary), var(--mostashary-secondary)) !important; }
-.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--mostashary-accent-1), var(--mostashary-accent-4)) !important; }
+.bg-gradient-to-br.from-\[#ffffff\].to-\[#E6DAC8\] { background: linear-gradient(to bottom right, var(--mostashary-accent-1), var(--mostashary-accent-4)) !important; }
 
 /* Override specific colors in sections */
 .bg-teal-100 { background-color: var(--mostashary-accent-1) !important; }

@@ -123,7 +123,7 @@ div[class*="header-toolbar"],
 .fi-sidebar-nav-item[aria-selected="true"],
 .fi-sidebar-nav-item[data-active="true"] {
     color: #A15DBF !important;
-    background-color: #FAD6E0 !important;
+    background-color: #ffffff !important;
 }
 
 .fi-sidebar-nav-item.fi-active *,
@@ -203,7 +203,7 @@ div[class*="header-toolbar"],
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[aria-selected="true"],
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item[data-active="true"] {
     color: #A15DBF !important;
-    background-color: #FAD6E0 !important;
+    background-color: #ffffff !important;
 }
 
 .fi-sidebar .fi-sidebar-nav .fi-sidebar-nav-item.fi-active *,

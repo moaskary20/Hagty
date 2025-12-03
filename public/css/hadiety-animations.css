@@ -4,7 +4,7 @@
 :root {
     --hadiety-primary: #A15DBF;
     --hadiety-secondary: #8B4A9C;
-    --hadiety-accent-1: #FAD6E0;
+    --hadiety-accent-1: #ffffff;
     --hadiety-accent-2: #E6A0C3;
     --hadiety-accent-3: #B17DC0;
     --hadiety-accent-4: #E6DAC8;
@@ -15,13 +15,13 @@
 header, nav, .navbar { animation: none !important; }
 
 /* Enhanced card hover effects */
-.bg-\[#FAD6E0\], .bg-\[#E6DAC8\], .bg-\[#E6A0C3\] {
+.bg-\[#ffffff\], .bg-\[#E6DAC8\], .bg-\[#E6A0C3\] {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.bg-\[#FAD6E0\]:hover, .bg-\[#E6DAC8\]:hover, .bg-\[#E6A0C3\]:hover {
+.bg-\[#ffffff\]:hover, .bg-\[#E6DAC8\]:hover, .bg-\[#E6A0C3\]:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 25px rgba(161, 93, 191, 0.3);
     border-color: var(--hadiety-accent-2);

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/nesaa-alghad-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">

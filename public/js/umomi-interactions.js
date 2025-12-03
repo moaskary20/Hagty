@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = {
         primary: '#A15DBF',
         secondary: '#8B4A9C',
-        accent: '#FAD6E0',
+        accent: '#ffffff',
         light: '#E6A0C3',
         dark: '#B17DC0',
         background: '#E6DAC8'
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // تحريك البطاقات
     function animateCards() {
-        const cards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const cards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         cards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
             card.classList.add('animate-fadeInUp');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // تأثيرات خاصة لأومومتي
     function addUmomiEffects() {
         // تأثير القلب للأطباء
-        const doctorCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const doctorCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         doctorCards.forEach(card => {
             if (card.textContent.includes('طبيب') || card.textContent.includes('دكتور')) {
                 card.classList.add('umomi-heart');
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير الرعاية للرعاية الأسبوعية
-        const careCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const careCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         careCards.forEach(card => {
             if (card.textContent.includes('رعاية') || card.textContent.includes('أسبوع')) {
                 card.classList.add('care-bounce');
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير الولادة للتحضيرات
-        const birthCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const birthCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         birthCards.forEach(card => {
             if (card.textContent.includes('ولادة') || card.textContent.includes('تحضير')) {
                 card.classList.add('birth-pulse');

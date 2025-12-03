@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/mostamay-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
@@ -21,6 +21,9 @@
             <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">رحلة تطوير الذات والتحفيز المستمر</p>
         </div>
     </section>
+    
+    <!-- Search Form -->
+    @include('components.mostamay-search-form')
 
     @if($sessions->count() > 0)
     <section class="py-16 bg-white">

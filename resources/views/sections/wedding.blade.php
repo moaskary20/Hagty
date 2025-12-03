@@ -146,37 +146,37 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-white min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">💒 قسم الزفاف</h1>
-            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">كل ما تحتاجينه لحفل زفاف أحلامك</p>
+    <!-- Statistics Section -->
+    <section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #9345ab 0%, #7a3690 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white animate-fadeInUp">💒 قسم الزفاف</h1>
+            <p class="text-xl md:text-2xl mb-12 text-white opacity-90 animate-fadeInUp" style="animation-delay: 0.2s;">كل ما تحتاجينه لحفل زفاف أحلامك</p>
             
-            <!-- Statistics -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mt-12">
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_designers->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مصممي فساتين</div>
+            <!-- Statistics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $wedding_designers->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">مصممي فساتين</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_planners->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">منظمي حفلات</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $wedding_planners->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">منظمي حفلات</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $makeup_artists->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فناني مكياج</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $makeup_artists->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">فناني مكياج</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_venues->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">قاعات حفلات</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $wedding_venues->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">قاعات حفلات</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.7s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $wedding_photographers->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مصورين</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.7s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $wedding_photographers->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">مصورين</div>
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">👗 مصممي فساتين الزفاف</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($wedding_designers as $designer)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $designer->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $designer->description }}</p>
@@ -225,7 +225,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎉 منظمي الحفلات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($wedding_planners as $planner)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $planner->name }}</h3>
                         <div class="space-y-2 text-sm text-[#8B4A9C]">
@@ -251,7 +251,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">💄 فناني المكياج</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($makeup_artists as $artist)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $artist->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $artist->description }}</p>
@@ -278,7 +278,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏰 قاعات الحفلات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($wedding_venues as $venue)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $venue->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $venue->description }}</p>
@@ -304,7 +304,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🍽️ خدمات التموين</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($catering_services as $catering)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $catering->company_name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $catering->description }}</p>
@@ -330,7 +330,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">📸 المصورين</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @forelse($wedding_photographers as $photographer)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $photographer->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $photographer->description }}</p>
@@ -354,7 +354,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في الزفاف</h2>
@@ -363,7 +363,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 

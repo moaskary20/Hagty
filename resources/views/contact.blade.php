@@ -17,7 +17,7 @@
         .primary-border { border-color: #A15DBF; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <!-- Hero Section -->
@@ -147,22 +147,22 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
+                <div class="bg-[#FFFFFF] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">كيف يمكنني التسجيل في المنصة؟</h3>
                     <p class="text-gray-600">يمكنك التسجيل بسهولة من خلال النقر على زر "الاشتراك" وملء النموذج بالمعلومات المطلوبة.</p>
                 </div>
                 
-                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
+                <div class="bg-[#FFFFFF] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">هل الخدمات مجانية؟</h3>
                     <p class="text-gray-600">نعم، معظم خدماتنا الأساسية مجانية. بعض الخدمات المتقدمة قد تتطلب رسوم رمزية.</p>
                 </div>
                 
-                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
+                <div class="bg-[#FFFFFF] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">كيف يمكنني الحصول على الدعم؟</h3>
                     <p class="text-gray-600">يمكنك التواصل معنا عبر الهاتف أو البريد الإلكتروني أو من خلال نموذج الاتصال أعلاه.</p>
                 </div>
                 
-                <div class="bg-[#FAD6E0] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
+                <div class="bg-[#FFFFFF] p-6 rounded-xl hover:shadow-lg transition-shadow animate-fadeInUp">
                     <h3 class="text-xl font-bold text-gray-900 mb-3">هل بياناتي آمنة؟</h3>
                     <p class="text-gray-600">نعم، نحن نستخدم أحدث تقنيات الحماية لضمان أمان بياناتك وخصوصيتك.</p>
                 </div>

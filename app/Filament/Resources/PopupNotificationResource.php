@@ -18,11 +18,11 @@ class PopupNotificationResource extends BaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-bell';
     
-    protected static ?string $navigationLabel = 'الإشعارات المتبثقة';
+    protected static ?string $navigationLabel = 'الإشعارات ';
     
     protected static ?string $modelLabel = 'إشعار متبث';
     
-    protected static ?string $pluralModelLabel = 'الإشعارات المتبثقة';
+    protected static ?string $pluralModelLabel = 'الإشعارات ';
     
     protected static ?string $navigationGroup = 'إدارة النظام';
 

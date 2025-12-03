@@ -11,7 +11,7 @@
 .fi-sidebar-nav-item.active,
 .fi-sidebar-nav-item[aria-selected="true"],
 .fi-sidebar-nav-item[data-active="true"] {
-    background-color: #FAD6E0 !important;
+    background-color: #ffffff !important;
     color: #A15DBF !important;
 }
 
@@ -89,7 +89,7 @@
 
 /* تطبيق الألوان الجديدة */
 :root {
-    --primary-50: #FAD6E0;
+    --primary-50: #ffffff;
     --primary-100: #E6A0C3;
     --primary-200: #B17DC0;
     --primary-300: #A15DBF;

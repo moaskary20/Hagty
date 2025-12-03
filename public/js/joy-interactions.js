@@ -4,7 +4,7 @@
 const colors = {
     primary: '#A15DBF',
     secondary: '#8B4A9C',
-    accent1: '#FAD6E0',
+    accent1: '#ffffff',
     accent2: '#E6A0C3',
     accent3: '#B17DC0',
     accent4: '#E6DAC8',
@@ -13,7 +13,7 @@ const colors = {
 
 // Animation functions
 function animateCards() {
-    const cards = document.querySelectorAll('.bg-\\[\\#FAD6E0\\], .bg-\\[\\#E6DAC8\\], .bg-\\[\\#E6A0C3\\]');
+    const cards = document.querySelectorAll('.bg-\\[\\#ffffff\\], .bg-\\[\\#E6DAC8\\], .bg-\\[\\#E6A0C3\\]');
     cards.forEach((card, index) => {
         setTimeout(() => {
             card.style.opacity = '0';
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Hover effects for cards
-    const cards = document.querySelectorAll('.bg-\\[\\#FAD6E0\\], .bg-\\[\\#E6DAC8\\], .bg-\\[\\#E6A0C3\\]');
+    const cards = document.querySelectorAll('.bg-\\[\\#ffffff\\], .bg-\\[\\#E6DAC8\\], .bg-\\[\\#E6A0C3\\]');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px) scale(1.02)';

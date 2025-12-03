@@ -98,7 +98,7 @@
         .mobile-menu-item:hover {
             transform: translateX(-4px);
             box-shadow: 0 4px 12px rgba(161, 93, 191, 0.15);
-            background: linear-gradient(135deg, #FAD6E0 0%, #E6A0C3 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #E6A0C3 100%);
         }
         
         .mobile-menu-item span {
@@ -164,7 +164,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-white min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
@@ -176,29 +176,32 @@
             
             <!-- Statistics -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mt-12">
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $hotels->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فندق</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $tourism_offices->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مكتب سياحي</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $travel_offers->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">عرض سفر</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $women_camps->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">معسكر نسائي</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.7s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.7s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $calendar_events->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">حدث</div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Search Form -->
+    @include('components.rehlaaty-search-form')
 
     <!-- Content Sections -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -208,7 +211,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏨 الفنادق</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($hotels as $hotel)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $hotel->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $hotel->brand }}</p>
@@ -237,7 +240,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏢 المكاتب السياحية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($tourism_offices as $office)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $office->brand }}</h3>
                         <div class="space-y-2 text-sm text-[#8B4A9C]">
@@ -265,7 +268,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎫 عروض السفر</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($travel_offers as $offer)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $offer->title }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $offer->destination }}</p>
@@ -299,7 +302,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🏕️ المعسكرات النسائية</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($women_camps as $camp)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $camp->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $camp->location }}</p>
@@ -330,7 +333,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">📅 الأحداث</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($calendar_events as $event)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $event->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $event->destination }}</p>
@@ -357,7 +360,7 @@
 
     <!-- Promotional Videos Section -->
     @if(($promo_videos && $promo_videos->count() > 0) || ($promotion_videos && $promotion_videos->count() > 0))
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#FFFFFF]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎬 الفيديوهات الترويجية</h2>
@@ -367,7 +370,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @if($promo_videos && $promo_videos->count() > 0)
                     @foreach($promo_videos as $video)
-                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                    <div class="bg-gradient-to-br from-[#FFFFFF] to-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                         <div class="relative">
                             <div class="aspect-video bg-gray-200 flex items-center justify-center">
                                 @if($video->video_url)
@@ -415,7 +418,7 @@
 
                 @if($promotion_videos && $promotion_videos->count() > 0)
                     @foreach($promotion_videos as $video)
-                    <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                    <div class="bg-gradient-to-br from-[#FFFFFF] to-[#FFFFFF]  rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                         <div class="relative">
                             <div class="aspect-video bg-gray-200 flex items-center justify-center">
                                 @if($video->url)
@@ -476,7 +479,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#FFFFFF]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في رحلتي</h2>
@@ -485,7 +488,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF]  rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
@@ -536,7 +539,7 @@
             
             <div class="text-center mt-12">
                 <a href="{{ route('articles.index') }}" 
-                   class="inline-flex items-center bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-lg font-bold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-white" style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Tajawal', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-weight: 800;">
+                   class="inline-flex items-center bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white px-8 py-3 rounded-lg font-bold hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl " style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Tajawal', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-weight: 800;">
                     <i class="fas fa-newspaper ml-2" style="color: #ffffff !important;"></i>
                     تصفح جميع المقالات
                 </a>

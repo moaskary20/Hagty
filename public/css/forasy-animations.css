@@ -4,7 +4,7 @@
 :root {
     --forasy-primary: #A15DBF;
     --forasy-secondary: #8B4A9C;
-    --forasy-accent-1: #FAD6E0;
+    --forasy-accent-1: #ffffff;
     --forasy-accent-2: #E6A0C3;
     --forasy-accent-3: #B17DC0;
     --forasy-accent-4: #E6DAC8;
@@ -17,13 +17,13 @@ header, nav, .navbar {
 }
 
 /* Enhanced card hover effects */
-.bg-\[#FAD6E0\], .bg-\[#E6DAC8\], .bg-\[#E6A0C3\] {
+.bg-\[#ffffff\], .bg-\[#E6DAC8\], .bg-\[#E6A0C3\] {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.bg-\[#FAD6E0\]:hover, .bg-\[#E6DAC8\]:hover, .bg-\[#E6A0C3\]:hover {
+.bg-\[#ffffff\]:hover, .bg-\[#E6DAC8\]:hover, .bg-\[#E6A0C3\]:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 25px rgba(161, 93, 191, 0.3);
     border-color: var(--forasy-accent-2);
@@ -124,7 +124,7 @@ header, nav, .navbar {
 }
 
 /* Add subtle overlay to statistics cards for better contrast */
-.bg-\[#FAD6E0\]:after {
+.bg-\[#ffffff\]:after {
     content: '';
     position: absolute;
     top: 0;
@@ -195,7 +195,7 @@ header, nav, .navbar {
 }
 
 /* Shimmer effect for cards */
-.bg-\[#FAD6E0\]:hover::before,
+.bg-\[#ffffff\]:hover::before,
 .bg-\[#E6DAC8\]:hover::before,
 .bg-\[#E6A0C3\]:hover::before {
     content: '';
@@ -208,7 +208,7 @@ header, nav, .navbar {
     transition: left 0.5s;
 }
 
-.bg-\[#FAD6E0\]:hover::before,
+.bg-\[#ffffff\]:hover::before,
 .bg-\[#E6DAC8\]:hover::before,
 .bg-\[#E6A0C3\]:hover::before {
     left: 100%;

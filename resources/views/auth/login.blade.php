@@ -88,7 +88,10 @@
 
                 <div>
                     <button type="submit" 
-                            class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-to-r from-d94288 to-purple-600 hover:from-purple-600 hover:to-d94288 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-d94288 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105"
+                            style="background: linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%);"
+                            onmouseover="this.style.background='linear-gradient(135deg, #8B4A9C 0%, #753880 100%)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%)'">
                         <span class="absolute left-0 inset-y-0 flex items-center pr-4">
                             <i class="fas fa-sign-in-alt text-white text-lg"></i>
                         </span>

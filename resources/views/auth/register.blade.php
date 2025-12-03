@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <style>
         body { font-family: 'Cairo', sans-serif; }
         .primary-bg { background-color: #A15DBF; }
@@ -51,6 +55,27 @@
             color: white;
         }
         
+        /* Map Styles */
+        #map {
+            height: 400px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(161, 93, 191, 0.2);
+        }
+        
+        .leaflet-popup-content-wrapper {
+            background: linear-gradient(135deg, #a15dbf 0%, #e91e63 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .leaflet-popup-content {
+            color: white;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .leaflet-popup-tip {
+            background: linear-gradient(135deg, #a15dbf 0%, #e91e63 100%);
+        }
         
     </style>
 </head>
@@ -166,14 +191,30 @@
 
                     <div>
                         <label for="location" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="fas fa-map-marker-alt ml-2"></i>الموقع (سيتم تحديده تلقائياً)
+                            <i class="fas fa-map-marker-alt ml-2"></i>الموقع - انقر على الخريطة لتحديد موقعك
                         </label>
-                        <input id="location" name="location" type="text" readonly
-                               class="appearance-none relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-xl bg-gray-100 sm:text-sm"
-                               placeholder="سيتم تحديد موقعك تلقائياً">
-                        <button type="button" id="getLocationBtn" class="mt-2 text-sm text-d94288 hover:text-purple-600">
-                            <i class="fas fa-location-arrow ml-1"></i>تحديد الموقع
-                        </button>
+                        
+                        <!-- Map Container -->
+                        <div id="map" class="w-full h-96 rounded-xl border-2 border-gray-300 mb-3 shadow-lg" style="z-index: 1;"></div>
+                        
+                        <!-- Location Info -->
+                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-info-circle text-purple-500 text-lg mt-1"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm text-purple-700 font-medium mb-2">الموقع المحدد:</p>
+                                    <input id="location" name="location" type="text" readonly
+                                           class="w-full px-3 py-2 border border-purple-200 rounded-lg bg-white text-sm text-gray-700"
+                                           placeholder="اضغط على الخريطة لتحديد موقعك">
+                                    <input id="latitude" name="latitude" type="hidden">
+                                    <input id="longitude" name="longitude" type="hidden">
+                                </div>
+                            </div>
+                            <button type="button" id="getCurrentLocationBtn" class="mt-3 w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                                <i class="fas fa-crosshairs"></i>
+                                استخدام موقعي الحالي
+                            </button>
+                        </div>
                     </div>
 
                     <div>
@@ -346,7 +387,10 @@
 
                 <div>
                     <button type="submit" 
-                            class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-to-r from-d94288 to-purple-600 hover:from-purple-600 hover:to-d94288 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-d94288 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-xl text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                            style="background: linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%);"
+                            onmouseover="this.style.background='linear-gradient(135deg, #8B4A9C 0%, #753880 100%)'"
+                            onmouseout="this.style.background='linear-gradient(135deg, #a15dbf 0%, #8B4A9C 100%)'">
                         <span class="absolute left-0 inset-y-0 flex items-center pr-4">
                             <i class="fas fa-user-plus text-white text-lg"></i>
                         </span>
@@ -375,18 +419,25 @@
                     </div>
                 </div>
 
-                <div class="mt-6 grid grid-cols-2 gap-3">
+                <div class="mt-6 grid grid-cols-2 gap-4">
                     <div>
-                        <a href="#" class="w-full inline-flex justify-center py-3 px-4 border-2 border-gray-300 rounded-xl shadow-md bg-white text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 transform hover:-translate-y-0.5">
-                            <i class="fab fa-google text-red-500 text-lg ml-2"></i>
-                            <span class="mr-2">Google</span>
+                        <a href="#" class="w-full inline-flex items-center justify-center py-4 px-4 border-2 border-gray-300 rounded-xl shadow-lg bg-white text-base font-bold text-gray-700 hover:bg-red-50 hover:border-red-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                            <span>Google</span>
                         </a>
                     </div>
 
                     <div>
-                        <a href="#" class="w-full inline-flex justify-center py-3 px-4 border-2 border-gray-300 rounded-xl shadow-md bg-white text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 transform hover:-translate-y-0.5">
-                            <i class="fab fa-facebook text-blue-600 text-lg ml-2"></i>
-                            <span class="mr-2">Facebook</span>
+                        <a href="#" class="w-full inline-flex items-center justify-center py-4 px-4 border-2 border-gray-300 rounded-xl shadow-lg bg-white text-base font-bold text-gray-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span>Facebook</span>
                         </a>
                     </div>
                 </div>
@@ -396,46 +447,87 @@
 
     @include('components.shared-footer')
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
     <script>
-        // تحديد الموقع تلقائياً
-        document.getElementById('getLocationBtn').addEventListener('click', function() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    
-                    // استخدام reverse geocoding للحصول على العنوان
-                    fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=ar`)
-                        .then(response => response.json())
-                        .then(data => {
-                            document.getElementById('location').value = data.city + ', ' + data.countryName;
-                            // إضافة hidden inputs للإحداثيات
-                            addHiddenInput('latitude', latitude);
-                            addHiddenInput('longitude', longitude);
-                        })
-                        .catch(error => {
+        // Initialize Map
+        let map, marker;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cairo, Egypt as default center
+            const defaultLat = 30.0444;
+            const defaultLng = 31.2357;
+            
+            // Create map
+            map = L.map('map').setView([defaultLat, defaultLng], 11);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add marker
+            marker = L.marker([defaultLat, defaultLng], {
+                draggable: true
+            }).addTo(map);
+            
+            // Update location on marker drag
+            marker.on('dragend', function(e) {
+                const position = marker.getLatLng();
+                updateLocation(position.lat, position.lng);
+            });
+            
+            // Update location on map click
+            map.on('click', function(e) {
+                marker.setLatLng(e.latlng);
+                updateLocation(e.latlng.lat, e.latlng.lng);
+            });
+            
+            // Get current location button
+            document.getElementById('getCurrentLocationBtn').addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحديد...';
+                    navigator.geolocation.getCurrentPosition(
+                        function(position) {
+                            const lat = position.coords.latitude;
+                            const lng = position.coords.longitude;
+                            
+                            map.setView([lat, lng], 15);
+                            marker.setLatLng([lat, lng]);
+                            updateLocation(lat, lng);
+                            
+                            document.getElementById('getCurrentLocationBtn').innerHTML = '<i class="fas fa-crosshairs"></i> استخدام موقعي الحالي';
+                        },
+                        function(error) {
                             console.error('Error getting location:', error);
-                            document.getElementById('location').value = 'الموقع: ' + latitude + ', ' + longitude;
-                            addHiddenInput('latitude', latitude);
-                            addHiddenInput('longitude', longitude);
-                        });
-                }, function(error) {
-                    console.error('Error getting location:', error);
-                    alert('لا يمكن تحديد موقعك. يرجى المحاولة مرة أخرى.');
-                });
-            } else {
-                alert('المتصفح لا يدعم تحديد الموقع.');
-            }
+                            alert('لا يمكن تحديد موقعك. يرجى النقر على الخريطة لتحديد الموقع يدوياً.');
+                            document.getElementById('getCurrentLocationBtn').innerHTML = '<i class="fas fa-crosshairs"></i> استخدام موقعي الحالي';
+                        }
+                    );
+                } else {
+                    alert('المتصفح لا يدعم تحديد الموقع.');
+                }
+            });
         });
-
-        function addHiddenInput(name, value) {
-            if (!document.querySelector(`input[name="${name}"]`)) {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = name;
-                input.value = value;
-                document.querySelector('form').appendChild(input);
-            }
+        
+        function updateLocation(lat, lng) {
+            // Update hidden inputs
+            document.getElementById('latitude').value = lat;
+            document.getElementById('longitude').value = lng;
+            
+            // Get address using reverse geocoding
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&accept-language=ar`)
+                .then(response => response.json())
+                .then(data => {
+                    const address = data.display_name || `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+                    document.getElementById('location').value = address;
+                })
+                .catch(error => {
+                    console.error('Error getting address:', error);
+                    document.getElementById('location').value = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+                });
         }
 
         // إظهار/إخفاء قسم الأطفال بناءً على الحالة الاجتماعية

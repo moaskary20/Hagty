@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/mostashary-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
@@ -23,14 +23,14 @@
     </section>
 
     @if($health->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 animate-fadeInUp">🩺 استشارات <span class="text-[#A15DBF]">صحية</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($health as $consultant)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-all border-2 border-transparent hover:border-[#A15DBF] animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-all border-2 border-transparent hover:border-[#A15DBF] animate-fadeInUp">
                     <div class="text-center mb-4">
-                        <div class="w-20 h-20 bg-[#FAD6E0] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-20 h-20 bg-[#FFFFFF] rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-user-md text-3xl text-[#A15DBF]"></i>
                         </div>
                         <h3 class="font-bold text-xl mb-1">{{ $consultant->consultant_name }}</h3>
@@ -51,12 +51,12 @@
     @endif
 
     @if($career->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 animate-fadeInUp">💼 استشارات <span class="text-[#A15DBF]">مهنية</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($career as $consultant)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-all animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-2xl transition-all animate-fadeInUp">
                     <i class="fas fa-briefcase text-4xl text-[#A15DBF] mb-4"></i>
                     <h3 class="font-bold text-xl mb-2">{{ $consultant->consultant_name }}</h3>
                     <p class="text-[#A15DBF] text-sm mb-3">{{ $consultant->expertise_area }}</p>
@@ -77,12 +77,12 @@
     @endif
 
     @if($family->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 animate-fadeInUp">💍 استشارات <span class="text-[#A15DBF]">عائلية وزوجية</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($family as $consultant)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-xl transition-all animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-xl transition-all animate-fadeInUp">
                     <i class="fas fa-heart text-4xl text-[#A15DBF] mb-4"></i>
                     <h3 class="font-bold text-xl mb-2">{{ $consultant->consultant_name }}</h3>
                     <p class="text-[#A15DBF] text-sm mb-3">{{ $consultant->specialty }}</p>
@@ -100,12 +100,12 @@
     @endif
 
     @if($business->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 animate-fadeInUp">📈 استشارات <span class="text-[#A15DBF]">الأعمال</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($business as $consultant)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-xl transition-all animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-xl transition-all animate-fadeInUp">
                     <i class="fas fa-chart-line text-4xl text-[#A15DBF] mb-4"></i>
                     <h3 class="font-bold text-xl mb-2">{{ $consultant->consultant_name }}</h3>
                     <p class="text-[#A15DBF] text-sm mb-3">{{ $consultant->expertise_area }}</p>
@@ -130,12 +130,12 @@
     @endif
 
     @if($psychological->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 animate-fadeInUp">🧠 دعم <span class="text-[#A15DBF]">نفسي ومعنوي</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($psychological as $specialist)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-xl transition-all animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-lg shadow-lg p-6 hover:shadow-xl transition-all animate-fadeInUp">
                     <i class="fas fa-brain text-4xl text-[#A15DBF] mb-4"></i>
                     <h3 class="font-bold text-xl mb-2">{{ $specialist->specialist_name }}</h3>
                     <p class="text-[#A15DBF] text-sm mb-3">{{ $specialist->specialty }}</p>
@@ -154,7 +154,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في مستشاري</h2>
@@ -163,7 +163,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInUp">
+                <div class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 
@@ -174,7 +174,7 @@
                     
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="inline-block bg-[#FAD6E0] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
+                            <span class="inline-block bg-[#FFFFFF] text-[#A15DBF] text-xs px-3 py-1 rounded-full font-semibold">
                                 {{ $blog->section_name }}
                             </span>
                             <span class="text-sm text-gray-500">

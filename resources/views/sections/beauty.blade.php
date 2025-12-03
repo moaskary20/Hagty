@@ -146,33 +146,33 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-white min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">💄 قسم الجمال</h1>
-            <p class="text-xl md:text-2xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">كل ما تحتاجينه للعناية بجمالك</p>
+    <!-- Statistics Section -->
+    <section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #9345ab 0%, #7a3690 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white animate-fadeInUp">💄 قسم الجمال</h1>
+            <p class="text-xl md:text-2xl mb-12 text-white opacity-90 animate-fadeInUp" style="animation-delay: 0.2s;">كل ما تحتاجينه للعناية بجمالك</p>
             
-            <!-- Statistics -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $plastic_surgeons->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">جراحي تجميل</div>
+            <!-- Statistics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $plastic_surgeons->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">جراحي تجميل</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $hair_stylists->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">مصففي شعر</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $hair_stylists->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">مصففي شعر</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $beauty_shops->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">متاجر جمال</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $beauty_shops->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">متاجر جمال</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $training_videos->count() }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فيديوهات تدريب</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.6s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $training_videos->count() }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">فيديوهات تدريب</div>
                 </div>
             </div>
         </div>
@@ -189,7 +189,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🔪 جراحي التجميل</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($plastic_surgeons as $surgeon)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $surgeon->first_name }} {{ $surgeon->last_name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $surgeon->clinic_address }}</p>
@@ -232,7 +232,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">💇‍♀️ مصففي الشعر</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($hair_stylists as $stylist)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $stylist->name }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $stylist->description }}</p>
@@ -259,7 +259,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🛍️ متاجر الجمال</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($beauty_shops as $shop)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $shop->brand_name }}</h3>
                         <div class="space-y-2 text-sm text-[#8B4A9C]">
@@ -284,7 +284,7 @@
             <h2 class="text-3xl font-bold text-[#A15DBF] mb-8 text-center animate-fadeInUp">🎥 فيديوهات التدريب</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($training_videos as $video)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#A15DBF] mb-2">{{ $video->عنوان_الفيديو }}</h3>
                         <p class="text-[#B17DC0] mb-4">{{ $video->وصف_الفيديو }}</p>
@@ -309,7 +309,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في الجمال</h2>
@@ -318,7 +318,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 

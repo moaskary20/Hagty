@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = {
         primary: '#A15DBF',
         secondary: '#8B4A9C',
-        accent: '#FAD6E0',
+        accent: '#ffffff',
         light: '#E6A0C3',
         dark: '#B17DC0',
         background: '#E6DAC8'
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // تحريك البطاقات
     function animateCards() {
-        const cards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const cards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         cards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
             card.classList.add('animate-fadeInUp');

@@ -164,7 +164,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     <!-- Navigation -->
     @include('components.shared-header')
 
@@ -176,15 +176,15 @@
             
             <!-- Statistics -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $fashion_trends->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">صيحات موضة</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $sponsor_videos->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">فيديوهات دعائية</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                <div class="bg-[#FFFFFF] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
                     <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $forasy_courses->count() }}</div>
                     <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">كورسات موضة</div>
                 </div>
@@ -208,7 +208,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($fashion_trends ?? [] as $trend)
                 @php $__trendIndex = $loop->index; @endphp
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp trend-card {{ $__trendIndex >= 6 ? 'hidden' : '' }}">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-2xl shadow-lg p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp trend-card {{ $__trendIndex >= 6 ? 'hidden' : '' }}">
                     <div class="flex items-center mb-4">
                         <div class="w-16 h-16 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-tshirt text-white text-2xl"></i>

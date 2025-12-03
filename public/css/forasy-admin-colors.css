@@ -2,7 +2,7 @@
 :root {
     --forasy-primary: #A15DBF;
     --forasy-secondary: #8B4A9C;
-    --forasy-accent-1: #FAD6E0;
+    --forasy-accent-1: #ffffff;
     --forasy-accent-2: #E6A0C3;
     --forasy-accent-3: #B17DC0;
     --forasy-accent-4: #E6DAC8;
@@ -18,7 +18,7 @@
     background-color: var(--forasy-secondary) !important;
 }
 
-.bg-\[#FAD6E0\] {
+.bg-\[#ffffff\] {
     background-color: var(--forasy-accent-1) !important;
 }
 
@@ -55,7 +55,7 @@
     background: linear-gradient(to right, var(--forasy-primary), var(--forasy-secondary)) !important;
 }
 
-.bg-gradient-to-br.from-\[#FAD6E0\].to-\[#E6DAC8\] {
+.bg-gradient-to-br.from-\[#ffffff\].to-\[#E6DAC8\] {
     background: linear-gradient(to bottom right, var(--forasy-accent-1), var(--forasy-accent-4)) !important;
 }
 

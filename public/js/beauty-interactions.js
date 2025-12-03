@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colors = {
         primary: '#A15DBF',
         secondary: '#8B4A9C',
-        accent: '#FAD6E0',
+        accent: '#ffffff',
         light: '#E6A0C3',
         dark: '#B17DC0',
         background: '#E6DAC8'
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // تحريك البطاقات
     function animateCards() {
-        const cards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const cards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         cards.forEach((card, index) => {
             card.style.animationDelay = `${index * 0.1}s`;
             card.classList.add('animate-fadeInUp');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // تأثيرات خاصة للجمال
     function addBeautyEffects() {
         // تأثير اللمعان للمكياج
-        const makeupCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const makeupCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         makeupCards.forEach(card => {
             if (card.textContent.includes('مكياج') || card.textContent.includes('جمال')) {
                 card.classList.add('beauty-glow');
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير التوهج للعناية
-        const careCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const careCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         careCards.forEach(card => {
             if (card.textContent.includes('عناية') || card.textContent.includes('رعاية')) {
                 card.classList.add('care-shine');
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // تأثير النعومة للبشرة
-        const skinCards = document.querySelectorAll('.bg-\\[#FAD6E0\\]');
+        const skinCards = document.querySelectorAll('.bg-\\[#ffffff\\]');
         skinCards.forEach(card => {
             if (card.textContent.includes('بشرة') || card.textContent.includes('جلد')) {
                 card.classList.add('skin-soft');

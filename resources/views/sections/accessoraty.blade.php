@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/home-enhancements.css') }}">
     <link rel="stylesheet" href="{{ asset('css/accessoraty-admin-colors.css') }}">
     <link rel="stylesheet" href="{{ asset('css/accessoraty-animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bg-white-fix.css') }}">
     
     <!-- Custom CSS -->
     <style>
@@ -255,7 +256,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-white min-h-screen">
     <!-- خلفية متحركة من القلوب والتاج والنجوم -->
     <div class="floating-background">
         <i class="floating-icon heart fas fa-heart" style="top: 10%; left: 5%;"></i>
@@ -275,23 +276,25 @@
     <!-- Navigation -->
     @include('components.shared-header')
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-4 animate-fadeInUp">💍 {{ $section_name }}</h1>
-            <p class="text-xl mb-8 animate-fadeInUp" style="animation-delay: 0.2s;">كورسات تعليمية احترافية وإكسسوارات عصرية</p>
-            <div class="flex justify-center space-x-4 space-x-reverse">
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $courses->count() ?? 0 }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">كورس تعليمي</div>
+    <!-- Statistics Section -->
+    <section class="py-20 relative overflow-hidden" style="background: linear-gradient(135deg, #9345ab 0%, #7a3690 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white animate-fadeInUp">💍 {{ $section_name }}</h1>
+            <p class="text-xl md:text-2xl mb-12 text-white opacity-90 animate-fadeInUp" style="animation-delay: 0.2s;">كورسات تعليمية احترافية وإكسسوارات عصرية</p>
+            
+            <!-- Statistics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $courses->count() ?? 0 }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">كورس تعليمي</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $students->count() ?? 0 }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">طالبة مسجلة</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.4s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $students->count() ?? 0 }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">طالبة مسجلة</div>
                 </div>
-                <div class="bg-[#FAD6E0] rounded-lg p-4 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
-                    <div class="text-3xl font-black text-black text-center mb-2" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">{{ $shops->count() ?? 0 }}</div>
-                    <div class="text-sm text-black font-bold text-center" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">متجر إكسسوارات</div>
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-all duration-300 animate-bounceIn" style="animation-delay: 0.5s;">
+                    <div class="text-4xl font-black text-center mb-2" style="color: #9345ab;">{{ $shops->count() ?? 0 }}</div>
+                    <div class="text-sm font-bold text-center text-gray-600">متجر إكسسوارات</div>
                 </div>
             </div>
         </div>
@@ -301,7 +304,7 @@
     @include('components.accessoraty-search-form')
 
     <!-- الكورسات التعليمية -->
-    <section class="py-16 bg-[#FAD6E0]">
+    <section class="py-16 bg-[#FFFFFF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">🎓 الكورسات التعليمية</h2>
@@ -310,7 +313,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($courses ?? [] as $course)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $course->name }}</h3>
@@ -348,7 +351,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($shops ?? [] as $shop)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-xl font-semibold text-[#A15DBF]">{{ $shop->brand_name }}</h3>
@@ -383,7 +386,7 @@
     </section>
 
     <!-- إعلانات البانر -->
-    <section class="py-16 bg-[#FAD6E0]">
+    <section class="py-16 bg-[#FFFFFF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📢 إعلانات البانر</h2>
@@ -392,7 +395,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($banners ?? [] as $banner)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         @if($banner->image)
                         <div class="mb-4">
@@ -445,7 +448,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($videos ?? [] as $video)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     <div class="p-6">
                         @if($video->thumbnail)
                         <div class="mb-4 relative">
@@ -500,7 +503,7 @@
 
     <!-- Latest Blogs Section -->
     @if($latestBlogs && $latestBlogs->count() > 0)
-    <section class="py-16 bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8]">
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-[#A15DBF] mb-4 animate-fadeInUp">📝 أحدث المقالات في أكسسوراتى</h2>
@@ -509,7 +512,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($latestBlogs as $blog)
-                <div class="bg-[#FAD6E0] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
+                <div class="bg-[#FFFFFF] border-2 border-[#E6A0C3] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fadeInUp">
                     @if($blog->featured_image)
                         <div class="h-48 overflow-hidden">
                             <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http', 'https']) ? $blog->featured_image : Storage::url($blog->featured_image) }}" 

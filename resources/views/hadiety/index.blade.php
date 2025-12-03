@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/hadiety-animations.css') }}">
     <style>body { font-family: 'Cairo', sans-serif; }</style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     @include('components.shared-header')
 
     <section class="bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white py-24">
@@ -21,6 +21,9 @@
             <p class="text-xl md:text-2xl animate-fadeInUp" style="animation-delay: 0.2s;">أفكار هدايا رائعة ودليل تسوق ذكي</p>
         </div>
     </section>
+    
+    <!-- Search Form -->
+    @include('components.hadiety-search-form')
 
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">

@@ -2,7 +2,7 @@
 
 /* تعريف متغيرات الألوان */
 :root {
-    --primary-50: #FAD6E0;
+    --primary-50: #ffffff;
     --primary-100: #E6A0C3;
     --primary-200: #B17DC0;
     --primary-300: #A15DBF;
@@ -15,7 +15,7 @@
     --accent: #E6DAC8;
     --hover-bg: #E6DAC8;
     --hover-text: #A15DBF;
-    --active-bg: #FAD6E0;
+    --active-bg: #ffffff;
     --active-text: #A15DBF;
 }
 

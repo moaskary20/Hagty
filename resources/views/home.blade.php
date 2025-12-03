@@ -1338,7 +1338,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#FAD6E0] to-[#E6DAC8] min-h-screen">
+<body class="bg-gradient-to-br from-[#FFFFFF] to-[#E6DAC8] min-h-screen">
     <!-- خلفية متحركة من القلوب والتاج والنجوم -->
     <div class="floating-background">
         <div class="floating-icon heart" style="top: 10%; left: 5%;">❤️</div>
@@ -1376,7 +1376,7 @@
             <i class="fas fa-sparkles text-pink-300"></i>
         </div>
         
-        <div class="swiper hero-swiper">
+        <div class="swiper hero-swiper" dir="rtl">
             <div class="swiper-wrapper">
                 @if(isset($forasy_banners) && $forasy_banners->count() > 0)
                     @foreach($forasy_banners as $banner)
@@ -1464,9 +1464,9 @@
         </div>
         
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 section-fade-in">
-                <div class="w-24 h-24 bg-gradient-to-br from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <i class="fas fa-search text-white text-4xl animated-icon"></i>
+            <div class="text-center mb-16">
+                <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg" style="background: linear-gradient(135deg, #d94288 0%, #9333ea 100%);">
+                    <i class="fas fa-search animated-icon" style="color: white; font-size: 2.5rem; display: block;"></i>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     ابحثي في <span class="text-d94288">المنصة</span>
@@ -1507,19 +1507,19 @@
                         </p>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <button type="button" onclick="setQuickSearch('كورس تجميل')" class="quick-search-category">
-                                <i class="fas fa-palette text-2xl mb-2"></i>
+                                <i class="fas fa-palette text-2xl mb-2" style="color: #a15dbf;"></i>
                                 <span>كورسات التجميل</span>
                             </button>
                             <button type="button" onclick="setQuickSearch('طبيبة نساء')" class="quick-search-category">
-                                <i class="fas fa-user-md text-2xl mb-2"></i>
+                                <i class="fas fa-user-md text-2xl mb-2" style="color: #a15dbf;"></i>
                                 <span>طبيبات متخصصات</span>
                             </button>
                             <button type="button" onclick="setQuickSearch('صيحة موضة')" class="quick-search-category">
-                                <i class="fas fa-tshirt text-2xl mb-2"></i>
+                                <i class="fas fa-tshirt text-2xl mb-2" style="color: #a15dbf;"></i>
                                 <span>صيحات الموضة</span>
                             </button>
                             <button type="button" onclick="setQuickSearch('نصيحة تجميل')" class="quick-search-category">
-                                <i class="fas fa-spa text-2xl mb-2"></i>
+                                <i class="fas fa-spa text-2xl mb-2" style="color: #a15dbf;"></i>
                                 <span>نصائح التجميل</span>
                             </button>
                         </div>
@@ -1828,7 +1828,7 @@
                     </p>
                 </div>
                 
-                <div class="swiper sponsorSwiper">
+                <div class="swiper sponsorSwiper" dir="rtl">
                     <div class="swiper-wrapper">
                         @foreach($sponsor_banners as $banner)
                         <div class="swiper-slide hero-slide" style="background-image: url('{{ \Illuminate\Support\Str::startsWith($banner->image, ['http', 'https']) ? $banner->image : Storage::url($banner->image) }}');">
@@ -1888,11 +1888,14 @@
             console.log('Sponsor Swiper element found:', sponsorSwiperElement);
             
             const sponsorSwiper = new Swiper('.sponsorSwiper', {
+                direction: 'horizontal',
+                dir: 'rtl',
                 loop: true,
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
+                    reverseDirection: false,
                 },
                 pagination: {
                     el: '.sponsorSwiper .swiper-pagination',
@@ -1903,8 +1906,8 @@
                     },
                 },
                 navigation: {
-                    nextEl: '.sponsorSwiper .swiper-button-next',
-                    prevEl: '.sponsorSwiper .swiper-button-prev',
+                    nextEl: '.sponsorSwiper .swiper-button-prev',
+                    prevEl: '.sponsorSwiper .swiper-button-next',
                     disabledClass: 'swiper-button-disabled',
                 },
                 effect: 'slide',
@@ -1960,11 +1963,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-d94288 to-purple-600 rounded-full mb-6">
-                    <i class="fas fa-newspaper text-white text-2xl"></i>
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style="background: #ffffff; border: 3px solid #a15dbf;">
+                    <i class="fas fa-crown text-2xl" style="color: #a15dbf; display: block;"></i>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    أحدث <span class="text-d94288">المقالات</span>
+                    الأكثر <span class="text-d94288">رواجاً</span>
                 </h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     اكتشفي آخر المقالات والنصائح المفيدة من خبرائنا
@@ -2024,7 +2027,7 @@
                 <a href="{{ route('articles.index') }}" 
                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#A15DBF] to-[#8B4A9C] text-white font-bold rounded-lg hover:from-[#8B4A9C] hover:to-[#753880] transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-newspaper ml-2"></i>
-                    تصفح المدونة
+                    تصفح أحدث الموضوعات
                 </a>
             </div>
         </div>
@@ -2034,9 +2037,9 @@
     <!-- Customer Reviews Section -->
     <section class="pt-8 pb-20 reviews-section relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 section-fade-in">
-                <div class="w-20 h-20 bg-gradient-to-br from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-star text-white text-3xl animated-icon"></i>
+            <div class="text-center mb-16">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg" style="background: #ffffff; border: 3px solid #a15dbf;">
+                    <i class="fas fa-comments text-3xl animated-icon" style="color: #a15dbf; display: block;"></i>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     تجارب <span class="text-d94288">العملاء</span>
@@ -2127,81 +2130,12 @@
 
 
     <!-- Enhanced App Download Section -->
-    <section class="app-download-section text-white relative overflow-hidden">
-        <!-- Floating App Icons -->
-        <div class="floating-app-icon">
-            <i class="fas fa-mobile-alt"></i>
-        </div>
-        <div class="floating-app-icon">
-            <i class="fas fa-tablet-alt"></i>
-        </div>
-        <div class="floating-app-icon">
-            <i class="fas fa-laptop"></i>
-        </div>
-        
-        <div class="app-download-content">
-            <!-- App Download Header -->
-            <div class="app-download-header section-fade-in">
-                <div class="app-download-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h2 class="app-download-title">حمل التطبيق الآن</h2>
-                <p class="app-download-subtitle">
-                    احصلي على تجربة أفضل مع تطبيق HAGTY - متوفر على Android و iOS
-                </p>
-            </div>
-            
-            <!-- App Download Grid -->
-            <div class="app-download-grid">
-                <!-- App Features -->
-                <div class="app-features section-fade-in">
-                    <h3 class="app-features-title">مميزات التطبيق</h3>
-                    <ul class="app-features-list">
-                        <li>
-                            <i class="fas fa-bell"></i>
-                            <span>إشعارات فورية بأحدث العروض والكورسات</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-calendar-check"></i>
-                            <span>حجز المواعيد بسهولة وسرعة</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-play-circle"></i>
-                            <span>مشاهدة الكورسات في أي وقت</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-headset"></i>
-                            <span>دعم متواصل على مدار الساعة</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- App Download Buttons -->
-                <div class="app-download-buttons section-fade-in">
-                    <div class="space-y-4">
-                        <a href="#" class="download-button">
-                            <i class="fab fa-google-play"></i>
-                            <div class="download-button-text">
-                                <span class="store-label">احصل عليه على</span>
-                                <span class="store-name">Google Play</span>
-                            </div>
-                        </a>
-                        
-                        <a href="#" class="download-button">
-                            <i class="fab fa-apple"></i>
-                            <div class="download-button-text">
-                                <span class="store-label">احصل عليه على</span>
-                                <span class="store-name">App Store</span>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- App Screenshot -->
-                    <div class="app-screenshot mt-8">
-                        <img src="https://via.placeholder.com/400x300/ffffff20/ffffff?text=HAGTY+App+Screenshot" alt="تطبيق HAGTY" class="w-full h-auto">
-                    </div>
-                </div>
-            </div>
+    <!-- HAGTY App Section -->
+    <section class="py-12 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <img src="{{ asset('images/hagty-app-banner.png') }}" 
+                 alt="تطبيق HAGTY" 
+                 class="w-full h-auto rounded-2xl shadow-lg">
         </div>
     </section>
 
@@ -2212,9 +2146,9 @@
     <!-- Newsletter Section -->
     <section class="py-20 newsletter-section relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 section-fade-in">
-                <div class="w-24 h-24 bg-gradient-to-br from-d94288 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <i class="fas fa-envelope text-white text-4xl animated-icon"></i>
+            <div class="text-center mb-16">
+                <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg" style="background: linear-gradient(135deg, #e8b4d9 0%, #d8a3ce 100%);">
+                    <i class="fas fa-envelope animated-icon" style="color: white; font-size: 2.5rem; display: block;"></i>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     انضمي إلى <span class="text-d94288">النشرة الإخبارية</span>
@@ -2283,11 +2217,14 @@
     <script>
         // Initialize Enhanced Swiper with Hero Effects
         const swiper = new Swiper('.hero-swiper', {
+            direction: 'horizontal',
+            dir: 'rtl',
             loop: true,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
+                reverseDirection: false,
             },
             pagination: {
                 el: '.swiper-pagination',
@@ -2298,8 +2235,8 @@
                 },
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-prev',
+                prevEl: '.swiper-button-next',
                 disabledClass: 'swiper-button-disabled',
             },
             effect: 'slide',
@@ -2967,7 +2904,7 @@
                     </div>
                     
                     <!-- Growth Chart -->
-                    <div class="bg-gradient-to-r from-[#FAD6E0] to-[#E6DAC8] rounded-xl p-4 mb-6">
+                    <div class="bg-gradient-to-r from-[#FFFFFF] to-[#E6DAC8] rounded-xl p-4 mb-6">
                         <h4 class="text-lg font-semibold text-gray-900 mb-3">معلومات النمو</h4>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                             <div class="bg-white rounded-lg p-3 shadow-sm">
@@ -3199,7 +3136,8 @@
             }
         });
         
-        // Popup Notifications
+        // Popup Notifications - Disabled
+        /* 
         @if(isset($popup_notifications) && $popup_notifications->count() > 0)
         document.addEventListener('DOMContentLoaded', function() {
             @foreach($popup_notifications as $popup)
@@ -3215,6 +3153,7 @@
             @endforeach
         });
         @endif
+        */
         
         // دالة بديلة لعرض الـ popup في حالة الخطأ
         function showFallbackPopup(popup) {
