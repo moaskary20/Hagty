@@ -18,73 +18,81 @@ class ForasyBannerResource extends BaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
     
-    protected static ?string $navigationLabel = 'إعلانات البانر';
+    protected static ?string $navigationLabel = 'إدارة البانر الرئيسي';
     
-    protected static ?string $modelLabel = 'بانر';
+    protected static ?string $modelLabel = 'بانر رئيسي';
     
-    protected static ?string $pluralModelLabel = 'إعلانات البانر';
+    protected static ?string $pluralModelLabel = 'البانرات الرئيسية';
     
-    protected static ?string $navigationGroup = 'فورصى';
+    protected static ?string $navigationGroup = 'إدارة النظام';
     
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 1001;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Section::make('معلومات البانر الأساسية')
+                    ->description('إضافة أو تعديل بانرات السلايدر الرئيسي في أعلى الصفحة الرئيسية')
                     ->schema([
-                        Forms\Components\TextInput::make('job_id')
-                            ->numeric()
-                            ->label('معرف الوظيفة'),
                         Forms\Components\TextInput::make('title')
                             ->required()
                             ->maxLength(255)
-                            ->label('العنوان'),
+                            ->label('عنوان البانر')
+                            ->placeholder('مثال: عروض خاصة'),
                         Forms\Components\FileUpload::make('banner_image')
                             ->image()
                             ->required()
                             ->label('صورة البانر')
-                            ->directory('forasy-banners'),
+                            ->directory('hero-banners')
+                            ->image()
+                            ->imageEditor()
+                            ->imageEditorAspectRatios([
+                                '16:9',
+                                '4:3',
+                            ])
+                            ->helperText('الحجم الموصى به: 1920x1080 بكسل')
+                            ->maxSize(5120),
                         Forms\Components\TextInput::make('link_url')
                             ->maxLength(255)
-                            ->label('رابط البانر'),
+                            ->url()
+                            ->label('رابط البانر (اختياري)')
+                            ->placeholder('https://example.com'),
                         Forms\Components\Textarea::make('description')
                             ->columnSpanFull()
-                            ->label('الوصف'),
-                        Forms\Components\TextInput::make('offer_description')
-                            ->maxLength(255)
-                            ->label('وصف العرض'),
-                        Forms\Components\DatePicker::make('valid_until')
-                            ->label('صالح حتى'),
+                            ->rows(3)
+                            ->label('وصف البانر (اختياري)'),
                         Forms\Components\TextInput::make('display_order')
                             ->required()
                             ->numeric()
                             ->default(0)
-                            ->label('ترتيب العرض'),
+                            ->label('ترتيب العرض')
+                            ->helperText('رقم أقل = يظهر أولاً'),
                         Forms\Components\Toggle::make('is_active')
                             ->required()
+                            ->default(true)
                             ->label('نشط'),
                     ])
                     ->columns(2),
 
                 Forms\Components\Section::make('نصوص البانر')
-                    ->description('إضافة النصوص التي ستظهر على الصورة')
+                    ->description('النصوص التي ستظهر فوق صورة البانر')
                     ->schema([
                         Forms\Components\TextInput::make('main_title')
                             ->maxLength(255)
                             ->label('العنوان الرئيسي')
-                            ->placeholder('مثال: كورسات تعليمية احترافية'),
+                            ->placeholder('مثال: مرحباً بك في منصة HAGTY'),
                         Forms\Components\TextInput::make('subtitle')
                             ->maxLength(255)
                             ->label('العنوان الفرعي')
-                            ->placeholder('مثال: تعلمي من أفضل المدربين'),
+                            ->placeholder('مثال: منصة شاملة للمرأة العربية'),
                         Forms\Components\TextInput::make('button_text')
                             ->maxLength(255)
                             ->label('نص الزر')
-                            ->placeholder('مثال: ابدئي التعلم'),
+                            ->placeholder('مثال: اكتشفي المزيد'),
                         Forms\Components\TextInput::make('button_url')
                             ->maxLength(255)
+                            ->url()
                             ->label('رابط الزر')
                             ->placeholder('https://example.com'),
                     ])
@@ -122,11 +130,13 @@ class ForasyBannerResource extends BaseResource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('banner_image')
-                    ->label('الصورة')
-                    ->size(60),
+                    ->label('صورة البانر')
+                    ->square()
+                    ->size(80),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
-                    ->label('العنوان'),
+                    ->label('عنوان البانر')
+                    ->weight('bold'),
                 Tables\Columns\TextColumn::make('main_title')
                     ->searchable()
                     ->label('العنوان الرئيسي')

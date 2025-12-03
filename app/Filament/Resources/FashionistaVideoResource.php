@@ -25,7 +25,7 @@ class FashionistaVideoResource extends BaseResource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'عالم الموضة';
+        return 'شياكتي';
     }
 
     public static function form(Form $form): Form

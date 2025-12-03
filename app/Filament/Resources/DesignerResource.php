@@ -84,6 +84,6 @@ class DesignerResource extends BaseResource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'عالم الموضة';
+        return 'شياكتي';
     }
 }

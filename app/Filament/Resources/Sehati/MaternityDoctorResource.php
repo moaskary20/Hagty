@@ -24,9 +24,10 @@ class MaternityDoctorResource extends Resource
     protected static ?string $model = MaternityDoctor::class;
     protected static ?string $navigationGroup = 'أومومتي';
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-    protected static ?string $navigationLabel = 'أطباء الأمومة';
-    protected static ?string $label = 'طبيب أمومة';
-    protected static ?string $pluralLabel = 'أطباء الأمومة';
+    protected static ?string $navigationLabel = 'أطباء النساء والتوليد';
+    protected static ?string $label = 'طبيب';
+    protected static ?string $pluralLabel = 'أطباء النساء والتوليد';
+    protected static ?int $navigationSort = 1;
     protected static bool $shouldRegisterNavigation = true;
 
     public static function form(Form $form): Form
